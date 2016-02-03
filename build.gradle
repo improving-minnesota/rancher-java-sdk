@@ -1,1 +1,10 @@
 apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "com.squareup.retrofit2:retrofit:2.0.0-beta3"
+    compile "com.squareup.retrofit2:converter-jackson:2.0.0-beta3"
+}
