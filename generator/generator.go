@@ -18,6 +18,7 @@ const (
 )
 
 var TYPE_SOURCE_OUTPUT_DIR = path.Join(SOURCE_OUTPUT_DIR, "type")
+var SERVICE_SOURCE_OUTPUT_DIR = path.Join(SOURCE_OUTPUT_DIR, "service")
 
 var (
 	blackListTypes    map[string]bool
@@ -31,6 +32,8 @@ type metadata struct {
 }
 
 func (m *metadata) importClass(class string) {
+	//This is better to handle as a map[string]struct{} so we don't have
+	//linear search time. Not that the # of imports will be large.
 	imported := false
 	for _, c := range m.importTypes {
 		if c == class {
@@ -134,7 +137,20 @@ func getResourceActions(schema client.Schema) map[string]client.Action {
 }
 
 func generateType(schema client.Schema) error {
-	output, err := os.Create(path.Join(TYPE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+".java"))
+	return generateTemplate(schema, path.Join(TYPE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+".java"), "type.template")
+}
+
+func generateService(schema client.Schema) error {
+	return generateTemplate(schema, path.Join(SERVICE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+"Service.java"), "service.template")
+}
+
+func generateTemplate(schema client.Schema, outputPath string, templateName string) error {
+	err := setupDirectory(path.Dir(outputPath))
+	if err != nil {
+		return err
+	}
+
+	output, err := os.Create(outputPath)
 
 	if err != nil {
 		return err
@@ -149,6 +165,7 @@ func generateType(schema client.Schema) error {
 		"collection":      capitalize(schema.Id) + "Collection",
 		"structFields":    typeMap,
 		"resourceActions": getResourceActions(schema),
+		"type":            schema.Id,
 		"meta":            metadata,
 	}
 
@@ -159,7 +176,7 @@ func generateType(schema client.Schema) error {
 		"upper":             strings.ToUpper,
 	}
 
-	typeTemplate, err := template.New("type.template").Funcs(funcMap).ParseFiles("type.template")
+	typeTemplate, err := template.New(templateName).Funcs(funcMap).ParseFiles(templateName)
 	if err != nil {
 		return err
 	}
@@ -175,34 +192,6 @@ func addUnderscore(input string) string {
 	return strings.ToLower(underscoreRegexp.ReplaceAllString(input, `${1}_${2}`))
 }
 
-//func generateClient(schema []client.Schema) error {
-//	template, err := template.ParseFiles("client.template")
-//	if err != nil {
-//		return err
-//	}
-//
-//	output, err := os.Create(path.Join(CLIENT_OUTPUT_DIR, "generated_client.go"))
-//	if err != nil {
-//		return err
-//	}
-//
-//	defer output.Close()
-//	buffer := make([]client.Schema, 0, len(schema))
-//	for _, val := range schema {
-//		if !(val.Id == "collection" || val.Id == "resource" || val.Id == "schema") {
-//			val.Id = strings.ToUpper(val.Id[:1]) + val.Id[1:]
-//			buffer = append(buffer, val)
-//		}
-//	}
-//
-//	result := map[string]interface{}{
-//		"schemas": buffer,
-//	}
-//
-//	err = template.Execute(output, result)
-//	return err
-//}
-
 func setupDirectory(dir string) error {
 	if _, err := os.Stat(dir); os.IsNotExist(err) {
 		return os.MkdirAll(dir, 0755)
@@ -212,15 +201,6 @@ func setupDirectory(dir string) error {
 }
 
 func generateFiles() error {
-	err := setupDirectory(TYPE_SOURCE_OUTPUT_DIR)
-	if err != nil {
-		return err
-	}
-
-	if err != nil {
-		return err
-	}
-
 	schemaBytes, err := ioutil.ReadFile("schemas.json")
 	if err != nil {
 		return err
@@ -250,9 +230,12 @@ func generateFiles() error {
 		if err != nil {
 			return err
 		}
+		err = generateService(schema)
+		if err != nil {
+			return err
+		}
 	}
 
-	//	return generateClient(schemas.Data)
 	return nil
 }
 

@@ -1,0 +1,36 @@
+package io.rancher.service;
+
+import io.rancher.base.Filters;
+import io.rancher.base.TypeCollection;
+import io.rancher.type.{{$.class}};
+
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+import retrofit2.http.QueryMap;
+
+public interface {{.class}}Service {
+
+  @GET("{{.type}}")
+  Call<TypeCollection<{{.class}}>> list();
+
+  @GET("{{.type}}")
+  Call<TypeCollection<{{.class}}>> list(@QueryMap Filters filters);
+
+  @GET("{{.type}}/{id}")
+  Call<{{.class}}> get(@Path("id") String id);
+
+  @POST("{{.type}}")
+  Call<{{.class}}> create(@Body {{.class}} {{.type}});
+
+  @PUT("{{.type}}/{id}")
+  Call<{{.class}}> update(@Path("id") String id, @Body {{.class}} {{.type}});
+
+  @DELETE("{{.type}}/{id}")
+  Call<Response> delete(@Path("id") String id);
+}
