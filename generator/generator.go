@@ -119,7 +119,10 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 			case "array[float64]":
 				result[fieldName] = "List<Float>"
 			default:
-				result[fieldName] = "List<Object>"
+				fieldType := strings.TrimPrefix(field.Type, "array[")
+				fieldType = strings.TrimSuffix(fieldType, "]")
+				class := strings.TrimSuffix(capitalize(fieldType), "s")
+				result[fieldName] = "List<" + class + ">"
 			}
 		} else if strings.HasPrefix(field.Type, "map") {
 			meta.importClass("java.util.Map")
