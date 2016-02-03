@@ -11,7 +11,7 @@ public class ExternalServiceEvent extends AbstractType {
     
     private Map<String, Object> data;
     
-    private Object environment;
+    private Map<String, Object> environment;
     
     private String eventType;
     
@@ -21,7 +21,7 @@ public class ExternalServiceEvent extends AbstractType {
     
     private String reportedAccountId;
     
-    private Object service;
+    private Map<String, Object> service;
     
     private String state;
     
@@ -57,11 +57,11 @@ public class ExternalServiceEvent extends AbstractType {
       this.data = data;
     }
     
-    public Object getEnvironment() {
+    public Map<String, Object> getEnvironment() {
         return this.environment;
     }
 
-    public void setEnvironment(Object environment) {
+    public void setEnvironment(Map<String, Object> environment) {
       this.environment = environment;
     }
     
@@ -97,11 +97,11 @@ public class ExternalServiceEvent extends AbstractType {
       this.reportedAccountId = reportedAccountId;
     }
     
-    public Object getService() {
+    public Map<String, Object> getService() {
         return this.service;
     }
 
-    public void setService(Object service) {
+    public void setService(Map<String, Object> service) {
       this.service = service;
     }
     

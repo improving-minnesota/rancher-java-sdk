@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class Host extends AbstractType {
     
@@ -22,7 +22,7 @@ public class Host extends AbstractType {
     
     private String description;
     
-    private Object info;
+    private Map<String, Object> info;
     
     private String kind;
     
@@ -112,11 +112,11 @@ public class Host extends AbstractType {
       this.description = description;
     }
     
-    public Object getInfo() {
+    public Map<String, Object> getInfo() {
         return this.info;
     }
 
-    public void setInfo(Object info) {
+    public void setInfo(Map<String, Object> info) {
       this.info = info;
     }
     

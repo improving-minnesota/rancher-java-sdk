@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 
 public class Cluster extends AbstractType {
     
@@ -24,7 +24,7 @@ public class Cluster extends AbstractType {
     
     private String discoverySpec;
     
-    private Object info;
+    private Map<String, Object> info;
     
     private String kind;
     
@@ -124,11 +124,11 @@ public class Cluster extends AbstractType {
       this.discoverySpec = discoverySpec;
     }
     
-    public Object getInfo() {
+    public Map<String, Object> getInfo() {
         return this.info;
     }
 
-    public void setInfo(Object info) {
+    public void setInfo(Map<String, Object> info) {
       this.info = info;
     }
     

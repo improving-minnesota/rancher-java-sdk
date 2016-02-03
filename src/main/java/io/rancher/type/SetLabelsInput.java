@@ -1,16 +1,17 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.Map;
 
 public class SetLabelsInput extends AbstractType {
     
-    private Object labels;
+    private Map<String, Object> labels;
     
-    public Object getLabels() {
+    public Map<String, Object> getLabels() {
         return this.labels;
     }
 
-    public void setLabels(Object labels) {
+    public void setLabels(Map<String, Object> labels) {
       this.labels = labels;
     }
     

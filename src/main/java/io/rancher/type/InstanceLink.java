@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class InstanceLink extends AbstractType {
     
@@ -22,7 +22,7 @@ public class InstanceLink extends AbstractType {
     
     private String name;
     
-    private List<Json> ports;
+    private List<Map<String, Object>> ports;
     
     private String removeTime;
     
@@ -104,11 +104,11 @@ public class InstanceLink extends AbstractType {
       this.name = name;
     }
     
-    public List<Json> getPorts() {
+    public List<Map<String, Object>> getPorts() {
         return this.ports;
     }
 
-    public void setPorts(List<Json> ports) {
+    public void setPorts(List<Map<String, Object>> ports) {
       this.ports = ports;
     }
     

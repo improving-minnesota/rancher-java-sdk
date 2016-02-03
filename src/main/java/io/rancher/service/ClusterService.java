@@ -3,9 +3,9 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Cluster;
-import io.rancher.type.Host;
 import io.rancher.type.AddRemoveClusterHostInput;
 import io.rancher.type.HostAccess;
+import io.rancher.type.Host;
 
 import retrofit2.Call;
 import retrofit2.Response;

@@ -1,10 +1,11 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.Map;
 
 public class ActiveSetting extends AbstractType {
     
-    private Object activeValue;
+    private Map<String, Object> activeValue;
     
     private Boolean inDb;
     
@@ -14,11 +15,11 @@ public class ActiveSetting extends AbstractType {
     
     private String value;
     
-    public Object getActiveValue() {
+    public Map<String, Object> getActiveValue() {
         return this.activeValue;
     }
 
-    public void setActiveValue(Object activeValue) {
+    public void setActiveValue(Map<String, Object> activeValue) {
       this.activeValue = activeValue;
     }
     
