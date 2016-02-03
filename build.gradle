@@ -17,10 +17,6 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
-task javadoc(type: Javadoc) {
-    from sourceSets.main.allJava
-}
-
 task javadocJar(type: Jar) {
     from javadoc.destinationDir
 }
@@ -32,7 +28,7 @@ publishing {
             artifact sourceJar {
                 classifier 'sources'
             }
-            artifcate javadocJar {
+            artifact javadocJar {
                 classifier 'javadoc'
             }
         }
