@@ -2,7 +2,8 @@ package io.rancher.service;
 
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
-import io.rancher.type.{{$.class}};
+import io.rancher.type.{{$.class}};{{range $import := .meta.ListActionImports}}
+import {{$import}};{{end}}
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -33,4 +34,10 @@ public interface {{.class}}Service {
 
   @DELETE("{{.type}}/{id}")
   Call<Response> delete(@Path("id") String id);
+  {{range $key, $value := .resourceActions}}
+  @POST("{{$.type}}/{id}?action={{$key}}"){{if eq $value.Input "" }}
+  Call<{{.Output | capitalize}}> {{$key}}(@Path("id") String id);
+  {{else}}
+  Call<{{.Output | capitalize}}> {{$key}}(@Path("id") String id, @Body {{.Input | capitalize}} {{.Input}});
+  {{end}}{{end}}
 }

@@ -22,32 +22,43 @@ var SERVICE_SOURCE_OUTPUT_DIR = path.Join(SOURCE_OUTPUT_DIR, "service")
 
 var (
 	blackListTypes    map[string]bool
+	blackListActions  map[string]bool
 	noConversionTypes map[string]bool
 	underscoreRegexp  *regexp.Regexp = regexp.MustCompile(`([a-z])([A-Z])`)
 	schemaExists      map[string]bool
 )
 
 type metadata struct {
-	importTypes []string
+	importTypes       map[string]bool
+	actionImportTypes map[string]bool
+}
+
+func (m *metadata) importActionClass(class string) {
+	m.actionImportTypes[class] = true
 }
 
 func (m *metadata) importClass(class string) {
-	//This is better to handle as a map[string]struct{} so we don't have
-	//linear search time. Not that the # of imports will be large.
-	imported := false
-	for _, c := range m.importTypes {
-		if c == class {
-			imported = true
-			break
-		}
-	}
-	if !imported {
-		m.importTypes = append(m.importTypes, class)
-	}
+	m.importTypes[class] = true
 }
 
 func (m metadata) ListImports() []string {
-	return m.importTypes
+	imports := make([]string, len(m.importTypes))
+	i := 0
+	for k := range m.importTypes {
+		imports[i] = k
+		i++
+	}
+	return imports
+}
+
+func (m metadata) ListActionImports() []string {
+	imports := make([]string, len(m.actionImportTypes))
+	i := 0
+	for k := range m.actionImportTypes {
+		imports[i] = k
+		i++
+	}
+	return imports
 }
 
 func init() {
@@ -55,6 +66,10 @@ func init() {
 	blackListTypes["schema"] = true
 	blackListTypes["resource"] = true
 	blackListTypes["collection"] = true
+
+	blackListActions = make(map[string]bool)
+	blackListActions["create"] = true
+	blackListActions["update"] = true
 
 	noConversionTypes = make(map[string]bool)
 	noConversionTypes["string"] = true
@@ -72,7 +87,8 @@ func capitalize(s string) string {
 
 func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 	meta := metadata{
-		importTypes: []string{},
+		importTypes:       map[string]bool{},
+		actionImportTypes: map[string]bool{},
 	}
 	result := map[string]string{}
 	for name, field := range schema.ResourceFields {
@@ -126,10 +142,16 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 	return result, meta
 }
 
-func getResourceActions(schema client.Schema) map[string]client.Action {
+func getResourceActions(schema client.Schema, m metadata) map[string]client.Action {
 	result := map[string]client.Action{}
 	for name, action := range schema.ResourceActions {
 		if _, ok := schemaExists[action.Output]; ok {
+			if _, ok2 := blackListActions[name]; ok2 {
+				continue
+			}
+			if action.Input != "" {
+				m.importActionClass("io.rancher.type." + capitalize(action.Input))
+			}
 			result[name] = action
 		}
 	}
@@ -164,7 +186,7 @@ func generateTemplate(schema client.Schema, outputPath string, templateName stri
 		"class":           capitalize(schema.Id),
 		"collection":      capitalize(schema.Id) + "Collection",
 		"structFields":    typeMap,
-		"resourceActions": getResourceActions(schema),
+		"resourceActions": getResourceActions(schema, metadata),
 		"type":            schema.Id,
 		"meta":            metadata,
 	}
