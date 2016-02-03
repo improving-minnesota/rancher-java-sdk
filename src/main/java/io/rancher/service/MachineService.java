@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Machine;
+import io.rancher.type.PhysicalHost;
 
 import retrofit2.Call;
 import retrofit2.Response;

@@ -3,10 +3,11 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalService;
-import io.rancher.type.AddRemoveServiceLinkInput;
 import io.rancher.type.ServiceRestart;
 import io.rancher.type.SetServiceLinksInput;
 import io.rancher.type.ServiceUpgrade;
+import io.rancher.type.Service;
+import io.rancher.type.AddRemoveServiceLinkInput;
 
 import retrofit2.Call;
 import retrofit2.Response;

@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Password;
+import io.rancher.type.Credential;
 import io.rancher.type.ChangeSecretInput;
 
 import retrofit2.Call;

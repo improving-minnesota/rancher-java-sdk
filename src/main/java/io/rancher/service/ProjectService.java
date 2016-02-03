@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Project;
+import io.rancher.type.Account;
 import io.rancher.type.SetProjectMembersInput;
 
 import retrofit2.Call;

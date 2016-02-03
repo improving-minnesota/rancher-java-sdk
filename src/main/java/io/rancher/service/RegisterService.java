@@ -4,6 +4,7 @@ import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Register;
 import io.rancher.type.InstanceStop;
+import io.rancher.type.Instance;
 
 import retrofit2.Call;
 import retrofit2.Response;
