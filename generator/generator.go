@@ -27,11 +27,24 @@ var (
 )
 
 type metadata struct {
-	ImportTypes []string
+	importTypes []string
 }
 
-func (m metadata) importType(importType string) {
-	m.ImportTypes = append(m.ImportTypes, importType)
+func (m *metadata) importClass(class string) {
+	imported := false
+	for _, c := range m.importTypes {
+		if c == class {
+			imported = true
+			break
+		}
+	}
+	if !imported {
+		m.importTypes = append(m.importTypes, class)
+	}
+}
+
+func (m metadata) ListImports() []string {
+	return m.importTypes
 }
 
 func init() {
@@ -56,7 +69,7 @@ func capitalize(s string) string {
 
 func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 	meta := metadata{
-		ImportTypes: []string{},
+		importTypes: []string{},
 	}
 	result := map[string]string{}
 	for name, field := range schema.ResourceFields {
@@ -70,9 +83,9 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 			result[fieldName] = "String"
 		} else if strings.HasPrefix(field.Type, "array[reference[") {
 			result[fieldName] = "List<String>"
-			meta.importType("java.util.List")
+			meta.importClass("java.util.List")
 		} else if strings.HasPrefix(field.Type, "array") {
-			meta.importType("java.util.List")
+			meta.importClass("java.util.List")
 			switch field.Type {
 			case "array[reference]":
 				fallthrough
@@ -90,7 +103,7 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 				result[fieldName] = "List<Object>"
 			}
 		} else if strings.HasPrefix(field.Type, "map") {
-			meta.importType("java.util.Map")
+			meta.importClass("java.util.Map")
 			result[fieldName] = "Map<String, Object>"
 		} else if strings.HasPrefix(field.Type, "json") {
 			result[fieldName] = "Object"

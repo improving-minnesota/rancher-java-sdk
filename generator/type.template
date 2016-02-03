@@ -1,8 +1,7 @@
 package io.rancher.type;
 
-import io.rancher.base.AbstractType;{{range $importType := .meta.ImportTypes}}
-import {{$importType}};
-{{end}}
+import io.rancher.base.AbstractType;{{range $import := .meta.ListImports}}
+import {{$import}};{{end}}
 
 public class {{.class}} extends AbstractType {
     {{range $key, $value := .structFields}}
