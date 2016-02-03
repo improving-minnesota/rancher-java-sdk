@@ -13,9 +13,9 @@ public class InServiceUpgradeStrategy extends AbstractType {
     
     private LaunchConfig previousLaunchConfig;
     
-    private List<Object> previousSecondaryLaunchConfigs;
+    private List<SecondaryLaunchConfig> previousSecondaryLaunchConfigs;
     
-    private List<Object> secondaryLaunchConfigs;
+    private List<SecondaryLaunchConfig> secondaryLaunchConfigs;
     
     private Boolean startFirst;
     
@@ -51,19 +51,19 @@ public class InServiceUpgradeStrategy extends AbstractType {
       this.previousLaunchConfig = previousLaunchConfig;
     }
     
-    public List<Object> getPreviousSecondaryLaunchConfigs() {
+    public List<SecondaryLaunchConfig> getPreviousSecondaryLaunchConfigs() {
         return this.previousSecondaryLaunchConfigs;
     }
 
-    public void setPreviousSecondaryLaunchConfigs(List<Object> previousSecondaryLaunchConfigs) {
+    public void setPreviousSecondaryLaunchConfigs(List<SecondaryLaunchConfig> previousSecondaryLaunchConfigs) {
       this.previousSecondaryLaunchConfigs = previousSecondaryLaunchConfigs;
     }
     
-    public List<Object> getSecondaryLaunchConfigs() {
+    public List<SecondaryLaunchConfig> getSecondaryLaunchConfigs() {
         return this.secondaryLaunchConfigs;
     }
 
-    public void setSecondaryLaunchConfigs(List<Object> secondaryLaunchConfigs) {
+    public void setSecondaryLaunchConfigs(List<SecondaryLaunchConfig> secondaryLaunchConfigs) {
       this.secondaryLaunchConfigs = secondaryLaunchConfigs;
     }
     

@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class Project extends AbstractType {
     
@@ -16,7 +16,7 @@ public class Project extends AbstractType {
     
     private Boolean kubernetes;
     
-    private List<Object> members;
+    private List<ProjectMember> members;
     
     private String name;
     
@@ -78,11 +78,11 @@ public class Project extends AbstractType {
       this.kubernetes = kubernetes;
     }
     
-    public List<Object> getMembers() {
+    public List<ProjectMember> getMembers() {
         return this.members;
     }
 
-    public void setMembers(List<Object> members) {
+    public void setMembers(List<ProjectMember> members) {
       this.members = members;
     }
     

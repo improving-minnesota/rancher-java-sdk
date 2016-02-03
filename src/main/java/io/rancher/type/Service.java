@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 
 public class Service extends AbstractType {
     
@@ -30,7 +30,7 @@ public class Service extends AbstractType {
     
     private String name;
     
-    private List<Object> publicEndpoints;
+    private List<PublicEndpoint> publicEndpoints;
     
     private String removeTime;
     
@@ -38,7 +38,7 @@ public class Service extends AbstractType {
     
     private Integer scale;
     
-    private List<Object> secondaryLaunchConfigs;
+    private List<SecondaryLaunchConfig> secondaryLaunchConfigs;
     
     private String selectorContainer;
     
@@ -156,11 +156,11 @@ public class Service extends AbstractType {
       this.name = name;
     }
     
-    public List<Object> getPublicEndpoints() {
+    public List<PublicEndpoint> getPublicEndpoints() {
         return this.publicEndpoints;
     }
 
-    public void setPublicEndpoints(List<Object> publicEndpoints) {
+    public void setPublicEndpoints(List<PublicEndpoint> publicEndpoints) {
       this.publicEndpoints = publicEndpoints;
     }
     
@@ -188,11 +188,11 @@ public class Service extends AbstractType {
       this.scale = scale;
     }
     
-    public List<Object> getSecondaryLaunchConfigs() {
+    public List<SecondaryLaunchConfig> getSecondaryLaunchConfigs() {
         return this.secondaryLaunchConfigs;
     }
 
-    public void setSecondaryLaunchConfigs(List<Object> secondaryLaunchConfigs) {
+    public void setSecondaryLaunchConfigs(List<SecondaryLaunchConfig> secondaryLaunchConfigs) {
       this.secondaryLaunchConfigs = secondaryLaunchConfigs;
     }
     

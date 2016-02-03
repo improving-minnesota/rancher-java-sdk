@@ -22,7 +22,7 @@ public class InstanceLink extends AbstractType {
     
     private String name;
     
-    private List<Object> ports;
+    private List<Json> ports;
     
     private String removeTime;
     
@@ -104,11 +104,11 @@ public class InstanceLink extends AbstractType {
       this.name = name;
     }
     
-    public List<Object> getPorts() {
+    public List<Json> getPorts() {
         return this.ports;
     }
 
-    public void setPorts(List<Object> ports) {
+    public void setPorts(List<Json> ports) {
       this.ports = ports;
     }
     

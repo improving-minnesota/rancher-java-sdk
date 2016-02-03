@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class LoadBalancerService extends AbstractType {
     
@@ -34,7 +34,7 @@ public class LoadBalancerService extends AbstractType {
     
     private String name;
     
-    private List<Object> publicEndpoints;
+    private List<PublicEndpoint> publicEndpoints;
     
     private String removeTime;
     
@@ -170,11 +170,11 @@ public class LoadBalancerService extends AbstractType {
       this.name = name;
     }
     
-    public List<Object> getPublicEndpoints() {
+    public List<PublicEndpoint> getPublicEndpoints() {
         return this.publicEndpoints;
     }
 
-    public void setPublicEndpoints(List<Object> publicEndpoints) {
+    public void setPublicEndpoints(List<PublicEndpoint> publicEndpoints) {
       this.publicEndpoints = publicEndpoints;
     }
     

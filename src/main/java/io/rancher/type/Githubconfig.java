@@ -7,7 +7,7 @@ public class Githubconfig extends AbstractType {
     
     private String accessMode;
     
-    private List<Object> allowedIdentities;
+    private List<Identity> allowedIdentities;
     
     private String clientId;
     
@@ -29,11 +29,11 @@ public class Githubconfig extends AbstractType {
       this.accessMode = accessMode;
     }
     
-    public List<Object> getAllowedIdentities() {
+    public List<Identity> getAllowedIdentities() {
         return this.allowedIdentities;
     }
 
-    public void setAllowedIdentities(List<Object> allowedIdentities) {
+    public void setAllowedIdentities(List<Identity> allowedIdentities) {
       this.allowedIdentities = allowedIdentities;
     }
     

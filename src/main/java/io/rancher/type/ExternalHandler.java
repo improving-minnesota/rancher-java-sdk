@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class ExternalHandler extends AbstractType {
     
@@ -18,7 +18,7 @@ public class ExternalHandler extends AbstractType {
     
     private Integer priority;
     
-    private List<Object> processConfigs;
+    private List<ExternalHandlerProcessConfig> processConfigs;
     
     private String removeTime;
     
@@ -86,11 +86,11 @@ public class ExternalHandler extends AbstractType {
       this.priority = priority;
     }
     
-    public List<Object> getProcessConfigs() {
+    public List<ExternalHandlerProcessConfig> getProcessConfigs() {
         return this.processConfigs;
     }
 
-    public void setProcessConfigs(List<Object> processConfigs) {
+    public void setProcessConfigs(List<ExternalHandlerProcessConfig> processConfigs) {
       this.processConfigs = processConfigs;
     }
     

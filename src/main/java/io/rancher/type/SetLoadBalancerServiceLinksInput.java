@@ -5,13 +5,13 @@ import java.util.List;
 
 public class SetLoadBalancerServiceLinksInput extends AbstractType {
     
-    private List<Object> serviceLinks;
+    private List<LoadBalancerServiceLink> serviceLinks;
     
-    public List<Object> getServiceLinks() {
+    public List<LoadBalancerServiceLink> getServiceLinks() {
         return this.serviceLinks;
     }
 
-    public void setServiceLinks(List<Object> serviceLinks) {
+    public void setServiceLinks(List<LoadBalancerServiceLink> serviceLinks) {
       this.serviceLinks = serviceLinks;
     }
     

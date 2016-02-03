@@ -17,7 +17,7 @@ public class ProcessDefinition extends AbstractType {
     
     private String resourceType;
     
-    private List<Object> stateTransitions;
+    private List<StateTransition> stateTransitions;
     
     public Boolean getExtensionBased() {
         return this.extensionBased;
@@ -67,11 +67,11 @@ public class ProcessDefinition extends AbstractType {
       this.resourceType = resourceType;
     }
     
-    public List<Object> getStateTransitions() {
+    public List<StateTransition> getStateTransitions() {
         return this.stateTransitions;
     }
 
-    public void setStateTransitions(List<Object> stateTransitions) {
+    public void setStateTransitions(List<StateTransition> stateTransitions) {
       this.stateTransitions = stateTransitions;
     }
     

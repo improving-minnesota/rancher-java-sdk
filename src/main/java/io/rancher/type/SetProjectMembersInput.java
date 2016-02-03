@@ -5,13 +5,13 @@ import java.util.List;
 
 public class SetProjectMembersInput extends AbstractType {
     
-    private List<Object> members;
+    private List<ProjectMember> members;
     
-    public List<Object> getMembers() {
+    public List<ProjectMember> getMembers() {
         return this.members;
     }
 
-    public void setMembers(List<Object> members) {
+    public void setMembers(List<ProjectMember> members) {
       this.members = members;
     }
     

@@ -3,11 +3,11 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Container;
-import io.rancher.type.InstanceConsoleInput;
 import io.rancher.type.ContainerLogs;
 import io.rancher.type.InstanceStop;
 import io.rancher.type.SetLabelsInput;
 import io.rancher.type.ContainerExec;
+import io.rancher.type.InstanceConsoleInput;
 
 import retrofit2.Call;
 import retrofit2.Response;

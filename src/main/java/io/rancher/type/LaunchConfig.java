@@ -46,7 +46,7 @@ public class LaunchConfig extends AbstractType {
     
     private List<String> devices;
     
-    private List<Object> disks;
+    private List<VirtualMachineDisk> disks;
     
     private List<String> dns;
     
@@ -316,11 +316,11 @@ public class LaunchConfig extends AbstractType {
       this.devices = devices;
     }
     
-    public List<Object> getDisks() {
+    public List<VirtualMachineDisk> getDisks() {
         return this.disks;
     }
 
-    public void setDisks(List<Object> disks) {
+    public void setDisks(List<VirtualMachineDisk> disks) {
       this.disks = disks;
     }
     

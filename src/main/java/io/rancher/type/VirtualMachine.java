@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class VirtualMachine extends AbstractType {
     
@@ -30,7 +30,7 @@ public class VirtualMachine extends AbstractType {
     
     private String description;
     
-    private List<Object> disks;
+    private List<VirtualMachineDisk> disks;
     
     private List<String> dns;
     
@@ -214,11 +214,11 @@ public class VirtualMachine extends AbstractType {
       this.description = description;
     }
     
-    public List<Object> getDisks() {
+    public List<VirtualMachineDisk> getDisks() {
         return this.disks;
     }
 
-    public void setDisks(List<Object> disks) {
+    public void setDisks(List<VirtualMachineDisk> disks) {
       this.disks = disks;
     }
     

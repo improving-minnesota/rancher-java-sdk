@@ -7,7 +7,7 @@ public class ExtensionPoint extends AbstractType {
     
     private String excludeSetting;
     
-    private List<Object> implementations;
+    private List<ExtensionImplementation> implementations;
     
     private String includeSetting;
     
@@ -23,11 +23,11 @@ public class ExtensionPoint extends AbstractType {
       this.excludeSetting = excludeSetting;
     }
     
-    public List<Object> getImplementations() {
+    public List<ExtensionImplementation> getImplementations() {
         return this.implementations;
     }
 
-    public void setImplementations(List<Object> implementations) {
+    public void setImplementations(List<ExtensionImplementation> implementations) {
       this.implementations = implementations;
     }
     

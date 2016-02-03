@@ -5,8 +5,8 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.LoadBalancerService;
 import io.rancher.type.ServiceUpgrade;
 import io.rancher.type.ServiceRestart;
-import io.rancher.type.SetLoadBalancerServiceLinksInput;
 import io.rancher.type.AddRemoveLoadBalancerServiceLinkInput;
+import io.rancher.type.SetLoadBalancerServiceLinksInput;
 
 import retrofit2.Call;
 import retrofit2.Response;

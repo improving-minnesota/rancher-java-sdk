@@ -32,7 +32,7 @@ public class Host extends AbstractType {
     
     private String physicalHostId;
     
-    private List<Object> publicEndpoints;
+    private List<PublicEndpoint> publicEndpoints;
     
     private String removeTime;
     
@@ -152,11 +152,11 @@ public class Host extends AbstractType {
       this.physicalHostId = physicalHostId;
     }
     
-    public List<Object> getPublicEndpoints() {
+    public List<PublicEndpoint> getPublicEndpoints() {
         return this.publicEndpoints;
     }
 
-    public void setPublicEndpoints(List<Object> publicEndpoints) {
+    public void setPublicEndpoints(List<PublicEndpoint> publicEndpoints) {
       this.publicEndpoints = publicEndpoints;
     }
     

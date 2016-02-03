@@ -5,13 +5,13 @@ import java.util.List;
 
 public class SetServiceLinksInput extends AbstractType {
     
-    private List<Object> serviceLinks;
+    private List<ServiceLink> serviceLinks;
     
-    public List<Object> getServiceLinks() {
+    public List<ServiceLink> getServiceLinks() {
         return this.serviceLinks;
     }
 
-    public void setServiceLinks(List<Object> serviceLinks) {
+    public void setServiceLinks(List<ServiceLink> serviceLinks) {
       this.serviceLinks = serviceLinks;
     }
     
