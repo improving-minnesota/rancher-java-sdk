@@ -152,8 +152,12 @@ func getResourceActions(schema client.Schema, m metadata) map[string]client.Acti
 			if _, ok2 := blackListActions[name]; ok2 {
 				continue
 			}
-			if action.Input != "" {
+			class := capitalize(schema.Id)
+			if action.Input != "" && capitalize(action.Input) != class {
 				m.importActionClass("io.rancher.type." + capitalize(action.Input))
+			}
+			if capitalize(action.Output) != class {
+				m.importActionClass("io.rancher.type." + capitalize(action.Output))
 			}
 			result[name] = action
 		}
