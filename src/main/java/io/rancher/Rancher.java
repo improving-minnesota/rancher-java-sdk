@@ -38,7 +38,7 @@ public class Rancher {
         return retrofit.create(service);
     }
 
-    static class Config {
+    public static class Config {
 
         private URL url;
         private String accessKey;
