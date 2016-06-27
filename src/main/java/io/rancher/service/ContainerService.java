@@ -3,13 +3,14 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Container;
-import io.rancher.type.ContainerLogs;
-import io.rancher.type.Instance;
 import io.rancher.type.InstanceStop;
+import io.rancher.type.ContainerProxy;
+import io.rancher.type.ContainerExec;
+import io.rancher.type.ContainerLogs;
+import io.rancher.type.HostAccess;
 import io.rancher.type.InstanceConsoleInput;
 import io.rancher.type.InstanceConsole;
-import io.rancher.type.ContainerExec;
-import io.rancher.type.HostAccess;
+import io.rancher.type.Instance;
 import io.rancher.type.SetLabelsInput;
 
 import retrofit2.Call;
@@ -51,6 +52,9 @@ public interface ContainerService {
   @POST("container/{id}?action=deallocate")
   Call<Instance> deallocate(@Path("id") String id);
   
+  @POST("container/{id}?action=error")
+  Call<Instance> error(@Path("id") String id);
+  
   @POST("container/{id}?action=execute")
   Call<HostAccess> execute(@Path("id") String id, @Body ContainerExec containerExec);
   
@@ -59,6 +63,9 @@ public interface ContainerService {
   
   @POST("container/{id}?action=migrate")
   Call<Instance> migrate(@Path("id") String id);
+  
+  @POST("container/{id}?action=proxy")
+  Call<HostAccess> proxy(@Path("id") String id, @Body ContainerProxy containerProxy);
   
   @POST("container/{id}?action=purge")
   Call<Instance> purge(@Path("id") String id);

@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class SecondaryLaunchConfig extends AbstractType {
     
@@ -11,6 +11,8 @@ public class SecondaryLaunchConfig extends AbstractType {
     private String agentId;
     
     private String allocationState;
+    
+    private Map<String, Object> blkioDeviceOptions;
     
     private DockerBuild build;
     
@@ -70,6 +72,8 @@ public class SecondaryLaunchConfig extends AbstractType {
     
     private String healthState;
     
+    private String hostId;
+    
     private String hostname;
     
     private String imageUuid;
@@ -121,6 +125,8 @@ public class SecondaryLaunchConfig extends AbstractType {
     private String removed;
     
     private String requestedHostId;
+    
+    private String requestedIpAddress;
     
     private List<String> securityOpt;
     
@@ -180,6 +186,14 @@ public class SecondaryLaunchConfig extends AbstractType {
 
     public void setAllocationState(String allocationState) {
       this.allocationState = allocationState;
+    }
+    
+    public Map<String, Object> getBlkioDeviceOptions() {
+        return this.blkioDeviceOptions;
+    }
+
+    public void setBlkioDeviceOptions(Map<String, Object> blkioDeviceOptions) {
+      this.blkioDeviceOptions = blkioDeviceOptions;
     }
     
     public DockerBuild getBuild() {
@@ -414,6 +428,14 @@ public class SecondaryLaunchConfig extends AbstractType {
       this.healthState = healthState;
     }
     
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    public void setHostId(String hostId) {
+      this.hostId = hostId;
+    }
+    
     public String getHostname() {
         return this.hostname;
     }
@@ -620,6 +642,14 @@ public class SecondaryLaunchConfig extends AbstractType {
 
     public void setRequestedHostId(String requestedHostId) {
       this.requestedHostId = requestedHostId;
+    }
+    
+    public String getRequestedIpAddress() {
+        return this.requestedIpAddress;
+    }
+
+    public void setRequestedIpAddress(String requestedIpAddress) {
+      this.requestedIpAddress = requestedIpAddress;
     }
     
     public List<String> getSecurityOpt() {

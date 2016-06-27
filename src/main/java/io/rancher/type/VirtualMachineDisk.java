@@ -11,9 +11,13 @@ public class VirtualMachineDisk extends AbstractType {
     
     private Map<String, Object> opts;
     
+    private Integer readIops;
+    
     private Boolean root;
     
     private String size;
+    
+    private Integer writeIops;
     
     public String getDriver() {
         return this.driver;
@@ -39,6 +43,14 @@ public class VirtualMachineDisk extends AbstractType {
       this.opts = opts;
     }
     
+    public Integer getReadIops() {
+        return this.readIops;
+    }
+
+    public void setReadIops(Integer readIops) {
+      this.readIops = readIops;
+    }
+    
     public Boolean getRoot() {
         return this.root;
     }
@@ -53,6 +65,14 @@ public class VirtualMachineDisk extends AbstractType {
 
     public void setSize(String size) {
       this.size = size;
+    }
+    
+    public Integer getWriteIops() {
+        return this.writeIops;
+    }
+
+    public void setWriteIops(Integer writeIops) {
+      this.writeIops = writeIops;
     }
     
 }

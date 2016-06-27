@@ -46,6 +46,9 @@ public interface InstanceService {
   @POST("instance/{id}?action=deallocate")
   Call<Instance> deallocate(@Path("id") String id);
   
+  @POST("instance/{id}?action=error")
+  Call<Instance> error(@Path("id") String id);
+  
   @POST("instance/{id}?action=migrate")
   Call<Instance> migrate(@Path("id") String id);
   

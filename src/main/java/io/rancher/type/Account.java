@@ -15,6 +15,8 @@ public class Account extends AbstractType {
     
     private String externalIdType;
     
+    private String identity;
+    
     private String kind;
     
     private String name;
@@ -71,6 +73,14 @@ public class Account extends AbstractType {
 
     public void setExternalIdType(String externalIdType) {
       this.externalIdType = externalIdType;
+    }
+    
+    public String getIdentity() {
+        return this.identity;
+    }
+
+    public void setIdentity(String identity) {
+      this.identity = identity;
     }
     
     public String getKind() {

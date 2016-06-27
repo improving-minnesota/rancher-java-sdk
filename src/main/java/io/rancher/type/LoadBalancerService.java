@@ -1,16 +1,20 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class LoadBalancerService extends AbstractType {
     
     private String accountId;
     
+    private Boolean assignServiceIpAddress;
+    
     private List<String> certificateIds;
     
     private String created;
+    
+    private Integer currentScale;
     
     private Map<String, Object> data;
     
@@ -23,6 +27,8 @@ public class LoadBalancerService extends AbstractType {
     private String externalId;
     
     private String fqdn;
+    
+    private String healthState;
     
     private String kind;
     
@@ -40,9 +46,15 @@ public class LoadBalancerService extends AbstractType {
     
     private String removed;
     
+    private Boolean retainIp;
+    
     private Integer scale;
     
+    private ScalePolicy scalePolicy;
+    
     private String selectorLink;
+    
+    private Boolean startOnCreate;
     
     private String state;
     
@@ -66,6 +78,14 @@ public class LoadBalancerService extends AbstractType {
       this.accountId = accountId;
     }
     
+    public Boolean getAssignServiceIpAddress() {
+        return this.assignServiceIpAddress;
+    }
+
+    public void setAssignServiceIpAddress(Boolean assignServiceIpAddress) {
+      this.assignServiceIpAddress = assignServiceIpAddress;
+    }
+    
     public List<String> getCertificateIds() {
         return this.certificateIds;
     }
@@ -80,6 +100,14 @@ public class LoadBalancerService extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
+    }
+    
+    public Integer getCurrentScale() {
+        return this.currentScale;
+    }
+
+    public void setCurrentScale(Integer currentScale) {
+      this.currentScale = currentScale;
     }
     
     public Map<String, Object> getData() {
@@ -128,6 +156,14 @@ public class LoadBalancerService extends AbstractType {
 
     public void setFqdn(String fqdn) {
       this.fqdn = fqdn;
+    }
+    
+    public String getHealthState() {
+        return this.healthState;
+    }
+
+    public void setHealthState(String healthState) {
+      this.healthState = healthState;
     }
     
     public String getKind() {
@@ -194,6 +230,14 @@ public class LoadBalancerService extends AbstractType {
       this.removed = removed;
     }
     
+    public Boolean getRetainIp() {
+        return this.retainIp;
+    }
+
+    public void setRetainIp(Boolean retainIp) {
+      this.retainIp = retainIp;
+    }
+    
     public Integer getScale() {
         return this.scale;
     }
@@ -202,12 +246,28 @@ public class LoadBalancerService extends AbstractType {
       this.scale = scale;
     }
     
+    public ScalePolicy getScalePolicy() {
+        return this.scalePolicy;
+    }
+
+    public void setScalePolicy(ScalePolicy scalePolicy) {
+      this.scalePolicy = scalePolicy;
+    }
+    
     public String getSelectorLink() {
         return this.selectorLink;
     }
 
     public void setSelectorLink(String selectorLink) {
       this.selectorLink = selectorLink;
+    }
+    
+    public Boolean getStartOnCreate() {
+        return this.startOnCreate;
+    }
+
+    public void setStartOnCreate(Boolean startOnCreate) {
+      this.startOnCreate = startOnCreate;
     }
     
     public String getState() {

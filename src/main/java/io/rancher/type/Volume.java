@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class Volume extends AbstractType {
     
+    private String accessMode;
+    
     private String accountId;
     
     private String created;
@@ -44,6 +46,14 @@ public class Volume extends AbstractType {
     private String uri;
     
     private String uuid;
+    
+    public String getAccessMode() {
+        return this.accessMode;
+    }
+
+    public void setAccessMode(String accessMode) {
+      this.accessMode = accessMode;
+    }
     
     public String getAccountId() {
         return this.accountId;

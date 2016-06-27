@@ -3,10 +3,10 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Environment;
-import io.rancher.type.AddOutputsInput;
-import io.rancher.type.ComposeConfigInput;
 import io.rancher.type.ComposeConfig;
 import io.rancher.type.EnvironmentUpgrade;
+import io.rancher.type.AddOutputsInput;
+import io.rancher.type.ComposeConfigInput;
 
 import retrofit2.Call;
 import retrofit2.Response;

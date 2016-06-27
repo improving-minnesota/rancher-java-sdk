@@ -19,11 +19,15 @@ public class Environment extends AbstractType {
     
     private String externalId;
     
+    private String healthState;
+    
     private String kind;
     
     private String name;
     
     private Map<String, Object> outputs;
+    
+    private Map<String, Object> previousEnvironment;
     
     private String previousExternalId;
     
@@ -101,6 +105,14 @@ public class Environment extends AbstractType {
       this.externalId = externalId;
     }
     
+    public String getHealthState() {
+        return this.healthState;
+    }
+
+    public void setHealthState(String healthState) {
+      this.healthState = healthState;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -123,6 +135,14 @@ public class Environment extends AbstractType {
 
     public void setOutputs(Map<String, Object> outputs) {
       this.outputs = outputs;
+    }
+    
+    public Map<String, Object> getPreviousEnvironment() {
+        return this.previousEnvironment;
+    }
+
+    public void setPreviousEnvironment(Map<String, Object> previousEnvironment) {
+      this.previousEnvironment = previousEnvironment;
     }
     
     public String getPreviousExternalId() {

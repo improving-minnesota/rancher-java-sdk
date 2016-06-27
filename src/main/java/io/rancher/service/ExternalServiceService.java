@@ -3,11 +3,9 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalService;
-import io.rancher.type.Service;
 import io.rancher.type.ServiceRestart;
-import io.rancher.type.SetServiceLinksInput;
+import io.rancher.type.Service;
 import io.rancher.type.ServiceUpgrade;
-import io.rancher.type.AddRemoveServiceLinkInput;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -42,9 +40,6 @@ public interface ExternalServiceService {
   @POST("externalService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);
   
-  @POST("externalService/{id}?action=addservicelink")
-  Call<Service> addservicelink(@Path("id") String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput);
-  
   @POST("externalService/{id}?action=cancelrollback")
   Call<Service> cancelrollback(@Path("id") String id);
   
@@ -60,17 +55,11 @@ public interface ExternalServiceService {
   @POST("externalService/{id}?action=remove")
   Call<Service> remove(@Path("id") String id);
   
-  @POST("externalService/{id}?action=removeservicelink")
-  Call<Service> removeservicelink(@Path("id") String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput);
-  
   @POST("externalService/{id}?action=restart")
   Call<Service> restart(@Path("id") String id, @Body ServiceRestart serviceRestart);
   
   @POST("externalService/{id}?action=rollback")
   Call<Service> rollback(@Path("id") String id);
-  
-  @POST("externalService/{id}?action=setservicelinks")
-  Call<Service> setservicelinks(@Path("id") String id, @Body SetServiceLinksInput setServiceLinksInput);
   
   @POST("externalService/{id}?action=upgrade")
   Call<Service> upgrade(@Path("id") String id, @Body ServiceUpgrade serviceUpgrade);

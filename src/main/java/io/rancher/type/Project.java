@@ -6,6 +6,8 @@ import java.util.Map;
 
 public class Project extends AbstractType {
     
+    private Boolean allowSystemRole;
+    
     private String created;
     
     private Map<String, Object> data;
@@ -18,7 +20,11 @@ public class Project extends AbstractType {
     
     private List<ProjectMember> members;
     
+    private Boolean mesos;
+    
     private String name;
+    
+    private Boolean publicDns;
     
     private String removeTime;
     
@@ -37,6 +43,16 @@ public class Project extends AbstractType {
     private Integer transitioningProgress;
     
     private String uuid;
+    
+    private Boolean virtualMachine;
+    
+    public Boolean getAllowSystemRole() {
+        return this.allowSystemRole;
+    }
+
+    public void setAllowSystemRole(Boolean allowSystemRole) {
+      this.allowSystemRole = allowSystemRole;
+    }
     
     public String getCreated() {
         return this.created;
@@ -86,12 +102,28 @@ public class Project extends AbstractType {
       this.members = members;
     }
     
+    public Boolean getMesos() {
+        return this.mesos;
+    }
+
+    public void setMesos(Boolean mesos) {
+      this.mesos = mesos;
+    }
+    
     public String getName() {
         return this.name;
     }
 
     public void setName(String name) {
       this.name = name;
+    }
+    
+    public Boolean getPublicDns() {
+        return this.publicDns;
+    }
+
+    public void setPublicDns(Boolean publicDns) {
+      this.publicDns = publicDns;
     }
     
     public String getRemoveTime() {
@@ -164,6 +196,14 @@ public class Project extends AbstractType {
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
+    }
+    
+    public Boolean getVirtualMachine() {
+        return this.virtualMachine;
+    }
+
+    public void setVirtualMachine(Boolean virtualMachine) {
+      this.virtualMachine = virtualMachine;
     }
     
 }

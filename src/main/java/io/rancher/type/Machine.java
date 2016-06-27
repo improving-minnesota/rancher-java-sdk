@@ -8,21 +8,15 @@ public class Machine extends AbstractType {
     
     private String accountId;
     
-    private Amazonec2Config amazonec2Config;
-    
     private String authCertificateAuthority;
     
     private String authKey;
-    
-    private AzureConfig azureConfig;
     
     private String created;
     
     private Map<String, Object> data;
     
     private String description;
-    
-    private DigitaloceanConfig digitaloceanConfig;
     
     private String dockerVersion;
     
@@ -42,8 +36,6 @@ public class Machine extends AbstractType {
     
     private String engineStorageDriver;
     
-    private ExoscaleConfig exoscaleConfig;
-    
     private String externalId;
     
     private String extractedConfig;
@@ -54,17 +46,9 @@ public class Machine extends AbstractType {
     
     private String name;
     
-    private OpenstackConfig openstackConfig;
-    
-    private PacketConfig packetConfig;
-    
-    private RackspaceConfig rackspaceConfig;
-    
     private String removeTime;
     
     private String removed;
-    
-    private SoftlayerConfig softlayerConfig;
     
     private String state;
     
@@ -74,15 +58,7 @@ public class Machine extends AbstractType {
     
     private Integer transitioningProgress;
     
-    private UbiquityConfig ubiquityConfig;
-    
     private String uuid;
-    
-    private VirtualboxConfig virtualboxConfig;
-    
-    private VmwarevcloudairConfig vmwarevcloudairConfig;
-    
-    private VmwarevsphereConfig vmwarevsphereConfig;
     
     public String getAccountId() {
         return this.accountId;
@@ -90,14 +66,6 @@ public class Machine extends AbstractType {
 
     public void setAccountId(String accountId) {
       this.accountId = accountId;
-    }
-    
-    public Amazonec2Config getAmazonec2Config() {
-        return this.amazonec2Config;
-    }
-
-    public void setAmazonec2Config(Amazonec2Config amazonec2Config) {
-      this.amazonec2Config = amazonec2Config;
     }
     
     public String getAuthCertificateAuthority() {
@@ -114,14 +82,6 @@ public class Machine extends AbstractType {
 
     public void setAuthKey(String authKey) {
       this.authKey = authKey;
-    }
-    
-    public AzureConfig getAzureConfig() {
-        return this.azureConfig;
-    }
-
-    public void setAzureConfig(AzureConfig azureConfig) {
-      this.azureConfig = azureConfig;
     }
     
     public String getCreated() {
@@ -146,14 +106,6 @@ public class Machine extends AbstractType {
 
     public void setDescription(String description) {
       this.description = description;
-    }
-    
-    public DigitaloceanConfig getDigitaloceanConfig() {
-        return this.digitaloceanConfig;
-    }
-
-    public void setDigitaloceanConfig(DigitaloceanConfig digitaloceanConfig) {
-      this.digitaloceanConfig = digitaloceanConfig;
     }
     
     public String getDockerVersion() {
@@ -228,14 +180,6 @@ public class Machine extends AbstractType {
       this.engineStorageDriver = engineStorageDriver;
     }
     
-    public ExoscaleConfig getExoscaleConfig() {
-        return this.exoscaleConfig;
-    }
-
-    public void setExoscaleConfig(ExoscaleConfig exoscaleConfig) {
-      this.exoscaleConfig = exoscaleConfig;
-    }
-    
     public String getExternalId() {
         return this.externalId;
     }
@@ -276,30 +220,6 @@ public class Machine extends AbstractType {
       this.name = name;
     }
     
-    public OpenstackConfig getOpenstackConfig() {
-        return this.openstackConfig;
-    }
-
-    public void setOpenstackConfig(OpenstackConfig openstackConfig) {
-      this.openstackConfig = openstackConfig;
-    }
-    
-    public PacketConfig getPacketConfig() {
-        return this.packetConfig;
-    }
-
-    public void setPacketConfig(PacketConfig packetConfig) {
-      this.packetConfig = packetConfig;
-    }
-    
-    public RackspaceConfig getRackspaceConfig() {
-        return this.rackspaceConfig;
-    }
-
-    public void setRackspaceConfig(RackspaceConfig rackspaceConfig) {
-      this.rackspaceConfig = rackspaceConfig;
-    }
-    
     public String getRemoveTime() {
         return this.removeTime;
     }
@@ -314,14 +234,6 @@ public class Machine extends AbstractType {
 
     public void setRemoved(String removed) {
       this.removed = removed;
-    }
-    
-    public SoftlayerConfig getSoftlayerConfig() {
-        return this.softlayerConfig;
-    }
-
-    public void setSoftlayerConfig(SoftlayerConfig softlayerConfig) {
-      this.softlayerConfig = softlayerConfig;
     }
     
     public String getState() {
@@ -356,44 +268,12 @@ public class Machine extends AbstractType {
       this.transitioningProgress = transitioningProgress;
     }
     
-    public UbiquityConfig getUbiquityConfig() {
-        return this.ubiquityConfig;
-    }
-
-    public void setUbiquityConfig(UbiquityConfig ubiquityConfig) {
-      this.ubiquityConfig = ubiquityConfig;
-    }
-    
     public String getUuid() {
         return this.uuid;
     }
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
-    }
-    
-    public VirtualboxConfig getVirtualboxConfig() {
-        return this.virtualboxConfig;
-    }
-
-    public void setVirtualboxConfig(VirtualboxConfig virtualboxConfig) {
-      this.virtualboxConfig = virtualboxConfig;
-    }
-    
-    public VmwarevcloudairConfig getVmwarevcloudairConfig() {
-        return this.vmwarevcloudairConfig;
-    }
-
-    public void setVmwarevcloudairConfig(VmwarevcloudairConfig vmwarevcloudairConfig) {
-      this.vmwarevcloudairConfig = vmwarevcloudairConfig;
-    }
-    
-    public VmwarevsphereConfig getVmwarevsphereConfig() {
-        return this.vmwarevsphereConfig;
-    }
-
-    public void setVmwarevsphereConfig(VmwarevsphereConfig vmwarevsphereConfig) {
-      this.vmwarevsphereConfig = vmwarevsphereConfig;
     }
     
 }

@@ -24,6 +24,8 @@ public class ExternalService extends AbstractType {
     
     private InstanceHealthCheck healthCheck;
     
+    private String healthState;
+    
     private String hostname;
     
     private String kind;
@@ -37,6 +39,8 @@ public class ExternalService extends AbstractType {
     private String removeTime;
     
     private String removed;
+    
+    private Boolean startOnCreate;
     
     private String state;
     
@@ -122,6 +126,14 @@ public class ExternalService extends AbstractType {
       this.healthCheck = healthCheck;
     }
     
+    public String getHealthState() {
+        return this.healthState;
+    }
+
+    public void setHealthState(String healthState) {
+      this.healthState = healthState;
+    }
+    
     public String getHostname() {
         return this.hostname;
     }
@@ -176,6 +188,14 @@ public class ExternalService extends AbstractType {
 
     public void setRemoved(String removed) {
       this.removed = removed;
+    }
+    
+    public Boolean getStartOnCreate() {
+        return this.startOnCreate;
+    }
+
+    public void setStartOnCreate(Boolean startOnCreate) {
+      this.startOnCreate = startOnCreate;
     }
     
     public String getState() {

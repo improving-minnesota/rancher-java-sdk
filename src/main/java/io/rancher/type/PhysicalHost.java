@@ -13,6 +13,10 @@ public class PhysicalHost extends AbstractType {
     
     private String description;
     
+    private String driver;
+    
+    private String externalId;
+    
     private String kind;
     
     private String name;
@@ -61,6 +65,22 @@ public class PhysicalHost extends AbstractType {
 
     public void setDescription(String description) {
       this.description = description;
+    }
+    
+    public String getDriver() {
+        return this.driver;
+    }
+
+    public void setDriver(String driver) {
+      this.driver = driver;
+    }
+    
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    public void setExternalId(String externalId) {
+      this.externalId = externalId;
     }
     
     public String getKind() {

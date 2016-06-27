@@ -12,6 +12,8 @@ public class LaunchConfig extends AbstractType {
     
     private String allocationState;
     
+    private Map<String, Object> blkioDeviceOptions;
+    
     private DockerBuild build;
     
     private List<String> capAdd;
@@ -70,6 +72,8 @@ public class LaunchConfig extends AbstractType {
     
     private String healthState;
     
+    private String hostId;
+    
     private String hostname;
     
     private String imageUuid;
@@ -119,6 +123,8 @@ public class LaunchConfig extends AbstractType {
     private String removed;
     
     private String requestedHostId;
+    
+    private String requestedIpAddress;
     
     private List<String> securityOpt;
     
@@ -178,6 +184,14 @@ public class LaunchConfig extends AbstractType {
 
     public void setAllocationState(String allocationState) {
       this.allocationState = allocationState;
+    }
+    
+    public Map<String, Object> getBlkioDeviceOptions() {
+        return this.blkioDeviceOptions;
+    }
+
+    public void setBlkioDeviceOptions(Map<String, Object> blkioDeviceOptions) {
+      this.blkioDeviceOptions = blkioDeviceOptions;
     }
     
     public DockerBuild getBuild() {
@@ -412,6 +426,14 @@ public class LaunchConfig extends AbstractType {
       this.healthState = healthState;
     }
     
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    public void setHostId(String hostId) {
+      this.hostId = hostId;
+    }
+    
     public String getHostname() {
         return this.hostname;
     }
@@ -610,6 +632,14 @@ public class LaunchConfig extends AbstractType {
 
     public void setRequestedHostId(String requestedHostId) {
       this.requestedHostId = requestedHostId;
+    }
+    
+    public String getRequestedIpAddress() {
+        return this.requestedIpAddress;
+    }
+
+    public void setRequestedIpAddress(String requestedIpAddress) {
+      this.requestedIpAddress = requestedIpAddress;
     }
     
     public List<String> getSecurityOpt() {

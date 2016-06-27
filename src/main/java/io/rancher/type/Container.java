@@ -12,6 +12,8 @@ public class Container extends AbstractType {
     
     private String allocationState;
     
+    private Map<String, Object> blkioDeviceOptions;
+    
     private DockerBuild build;
     
     private List<String> capAdd;
@@ -65,6 +67,8 @@ public class Container extends AbstractType {
     private InstanceHealthCheck healthCheck;
     
     private String healthState;
+    
+    private String hostId;
     
     private String hostname;
     
@@ -170,6 +174,14 @@ public class Container extends AbstractType {
 
     public void setAllocationState(String allocationState) {
       this.allocationState = allocationState;
+    }
+    
+    public Map<String, Object> getBlkioDeviceOptions() {
+        return this.blkioDeviceOptions;
+    }
+
+    public void setBlkioDeviceOptions(Map<String, Object> blkioDeviceOptions) {
+      this.blkioDeviceOptions = blkioDeviceOptions;
     }
     
     public DockerBuild getBuild() {
@@ -386,6 +398,14 @@ public class Container extends AbstractType {
 
     public void setHealthState(String healthState) {
       this.healthState = healthState;
+    }
+    
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    public void setHostId(String hostId) {
+      this.hostId = hostId;
     }
     
     public String getHostname() {

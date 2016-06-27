@@ -15,6 +15,8 @@ public class Instance extends AbstractType {
     
     private String externalId;
     
+    private String hostId;
+    
     private String kind;
     
     private String name;
@@ -71,6 +73,14 @@ public class Instance extends AbstractType {
 
     public void setExternalId(String externalId) {
       this.externalId = externalId;
+    }
+    
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    public void setHostId(String hostId) {
+      this.hostId = hostId;
     }
     
     public String getKind() {

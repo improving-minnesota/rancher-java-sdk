@@ -23,7 +23,7 @@ public class Credential extends AbstractType {
     
     private String removed;
     
-    private String secretValue;
+    private Password secretValue;
     
     private String state;
     
@@ -107,11 +107,11 @@ public class Credential extends AbstractType {
       this.removed = removed;
     }
     
-    public String getSecretValue() {
+    public Password getSecretValue() {
         return this.secretValue;
     }
 
-    public void setSecretValue(String secretValue) {
+    public void setSecretValue(Password secretValue) {
       this.secretValue = secretValue;
     }
     

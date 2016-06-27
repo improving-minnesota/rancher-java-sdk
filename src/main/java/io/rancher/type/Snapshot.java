@@ -15,8 +15,6 @@ public class Snapshot extends AbstractType {
     
     private String kind;
     
-    private String managedVolumeUUID;
-    
     private String name;
     
     private String removeTime;
@@ -73,14 +71,6 @@ public class Snapshot extends AbstractType {
 
     public void setKind(String kind) {
       this.kind = kind;
-    }
-    
-    public String getManagedVolumeUUID() {
-        return this.managedVolumeUUID;
-    }
-
-    public void setManagedVolumeUUID(String managedVolumeUUID) {
-      this.managedVolumeUUID = managedVolumeUUID;
     }
     
     public String getName() {

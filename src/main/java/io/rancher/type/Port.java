@@ -7,6 +7,8 @@ public class Port extends AbstractType {
     
     private String accountId;
     
+    private String bindAddress;
+    
     private String created;
     
     private Map<String, Object> data;
@@ -49,6 +51,14 @@ public class Port extends AbstractType {
 
     public void setAccountId(String accountId) {
       this.accountId = accountId;
+    }
+    
+    public String getBindAddress() {
+        return this.bindAddress;
+    }
+
+    public void setBindAddress(String bindAddress) {
+      this.bindAddress = bindAddress;
     }
     
     public String getCreated() {

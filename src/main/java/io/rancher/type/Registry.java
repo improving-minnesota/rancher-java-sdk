@@ -1,11 +1,14 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.List;
 import java.util.Map;
 
 public class Registry extends AbstractType {
     
     private String accountId;
+    
+    private String blockDevicePath;
     
     private String created;
     
@@ -37,12 +40,24 @@ public class Registry extends AbstractType {
     
     private String uuid;
     
+    private String volumeAccessMode;
+    
+    private List<String> volumeCapabilities;
+    
     public String getAccountId() {
         return this.accountId;
     }
 
     public void setAccountId(String accountId) {
       this.accountId = accountId;
+    }
+    
+    public String getBlockDevicePath() {
+        return this.blockDevicePath;
+    }
+
+    public void setBlockDevicePath(String blockDevicePath) {
+      this.blockDevicePath = blockDevicePath;
     }
     
     public String getCreated() {
@@ -163,6 +178,22 @@ public class Registry extends AbstractType {
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
+    }
+    
+    public String getVolumeAccessMode() {
+        return this.volumeAccessMode;
+    }
+
+    public void setVolumeAccessMode(String volumeAccessMode) {
+      this.volumeAccessMode = volumeAccessMode;
+    }
+    
+    public List<String> getVolumeCapabilities() {
+        return this.volumeCapabilities;
+    }
+
+    public void setVolumeCapabilities(List<String> volumeCapabilities) {
+      this.volumeCapabilities = volumeCapabilities;
     }
     
 }

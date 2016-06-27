@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 
 public class VirtualMachine extends AbstractType {
     
@@ -11,6 +11,8 @@ public class VirtualMachine extends AbstractType {
     private String agentId;
     
     private String allocationState;
+    
+    private Map<String, Object> blkioDeviceOptions;
     
     private List<String> command;
     
@@ -49,6 +51,8 @@ public class VirtualMachine extends AbstractType {
     private InstanceHealthCheck healthCheck;
     
     private String healthState;
+    
+    private String hostId;
     
     private String hostname;
     
@@ -140,6 +144,14 @@ public class VirtualMachine extends AbstractType {
 
     public void setAllocationState(String allocationState) {
       this.allocationState = allocationState;
+    }
+    
+    public Map<String, Object> getBlkioDeviceOptions() {
+        return this.blkioDeviceOptions;
+    }
+
+    public void setBlkioDeviceOptions(Map<String, Object> blkioDeviceOptions) {
+      this.blkioDeviceOptions = blkioDeviceOptions;
     }
     
     public List<String> getCommand() {
@@ -292,6 +304,14 @@ public class VirtualMachine extends AbstractType {
 
     public void setHealthState(String healthState) {
       this.healthState = healthState;
+    }
+    
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    public void setHostId(String hostId) {
+      this.hostId = hostId;
     }
     
     public String getHostname() {

@@ -22,6 +22,8 @@ public class Host extends AbstractType {
     
     private String description;
     
+    private String hostname;
+    
     private Map<String, Object> info;
     
     private String kind;
@@ -110,6 +112,14 @@ public class Host extends AbstractType {
 
     public void setDescription(String description) {
       this.description = description;
+    }
+    
+    public String getHostname() {
+        return this.hostname;
+    }
+
+    public void setHostname(String hostname) {
+      this.hostname = hostname;
     }
     
     public Map<String, Object> getInfo() {

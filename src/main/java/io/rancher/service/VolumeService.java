@@ -3,6 +3,10 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Volume;
+import io.rancher.type.RevertToSnapshotInput;
+import io.rancher.type.VolumeSnapshotInput;
+import io.rancher.type.Snapshot;
+import io.rancher.type.RestoreFromBackupInput;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -40,9 +44,6 @@ public interface VolumeService {
   @POST("volume/{id}?action=allocate")
   Call<Volume> allocate(@Path("id") String id);
   
-  @POST("volume/{id}?action=deactivate")
-  Call<Volume> deactivate(@Path("id") String id);
-  
   @POST("volume/{id}?action=deallocate")
   Call<Volume> deallocate(@Path("id") String id);
   
@@ -54,5 +55,14 @@ public interface VolumeService {
   
   @POST("volume/{id}?action=restore")
   Call<Volume> restore(@Path("id") String id);
+  
+  @POST("volume/{id}?action=restorefrombackup")
+  Call<Volume> restorefrombackup(@Path("id") String id, @Body RestoreFromBackupInput restoreFromBackupInput);
+  
+  @POST("volume/{id}?action=reverttosnapshot")
+  Call<Volume> reverttosnapshot(@Path("id") String id, @Body RevertToSnapshotInput revertToSnapshotInput);
+  
+  @POST("volume/{id}?action=snapshot")
+  Call<Snapshot> snapshot(@Path("id") String id, @Body VolumeSnapshotInput volumeSnapshotInput);
   
 }

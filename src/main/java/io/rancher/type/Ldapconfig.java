@@ -1,10 +1,13 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.List;
 
 public class Ldapconfig extends AbstractType {
     
     private String accessMode;
+    
+    private List<Identity> allowedIdentities;
     
     private Integer connectionTimeout;
     
@@ -54,6 +57,14 @@ public class Ldapconfig extends AbstractType {
 
     public void setAccessMode(String accessMode) {
       this.accessMode = accessMode;
+    }
+    
+    public List<Identity> getAllowedIdentities() {
+        return this.allowedIdentities;
+    }
+
+    public void setAllowedIdentities(List<Identity> allowedIdentities) {
+      this.allowedIdentities = allowedIdentities;
     }
     
     public Integer getConnectionTimeout() {
