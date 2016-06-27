@@ -42,3 +42,12 @@ ServiceService service = rancher.type(io.rancher.service.ServiceService.class);
 
 List<io.rancher.type.Service> services = service.list().execute();
 ```
+
+## Updating the Rancher API
+
+The API definitions in this project are automatically generated from the Rancher API definition.
+To update the API, perform the following steps:
+
+1. `cd generator`
+1. `curl -o schemas.json https://raw.githubusercontent.com/rancher/go-rancher/master/generator/schemas.json`
+1. `make && ./generator`
