@@ -9,6 +9,7 @@ import (
 	"regexp"
 	"strings"
 	"text/template"
+	"sort"
 
 	"github.com/rancher/go-rancher/client"
 )
@@ -48,6 +49,7 @@ func (m metadata) ListImports() []string {
 		imports[i] = k
 		i++
 	}
+	sort.Strings(imports)
 	return imports
 }
 
@@ -58,6 +60,7 @@ func (m metadata) ListActionImports() []string {
 		imports[i] = k
 		i++
 	}
+	sort.Strings(imports)
 	return imports
 }
 
@@ -168,6 +171,37 @@ func getResourceActions(schema client.Schema, m metadata) map[string]client.Acti
 	return result
 }
 
+func getServiceLinks(schema client.Schema, m metadata) map[string]string {
+	result := map[string]string{}
+	for i := range schema.IncludeableLinks {
+		link := schema.IncludeableLinks[i]
+		if _, ok := schemaExists[link]; ok {
+			if strings.HasSuffix(link, "s") {
+				singular := link[:len(link)-1]
+				class := capitalize(singular)
+				result[link] = "TypeCollection<" + class +">"
+				m.importActionClass("io.rancher.type." + class)
+			} else {
+				class := capitalize(link)
+				result[link] = class
+				m.importActionClass("io.rancher.type." + class)
+			}
+		}
+	}
+	return result
+}
+
+func getLinks(schema client.Schema) map[string]string {
+	result := map[string]string{}
+	for i := range schema.IncludeableLinks {
+		link := schema.IncludeableLinks[i]
+		if _, ok := schemaExists[link]; ok {
+			result[link] = capitalize(link);
+		}
+	}
+	return result
+}
+
 func generateType(schema client.Schema) error {
 	return generateTemplate(schema, path.Join(TYPE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+".java"), "type.template")
 }
@@ -197,6 +231,8 @@ func generateTemplate(schema client.Schema, outputPath string, templateName stri
 		"collection":      capitalize(schema.Id) + "Collection",
 		"structFields":    typeMap,
 		"resourceActions": getResourceActions(schema, metadata),
+		"serviceLinks":    getServiceLinks(schema, metadata),
+		"links":           getLinks(schema),
 		"type":            schema.Id,
 		"meta":            metadata,
 	}
@@ -251,6 +287,7 @@ func generateFiles() error {
 		}
 
 		schemaExists[schema.Id] = true
+		schemaExists[schema.PluralName] = true
 	}
 
 	for _, schema := range schemas.Data {
