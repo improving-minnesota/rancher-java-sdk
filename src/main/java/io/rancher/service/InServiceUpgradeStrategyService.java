@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface InServiceUpgradeStrategyService {
 
@@ -20,7 +21,7 @@ public interface InServiceUpgradeStrategyService {
   Call<TypeCollection<InServiceUpgradeStrategy>> list();
 
   @GET("inServiceUpgradeStrategy")
-  Call<TypeCollection<InServiceUpgradeStrategy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InServiceUpgradeStrategy>> list(@QueryMap Filters<String, String> filters);
 
   @GET("inServiceUpgradeStrategy/{id}")
   Call<InServiceUpgradeStrategy> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface InServiceUpgradeStrategyService {
 
   @DELETE("inServiceUpgradeStrategy/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

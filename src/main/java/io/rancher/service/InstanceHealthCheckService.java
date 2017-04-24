@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface InstanceHealthCheckService {
 
@@ -20,7 +21,7 @@ public interface InstanceHealthCheckService {
   Call<TypeCollection<InstanceHealthCheck>> list();
 
   @GET("instanceHealthCheck")
-  Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap Filters<String, String> filters);
 
   @GET("instanceHealthCheck/{id}")
   Call<InstanceHealthCheck> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface InstanceHealthCheckService {
 
   @DELETE("instanceHealthCheck/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

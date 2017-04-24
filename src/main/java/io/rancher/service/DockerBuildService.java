@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface DockerBuildService {
 
@@ -20,7 +21,7 @@ public interface DockerBuildService {
   Call<TypeCollection<DockerBuild>> list();
 
   @GET("dockerBuild")
-  Call<TypeCollection<DockerBuild>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DockerBuild>> list(@QueryMap Filters<String, String> filters);
 
   @GET("dockerBuild/{id}")
   Call<DockerBuild> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface DockerBuildService {
 
   @DELETE("dockerBuild/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface LogConfigService {
 
@@ -20,7 +21,7 @@ public interface LogConfigService {
   Call<TypeCollection<LogConfig>> list();
 
   @GET("logConfig")
-  Call<TypeCollection<LogConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LogConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("logConfig/{id}")
   Call<LogConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface LogConfigService {
 
   @DELETE("logConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

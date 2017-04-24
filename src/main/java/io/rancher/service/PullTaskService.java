@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PullTask;
+import io.rancher.type.Account;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -13,6 +14,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface PullTaskService {
 
@@ -20,7 +22,7 @@ public interface PullTaskService {
   Call<TypeCollection<PullTask>> list();
 
   @GET("pullTask")
-  Call<TypeCollection<PullTask>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PullTask>> list(@QueryMap Filters<String, String> filters);
 
   @GET("pullTask/{id}")
   Call<PullTask> get(@Path("id") String id);
@@ -33,5 +35,10 @@ public interface PullTaskService {
 
   @DELETE("pullTask/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
   
 }

@@ -1,12 +1,28 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 
 public class Amazonec2Config extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+
     
     private String accessKey;
     
     private String ami;
+    
+    private String deviceName;
     
     private String iamInstanceProfile;
     
@@ -30,11 +46,19 @@ public class Amazonec2Config extends AbstractType {
     
     private String spotPrice;
     
+    private String sshKeypath;
+    
     private String sshUser;
     
     private String subnetId;
     
+    private String tags;
+    
+    private Boolean useEbsOptimizedInstance;
+    
     private Boolean usePrivateAddress;
+    
+    private String volumeType;
     
     private String vpcId;
     
@@ -54,6 +78,14 @@ public class Amazonec2Config extends AbstractType {
 
     public void setAmi(String ami) {
       this.ami = ami;
+    }
+    
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    public void setDeviceName(String deviceName) {
+      this.deviceName = deviceName;
     }
     
     public String getIamInstanceProfile() {
@@ -144,6 +176,14 @@ public class Amazonec2Config extends AbstractType {
       this.spotPrice = spotPrice;
     }
     
+    public String getSshKeypath() {
+        return this.sshKeypath;
+    }
+
+    public void setSshKeypath(String sshKeypath) {
+      this.sshKeypath = sshKeypath;
+    }
+    
     public String getSshUser() {
         return this.sshUser;
     }
@@ -160,12 +200,36 @@ public class Amazonec2Config extends AbstractType {
       this.subnetId = subnetId;
     }
     
+    public String getTags() {
+        return this.tags;
+    }
+
+    public void setTags(String tags) {
+      this.tags = tags;
+    }
+    
+    public Boolean getUseEbsOptimizedInstance() {
+        return this.useEbsOptimizedInstance;
+    }
+
+    public void setUseEbsOptimizedInstance(Boolean useEbsOptimizedInstance) {
+      this.useEbsOptimizedInstance = useEbsOptimizedInstance;
+    }
+    
     public Boolean getUsePrivateAddress() {
         return this.usePrivateAddress;
     }
 
     public void setUsePrivateAddress(Boolean usePrivateAddress) {
       this.usePrivateAddress = usePrivateAddress;
+    }
+    
+    public String getVolumeType() {
+        return this.volumeType;
+    }
+
+    public void setVolumeType(String volumeType) {
+      this.volumeType = volumeType;
     }
     
     public String getVpcId() {

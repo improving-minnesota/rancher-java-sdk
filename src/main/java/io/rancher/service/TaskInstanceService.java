@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.TaskInstance;
+import io.rancher.type.Task;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -13,6 +14,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface TaskInstanceService {
 
@@ -20,7 +22,7 @@ public interface TaskInstanceService {
   Call<TypeCollection<TaskInstance>> list();
 
   @GET("taskInstance")
-  Call<TypeCollection<TaskInstance>> list(@QueryMap Filters filters);
+  Call<TypeCollection<TaskInstance>> list(@QueryMap Filters<String, String> filters);
 
   @GET("taskInstance/{id}")
   Call<TaskInstance> get(@Path("id") String id);
@@ -33,5 +35,10 @@ public interface TaskInstanceService {
 
   @DELETE("taskInstance/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Task> getLinkTask(@Url String url );
   
 }

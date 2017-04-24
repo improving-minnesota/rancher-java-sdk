@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface RollingRestartStrategyService {
 
@@ -20,7 +21,7 @@ public interface RollingRestartStrategyService {
   Call<TypeCollection<RollingRestartStrategy>> list();
 
   @GET("rollingRestartStrategy")
-  Call<TypeCollection<RollingRestartStrategy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RollingRestartStrategy>> list(@QueryMap Filters<String, String> filters);
 
   @GET("rollingRestartStrategy/{id}")
   Call<RollingRestartStrategy> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface RollingRestartStrategyService {
 
   @DELETE("rollingRestartStrategy/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

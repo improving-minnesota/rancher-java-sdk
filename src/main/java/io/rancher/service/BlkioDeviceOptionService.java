@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface BlkioDeviceOptionService {
 
@@ -20,7 +21,7 @@ public interface BlkioDeviceOptionService {
   Call<TypeCollection<BlkioDeviceOption>> list();
 
   @GET("blkioDeviceOption")
-  Call<TypeCollection<BlkioDeviceOption>> list(@QueryMap Filters filters);
+  Call<TypeCollection<BlkioDeviceOption>> list(@QueryMap Filters<String, String> filters);
 
   @GET("blkioDeviceOption/{id}")
   Call<BlkioDeviceOption> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface BlkioDeviceOptionService {
 
   @DELETE("blkioDeviceOption/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

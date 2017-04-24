@@ -3,6 +3,9 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Credential;
+import io.rancher.type.Account;
+import io.rancher.type.Image;
+import io.rancher.type.Instance;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -13,6 +16,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface CredentialService {
 
@@ -20,7 +24,7 @@ public interface CredentialService {
   Call<TypeCollection<Credential>> list();
 
   @GET("credential")
-  Call<TypeCollection<Credential>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Credential>> list(@QueryMap Filters<String, String> filters);
 
   @GET("credential/{id}")
   Call<Credential> get(@Path("id") String id);
@@ -45,5 +49,16 @@ public interface CredentialService {
   
   @POST("credential/{id}?action=remove")
   Call<Credential> remove(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Image>> getLinkImages(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Instance>> getLinkInstances(@Url String url );
   
 }

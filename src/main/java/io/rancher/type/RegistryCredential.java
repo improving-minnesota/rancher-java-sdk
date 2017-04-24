@@ -1,9 +1,39 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 import java.util.Map;
 
 public class RegistryCredential extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAccountLink() {
+        return this.links.get("account");
+    }
+    
+    public String getImagesLink() {
+        return this.links.get("images");
+    }
+    
+    public String getInstancesLink() {
+        return this.links.get("instances");
+    }
+    
+    public String getRegistryLink() {
+        return this.links.get("registry");
+    }
+    
+
     
     private String accountId;
     

@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface StatsAccessService {
 
@@ -20,7 +21,7 @@ public interface StatsAccessService {
   Call<TypeCollection<StatsAccess>> list();
 
   @GET("statsAccess")
-  Call<TypeCollection<StatsAccess>> list(@QueryMap Filters filters);
+  Call<TypeCollection<StatsAccess>> list(@QueryMap Filters<String, String> filters);
 
   @GET("statsAccess/{id}")
   Call<StatsAccess> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface StatsAccessService {
 
   @DELETE("statsAccess/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

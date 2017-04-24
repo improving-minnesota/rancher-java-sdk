@@ -3,7 +3,9 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ComposeProject;
+import io.rancher.type.Account;
 import io.rancher.type.Environment;
+import io.rancher.type.Service;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -14,6 +16,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ComposeProjectService {
 
@@ -21,7 +24,7 @@ public interface ComposeProjectService {
   Call<TypeCollection<ComposeProject>> list();
 
   @GET("composeProject")
-  Call<TypeCollection<ComposeProject>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ComposeProject>> list(@QueryMap Filters<String, String> filters);
 
   @GET("composeProject/{id}")
   Call<ComposeProject> get(@Path("id") String id);
@@ -52,5 +55,13 @@ public interface ComposeProjectService {
   
   @POST("composeProject/{id}?action=rollback")
   Call<Environment> rollback(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Service>> getLinkServices(@Url String url );
   
 }

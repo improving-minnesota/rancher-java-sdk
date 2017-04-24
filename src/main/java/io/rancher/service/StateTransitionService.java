@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface StateTransitionService {
 
@@ -20,7 +21,7 @@ public interface StateTransitionService {
   Call<TypeCollection<StateTransition>> list();
 
   @GET("stateTransition")
-  Call<TypeCollection<StateTransition>> list(@QueryMap Filters filters);
+  Call<TypeCollection<StateTransition>> list(@QueryMap Filters<String, String> filters);
 
   @GET("stateTransition/{id}")
   Call<StateTransition> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface StateTransitionService {
 
   @DELETE("stateTransition/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

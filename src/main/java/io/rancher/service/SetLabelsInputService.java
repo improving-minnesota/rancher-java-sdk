@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface SetLabelsInputService {
 
@@ -20,7 +21,7 @@ public interface SetLabelsInputService {
   Call<TypeCollection<SetLabelsInput>> list();
 
   @GET("setLabelsInput")
-  Call<TypeCollection<SetLabelsInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<SetLabelsInput>> list(@QueryMap Filters<String, String> filters);
 
   @GET("setLabelsInput/{id}")
   Call<SetLabelsInput> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface SetLabelsInputService {
 
   @DELETE("setLabelsInput/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

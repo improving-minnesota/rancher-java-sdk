@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ProjectMember;
+import io.rancher.type.Project;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -13,6 +14,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ProjectMemberService {
 
@@ -20,7 +22,7 @@ public interface ProjectMemberService {
   Call<TypeCollection<ProjectMember>> list();
 
   @GET("projectMember")
-  Call<TypeCollection<ProjectMember>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ProjectMember>> list(@QueryMap Filters<String, String> filters);
 
   @GET("projectMember/{id}")
   Call<ProjectMember> get(@Path("id") String id);
@@ -48,5 +50,10 @@ public interface ProjectMemberService {
   
   @POST("projectMember/{id}?action=restore")
   Call<ProjectMember> restore(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Project> getLinkProject(@Url String url );
   
 }

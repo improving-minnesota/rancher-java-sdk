@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface LdapconfigService {
 
@@ -20,7 +21,7 @@ public interface LdapconfigService {
   Call<TypeCollection<Ldapconfig>> list();
 
   @GET("ldapconfig")
-  Call<TypeCollection<Ldapconfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Ldapconfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("ldapconfig/{id}")
   Call<Ldapconfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface LdapconfigService {
 
   @DELETE("ldapconfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

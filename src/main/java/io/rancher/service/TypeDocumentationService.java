@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface TypeDocumentationService {
 
@@ -20,7 +21,7 @@ public interface TypeDocumentationService {
   Call<TypeCollection<TypeDocumentation>> list();
 
   @GET("typeDocumentation")
-  Call<TypeCollection<TypeDocumentation>> list(@QueryMap Filters filters);
+  Call<TypeCollection<TypeDocumentation>> list(@QueryMap Filters<String, String> filters);
 
   @GET("typeDocumentation/{id}")
   Call<TypeDocumentation> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface TypeDocumentationService {
 
   @DELETE("typeDocumentation/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

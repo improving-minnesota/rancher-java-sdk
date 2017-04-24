@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface IdentityService {
 
@@ -20,7 +21,7 @@ public interface IdentityService {
   Call<TypeCollection<Identity>> list();
 
   @GET("identity")
-  Call<TypeCollection<Identity>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Identity>> list(@QueryMap Filters<String, String> filters);
 
   @GET("identity/{id}")
   Call<Identity> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface IdentityService {
 
   @DELETE("identity/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

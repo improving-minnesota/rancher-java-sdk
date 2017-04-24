@@ -3,10 +3,12 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Environment;
-import io.rancher.type.ComposeConfig;
-import io.rancher.type.EnvironmentUpgrade;
+import io.rancher.type.Account;
 import io.rancher.type.AddOutputsInput;
+import io.rancher.type.ComposeConfig;
 import io.rancher.type.ComposeConfigInput;
+import io.rancher.type.EnvironmentUpgrade;
+import io.rancher.type.Service;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -17,6 +19,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface EnvironmentService {
 
@@ -24,7 +27,7 @@ public interface EnvironmentService {
   Call<TypeCollection<Environment>> list();
 
   @GET("environment")
-  Call<TypeCollection<Environment>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Environment>> list(@QueryMap Filters<String, String> filters);
 
   @GET("environment/{id}")
   Call<Environment> get(@Path("id") String id);
@@ -70,5 +73,13 @@ public interface EnvironmentService {
   
   @POST("environment/{id}?action=upgrade")
   Call<Environment> upgrade(@Path("id") String id, @Body EnvironmentUpgrade environmentUpgrade);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Service>> getLinkServices(@Url String url );
   
 }

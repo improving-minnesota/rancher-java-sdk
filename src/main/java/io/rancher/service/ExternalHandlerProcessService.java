@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ExternalHandlerProcessService {
 
@@ -20,7 +21,7 @@ public interface ExternalHandlerProcessService {
   Call<TypeCollection<ExternalHandlerProcess>> list();
 
   @GET("externalHandlerProcess")
-  Call<TypeCollection<ExternalHandlerProcess>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalHandlerProcess>> list(@QueryMap Filters<String, String> filters);
 
   @GET("externalHandlerProcess/{id}")
   Call<ExternalHandlerProcess> get(@Path("id") String id);
@@ -48,5 +49,7 @@ public interface ExternalHandlerProcessService {
   
   @POST("externalHandlerProcess/{id}?action=restore")
   Call<ExternalHandlerProcess> restore(@Path("id") String id);
+  
+
   
 }

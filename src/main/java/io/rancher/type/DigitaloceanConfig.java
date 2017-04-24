@@ -1,8 +1,22 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 
 public class DigitaloceanConfig extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+
     
     private String accessToken;
     
@@ -18,7 +32,11 @@ public class DigitaloceanConfig extends AbstractType {
     
     private String size;
     
+    private String sshPort;
+    
     private String sshUser;
+    
+    private String userdata;
     
     public String getAccessToken() {
         return this.accessToken;
@@ -76,12 +94,28 @@ public class DigitaloceanConfig extends AbstractType {
       this.size = size;
     }
     
+    public String getSshPort() {
+        return this.sshPort;
+    }
+
+    public void setSshPort(String sshPort) {
+      this.sshPort = sshPort;
+    }
+    
     public String getSshUser() {
         return this.sshUser;
     }
 
     public void setSshUser(String sshUser) {
       this.sshUser = sshUser;
+    }
+    
+    public String getUserdata() {
+        return this.userdata;
+    }
+
+    public void setUserdata(String userdata) {
+      this.userdata = userdata;
     }
     
 }

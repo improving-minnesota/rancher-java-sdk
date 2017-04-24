@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface HostAccessService {
 
@@ -20,7 +21,7 @@ public interface HostAccessService {
   Call<TypeCollection<HostAccess>> list();
 
   @GET("hostAccess")
-  Call<TypeCollection<HostAccess>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HostAccess>> list(@QueryMap Filters<String, String> filters);
 
   @GET("hostAccess/{id}")
   Call<HostAccess> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface HostAccessService {
 
   @DELETE("hostAccess/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

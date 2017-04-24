@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ContainerLogsService {
 
@@ -20,7 +21,7 @@ public interface ContainerLogsService {
   Call<TypeCollection<ContainerLogs>> list();
 
   @GET("containerLogs")
-  Call<TypeCollection<ContainerLogs>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ContainerLogs>> list(@QueryMap Filters<String, String> filters);
 
   @GET("containerLogs/{id}")
   Call<ContainerLogs> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ContainerLogsService {
 
   @DELETE("containerLogs/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

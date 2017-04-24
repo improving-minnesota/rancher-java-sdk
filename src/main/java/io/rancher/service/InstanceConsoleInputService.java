@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface InstanceConsoleInputService {
 
@@ -20,7 +21,7 @@ public interface InstanceConsoleInputService {
   Call<TypeCollection<InstanceConsoleInput>> list();
 
   @GET("instanceConsoleInput")
-  Call<TypeCollection<InstanceConsoleInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceConsoleInput>> list(@QueryMap Filters<String, String> filters);
 
   @GET("instanceConsoleInput/{id}")
   Call<InstanceConsoleInput> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface InstanceConsoleInputService {
 
   @DELETE("instanceConsoleInput/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

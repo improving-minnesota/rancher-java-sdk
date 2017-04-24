@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface NfsConfigService {
 
@@ -20,7 +21,7 @@ public interface NfsConfigService {
   Call<TypeCollection<NfsConfig>> list();
 
   @GET("nfsConfig")
-  Call<TypeCollection<NfsConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<NfsConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("nfsConfig/{id}")
   Call<NfsConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface NfsConfigService {
 
   @DELETE("nfsConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

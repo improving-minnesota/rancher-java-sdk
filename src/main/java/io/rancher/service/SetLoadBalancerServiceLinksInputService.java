@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface SetLoadBalancerServiceLinksInputService {
 
@@ -20,7 +21,7 @@ public interface SetLoadBalancerServiceLinksInputService {
   Call<TypeCollection<SetLoadBalancerServiceLinksInput>> list();
 
   @GET("setLoadBalancerServiceLinksInput")
-  Call<TypeCollection<SetLoadBalancerServiceLinksInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<SetLoadBalancerServiceLinksInput>> list(@QueryMap Filters<String, String> filters);
 
   @GET("setLoadBalancerServiceLinksInput/{id}")
   Call<SetLoadBalancerServiceLinksInput> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface SetLoadBalancerServiceLinksInputService {
 
   @DELETE("setLoadBalancerServiceLinksInput/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

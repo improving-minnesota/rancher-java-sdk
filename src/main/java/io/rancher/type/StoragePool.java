@@ -1,10 +1,44 @@
 package io.rancher.type;
 
-import io.rancher.base.AbstractType;
 import java.util.Map;
+
+import io.rancher.base.AbstractType;
 import java.util.List;
+import java.util.Map;
 
 public class StoragePool extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAccountLink() {
+        return this.links.get("account");
+    }
+    
+    public String getCredentialsLink() {
+        return this.links.get("credentials");
+    }
+    
+    public String getHostsLink() {
+        return this.links.get("hosts");
+    }
+    
+    public String getImagesLink() {
+        return this.links.get("images");
+    }
+    
+    public String getVolumesLink() {
+        return this.links.get("volumes");
+    }
+    
+
     
     private String accountId;
     

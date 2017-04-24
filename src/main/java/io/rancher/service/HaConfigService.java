@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface HaConfigService {
 
@@ -20,7 +21,7 @@ public interface HaConfigService {
   Call<TypeCollection<HaConfig>> list();
 
   @GET("haConfig")
-  Call<TypeCollection<HaConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HaConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("haConfig/{id}")
   Call<HaConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface HaConfigService {
 
   @DELETE("haConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface AzureConfigService {
 
@@ -20,7 +21,7 @@ public interface AzureConfigService {
   Call<TypeCollection<AzureConfig>> list();
 
   @GET("azureConfig")
-  Call<TypeCollection<AzureConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<AzureConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("azureConfig/{id}")
   Call<AzureConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface AzureConfigService {
 
   @DELETE("azureConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

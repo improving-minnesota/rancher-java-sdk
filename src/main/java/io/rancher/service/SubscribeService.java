@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface SubscribeService {
 
@@ -20,7 +21,7 @@ public interface SubscribeService {
   Call<TypeCollection<Subscribe>> list();
 
   @GET("subscribe")
-  Call<TypeCollection<Subscribe>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Subscribe>> list(@QueryMap Filters<String, String> filters);
 
   @GET("subscribe/{id}")
   Call<Subscribe> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface SubscribeService {
 
   @DELETE("subscribe/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

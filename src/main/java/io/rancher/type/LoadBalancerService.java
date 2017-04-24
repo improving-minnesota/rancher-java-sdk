@@ -1,10 +1,36 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 import java.util.List;
 import java.util.Map;
 
 public class LoadBalancerService extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAccountLink() {
+        return this.links.get("account");
+    }
+    
+    public String getEnvironmentLink() {
+        return this.links.get("environment");
+    }
+    
+    public String getInstancesLink() {
+        return this.links.get("instances");
+    }
+    
+
     
     private String accountId;
     

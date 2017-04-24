@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface VirtualMachineDiskService {
 
@@ -20,7 +21,7 @@ public interface VirtualMachineDiskService {
   Call<TypeCollection<VirtualMachineDisk>> list();
 
   @GET("virtualMachineDisk")
-  Call<TypeCollection<VirtualMachineDisk>> list(@QueryMap Filters filters);
+  Call<TypeCollection<VirtualMachineDisk>> list(@QueryMap Filters<String, String> filters);
 
   @GET("virtualMachineDisk/{id}")
   Call<VirtualMachineDisk> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface VirtualMachineDiskService {
 
   @DELETE("virtualMachineDisk/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

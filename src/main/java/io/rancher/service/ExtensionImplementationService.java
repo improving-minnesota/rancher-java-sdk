@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ExtensionImplementationService {
 
@@ -20,7 +21,7 @@ public interface ExtensionImplementationService {
   Call<TypeCollection<ExtensionImplementation>> list();
 
   @GET("extensionImplementation")
-  Call<TypeCollection<ExtensionImplementation>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExtensionImplementation>> list(@QueryMap Filters<String, String> filters);
 
   @GET("extensionImplementation/{id}")
   Call<ExtensionImplementation> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ExtensionImplementationService {
 
   @DELETE("extensionImplementation/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }
