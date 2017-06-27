@@ -24,6 +24,18 @@ task javadocJar(type: Jar) {
 publishing {
     publications {
         sdk(MavenPublication) {
+            groupId 'io.rancher'
+            artifactId 'rancher-java-sdk'
+            version '1.0.0'
+
+            pom.withXml {
+                asNode().dependencies.'*'.findAll() {
+                    it.scope.text() == 'runtime' && project.configurations.compile.allDependencies.find { dep ->
+                        dep.name == it.artifactId.text()
+                    }
+                }.each { it.scope*.value = 'compile'}
+            }
+
             from components.java
             artifact sourceJar {
                 classifier 'sources'
