@@ -1,12 +1,20 @@
 apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 repositories {
     jcenter()
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+group = "io.rancher"
+version = "0.3-SNAPSHOT"
+
+jar {
+    baseName = "rancher-java-sdk"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
     compile "com.squareup.retrofit2:retrofit:2.0.0-beta3"
@@ -23,13 +31,27 @@ task javadocJar(type: Jar) {
 
 publishing {
     publications {
-        sdk(MavenPublication) {
+        mavenJava(MavenPublication) {
             from components.java
             artifact sourceJar {
                 classifier 'sources'
             }
             artifact javadocJar {
                 classifier 'javadoc'
+            }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username "$nexusUser"
+                password"$nexusPass"
+            }
+
+            if (project.version.endsWith('-SNAPSHOT')) {
+                url "https://nexus.cropster.xyz/repository/cropster-snapshots/"
+            } else {
+                url "https://nexus.cropster.xyz/repository/cropster/"
             }
         }
     }
