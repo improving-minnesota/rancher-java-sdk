@@ -47,7 +47,4 @@ public interface RegistryService {
   @POST("registry/{id}?action=remove")
   Call<StoragePool> remove(@Path("id") String id);
   
-  @POST("registry/{id}?action=restore")
-  Call<StoragePool> restore(@Path("id") String id);
-  
 }

@@ -46,7 +46,4 @@ public interface ImageService {
   @POST("image/{id}?action=remove")
   Call<Image> remove(@Path("id") String id);
   
-  @POST("image/{id}?action=restore")
-  Call<Image> restore(@Path("id") String id);
-  
 }

@@ -22,6 +22,8 @@ public class Identity extends AbstractType {
     
     private String role;
     
+    private Boolean user;
+    
     public String getAll() {
         return this.all;
     }
@@ -92,6 +94,14 @@ public class Identity extends AbstractType {
 
     public void setRole(String role) {
       this.role = role;
+    }
+    
+    public Boolean getUser() {
+        return this.user;
+    }
+
+    public void setUser(Boolean user) {
+      this.user = user;
     }
     
 }

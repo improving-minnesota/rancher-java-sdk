@@ -38,9 +38,6 @@ public interface VolumeService {
   @DELETE("volume/{id}")
   Call<Response> delete(@Path("id") String id);
   
-  @POST("volume/{id}?action=activate")
-  Call<Volume> activate(@Path("id") String id);
-  
   @POST("volume/{id}?action=allocate")
   Call<Volume> allocate(@Path("id") String id);
   
@@ -52,9 +49,6 @@ public interface VolumeService {
   
   @POST("volume/{id}?action=remove")
   Call<Volume> remove(@Path("id") String id);
-  
-  @POST("volume/{id}?action=restore")
-  Call<Volume> restore(@Path("id") String id);
   
   @POST("volume/{id}?action=restorefrombackup")
   Call<Volume> restorefrombackup(@Path("id") String id, @Body RestoreFromBackupInput restoreFromBackupInput);

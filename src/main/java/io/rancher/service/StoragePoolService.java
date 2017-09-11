@@ -46,7 +46,4 @@ public interface StoragePoolService {
   @POST("storagePool/{id}?action=remove")
   Call<StoragePool> remove(@Path("id") String id);
   
-  @POST("storagePool/{id}?action=restore")
-  Call<StoragePool> restore(@Path("id") String id);
-  
 }

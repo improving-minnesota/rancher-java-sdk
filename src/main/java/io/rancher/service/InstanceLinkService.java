@@ -46,7 +46,4 @@ public interface InstanceLinkService {
   @POST("instanceLink/{id}?action=remove")
   Call<InstanceLink> remove(@Path("id") String id);
   
-  @POST("instanceLink/{id}?action=restore")
-  Call<InstanceLink> restore(@Path("id") String id);
-  
 }

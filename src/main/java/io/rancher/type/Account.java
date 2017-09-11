@@ -35,6 +35,8 @@ public class Account extends AbstractType {
     
     private String uuid;
     
+    private String version;
+    
     public String getCreated() {
         return this.created;
     }
@@ -153,6 +155,14 @@ public class Account extends AbstractType {
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
+    }
+    
+    public String getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(String version) {
+      this.version = version;
     }
     
 }

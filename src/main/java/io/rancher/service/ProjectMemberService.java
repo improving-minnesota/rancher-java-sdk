@@ -46,7 +46,4 @@ public interface ProjectMemberService {
   @POST("projectMember/{id}?action=remove")
   Call<ProjectMember> remove(@Path("id") String id);
   
-  @POST("projectMember/{id}?action=restore")
-  Call<ProjectMember> restore(@Path("id") String id);
-  
 }

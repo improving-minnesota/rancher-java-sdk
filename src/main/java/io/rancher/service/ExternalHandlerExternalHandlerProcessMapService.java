@@ -46,7 +46,4 @@ public interface ExternalHandlerExternalHandlerProcessMapService {
   @POST("externalHandlerExternalHandlerProcessMap/{id}?action=remove")
   Call<ExternalHandlerExternalHandlerProcessMap> remove(@Path("id") String id);
   
-  @POST("externalHandlerExternalHandlerProcessMap/{id}?action=restore")
-  Call<ExternalHandlerExternalHandlerProcessMap> restore(@Path("id") String id);
-  
 }

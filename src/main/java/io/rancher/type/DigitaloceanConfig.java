@@ -18,7 +18,15 @@ public class DigitaloceanConfig extends AbstractType {
     
     private String size;
     
+    private String sshKeyFingerprint;
+    
+    private String sshKeyPath;
+    
+    private String sshPort;
+    
     private String sshUser;
+    
+    private String userdata;
     
     public String getAccessToken() {
         return this.accessToken;
@@ -76,12 +84,44 @@ public class DigitaloceanConfig extends AbstractType {
       this.size = size;
     }
     
+    public String getSshKeyFingerprint() {
+        return this.sshKeyFingerprint;
+    }
+
+    public void setSshKeyFingerprint(String sshKeyFingerprint) {
+      this.sshKeyFingerprint = sshKeyFingerprint;
+    }
+    
+    public String getSshKeyPath() {
+        return this.sshKeyPath;
+    }
+
+    public void setSshKeyPath(String sshKeyPath) {
+      this.sshKeyPath = sshKeyPath;
+    }
+    
+    public String getSshPort() {
+        return this.sshPort;
+    }
+
+    public void setSshPort(String sshPort) {
+      this.sshPort = sshPort;
+    }
+    
     public String getSshUser() {
         return this.sshUser;
     }
 
     public void setSshUser(String sshUser) {
       this.sshUser = sshUser;
+    }
+    
+    public String getUserdata() {
+        return this.userdata;
+    }
+
+    public void setUserdata(String userdata) {
+      this.userdata = userdata;
     }
     
 }

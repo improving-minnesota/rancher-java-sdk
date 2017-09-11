@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Register;
+import io.rancher.type.GenericObject;
 import io.rancher.type.InstanceStop;
 import io.rancher.type.Instance;
 
@@ -35,6 +36,9 @@ public interface RegisterService {
 
   @DELETE("register/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+  @POST("register/{id}?action=remove")
+  Call<GenericObject> remove(@Path("id") String id);
   
   @POST("register/{id}?action=stop")
   Call<Instance> stop(@Path("id") String id, @Body InstanceStop instanceStop);

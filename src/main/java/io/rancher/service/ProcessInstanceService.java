@@ -34,4 +34,7 @@ public interface ProcessInstanceService {
   @DELETE("processInstance/{id}")
   Call<Response> delete(@Path("id") String id);
   
+  @POST("processInstance/{id}?action=replay")
+  Call<ProcessInstance> replay(@Path("id") String id);
+  
 }

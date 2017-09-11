@@ -26,7 +26,7 @@ publishing {
         sdk(MavenPublication) {
             groupId 'io.rancher'
             artifactId 'rancher-java-sdk'
-            version '1.0.0'
+            version '2.0.0'
 
             pom.withXml {
                 asNode().dependencies.'*'.findAll() {

@@ -2,6 +2,7 @@ package io.rancher.type;
 
 import io.rancher.base.AbstractType;
 import java.util.Map;
+import java.util.List;
 
 public class Volume extends AbstractType {
     
@@ -21,6 +22,8 @@ public class Volume extends AbstractType {
     
     private String externalId;
     
+    private String hostId;
+    
     private String imageId;
     
     private String instanceId;
@@ -29,13 +32,21 @@ public class Volume extends AbstractType {
     
     private String kind;
     
+    private List<MountEntry> mounts;
+    
     private String name;
     
     private String removeTime;
     
     private String removed;
     
+    private Integer sizeMb;
+    
+    private String stackId;
+    
     private String state;
+    
+    private String storageDriverId;
     
     private String transitioning;
     
@@ -46,6 +57,8 @@ public class Volume extends AbstractType {
     private String uri;
     
     private String uuid;
+    
+    private String volumeTemplateId;
     
     public String getAccessMode() {
         return this.accessMode;
@@ -111,6 +124,14 @@ public class Volume extends AbstractType {
       this.externalId = externalId;
     }
     
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    public void setHostId(String hostId) {
+      this.hostId = hostId;
+    }
+    
     public String getImageId() {
         return this.imageId;
     }
@@ -143,6 +164,14 @@ public class Volume extends AbstractType {
       this.kind = kind;
     }
     
+    public List<MountEntry> getMounts() {
+        return this.mounts;
+    }
+
+    public void setMounts(List<MountEntry> mounts) {
+      this.mounts = mounts;
+    }
+    
     public String getName() {
         return this.name;
     }
@@ -167,12 +196,36 @@ public class Volume extends AbstractType {
       this.removed = removed;
     }
     
+    public Integer getSizeMb() {
+        return this.sizeMb;
+    }
+
+    public void setSizeMb(Integer sizeMb) {
+      this.sizeMb = sizeMb;
+    }
+    
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    public void setStackId(String stackId) {
+      this.stackId = stackId;
+    }
+    
     public String getState() {
         return this.state;
     }
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public String getStorageDriverId() {
+        return this.storageDriverId;
+    }
+
+    public void setStorageDriverId(String storageDriverId) {
+      this.storageDriverId = storageDriverId;
     }
     
     public String getTransitioning() {
@@ -213,6 +266,14 @@ public class Volume extends AbstractType {
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
+    }
+    
+    public String getVolumeTemplateId() {
+        return this.volumeTemplateId;
+    }
+
+    public void setVolumeTemplateId(String volumeTemplateId) {
+      this.volumeTemplateId = volumeTemplateId;
     }
     
 }

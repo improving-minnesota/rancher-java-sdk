@@ -3,8 +3,8 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Project;
-import io.rancher.type.SetProjectMembersInput;
 import io.rancher.type.Account;
+import io.rancher.type.SetProjectMembersInput;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -48,10 +48,10 @@ public interface ProjectService {
   @POST("project/{id}?action=remove")
   Call<Account> remove(@Path("id") String id);
   
-  @POST("project/{id}?action=restore")
-  Call<Account> restore(@Path("id") String id);
-  
   @POST("project/{id}?action=setmembers")
   Call<SetProjectMembersInput> setmembers(@Path("id") String id, @Body SetProjectMembersInput setProjectMembersInput);
+  
+  @POST("project/{id}?action=upgrade")
+  Call<Account> upgrade(@Path("id") String id);
   
 }

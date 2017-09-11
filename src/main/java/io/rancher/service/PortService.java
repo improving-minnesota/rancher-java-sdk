@@ -46,7 +46,4 @@ public interface PortService {
   @POST("port/{id}?action=remove")
   Call<Port> remove(@Path("id") String id);
   
-  @POST("port/{id}?action=restore")
-  Call<Port> restore(@Path("id") String id);
-  
 }

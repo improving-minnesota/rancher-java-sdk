@@ -46,7 +46,7 @@ public interface AccountService {
   @POST("account/{id}?action=remove")
   Call<Account> remove(@Path("id") String id);
   
-  @POST("account/{id}?action=restore")
-  Call<Account> restore(@Path("id") String id);
+  @POST("account/{id}?action=upgrade")
+  Call<Account> upgrade(@Path("id") String id);
   
 }

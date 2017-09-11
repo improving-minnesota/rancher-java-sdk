@@ -46,7 +46,4 @@ public interface NetworkService {
   @POST("network/{id}?action=remove")
   Call<Network> remove(@Path("id") String id);
   
-  @POST("network/{id}?action=restore")
-  Call<Network> restore(@Path("id") String id);
-  
 }

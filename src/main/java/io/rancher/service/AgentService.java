@@ -40,6 +40,12 @@ public interface AgentService {
   @POST("agent/{id}?action=deactivate")
   Call<Agent> deactivate(@Path("id") String id);
   
+  @POST("agent/{id}?action=disconnect")
+  Call<Agent> disconnect(@Path("id") String id);
+  
+  @POST("agent/{id}?action=finishreconnect")
+  Call<Agent> finishreconnect(@Path("id") String id);
+  
   @POST("agent/{id}?action=purge")
   Call<Agent> purge(@Path("id") String id);
   
@@ -48,8 +54,5 @@ public interface AgentService {
   
   @POST("agent/{id}?action=remove")
   Call<Agent> remove(@Path("id") String id);
-  
-  @POST("agent/{id}?action=restore")
-  Call<Agent> restore(@Path("id") String id);
   
 }

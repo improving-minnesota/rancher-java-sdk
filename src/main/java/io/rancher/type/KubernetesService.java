@@ -2,6 +2,7 @@ package io.rancher.type;
 
 import io.rancher.base.AbstractType;
 import java.util.Map;
+import java.util.List;
 
 public class KubernetesService extends AbstractType {
     
@@ -13,13 +14,15 @@ public class KubernetesService extends AbstractType {
     
     private String description;
     
-    private String environmentId;
-    
     private String externalId;
     
     private String healthState;
     
+    private List<String> instanceIds;
+    
     private String kind;
+    
+    private Map<String, Object> linkedServices;
     
     private String name;
     
@@ -29,7 +32,11 @@ public class KubernetesService extends AbstractType {
     
     private String selectorContainer;
     
+    private String stackId;
+    
     private String state;
+    
+    private Boolean system;
     
     private Map<String, Object> template;
     
@@ -75,14 +82,6 @@ public class KubernetesService extends AbstractType {
       this.description = description;
     }
     
-    public String getEnvironmentId() {
-        return this.environmentId;
-    }
-
-    public void setEnvironmentId(String environmentId) {
-      this.environmentId = environmentId;
-    }
-    
     public String getExternalId() {
         return this.externalId;
     }
@@ -99,12 +98,28 @@ public class KubernetesService extends AbstractType {
       this.healthState = healthState;
     }
     
+    public List<String> getInstanceIds() {
+        return this.instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+      this.instanceIds = instanceIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
 
     public void setKind(String kind) {
       this.kind = kind;
+    }
+    
+    public Map<String, Object> getLinkedServices() {
+        return this.linkedServices;
+    }
+
+    public void setLinkedServices(Map<String, Object> linkedServices) {
+      this.linkedServices = linkedServices;
     }
     
     public String getName() {
@@ -139,12 +154,28 @@ public class KubernetesService extends AbstractType {
       this.selectorContainer = selectorContainer;
     }
     
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    public void setStackId(String stackId) {
+      this.stackId = stackId;
+    }
+    
     public String getState() {
         return this.state;
     }
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public Boolean getSystem() {
+        return this.system;
+    }
+
+    public void setSystem(Boolean system) {
+      this.system = system;
     }
     
     public Map<String, Object> getTemplate() {

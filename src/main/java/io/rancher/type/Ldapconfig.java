@@ -21,6 +21,8 @@ public class Ldapconfig extends AbstractType {
     
     private String groupObjectClass;
     
+    private String groupSearchDomain;
+    
     private String groupSearchField;
     
     private String loginDomain;
@@ -113,6 +115,14 @@ public class Ldapconfig extends AbstractType {
 
     public void setGroupObjectClass(String groupObjectClass) {
       this.groupObjectClass = groupObjectClass;
+    }
+    
+    public String getGroupSearchDomain() {
+        return this.groupSearchDomain;
+    }
+
+    public void setGroupSearchDomain(String groupSearchDomain) {
+      this.groupSearchDomain = groupSearchDomain;
     }
     
     public String getGroupSearchField() {

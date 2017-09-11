@@ -3,15 +3,13 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.SecondaryLaunchConfig;
-import io.rancher.type.InstanceStop;
 import io.rancher.type.Instance;
-import io.rancher.type.SetLabelsInput;
-import io.rancher.type.InstanceConsoleInput;
-import io.rancher.type.InstanceConsole;
 import io.rancher.type.ContainerExec;
 import io.rancher.type.HostAccess;
-import io.rancher.type.Container;
 import io.rancher.type.ContainerProxy;
+import io.rancher.type.InstanceConsoleInput;
+import io.rancher.type.InstanceConsole;
+import io.rancher.type.InstanceStop;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -72,12 +70,6 @@ public interface SecondaryLaunchConfigService {
   
   @POST("secondaryLaunchConfig/{id}?action=restart")
   Call<Instance> restart(@Path("id") String id);
-  
-  @POST("secondaryLaunchConfig/{id}?action=restore")
-  Call<Instance> restore(@Path("id") String id);
-  
-  @POST("secondaryLaunchConfig/{id}?action=setlabels")
-  Call<Container> setlabels(@Path("id") String id, @Body SetLabelsInput setLabelsInput);
   
   @POST("secondaryLaunchConfig/{id}?action=start")
   Call<Instance> start(@Path("id") String id);

@@ -3,11 +3,11 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.DnsService;
-import io.rancher.type.ServiceRestart;
+import io.rancher.type.Service;
 import io.rancher.type.ServiceUpgrade;
+import io.rancher.type.ServiceRestart;
 import io.rancher.type.AddRemoveServiceLinkInput;
 import io.rancher.type.SetServiceLinksInput;
-import io.rancher.type.Service;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -45,11 +45,11 @@ public interface DnsServiceService {
   @POST("dnsService/{id}?action=addservicelink")
   Call<Service> addservicelink(@Path("id") String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput);
   
-  @POST("dnsService/{id}?action=cancelrollback")
-  Call<Service> cancelrollback(@Path("id") String id);
-  
   @POST("dnsService/{id}?action=cancelupgrade")
   Call<Service> cancelupgrade(@Path("id") String id);
+  
+  @POST("dnsService/{id}?action=continueupgrade")
+  Call<Service> continueupgrade(@Path("id") String id);
   
   @POST("dnsService/{id}?action=deactivate")
   Call<Service> deactivate(@Path("id") String id);

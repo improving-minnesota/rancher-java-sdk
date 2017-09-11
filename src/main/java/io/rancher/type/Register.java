@@ -25,6 +25,8 @@ public class Register extends AbstractType {
     
     private String removed;
     
+    private Map<String, Object> resourceData;
+    
     private String secretKey;
     
     private String state;
@@ -115,6 +117,14 @@ public class Register extends AbstractType {
 
     public void setRemoved(String removed) {
       this.removed = removed;
+    }
+    
+    public Map<String, Object> getResourceData() {
+        return this.resourceData;
+    }
+
+    public void setResourceData(Map<String, Object> resourceData) {
+      this.resourceData = resourceData;
     }
     
     public String getSecretKey() {

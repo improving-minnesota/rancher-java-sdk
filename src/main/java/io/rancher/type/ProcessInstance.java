@@ -5,9 +5,13 @@ import java.util.Map;
 
 public class ProcessInstance extends AbstractType {
     
+    private String accountId;
+    
     private Map<String, Object> data;
     
     private String endTime;
+    
+    private Integer executionCount;
     
     private String exitReason;
     
@@ -23,11 +27,21 @@ public class ProcessInstance extends AbstractType {
     
     private String result;
     
+    private String runAfter;
+    
     private String runningProcessServerId;
     
     private String startProcessServerId;
     
     private String startTime;
+    
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    public void setAccountId(String accountId) {
+      this.accountId = accountId;
+    }
     
     public Map<String, Object> getData() {
         return this.data;
@@ -43,6 +57,14 @@ public class ProcessInstance extends AbstractType {
 
     public void setEndTime(String endTime) {
       this.endTime = endTime;
+    }
+    
+    public Integer getExecutionCount() {
+        return this.executionCount;
+    }
+
+    public void setExecutionCount(Integer executionCount) {
+      this.executionCount = executionCount;
     }
     
     public String getExitReason() {
@@ -99,6 +121,14 @@ public class ProcessInstance extends AbstractType {
 
     public void setResult(String result) {
       this.result = result;
+    }
+    
+    public String getRunAfter() {
+        return this.runAfter;
+    }
+
+    public void setRunAfter(String runAfter) {
+      this.runAfter = runAfter;
     }
     
     public String getRunningProcessServerId() {

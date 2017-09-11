@@ -44,13 +44,19 @@ public interface HostService {
   @POST("host/{id}?action=dockersocket")
   Call<HostAccess> dockersocket(@Path("id") String id);
   
+  @POST("host/{id}?action=error")
+  Call<Host> error(@Path("id") String id);
+  
+  @POST("host/{id}?action=evacuate")
+  Call<Host> evacuate(@Path("id") String id);
+  
+  @POST("host/{id}?action=provision")
+  Call<Host> provision(@Path("id") String id);
+  
   @POST("host/{id}?action=purge")
   Call<Host> purge(@Path("id") String id);
   
   @POST("host/{id}?action=remove")
   Call<Host> remove(@Path("id") String id);
-  
-  @POST("host/{id}?action=restore")
-  Call<Host> restore(@Path("id") String id);
   
 }

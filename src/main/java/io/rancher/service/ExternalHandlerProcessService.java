@@ -46,7 +46,4 @@ public interface ExternalHandlerProcessService {
   @POST("externalHandlerProcess/{id}?action=remove")
   Call<ExternalHandlerProcess> remove(@Path("id") String id);
   
-  @POST("externalHandlerProcess/{id}?action=restore")
-  Call<ExternalHandlerProcess> restore(@Path("id") String id);
-  
 }

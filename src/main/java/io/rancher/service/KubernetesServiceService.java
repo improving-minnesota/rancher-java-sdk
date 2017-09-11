@@ -3,11 +3,11 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.KubernetesService;
-import io.rancher.type.SetServiceLinksInput;
-import io.rancher.type.ServiceUpgrade;
-import io.rancher.type.ServiceRestart;
 import io.rancher.type.Service;
 import io.rancher.type.AddRemoveServiceLinkInput;
+import io.rancher.type.SetServiceLinksInput;
+import io.rancher.type.ServiceRestart;
+import io.rancher.type.ServiceUpgrade;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -45,11 +45,11 @@ public interface KubernetesServiceService {
   @POST("kubernetesService/{id}?action=addservicelink")
   Call<Service> addservicelink(@Path("id") String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput);
   
-  @POST("kubernetesService/{id}?action=cancelrollback")
-  Call<Service> cancelrollback(@Path("id") String id);
-  
   @POST("kubernetesService/{id}?action=cancelupgrade")
   Call<Service> cancelupgrade(@Path("id") String id);
+  
+  @POST("kubernetesService/{id}?action=continueupgrade")
+  Call<Service> continueupgrade(@Path("id") String id);
   
   @POST("kubernetesService/{id}?action=deactivate")
   Call<Service> deactivate(@Path("id") String id);

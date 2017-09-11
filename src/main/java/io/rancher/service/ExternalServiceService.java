@@ -3,9 +3,9 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalService;
-import io.rancher.type.ServiceRestart;
 import io.rancher.type.Service;
 import io.rancher.type.ServiceUpgrade;
+import io.rancher.type.ServiceRestart;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -40,11 +40,11 @@ public interface ExternalServiceService {
   @POST("externalService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);
   
-  @POST("externalService/{id}?action=cancelrollback")
-  Call<Service> cancelrollback(@Path("id") String id);
-  
   @POST("externalService/{id}?action=cancelupgrade")
   Call<Service> cancelupgrade(@Path("id") String id);
+  
+  @POST("externalService/{id}?action=continueupgrade")
+  Call<Service> continueupgrade(@Path("id") String id);
   
   @POST("externalService/{id}?action=deactivate")
   Call<Service> deactivate(@Path("id") String id);

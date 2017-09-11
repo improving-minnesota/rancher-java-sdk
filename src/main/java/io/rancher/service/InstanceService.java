@@ -3,9 +3,9 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Instance;
-import io.rancher.type.InstanceStop;
 import io.rancher.type.InstanceConsoleInput;
 import io.rancher.type.InstanceConsole;
+import io.rancher.type.InstanceStop;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -60,9 +60,6 @@ public interface InstanceService {
   
   @POST("instance/{id}?action=restart")
   Call<Instance> restart(@Path("id") String id);
-  
-  @POST("instance/{id}?action=restore")
-  Call<Instance> restore(@Path("id") String id);
   
   @POST("instance/{id}?action=start")
   Call<Instance> start(@Path("id") String id);

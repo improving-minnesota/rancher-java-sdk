@@ -37,6 +37,9 @@ public interface IpAddressService {
   @POST("ipAddress/{id}?action=activate")
   Call<IpAddress> activate(@Path("id") String id);
   
+  @POST("ipAddress/{id}?action=associate")
+  Call<IpAddress> associate(@Path("id") String id);
+  
   @POST("ipAddress/{id}?action=deactivate")
   Call<IpAddress> deactivate(@Path("id") String id);
   
@@ -48,8 +51,5 @@ public interface IpAddressService {
   
   @POST("ipAddress/{id}?action=remove")
   Call<IpAddress> remove(@Path("id") String id);
-  
-  @POST("ipAddress/{id}?action=restore")
-  Call<IpAddress> restore(@Path("id") String id);
   
 }
