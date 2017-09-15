@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.SetProjectMembersInput;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,6 +31,6 @@ public interface SetProjectMembersInputService {
   Call<SetProjectMembersInput> update(@Path("id") String id, @Body SetProjectMembersInput setProjectMembersInput);
 
   @DELETE("setProjectMembersInput/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

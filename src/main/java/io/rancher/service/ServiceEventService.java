@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceEvent;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface ServiceEventService {
   Call<ServiceEvent> update(@Path("id") String id, @Body ServiceEvent serviceEvent);
 
   @DELETE("serviceEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("serviceEvent/{id}?action=remove")
   Call<ServiceEvent> remove(@Path("id") String id);

@@ -6,7 +6,6 @@ import io.rancher.type.PullTask;
 import io.rancher.type.GenericObject;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -33,7 +32,7 @@ public interface PullTaskService {
   Call<PullTask> update(@Path("id") String id, @Body PullTask pullTask);
 
   @DELETE("pullTask/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("pullTask/{id}?action=remove")
   Call<GenericObject> remove(@Path("id") String id);

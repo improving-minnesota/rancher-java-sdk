@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.Credential;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface CredentialService {
   Call<Credential> update(@Path("id") String id, @Body Credential credential);
 
   @DELETE("credential/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("credential/{id}?action=activate")
   Call<Credential> activate(@Path("id") String id);

@@ -3,13 +3,12 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Stack;
-import io.rancher.type.ComposeConfigInput;
-import io.rancher.type.ComposeConfig;
 import io.rancher.type.StackUpgrade;
 import io.rancher.type.AddOutputsInput;
+import io.rancher.type.ComposeConfigInput;
+import io.rancher.type.ComposeConfig;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -36,7 +35,7 @@ public interface StackService {
   Call<Stack> update(@Path("id") String id, @Body Stack stack);
 
   @DELETE("stack/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("stack/{id}?action=activateservices")
   Call<Stack> activateservices(@Path("id") String id);

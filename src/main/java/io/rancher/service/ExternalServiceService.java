@@ -8,7 +8,6 @@ import io.rancher.type.ServiceUpgrade;
 import io.rancher.type.ServiceRestart;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -35,7 +34,7 @@ public interface ExternalServiceService {
   Call<ExternalService> update(@Path("id") String id, @Body ExternalService externalService);
 
   @DELETE("externalService/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);

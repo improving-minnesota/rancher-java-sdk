@@ -6,7 +6,6 @@ import io.rancher.type.ExternalStoragePoolEvent;
 import io.rancher.type.ExternalEvent;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -33,7 +32,7 @@ public interface ExternalStoragePoolEventService {
   Call<ExternalStoragePoolEvent> update(@Path("id") String id, @Body ExternalStoragePoolEvent externalStoragePoolEvent);
 
   @DELETE("externalStoragePoolEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalStoragePoolEvent/{id}?action=remove")
   Call<ExternalEvent> remove(@Path("id") String id);

@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.IpAddress;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface IpAddressService {
   Call<IpAddress> update(@Path("id") String id, @Body IpAddress ipAddress);
 
   @DELETE("ipAddress/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("ipAddress/{id}?action=activate")
   Call<IpAddress> activate(@Path("id") String id);

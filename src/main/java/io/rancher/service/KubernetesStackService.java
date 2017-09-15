@@ -7,7 +7,6 @@ import io.rancher.type.Stack;
 import io.rancher.type.KubernetesStackUpgrade;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -34,7 +33,7 @@ public interface KubernetesStackService {
   Call<KubernetesStack> update(@Path("id") String id, @Body KubernetesStack kubernetesStack);
 
   @DELETE("kubernetesStack/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("kubernetesStack/{id}?action=cancelupgrade")
   Call<Stack> cancelupgrade(@Path("id") String id);

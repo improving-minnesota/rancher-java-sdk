@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.Network;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface NetworkService {
   Call<Network> update(@Path("id") String id, @Body Network network);
 
   @DELETE("network/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("network/{id}?action=activate")
   Call<Network> activate(@Path("id") String id);

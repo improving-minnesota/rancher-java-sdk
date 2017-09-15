@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.ProcessInstance;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface ProcessInstanceService {
   Call<ProcessInstance> update(@Path("id") String id, @Body ProcessInstance processInstance);
 
   @DELETE("processInstance/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("processInstance/{id}?action=replay")
   Call<ProcessInstance> replay(@Path("id") String id);

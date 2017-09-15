@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.Port;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface PortService {
   Call<Port> update(@Path("id") String id, @Body Port port);
 
   @DELETE("port/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("port/{id}?action=activate")
   Call<Port> activate(@Path("id") String id);

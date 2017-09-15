@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.Mount;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface MountService {
   Call<Mount> update(@Path("id") String id, @Body Mount mount);
 
   @DELETE("mount/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("mount/{id}?action=deactivate")
   Call<Mount> deactivate(@Path("id") String id);

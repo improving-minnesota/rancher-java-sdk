@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.BackupTarget;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface BackupTargetService {
   Call<BackupTarget> update(@Path("id") String id, @Body BackupTarget backupTarget);
 
   @DELETE("backupTarget/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("backupTarget/{id}?action=remove")
   Call<BackupTarget> remove(@Path("id") String id);

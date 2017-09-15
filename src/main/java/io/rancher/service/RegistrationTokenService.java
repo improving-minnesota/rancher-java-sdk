@@ -6,7 +6,6 @@ import io.rancher.type.RegistrationToken;
 import io.rancher.type.Credential;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -33,7 +32,7 @@ public interface RegistrationTokenService {
   Call<RegistrationToken> update(@Path("id") String id, @Body RegistrationToken registrationToken);
 
   @DELETE("registrationToken/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("registrationToken/{id}?action=activate")
   Call<Credential> activate(@Path("id") String id);

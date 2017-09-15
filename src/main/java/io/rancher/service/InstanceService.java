@@ -3,12 +3,11 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Instance;
+import io.rancher.type.InstanceStop;
 import io.rancher.type.InstanceConsoleInput;
 import io.rancher.type.InstanceConsole;
-import io.rancher.type.InstanceStop;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -35,7 +34,7 @@ public interface InstanceService {
   Call<Instance> update(@Path("id") String id, @Body Instance instance);
 
   @DELETE("instance/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("instance/{id}?action=allocate")
   Call<Instance> allocate(@Path("id") String id);

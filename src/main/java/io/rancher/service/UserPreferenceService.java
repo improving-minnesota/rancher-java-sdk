@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.UserPreference;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface UserPreferenceService {
   Call<UserPreference> update(@Path("id") String id, @Body UserPreference userPreference);
 
   @DELETE("userPreference/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("userPreference/{id}?action=activate")
   Call<UserPreference> activate(@Path("id") String id);

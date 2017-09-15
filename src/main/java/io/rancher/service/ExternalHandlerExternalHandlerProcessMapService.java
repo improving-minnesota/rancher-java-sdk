@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalHandlerExternalHandlerProcessMap;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface ExternalHandlerExternalHandlerProcessMapService {
   Call<ExternalHandlerExternalHandlerProcessMap> update(@Path("id") String id, @Body ExternalHandlerExternalHandlerProcessMap externalHandlerExternalHandlerProcessMap);
 
   @DELETE("externalHandlerExternalHandlerProcessMap/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalHandlerExternalHandlerProcessMap/{id}?action=activate")
   Call<ExternalHandlerExternalHandlerProcessMap> activate(@Path("id") String id);

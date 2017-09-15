@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.VolumeSnapshotInput;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,6 +31,6 @@ public interface VolumeSnapshotInputService {
   Call<VolumeSnapshotInput> update(@Path("id") String id, @Body VolumeSnapshotInput volumeSnapshotInput);
 
   @DELETE("volumeSnapshotInput/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

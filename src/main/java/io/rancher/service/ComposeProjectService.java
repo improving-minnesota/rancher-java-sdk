@@ -6,7 +6,6 @@ import io.rancher.type.ComposeProject;
 import io.rancher.type.Stack;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -33,7 +32,7 @@ public interface ComposeProjectService {
   Call<ComposeProject> update(@Path("id") String id, @Body ComposeProject composeProject);
 
   @DELETE("composeProject/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("composeProject/{id}?action=cancelupgrade")
   Call<Stack> cancelupgrade(@Path("id") String id);

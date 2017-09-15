@@ -6,7 +6,6 @@ import io.rancher.type.Machine;
 import io.rancher.type.PhysicalHost;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -33,7 +32,7 @@ public interface MachineService {
   Call<Machine> update(@Path("id") String id, @Body Machine machine);
 
   @DELETE("machine/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("machine/{id}?action=bootstrap")
   Call<PhysicalHost> bootstrap(@Path("id") String id);

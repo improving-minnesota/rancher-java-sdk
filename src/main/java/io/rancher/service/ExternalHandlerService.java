@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalHandler;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface ExternalHandlerService {
   Call<ExternalHandler> update(@Path("id") String id, @Body ExternalHandler externalHandler);
 
   @DELETE("externalHandler/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalHandler/{id}?action=activate")
   Call<ExternalHandler> activate(@Path("id") String id);

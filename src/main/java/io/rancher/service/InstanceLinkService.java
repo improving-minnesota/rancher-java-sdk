@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.InstanceLink;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface InstanceLinkService {
   Call<InstanceLink> update(@Path("id") String id, @Body InstanceLink instanceLink);
 
   @DELETE("instanceLink/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("instanceLink/{id}?action=activate")
   Call<InstanceLink> activate(@Path("id") String id);

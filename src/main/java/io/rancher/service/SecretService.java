@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.Secret;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface SecretService {
   Call<Secret> update(@Path("id") String id, @Body Secret secret);
 
   @DELETE("secret/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("secret/{id}?action=remove")
   Call<Secret> remove(@Path("id") String id);

@@ -7,7 +7,6 @@ import io.rancher.type.Account;
 import io.rancher.type.SetProjectMembersInput;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -34,7 +33,7 @@ public interface ProjectService {
   Call<Project> update(@Path("id") String id, @Body Project project);
 
   @DELETE("project/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("project/{id}?action=activate")
   Call<Account> activate(@Path("id") String id);

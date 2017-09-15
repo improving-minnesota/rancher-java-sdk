@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.ScheduledUpgrade;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface ScheduledUpgradeService {
   Call<ScheduledUpgrade> update(@Path("id") String id, @Body ScheduledUpgrade scheduledUpgrade);
 
   @DELETE("scheduledUpgrade/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("scheduledUpgrade/{id}?action=remove")
   Call<ScheduledUpgrade> remove(@Path("id") String id);

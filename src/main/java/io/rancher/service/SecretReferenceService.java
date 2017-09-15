@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.SecretReference;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,6 +31,6 @@ public interface SecretReferenceService {
   Call<SecretReference> update(@Path("id") String id, @Body SecretReference secretReference);
 
   @DELETE("secretReference/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

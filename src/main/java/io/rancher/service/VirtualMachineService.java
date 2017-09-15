@@ -3,17 +3,16 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.VirtualMachine;
-import io.rancher.type.InstanceConsole;
-import io.rancher.type.ContainerLogs;
 import io.rancher.type.Instance;
+import io.rancher.type.InstanceStop;
 import io.rancher.type.ContainerProxy;
 import io.rancher.type.HostAccess;
-import io.rancher.type.InstanceStop;
+import io.rancher.type.ContainerLogs;
 import io.rancher.type.ContainerExec;
 import io.rancher.type.InstanceConsoleInput;
+import io.rancher.type.InstanceConsole;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -40,7 +39,7 @@ public interface VirtualMachineService {
   Call<VirtualMachine> update(@Path("id") String id, @Body VirtualMachine virtualMachine);
 
   @DELETE("virtualMachine/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("virtualMachine/{id}?action=allocate")
   Call<Instance> allocate(@Path("id") String id);

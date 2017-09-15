@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.HealthcheckInstanceHostMap;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface HealthcheckInstanceHostMapService {
   Call<HealthcheckInstanceHostMap> update(@Path("id") String id, @Body HealthcheckInstanceHostMap healthcheckInstanceHostMap);
 
   @DELETE("healthcheckInstanceHostMap/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("healthcheckInstanceHostMap/{id}?action=remove")
   Call<HealthcheckInstanceHostMap> remove(@Path("id") String id);

@@ -3,14 +3,13 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.NetworkDriverService;
-import io.rancher.type.SetServiceLinksInput;
-import io.rancher.type.AddRemoveServiceLinkInput;
-import io.rancher.type.ServiceUpgrade;
 import io.rancher.type.ServiceRestart;
+import io.rancher.type.AddRemoveServiceLinkInput;
+import io.rancher.type.SetServiceLinksInput;
 import io.rancher.type.Service;
+import io.rancher.type.ServiceUpgrade;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -37,7 +36,7 @@ public interface NetworkDriverServiceService {
   Call<NetworkDriverService> update(@Path("id") String id, @Body NetworkDriverService networkDriverService);
 
   @DELETE("networkDriverService/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("networkDriverService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);

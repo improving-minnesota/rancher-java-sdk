@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.NetworkDriver;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface NetworkDriverService {
   Call<NetworkDriver> update(@Path("id") String id, @Body NetworkDriver networkDriver);
 
   @DELETE("networkDriver/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("networkDriver/{id}?action=activate")
   Call<NetworkDriver> activate(@Path("id") String id);

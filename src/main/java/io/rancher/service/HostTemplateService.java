@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.HostTemplate;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface HostTemplateService {
   Call<HostTemplate> update(@Path("id") String id, @Body HostTemplate hostTemplate);
 
   @DELETE("hostTemplate/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("hostTemplate/{id}?action=remove")
   Call<HostTemplate> remove(@Path("id") String id);

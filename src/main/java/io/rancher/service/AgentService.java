@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.Agent;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface AgentService {
   Call<Agent> update(@Path("id") String id, @Body Agent agent);
 
   @DELETE("agent/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("agent/{id}?action=activate")
   Call<Agent> activate(@Path("id") String id);

@@ -8,7 +8,6 @@ import io.rancher.type.InstanceStop;
 import io.rancher.type.Instance;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -35,7 +34,7 @@ public interface RegisterService {
   Call<Register> update(@Path("id") String id, @Body Register register);
 
   @DELETE("register/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("register/{id}?action=remove")
   Call<GenericObject> remove(@Path("id") String id);

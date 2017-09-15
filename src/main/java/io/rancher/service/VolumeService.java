@@ -9,7 +9,6 @@ import io.rancher.type.Snapshot;
 import io.rancher.type.RestoreFromBackupInput;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -36,7 +35,7 @@ public interface VolumeService {
   Call<Volume> update(@Path("id") String id, @Body Volume volume);
 
   @DELETE("volume/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("volume/{id}?action=allocate")
   Call<Volume> allocate(@Path("id") String id);

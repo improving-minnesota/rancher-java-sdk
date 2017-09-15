@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.StoragePool;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface StoragePoolService {
   Call<StoragePool> update(@Path("id") String id, @Body StoragePool storagePool);
 
   @DELETE("storagePool/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("storagePool/{id}?action=activate")
   Call<StoragePool> activate(@Path("id") String id);

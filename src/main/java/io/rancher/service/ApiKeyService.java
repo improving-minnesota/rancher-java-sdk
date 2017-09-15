@@ -6,7 +6,6 @@ import io.rancher.type.ApiKey;
 import io.rancher.type.Credential;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -33,7 +32,7 @@ public interface ApiKeyService {
   Call<ApiKey> update(@Path("id") String id, @Body ApiKey apiKey);
 
   @DELETE("apiKey/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("apiKey/{id}?action=activate")
   Call<Credential> activate(@Path("id") String id);

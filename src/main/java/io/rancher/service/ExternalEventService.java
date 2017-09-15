@@ -5,7 +5,6 @@ import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalEvent;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -32,7 +31,7 @@ public interface ExternalEventService {
   Call<ExternalEvent> update(@Path("id") String id, @Body ExternalEvent externalEvent);
 
   @DELETE("externalEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalEvent/{id}?action=remove")
   Call<ExternalEvent> remove(@Path("id") String id);
