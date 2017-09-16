@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PullTask;
 import io.rancher.type.GenericObject;
@@ -20,7 +20,7 @@ public interface PullTaskService {
   Call<TypeCollection<PullTask>> list();
 
   @GET("pullTask")
-  Call<TypeCollection<PullTask>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PullTask>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("pullTask/{id}")
   Call<PullTask> get(@Path("id") String id);

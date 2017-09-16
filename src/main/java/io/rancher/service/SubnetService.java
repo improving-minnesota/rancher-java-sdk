@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Subnet;
 
@@ -19,7 +19,7 @@ public interface SubnetService {
   Call<TypeCollection<Subnet>> list();
 
   @GET("subnet")
-  Call<TypeCollection<Subnet>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Subnet>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("subnet/{id}")
   Call<Subnet> get(@Path("id") String id);

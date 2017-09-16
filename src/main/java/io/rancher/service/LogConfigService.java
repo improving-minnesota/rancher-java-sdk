@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.LogConfig;
 
@@ -19,7 +19,7 @@ public interface LogConfigService {
   Call<TypeCollection<LogConfig>> list();
 
   @GET("logConfig")
-  Call<TypeCollection<LogConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LogConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("logConfig/{id}")
   Call<LogConfig> get(@Path("id") String id);

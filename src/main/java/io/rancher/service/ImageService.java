@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Image;
 
@@ -19,7 +19,7 @@ public interface ImageService {
   Call<TypeCollection<Image>> list();
 
   @GET("image")
-  Call<TypeCollection<Image>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Image>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("image/{id}")
   Call<Image> get(@Path("id") String id);

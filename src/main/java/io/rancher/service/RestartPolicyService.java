@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.RestartPolicy;
 
@@ -19,7 +19,7 @@ public interface RestartPolicyService {
   Call<TypeCollection<RestartPolicy>> list();
 
   @GET("restartPolicy")
-  Call<TypeCollection<RestartPolicy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RestartPolicy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("restartPolicy/{id}")
   Call<RestartPolicy> get(@Path("id") String id);

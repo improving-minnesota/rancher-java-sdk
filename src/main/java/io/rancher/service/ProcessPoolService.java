@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ProcessPool;
 
@@ -19,7 +19,7 @@ public interface ProcessPoolService {
   Call<TypeCollection<ProcessPool>> list();
 
   @GET("processPool")
-  Call<TypeCollection<ProcessPool>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ProcessPool>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("processPool/{id}")
   Call<ProcessPool> get(@Path("id") String id);

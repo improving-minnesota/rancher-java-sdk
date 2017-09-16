@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ApiKey;
 import io.rancher.type.Credential;
@@ -20,7 +20,7 @@ public interface ApiKeyService {
   Call<TypeCollection<ApiKey>> list();
 
   @GET("apiKey")
-  Call<TypeCollection<ApiKey>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ApiKey>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("apiKey/{id}")
   Call<ApiKey> get(@Path("id") String id);

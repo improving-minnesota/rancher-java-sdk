@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Register;
 import io.rancher.type.GenericObject;
@@ -22,7 +22,7 @@ public interface RegisterService {
   Call<TypeCollection<Register>> list();
 
   @GET("register")
-  Call<TypeCollection<Register>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Register>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("register/{id}")
   Call<Register> get(@Path("id") String id);

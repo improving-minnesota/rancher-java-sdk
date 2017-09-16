@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Ldapconfig;
 
@@ -19,7 +19,7 @@ public interface LdapconfigService {
   Call<TypeCollection<Ldapconfig>> list();
 
   @GET("ldapconfig")
-  Call<TypeCollection<Ldapconfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Ldapconfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("ldapconfig/{id}")
   Call<Ldapconfig> get(@Path("id") String id);

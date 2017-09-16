@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PacketConfig;
 
@@ -19,7 +19,7 @@ public interface PacketConfigService {
   Call<TypeCollection<PacketConfig>> list();
 
   @GET("packetConfig")
-  Call<TypeCollection<PacketConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PacketConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("packetConfig/{id}")
   Call<PacketConfig> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PublicEndpoint;
 
@@ -19,7 +19,7 @@ public interface PublicEndpointService {
   Call<TypeCollection<PublicEndpoint>> list();
 
   @GET("publicEndpoint")
-  Call<TypeCollection<PublicEndpoint>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PublicEndpoint>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("publicEndpoint/{id}")
   Call<PublicEndpoint> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.NetworkDriver;
 
@@ -19,7 +19,7 @@ public interface NetworkDriverService {
   Call<TypeCollection<NetworkDriver>> list();
 
   @GET("networkDriver")
-  Call<TypeCollection<NetworkDriver>> list(@QueryMap Filters filters);
+  Call<TypeCollection<NetworkDriver>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("networkDriver/{id}")
   Call<NetworkDriver> get(@Path("id") String id);

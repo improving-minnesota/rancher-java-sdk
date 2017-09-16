@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.AuditLog;
 
@@ -19,7 +19,7 @@ public interface AuditLogService {
   Call<TypeCollection<AuditLog>> list();
 
   @GET("auditLog")
-  Call<TypeCollection<AuditLog>> list(@QueryMap Filters filters);
+  Call<TypeCollection<AuditLog>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("auditLog/{id}")
   Call<AuditLog> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Databasechangeloglock;
 
@@ -19,7 +19,7 @@ public interface DatabasechangeloglockService {
   Call<TypeCollection<Databasechangeloglock>> list();
 
   @GET("databasechangeloglock")
-  Call<TypeCollection<Databasechangeloglock>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Databasechangeloglock>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("databasechangeloglock/{id}")
   Call<Databasechangeloglock> get(@Path("id") String id);

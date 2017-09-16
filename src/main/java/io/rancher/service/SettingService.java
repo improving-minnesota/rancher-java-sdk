@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Setting;
 
@@ -19,7 +19,7 @@ public interface SettingService {
   Call<TypeCollection<Setting>> list();
 
   @GET("setting")
-  Call<TypeCollection<Setting>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Setting>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("setting/{id}")
   Call<Setting> get(@Path("id") String id);

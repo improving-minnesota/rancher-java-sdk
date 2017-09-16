@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Registry;
 import io.rancher.type.StoragePool;
@@ -20,7 +20,7 @@ public interface RegistryService {
   Call<TypeCollection<Registry>> list();
 
   @GET("registry")
-  Call<TypeCollection<Registry>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Registry>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("registry/{id}")
   Call<Registry> get(@Path("id") String id);

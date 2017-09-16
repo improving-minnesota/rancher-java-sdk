@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.StateTransition;
 
@@ -19,7 +19,7 @@ public interface StateTransitionService {
   Call<TypeCollection<StateTransition>> list();
 
   @GET("stateTransition")
-  Call<TypeCollection<StateTransition>> list(@QueryMap Filters filters);
+  Call<TypeCollection<StateTransition>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("stateTransition/{id}")
   Call<StateTransition> get(@Path("id") String id);

@@ -1,16 +1,16 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Container;
 import io.rancher.type.Instance;
-import io.rancher.type.ContainerLogs;
-import io.rancher.type.HostAccess;
-import io.rancher.type.ContainerExec;
-import io.rancher.type.InstanceStop;
 import io.rancher.type.ContainerProxy;
+import io.rancher.type.InstanceStop;
 import io.rancher.type.InstanceConsoleInput;
 import io.rancher.type.InstanceConsole;
+import io.rancher.type.ContainerLogs;
+import io.rancher.type.ContainerExec;
+import io.rancher.type.HostAccess;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -27,7 +27,7 @@ public interface ContainerService {
   Call<TypeCollection<Container>> list();
 
   @GET("container")
-  Call<TypeCollection<Container>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Container>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("container/{id}")
   Call<Container> get(@Path("id") String id);

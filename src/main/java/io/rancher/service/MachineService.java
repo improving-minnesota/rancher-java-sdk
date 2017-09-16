@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Machine;
 import io.rancher.type.PhysicalHost;
@@ -20,7 +20,7 @@ public interface MachineService {
   Call<TypeCollection<Machine>> list();
 
   @GET("machine")
-  Call<TypeCollection<Machine>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Machine>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("machine/{id}")
   Call<Machine> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.TaskInstance;
 
@@ -19,7 +19,7 @@ public interface TaskInstanceService {
   Call<TypeCollection<TaskInstance>> list();
 
   @GET("taskInstance")
-  Call<TypeCollection<TaskInstance>> list(@QueryMap Filters filters);
+  Call<TypeCollection<TaskInstance>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("taskInstance/{id}")
   Call<TaskInstance> get(@Path("id") String id);

@@ -1,13 +1,13 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.DnsService;
-import io.rancher.type.SetServiceLinksInput;
-import io.rancher.type.ServiceUpgrade;
-import io.rancher.type.ServiceRestart;
-import io.rancher.type.Service;
 import io.rancher.type.AddRemoveServiceLinkInput;
+import io.rancher.type.ServiceRestart;
+import io.rancher.type.ServiceUpgrade;
+import io.rancher.type.SetServiceLinksInput;
+import io.rancher.type.Service;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -24,7 +24,7 @@ public interface DnsServiceService {
   Call<TypeCollection<DnsService>> list();
 
   @GET("dnsService")
-  Call<TypeCollection<DnsService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DnsService>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("dnsService/{id}")
   Call<DnsService> get(@Path("id") String id);

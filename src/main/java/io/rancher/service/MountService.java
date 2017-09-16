@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Mount;
 
@@ -19,7 +19,7 @@ public interface MountService {
   Call<TypeCollection<Mount>> list();
 
   @GET("mount")
-  Call<TypeCollection<Mount>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Mount>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("mount/{id}")
   Call<Mount> get(@Path("id") String id);

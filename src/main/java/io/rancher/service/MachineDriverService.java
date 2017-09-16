@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.MachineDriver;
 
@@ -19,7 +19,7 @@ public interface MachineDriverService {
   Call<TypeCollection<MachineDriver>> list();
 
   @GET("machineDriver")
-  Call<TypeCollection<MachineDriver>> list(@QueryMap Filters filters);
+  Call<TypeCollection<MachineDriver>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("machineDriver/{id}")
   Call<MachineDriver> get(@Path("id") String id);

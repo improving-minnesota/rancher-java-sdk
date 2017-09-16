@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.VirtualMachineDisk;
 
@@ -19,7 +19,7 @@ public interface VirtualMachineDiskService {
   Call<TypeCollection<VirtualMachineDisk>> list();
 
   @GET("virtualMachineDisk")
-  Call<TypeCollection<VirtualMachineDisk>> list(@QueryMap Filters filters);
+  Call<TypeCollection<VirtualMachineDisk>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("virtualMachineDisk/{id}")
   Call<VirtualMachineDisk> get(@Path("id") String id);

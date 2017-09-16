@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Amazonec2Config;
 
@@ -19,7 +19,7 @@ public interface Amazonec2ConfigService {
   Call<TypeCollection<Amazonec2Config>> list();
 
   @GET("amazonec2Config")
-  Call<TypeCollection<Amazonec2Config>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Amazonec2Config>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("amazonec2Config/{id}")
   Call<Amazonec2Config> get(@Path("id") String id);

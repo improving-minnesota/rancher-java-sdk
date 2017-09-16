@@ -1,15 +1,15 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.SecondaryLaunchConfig;
-import io.rancher.type.ContainerProxy;
-import io.rancher.type.InstanceStop;
 import io.rancher.type.Instance;
-import io.rancher.type.InstanceConsoleInput;
-import io.rancher.type.InstanceConsole;
 import io.rancher.type.ContainerExec;
 import io.rancher.type.HostAccess;
+import io.rancher.type.ContainerProxy;
+import io.rancher.type.InstanceStop;
+import io.rancher.type.InstanceConsoleInput;
+import io.rancher.type.InstanceConsole;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -26,7 +26,7 @@ public interface SecondaryLaunchConfigService {
   Call<TypeCollection<SecondaryLaunchConfig>> list();
 
   @GET("secondaryLaunchConfig")
-  Call<TypeCollection<SecondaryLaunchConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<SecondaryLaunchConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("secondaryLaunchConfig/{id}")
   Call<SecondaryLaunchConfig> get(@Path("id") String id);

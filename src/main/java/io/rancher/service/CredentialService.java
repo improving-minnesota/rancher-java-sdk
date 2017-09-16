@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Credential;
 
@@ -19,7 +19,7 @@ public interface CredentialService {
   Call<TypeCollection<Credential>> list();
 
   @GET("credential")
-  Call<TypeCollection<Credential>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Credential>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("credential/{id}")
   Call<Credential> get(@Path("id") String id);

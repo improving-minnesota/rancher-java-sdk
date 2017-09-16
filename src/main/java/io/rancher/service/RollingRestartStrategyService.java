@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.RollingRestartStrategy;
 
@@ -19,7 +19,7 @@ public interface RollingRestartStrategyService {
   Call<TypeCollection<RollingRestartStrategy>> list();
 
   @GET("rollingRestartStrategy")
-  Call<TypeCollection<RollingRestartStrategy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RollingRestartStrategy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("rollingRestartStrategy/{id}")
   Call<RollingRestartStrategy> get(@Path("id") String id);

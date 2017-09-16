@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.NetworkPolicyRuleBetween;
 
@@ -19,7 +19,7 @@ public interface NetworkPolicyRuleBetweenService {
   Call<TypeCollection<NetworkPolicyRuleBetween>> list();
 
   @GET("networkPolicyRuleBetween")
-  Call<TypeCollection<NetworkPolicyRuleBetween>> list(@QueryMap Filters filters);
+  Call<TypeCollection<NetworkPolicyRuleBetween>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("networkPolicyRuleBetween/{id}")
   Call<NetworkPolicyRuleBetween> get(@Path("id") String id);

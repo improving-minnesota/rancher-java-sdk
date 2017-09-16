@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.InstanceLink;
 
@@ -19,7 +19,7 @@ public interface InstanceLinkService {
   Call<TypeCollection<InstanceLink>> list();
 
   @GET("instanceLink")
-  Call<TypeCollection<InstanceLink>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceLink>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("instanceLink/{id}")
   Call<InstanceLink> get(@Path("id") String id);

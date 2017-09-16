@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.InstanceConsole;
 
@@ -19,7 +19,7 @@ public interface InstanceConsoleService {
   Call<TypeCollection<InstanceConsole>> list();
 
   @GET("instanceConsole")
-  Call<TypeCollection<InstanceConsole>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceConsole>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("instanceConsole/{id}")
   Call<InstanceConsole> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.AddRemoveServiceLinkInput;
 
@@ -19,7 +19,7 @@ public interface AddRemoveServiceLinkInputService {
   Call<TypeCollection<AddRemoveServiceLinkInput>> list();
 
   @GET("addRemoveServiceLinkInput")
-  Call<TypeCollection<AddRemoveServiceLinkInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<AddRemoveServiceLinkInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("addRemoveServiceLinkInput/{id}")
   Call<AddRemoveServiceLinkInput> get(@Path("id") String id);

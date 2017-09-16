@@ -1,11 +1,11 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Service;
-import io.rancher.type.SetServiceLinksInput;
-import io.rancher.type.ServiceUpgrade;
 import io.rancher.type.AddRemoveServiceLinkInput;
+import io.rancher.type.ServiceUpgrade;
+import io.rancher.type.SetServiceLinksInput;
 import io.rancher.type.ServiceRestart;
 
 import retrofit2.Call;
@@ -23,7 +23,7 @@ public interface ServiceService {
   Call<TypeCollection<Service>> list();
 
   @GET("service")
-  Call<TypeCollection<Service>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Service>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("service/{id}")
   Call<Service> get(@Path("id") String id);

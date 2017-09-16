@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ResourceDefinition;
 
@@ -19,7 +19,7 @@ public interface ResourceDefinitionService {
   Call<TypeCollection<ResourceDefinition>> list();
 
   @GET("resourceDefinition")
-  Call<TypeCollection<ResourceDefinition>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ResourceDefinition>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("resourceDefinition/{id}")
   Call<ResourceDefinition> get(@Path("id") String id);

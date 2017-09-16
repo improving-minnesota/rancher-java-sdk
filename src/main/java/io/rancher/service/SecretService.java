@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Secret;
 
@@ -19,7 +19,7 @@ public interface SecretService {
   Call<TypeCollection<Secret>> list();
 
   @GET("secret")
-  Call<TypeCollection<Secret>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Secret>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("secret/{id}")
   Call<Secret> get(@Path("id") String id);

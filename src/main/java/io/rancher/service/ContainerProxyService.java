@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ContainerProxy;
 
@@ -19,7 +19,7 @@ public interface ContainerProxyService {
   Call<TypeCollection<ContainerProxy>> list();
 
   @GET("containerProxy")
-  Call<TypeCollection<ContainerProxy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ContainerProxy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("containerProxy/{id}")
   Call<ContainerProxy> get(@Path("id") String id);

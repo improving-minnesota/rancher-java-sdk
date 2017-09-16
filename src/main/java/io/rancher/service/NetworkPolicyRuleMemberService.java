@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.NetworkPolicyRuleMember;
 
@@ -19,7 +19,7 @@ public interface NetworkPolicyRuleMemberService {
   Call<TypeCollection<NetworkPolicyRuleMember>> list();
 
   @GET("networkPolicyRuleMember")
-  Call<TypeCollection<NetworkPolicyRuleMember>> list(@QueryMap Filters filters);
+  Call<TypeCollection<NetworkPolicyRuleMember>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("networkPolicyRuleMember/{id}")
   Call<NetworkPolicyRuleMember> get(@Path("id") String id);

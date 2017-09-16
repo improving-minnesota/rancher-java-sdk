@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExtensionPoint;
 
@@ -19,7 +19,7 @@ public interface ExtensionPointService {
   Call<TypeCollection<ExtensionPoint>> list();
 
   @GET("extensionPoint")
-  Call<TypeCollection<ExtensionPoint>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExtensionPoint>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("extensionPoint/{id}")
   Call<ExtensionPoint> get(@Path("id") String id);

@@ -1,15 +1,15 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.LaunchConfig;
 import io.rancher.type.Instance;
 import io.rancher.type.InstanceStop;
-import io.rancher.type.InstanceConsoleInput;
-import io.rancher.type.InstanceConsole;
 import io.rancher.type.ContainerExec;
 import io.rancher.type.HostAccess;
 import io.rancher.type.ContainerProxy;
+import io.rancher.type.InstanceConsoleInput;
+import io.rancher.type.InstanceConsole;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -26,7 +26,7 @@ public interface LaunchConfigService {
   Call<TypeCollection<LaunchConfig>> list();
 
   @GET("launchConfig")
-  Call<TypeCollection<LaunchConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LaunchConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("launchConfig/{id}")
   Call<LaunchConfig> get(@Path("id") String id);

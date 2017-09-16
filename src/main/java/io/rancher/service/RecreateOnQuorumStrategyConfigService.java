@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.RecreateOnQuorumStrategyConfig;
 
@@ -19,7 +19,7 @@ public interface RecreateOnQuorumStrategyConfigService {
   Call<TypeCollection<RecreateOnQuorumStrategyConfig>> list();
 
   @GET("recreateOnQuorumStrategyConfig")
-  Call<TypeCollection<RecreateOnQuorumStrategyConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RecreateOnQuorumStrategyConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("recreateOnQuorumStrategyConfig/{id}")
   Call<RecreateOnQuorumStrategyConfig> get(@Path("id") String id);

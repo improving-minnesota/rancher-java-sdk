@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.VolumeTemplate;
 
@@ -19,7 +19,7 @@ public interface VolumeTemplateService {
   Call<TypeCollection<VolumeTemplate>> list();
 
   @GET("volumeTemplate")
-  Call<TypeCollection<VolumeTemplate>> list(@QueryMap Filters filters);
+  Call<TypeCollection<VolumeTemplate>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("volumeTemplate/{id}")
   Call<VolumeTemplate> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.KubernetesStackUpgrade;
 
@@ -19,7 +19,7 @@ public interface KubernetesStackUpgradeService {
   Call<TypeCollection<KubernetesStackUpgrade>> list();
 
   @GET("kubernetesStackUpgrade")
-  Call<TypeCollection<KubernetesStackUpgrade>> list(@QueryMap Filters filters);
+  Call<TypeCollection<KubernetesStackUpgrade>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("kubernetesStackUpgrade/{id}")
   Call<KubernetesStackUpgrade> get(@Path("id") String id);

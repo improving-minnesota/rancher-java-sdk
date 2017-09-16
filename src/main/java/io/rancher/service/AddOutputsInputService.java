@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.AddOutputsInput;
 
@@ -19,7 +19,7 @@ public interface AddOutputsInputService {
   Call<TypeCollection<AddOutputsInput>> list();
 
   @GET("addOutputsInput")
-  Call<TypeCollection<AddOutputsInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<AddOutputsInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("addOutputsInput/{id}")
   Call<AddOutputsInput> get(@Path("id") String id);

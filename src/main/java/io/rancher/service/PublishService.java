@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Publish;
 
@@ -19,7 +19,7 @@ public interface PublishService {
   Call<TypeCollection<Publish>> list();
 
   @GET("publish")
-  Call<TypeCollection<Publish>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Publish>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("publish/{id}")
   Call<Publish> get(@Path("id") String id);

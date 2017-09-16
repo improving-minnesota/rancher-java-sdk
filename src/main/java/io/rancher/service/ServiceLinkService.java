@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceLink;
 
@@ -19,7 +19,7 @@ public interface ServiceLinkService {
   Call<TypeCollection<ServiceLink>> list();
 
   @GET("serviceLink")
-  Call<TypeCollection<ServiceLink>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceLink>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("serviceLink/{id}")
   Call<ServiceLink> get(@Path("id") String id);

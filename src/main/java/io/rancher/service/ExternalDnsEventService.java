@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalDnsEvent;
 import io.rancher.type.ExternalEvent;
@@ -20,7 +20,7 @@ public interface ExternalDnsEventService {
   Call<TypeCollection<ExternalDnsEvent>> list();
 
   @GET("externalDnsEvent")
-  Call<TypeCollection<ExternalDnsEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalDnsEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalDnsEvent/{id}")
   Call<ExternalDnsEvent> get(@Path("id") String id);

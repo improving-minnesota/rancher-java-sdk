@@ -1,12 +1,12 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Stack;
-import io.rancher.type.StackUpgrade;
 import io.rancher.type.AddOutputsInput;
 import io.rancher.type.ComposeConfigInput;
 import io.rancher.type.ComposeConfig;
+import io.rancher.type.StackUpgrade;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -23,7 +23,7 @@ public interface StackService {
   Call<TypeCollection<Stack>> list();
 
   @GET("stack")
-  Call<TypeCollection<Stack>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Stack>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("stack/{id}")
   Call<Stack> get(@Path("id") String id);

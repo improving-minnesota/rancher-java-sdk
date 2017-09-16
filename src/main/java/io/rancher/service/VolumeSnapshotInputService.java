@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.VolumeSnapshotInput;
 
@@ -19,7 +19,7 @@ public interface VolumeSnapshotInputService {
   Call<TypeCollection<VolumeSnapshotInput>> list();
 
   @GET("volumeSnapshotInput")
-  Call<TypeCollection<VolumeSnapshotInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<VolumeSnapshotInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("volumeSnapshotInput/{id}")
   Call<VolumeSnapshotInput> get(@Path("id") String id);

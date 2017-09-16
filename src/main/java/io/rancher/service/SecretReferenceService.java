@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.SecretReference;
 
@@ -19,7 +19,7 @@ public interface SecretReferenceService {
   Call<TypeCollection<SecretReference>> list();
 
   @GET("secretReference")
-  Call<TypeCollection<SecretReference>> list(@QueryMap Filters filters);
+  Call<TypeCollection<SecretReference>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("secretReference/{id}")
   Call<SecretReference> get(@Path("id") String id);

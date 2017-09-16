@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.DigitaloceanConfig;
 
@@ -19,7 +19,7 @@ public interface DigitaloceanConfigService {
   Call<TypeCollection<DigitaloceanConfig>> list();
 
   @GET("digitaloceanConfig")
-  Call<TypeCollection<DigitaloceanConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DigitaloceanConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("digitaloceanConfig/{id}")
   Call<DigitaloceanConfig> get(@Path("id") String id);

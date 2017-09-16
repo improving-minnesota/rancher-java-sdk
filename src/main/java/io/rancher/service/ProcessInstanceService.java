@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ProcessInstance;
 
@@ -19,7 +19,7 @@ public interface ProcessInstanceService {
   Call<TypeCollection<ProcessInstance>> list();
 
   @GET("processInstance")
-  Call<TypeCollection<ProcessInstance>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ProcessInstance>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("processInstance/{id}")
   Call<ProcessInstance> get(@Path("id") String id);

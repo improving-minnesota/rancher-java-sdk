@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.LocalAuthConfig;
 
@@ -19,7 +19,7 @@ public interface LocalAuthConfigService {
   Call<TypeCollection<LocalAuthConfig>> list();
 
   @GET("localAuthConfig")
-  Call<TypeCollection<LocalAuthConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LocalAuthConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("localAuthConfig/{id}")
   Call<LocalAuthConfig> get(@Path("id") String id);

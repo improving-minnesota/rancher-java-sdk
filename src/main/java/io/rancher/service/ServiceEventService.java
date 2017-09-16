@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceEvent;
 
@@ -19,7 +19,7 @@ public interface ServiceEventService {
   Call<TypeCollection<ServiceEvent>> list();
 
   @GET("serviceEvent")
-  Call<TypeCollection<ServiceEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("serviceEvent/{id}")
   Call<ServiceEvent> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.UserPreference;
 
@@ -19,7 +19,7 @@ public interface UserPreferenceService {
   Call<TypeCollection<UserPreference>> list();
 
   @GET("userPreference")
-  Call<TypeCollection<UserPreference>> list(@QueryMap Filters filters);
+  Call<TypeCollection<UserPreference>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("userPreference/{id}")
   Call<UserPreference> get(@Path("id") String id);

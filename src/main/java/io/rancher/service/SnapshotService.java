@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Snapshot;
 import io.rancher.type.SnapshotBackupInput;
@@ -21,7 +21,7 @@ public interface SnapshotService {
   Call<TypeCollection<Snapshot>> list();
 
   @GET("snapshot")
-  Call<TypeCollection<Snapshot>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Snapshot>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("snapshot/{id}")
   Call<Snapshot> get(@Path("id") String id);

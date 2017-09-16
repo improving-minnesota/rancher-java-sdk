@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.RegistryCredential;
 import io.rancher.type.Credential;
@@ -20,7 +20,7 @@ public interface RegistryCredentialService {
   Call<TypeCollection<RegistryCredential>> list();
 
   @GET("registryCredential")
-  Call<TypeCollection<RegistryCredential>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RegistryCredential>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("registryCredential/{id}")
   Call<RegistryCredential> get(@Path("id") String id);

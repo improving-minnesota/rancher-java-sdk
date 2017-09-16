@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.SetProjectMembersInput;
 
@@ -19,7 +19,7 @@ public interface SetProjectMembersInputService {
   Call<TypeCollection<SetProjectMembersInput>> list();
 
   @GET("setProjectMembersInput")
-  Call<TypeCollection<SetProjectMembersInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<SetProjectMembersInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("setProjectMembersInput/{id}")
   Call<SetProjectMembersInput> get(@Path("id") String id);

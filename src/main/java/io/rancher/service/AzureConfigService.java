@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.AzureConfig;
 
@@ -19,7 +19,7 @@ public interface AzureConfigService {
   Call<TypeCollection<AzureConfig>> list();
 
   @GET("azureConfig")
-  Call<TypeCollection<AzureConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<AzureConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("azureConfig/{id}")
   Call<AzureConfig> get(@Path("id") String id);

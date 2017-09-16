@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.TypeDocumentation;
 
@@ -19,7 +19,7 @@ public interface TypeDocumentationService {
   Call<TypeCollection<TypeDocumentation>> list();
 
   @GET("typeDocumentation")
-  Call<TypeCollection<TypeDocumentation>> list(@QueryMap Filters filters);
+  Call<TypeCollection<TypeDocumentation>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("typeDocumentation/{id}")
   Call<TypeDocumentation> get(@Path("id") String id);

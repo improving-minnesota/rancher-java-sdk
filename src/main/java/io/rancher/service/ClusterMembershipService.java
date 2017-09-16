@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ClusterMembership;
 
@@ -19,7 +19,7 @@ public interface ClusterMembershipService {
   Call<TypeCollection<ClusterMembership>> list();
 
   @GET("clusterMembership")
-  Call<TypeCollection<ClusterMembership>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ClusterMembership>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("clusterMembership/{id}")
   Call<ClusterMembership> get(@Path("id") String id);

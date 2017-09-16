@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Ulimit;
 
@@ -19,7 +19,7 @@ public interface UlimitService {
   Call<TypeCollection<Ulimit>> list();
 
   @GET("ulimit")
-  Call<TypeCollection<Ulimit>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Ulimit>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("ulimit/{id}")
   Call<Ulimit> get(@Path("id") String id);

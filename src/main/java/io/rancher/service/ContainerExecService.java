@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ContainerExec;
 
@@ -19,7 +19,7 @@ public interface ContainerExecService {
   Call<TypeCollection<ContainerExec>> list();
 
   @GET("containerExec")
-  Call<TypeCollection<ContainerExec>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ContainerExec>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("containerExec/{id}")
   Call<ContainerExec> get(@Path("id") String id);

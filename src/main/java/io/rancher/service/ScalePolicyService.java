@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ScalePolicy;
 
@@ -19,7 +19,7 @@ public interface ScalePolicyService {
   Call<TypeCollection<ScalePolicy>> list();
 
   @GET("scalePolicy")
-  Call<TypeCollection<ScalePolicy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ScalePolicy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("scalePolicy/{id}")
   Call<ScalePolicy> get(@Path("id") String id);

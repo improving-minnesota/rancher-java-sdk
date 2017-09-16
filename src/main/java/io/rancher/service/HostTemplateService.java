@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.HostTemplate;
 
@@ -19,7 +19,7 @@ public interface HostTemplateService {
   Call<TypeCollection<HostTemplate>> list();
 
   @GET("hostTemplate")
-  Call<TypeCollection<HostTemplate>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HostTemplate>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("hostTemplate/{id}")
   Call<HostTemplate> get(@Path("id") String id);

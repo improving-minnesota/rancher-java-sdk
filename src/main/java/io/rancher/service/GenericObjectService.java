@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.GenericObject;
 
@@ -19,7 +19,7 @@ public interface GenericObjectService {
   Call<TypeCollection<GenericObject>> list();
 
   @GET("genericObject")
-  Call<TypeCollection<GenericObject>> list(@QueryMap Filters filters);
+  Call<TypeCollection<GenericObject>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("genericObject/{id}")
   Call<GenericObject> get(@Path("id") String id);

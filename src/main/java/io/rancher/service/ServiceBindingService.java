@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceBinding;
 
@@ -19,7 +19,7 @@ public interface ServiceBindingService {
   Call<TypeCollection<ServiceBinding>> list();
 
   @GET("serviceBinding")
-  Call<TypeCollection<ServiceBinding>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceBinding>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("serviceBinding/{id}")
   Call<ServiceBinding> get(@Path("id") String id);

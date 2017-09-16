@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ScheduledUpgrade;
 
@@ -19,7 +19,7 @@ public interface ScheduledUpgradeService {
   Call<TypeCollection<ScheduledUpgrade>> list();
 
   @GET("scheduledUpgrade")
-  Call<TypeCollection<ScheduledUpgrade>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ScheduledUpgrade>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("scheduledUpgrade/{id}")
   Call<ScheduledUpgrade> get(@Path("id") String id);

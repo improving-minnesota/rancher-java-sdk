@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.{{$.class}};{{range $import := .meta.ListActionImports}}
 import {{$import}};{{end}}
@@ -20,7 +20,7 @@ public interface {{.class}}Service {
   Call<TypeCollection<{{.class}}>> list();
 
   @GET("{{.type}}")
-  Call<TypeCollection<{{.class}}>> list(@QueryMap Filters filters);
+  Call<TypeCollection<{{.class}}>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("{{.type}}/{id}")
   Call<{{.class}}> get(@Path("id") String id);

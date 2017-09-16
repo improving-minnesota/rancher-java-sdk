@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.DockerBuild;
 
@@ -19,7 +19,7 @@ public interface DockerBuildService {
   Call<TypeCollection<DockerBuild>> list();
 
   @GET("dockerBuild")
-  Call<TypeCollection<DockerBuild>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DockerBuild>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("dockerBuild/{id}")
   Call<DockerBuild> get(@Path("id") String id);

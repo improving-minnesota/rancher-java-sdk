@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ComposeConfigInput;
 
@@ -19,7 +19,7 @@ public interface ComposeConfigInputService {
   Call<TypeCollection<ComposeConfigInput>> list();
 
   @GET("composeConfigInput")
-  Call<TypeCollection<ComposeConfigInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ComposeConfigInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("composeConfigInput/{id}")
   Call<ComposeConfigInput> get(@Path("id") String id);

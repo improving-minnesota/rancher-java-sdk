@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.HostAccess;
 
@@ -19,7 +19,7 @@ public interface HostAccessService {
   Call<TypeCollection<HostAccess>> list();
 
   @GET("hostAccess")
-  Call<TypeCollection<HostAccess>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HostAccess>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("hostAccess/{id}")
   Call<HostAccess> get(@Path("id") String id);

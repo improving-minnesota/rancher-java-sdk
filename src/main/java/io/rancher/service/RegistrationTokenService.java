@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.RegistrationToken;
 import io.rancher.type.Credential;
@@ -20,7 +20,7 @@ public interface RegistrationTokenService {
   Call<TypeCollection<RegistrationToken>> list();
 
   @GET("registrationToken")
-  Call<TypeCollection<RegistrationToken>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RegistrationToken>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("registrationToken/{id}")
   Call<RegistrationToken> get(@Path("id") String id);

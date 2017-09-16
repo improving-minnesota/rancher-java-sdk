@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.DefaultNetwork;
 import io.rancher.type.Network;
@@ -20,7 +20,7 @@ public interface DefaultNetworkService {
   Call<TypeCollection<DefaultNetwork>> list();
 
   @GET("defaultNetwork")
-  Call<TypeCollection<DefaultNetwork>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DefaultNetwork>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("defaultNetwork/{id}")
   Call<DefaultNetwork> get(@Path("id") String id);

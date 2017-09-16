@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.LbConfig;
 
@@ -19,7 +19,7 @@ public interface LbConfigService {
   Call<TypeCollection<LbConfig>> list();
 
   @GET("lbConfig")
-  Call<TypeCollection<LbConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LbConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("lbConfig/{id}")
   Call<LbConfig> get(@Path("id") String id);

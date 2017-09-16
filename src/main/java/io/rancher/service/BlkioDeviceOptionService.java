@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.BlkioDeviceOption;
 
@@ -19,7 +19,7 @@ public interface BlkioDeviceOptionService {
   Call<TypeCollection<BlkioDeviceOption>> list();
 
   @GET("blkioDeviceOption")
-  Call<TypeCollection<BlkioDeviceOption>> list(@QueryMap Filters filters);
+  Call<TypeCollection<BlkioDeviceOption>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("blkioDeviceOption/{id}")
   Call<BlkioDeviceOption> get(@Path("id") String id);

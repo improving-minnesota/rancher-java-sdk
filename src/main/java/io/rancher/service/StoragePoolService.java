@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.StoragePool;
 
@@ -19,7 +19,7 @@ public interface StoragePoolService {
   Call<TypeCollection<StoragePool>> list();
 
   @GET("storagePool")
-  Call<TypeCollection<StoragePool>> list(@QueryMap Filters filters);
+  Call<TypeCollection<StoragePool>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("storagePool/{id}")
   Call<StoragePool> get(@Path("id") String id);

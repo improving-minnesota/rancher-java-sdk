@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Port;
 
@@ -19,7 +19,7 @@ public interface PortService {
   Call<TypeCollection<Port>> list();
 
   @GET("port")
-  Call<TypeCollection<Port>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Port>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("port/{id}")
   Call<Port> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ContainerLogs;
 
@@ -19,7 +19,7 @@ public interface ContainerLogsService {
   Call<TypeCollection<ContainerLogs>> list();
 
   @GET("containerLogs")
-  Call<TypeCollection<ContainerLogs>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ContainerLogs>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("containerLogs/{id}")
   Call<ContainerLogs> get(@Path("id") String id);

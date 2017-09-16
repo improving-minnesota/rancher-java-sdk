@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.LoadBalancerCookieStickinessPolicy;
 
@@ -19,7 +19,7 @@ public interface LoadBalancerCookieStickinessPolicyService {
   Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list();
 
   @GET("loadBalancerCookieStickinessPolicy")
-  Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("loadBalancerCookieStickinessPolicy/{id}")
   Call<LoadBalancerCookieStickinessPolicy> get(@Path("id") String id);

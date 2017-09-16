@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalHandlerProcess;
 
@@ -19,7 +19,7 @@ public interface ExternalHandlerProcessService {
   Call<TypeCollection<ExternalHandlerProcess>> list();
 
   @GET("externalHandlerProcess")
-  Call<TypeCollection<ExternalHandlerProcess>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalHandlerProcess>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalHandlerProcess/{id}")
   Call<ExternalHandlerProcess> get(@Path("id") String id);

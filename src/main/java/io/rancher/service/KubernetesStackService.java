@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.KubernetesStack;
 import io.rancher.type.Stack;
@@ -21,7 +21,7 @@ public interface KubernetesStackService {
   Call<TypeCollection<KubernetesStack>> list();
 
   @GET("kubernetesStack")
-  Call<TypeCollection<KubernetesStack>> list(@QueryMap Filters filters);
+  Call<TypeCollection<KubernetesStack>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("kubernetesStack/{id}")
   Call<KubernetesStack> get(@Path("id") String id);

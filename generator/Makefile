@@ -1,5 +1,7 @@
 #.PHONY: clean deps
 
+all: clean generate
+
 clean:
 	go clean -i ./...
 	rm -rf ../src/main/java/io/rancher/type
@@ -8,5 +10,8 @@ clean:
 deps:
 	go get -t ./...
 
-build:
+generator: generator.go
 	go build ./...
+
+generate: generator
+	./generator

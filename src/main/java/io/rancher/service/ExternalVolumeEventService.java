@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalVolumeEvent;
 import io.rancher.type.ExternalEvent;
@@ -20,7 +20,7 @@ public interface ExternalVolumeEventService {
   Call<TypeCollection<ExternalVolumeEvent>> list();
 
   @GET("externalVolumeEvent")
-  Call<TypeCollection<ExternalVolumeEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalVolumeEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalVolumeEvent/{id}")
   Call<ExternalVolumeEvent> get(@Path("id") String id);

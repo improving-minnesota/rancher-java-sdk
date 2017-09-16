@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.BackupTarget;
 
@@ -19,7 +19,7 @@ public interface BackupTargetService {
   Call<TypeCollection<BackupTarget>> list();
 
   @GET("backupTarget")
-  Call<TypeCollection<BackupTarget>> list(@QueryMap Filters filters);
+  Call<TypeCollection<BackupTarget>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("backupTarget/{id}")
   Call<BackupTarget> get(@Path("id") String id);

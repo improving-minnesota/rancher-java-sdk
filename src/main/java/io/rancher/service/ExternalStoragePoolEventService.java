@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalStoragePoolEvent;
 import io.rancher.type.ExternalEvent;
@@ -20,7 +20,7 @@ public interface ExternalStoragePoolEventService {
   Call<TypeCollection<ExternalStoragePoolEvent>> list();
 
   @GET("externalStoragePoolEvent")
-  Call<TypeCollection<ExternalStoragePoolEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalStoragePoolEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalStoragePoolEvent/{id}")
   Call<ExternalStoragePoolEvent> get(@Path("id") String id);

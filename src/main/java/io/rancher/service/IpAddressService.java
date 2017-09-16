@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.IpAddress;
 
@@ -19,7 +19,7 @@ public interface IpAddressService {
   Call<TypeCollection<IpAddress>> list();
 
   @GET("ipAddress")
-  Call<TypeCollection<IpAddress>> list(@QueryMap Filters filters);
+  Call<TypeCollection<IpAddress>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("ipAddress/{id}")
   Call<IpAddress> get(@Path("id") String id);

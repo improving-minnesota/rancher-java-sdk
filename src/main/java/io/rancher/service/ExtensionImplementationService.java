@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExtensionImplementation;
 
@@ -19,7 +19,7 @@ public interface ExtensionImplementationService {
   Call<TypeCollection<ExtensionImplementation>> list();
 
   @GET("extensionImplementation")
-  Call<TypeCollection<ExtensionImplementation>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExtensionImplementation>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("extensionImplementation/{id}")
   Call<ExtensionImplementation> get(@Path("id") String id);

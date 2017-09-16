@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Label;
 
@@ -19,7 +19,7 @@ public interface LabelService {
   Call<TypeCollection<Label>> list();
 
   @GET("label")
-  Call<TypeCollection<Label>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Label>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("label/{id}")
   Call<Label> get(@Path("id") String id);

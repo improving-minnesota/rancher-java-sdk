@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.StatsAccess;
 
@@ -19,7 +19,7 @@ public interface StatsAccessService {
   Call<TypeCollection<StatsAccess>> list();
 
   @GET("statsAccess")
-  Call<TypeCollection<StatsAccess>> list(@QueryMap Filters filters);
+  Call<TypeCollection<StatsAccess>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("statsAccess/{id}")
   Call<StatsAccess> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.StorageDriver;
 
@@ -19,7 +19,7 @@ public interface StorageDriverService {
   Call<TypeCollection<StorageDriver>> list();
 
   @GET("storageDriver")
-  Call<TypeCollection<StorageDriver>> list(@QueryMap Filters filters);
+  Call<TypeCollection<StorageDriver>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("storageDriver/{id}")
   Call<StorageDriver> get(@Path("id") String id);

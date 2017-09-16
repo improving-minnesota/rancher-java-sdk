@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Password;
 import io.rancher.type.Credential;
@@ -21,7 +21,7 @@ public interface PasswordService {
   Call<TypeCollection<Password>> list();
 
   @GET("password")
-  Call<TypeCollection<Password>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Password>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("password/{id}")
   Call<Password> get(@Path("id") String id);

@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.RevertToSnapshotInput;
 
@@ -19,7 +19,7 @@ public interface RevertToSnapshotInputService {
   Call<TypeCollection<RevertToSnapshotInput>> list();
 
   @GET("revertToSnapshotInput")
-  Call<TypeCollection<RevertToSnapshotInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RevertToSnapshotInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("revertToSnapshotInput/{id}")
   Call<RevertToSnapshotInput> get(@Path("id") String id);

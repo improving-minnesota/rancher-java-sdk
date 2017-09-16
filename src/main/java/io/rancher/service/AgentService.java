@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Agent;
 
@@ -19,7 +19,7 @@ public interface AgentService {
   Call<TypeCollection<Agent>> list();
 
   @GET("agent")
-  Call<TypeCollection<Agent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Agent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("agent/{id}")
   Call<Agent> get(@Path("id") String id);

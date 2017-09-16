@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ContainerEvent;
 
@@ -19,7 +19,7 @@ public interface ContainerEventService {
   Call<TypeCollection<ContainerEvent>> list();
 
   @GET("containerEvent")
-  Call<TypeCollection<ContainerEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ContainerEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("containerEvent/{id}")
   Call<ContainerEvent> get(@Path("id") String id);

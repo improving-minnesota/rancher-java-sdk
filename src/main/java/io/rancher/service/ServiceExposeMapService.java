@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceExposeMap;
 
@@ -19,7 +19,7 @@ public interface ServiceExposeMapService {
   Call<TypeCollection<ServiceExposeMap>> list();
 
   @GET("serviceExposeMap")
-  Call<TypeCollection<ServiceExposeMap>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceExposeMap>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("serviceExposeMap/{id}")
   Call<ServiceExposeMap> get(@Path("id") String id);

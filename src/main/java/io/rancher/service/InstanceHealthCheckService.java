@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.InstanceHealthCheck;
 
@@ -19,7 +19,7 @@ public interface InstanceHealthCheckService {
   Call<TypeCollection<InstanceHealthCheck>> list();
 
   @GET("instanceHealthCheck")
-  Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("instanceHealthCheck/{id}")
   Call<InstanceHealthCheck> get(@Path("id") String id);

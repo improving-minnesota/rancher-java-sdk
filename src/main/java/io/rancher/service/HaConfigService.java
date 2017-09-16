@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.HaConfig;
 
@@ -19,7 +19,7 @@ public interface HaConfigService {
   Call<TypeCollection<HaConfig>> list();
 
   @GET("haConfig")
-  Call<TypeCollection<HaConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HaConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("haConfig/{id}")
   Call<HaConfig> get(@Path("id") String id);

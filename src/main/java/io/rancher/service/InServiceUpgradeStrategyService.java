@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.InServiceUpgradeStrategy;
 
@@ -19,7 +19,7 @@ public interface InServiceUpgradeStrategyService {
   Call<TypeCollection<InServiceUpgradeStrategy>> list();
 
   @GET("inServiceUpgradeStrategy")
-  Call<TypeCollection<InServiceUpgradeStrategy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InServiceUpgradeStrategy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("inServiceUpgradeStrategy/{id}")
   Call<InServiceUpgradeStrategy> get(@Path("id") String id);

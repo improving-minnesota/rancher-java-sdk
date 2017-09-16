@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ComposeService;
 import io.rancher.type.Service;
@@ -20,7 +20,7 @@ public interface ComposeServiceService {
   Call<TypeCollection<ComposeService>> list();
 
   @GET("composeService")
-  Call<TypeCollection<ComposeService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ComposeService>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("composeService/{id}")
   Call<ComposeService> get(@Path("id") String id);

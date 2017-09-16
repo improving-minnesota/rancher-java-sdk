@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Certificate;
 
@@ -19,7 +19,7 @@ public interface CertificateService {
   Call<TypeCollection<Certificate>> list();
 
   @GET("certificate")
-  Call<TypeCollection<Certificate>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Certificate>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("certificate/{id}")
   Call<Certificate> get(@Path("id") String id);

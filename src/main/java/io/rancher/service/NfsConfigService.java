@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.NfsConfig;
 
@@ -19,7 +19,7 @@ public interface NfsConfigService {
   Call<TypeCollection<NfsConfig>> list();
 
   @GET("nfsConfig")
-  Call<TypeCollection<NfsConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<NfsConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("nfsConfig/{id}")
   Call<NfsConfig> get(@Path("id") String id);

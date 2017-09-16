@@ -13149,7 +13149,7 @@
           "maxLength": 255
         },
         "memory": {
-          "type": "int",
+          "type": "long",
           "description": null,
           "create": true,
           "update": true,

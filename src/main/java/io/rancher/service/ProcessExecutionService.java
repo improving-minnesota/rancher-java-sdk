@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ProcessExecution;
 
@@ -19,7 +19,7 @@ public interface ProcessExecutionService {
   Call<TypeCollection<ProcessExecution>> list();
 
   @GET("processExecution")
-  Call<TypeCollection<ProcessExecution>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ProcessExecution>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("processExecution/{id}")
   Call<ProcessExecution> get(@Path("id") String id);

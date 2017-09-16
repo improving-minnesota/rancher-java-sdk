@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalServiceEvent;
 import io.rancher.type.ExternalEvent;
@@ -20,7 +20,7 @@ public interface ExternalServiceEventService {
   Call<TypeCollection<ExternalServiceEvent>> list();
 
   @GET("externalServiceEvent")
-  Call<TypeCollection<ExternalServiceEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalServiceEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalServiceEvent/{id}")
   Call<ExternalServiceEvent> get(@Path("id") String id);

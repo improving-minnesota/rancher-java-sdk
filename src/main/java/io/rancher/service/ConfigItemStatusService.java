@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ConfigItemStatus;
 
@@ -19,7 +19,7 @@ public interface ConfigItemStatusService {
   Call<TypeCollection<ConfigItemStatus>> list();
 
   @GET("configItemStatus")
-  Call<TypeCollection<ConfigItemStatus>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ConfigItemStatus>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("configItemStatus/{id}")
   Call<ConfigItemStatus> get(@Path("id") String id);

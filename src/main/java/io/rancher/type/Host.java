@@ -66,7 +66,7 @@ public class Host extends AbstractType {
     
     private Integer localStorageMb;
     
-    private Integer memory;
+    private Long memory;
     
     private Integer milliCpu;
     
@@ -334,11 +334,11 @@ public class Host extends AbstractType {
       this.localStorageMb = localStorageMb;
     }
     
-    public Integer getMemory() {
+    public Long getMemory() {
         return this.memory;
     }
 
-    public void setMemory(Integer memory) {
+    public void setMemory(Long memory) {
       this.memory = memory;
     }
     

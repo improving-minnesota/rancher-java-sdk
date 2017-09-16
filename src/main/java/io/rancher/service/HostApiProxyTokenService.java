@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.HostApiProxyToken;
 
@@ -19,7 +19,7 @@ public interface HostApiProxyTokenService {
   Call<TypeCollection<HostApiProxyToken>> list();
 
   @GET("hostApiProxyToken")
-  Call<TypeCollection<HostApiProxyToken>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HostApiProxyToken>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("hostApiProxyToken/{id}")
   Call<HostApiProxyToken> get(@Path("id") String id);

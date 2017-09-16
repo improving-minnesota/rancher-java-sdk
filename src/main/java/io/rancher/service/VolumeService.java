@@ -1,12 +1,12 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Volume;
+import io.rancher.type.RestoreFromBackupInput;
 import io.rancher.type.RevertToSnapshotInput;
 import io.rancher.type.VolumeSnapshotInput;
 import io.rancher.type.Snapshot;
-import io.rancher.type.RestoreFromBackupInput;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -23,7 +23,7 @@ public interface VolumeService {
   Call<TypeCollection<Volume>> list();
 
   @GET("volume")
-  Call<TypeCollection<Volume>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Volume>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("volume/{id}")
   Call<Volume> get(@Path("id") String id);

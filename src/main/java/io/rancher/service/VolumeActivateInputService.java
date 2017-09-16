@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.VolumeActivateInput;
 
@@ -19,7 +19,7 @@ public interface VolumeActivateInputService {
   Call<TypeCollection<VolumeActivateInput>> list();
 
   @GET("volumeActivateInput")
-  Call<TypeCollection<VolumeActivateInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<VolumeActivateInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("volumeActivateInput/{id}")
   Call<VolumeActivateInput> get(@Path("id") String id);
