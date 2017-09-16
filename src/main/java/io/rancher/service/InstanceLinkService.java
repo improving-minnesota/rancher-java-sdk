@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.InstanceLink;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface InstanceLinkService {
   Call<TypeCollection<InstanceLink>> list();
 
   @GET("instanceLink")
-  Call<TypeCollection<InstanceLink>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceLink>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("instanceLink/{id}")
   Call<InstanceLink> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface InstanceLinkService {
   Call<InstanceLink> update(@Path("id") String id, @Body InstanceLink instanceLink);
 
   @DELETE("instanceLink/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("instanceLink/{id}?action=activate")
   Call<InstanceLink> activate(@Path("id") String id);
@@ -45,8 +44,5 @@ public interface InstanceLinkService {
   
   @POST("instanceLink/{id}?action=remove")
   Call<InstanceLink> remove(@Path("id") String id);
-  
-  @POST("instanceLink/{id}?action=restore")
-  Call<InstanceLink> restore(@Path("id") String id);
   
 }

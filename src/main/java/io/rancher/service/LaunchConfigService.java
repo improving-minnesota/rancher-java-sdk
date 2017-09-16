@@ -1,20 +1,17 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.LaunchConfig;
 import io.rancher.type.Instance;
+import io.rancher.type.InstanceStop;
 import io.rancher.type.ContainerExec;
 import io.rancher.type.HostAccess;
+import io.rancher.type.ContainerProxy;
 import io.rancher.type.InstanceConsoleInput;
 import io.rancher.type.InstanceConsole;
-import io.rancher.type.SetLabelsInput;
-import io.rancher.type.InstanceStop;
-import io.rancher.type.Container;
-import io.rancher.type.ContainerProxy;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -29,7 +26,7 @@ public interface LaunchConfigService {
   Call<TypeCollection<LaunchConfig>> list();
 
   @GET("launchConfig")
-  Call<TypeCollection<LaunchConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LaunchConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("launchConfig/{id}")
   Call<LaunchConfig> get(@Path("id") String id);
@@ -41,7 +38,7 @@ public interface LaunchConfigService {
   Call<LaunchConfig> update(@Path("id") String id, @Body LaunchConfig launchConfig);
 
   @DELETE("launchConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("launchConfig/{id}?action=allocate")
   Call<Instance> allocate(@Path("id") String id);
@@ -72,12 +69,6 @@ public interface LaunchConfigService {
   
   @POST("launchConfig/{id}?action=restart")
   Call<Instance> restart(@Path("id") String id);
-  
-  @POST("launchConfig/{id}?action=restore")
-  Call<Instance> restore(@Path("id") String id);
-  
-  @POST("launchConfig/{id}?action=setlabels")
-  Call<Container> setlabels(@Path("id") String id, @Body SetLabelsInput setLabelsInput);
   
   @POST("launchConfig/{id}?action=start")
   Call<Instance> start(@Path("id") String id);

@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Account;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface AccountService {
   Call<TypeCollection<Account>> list();
 
   @GET("account")
-  Call<TypeCollection<Account>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Account>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("account/{id}")
   Call<Account> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface AccountService {
   Call<Account> update(@Path("id") String id, @Body Account account);
 
   @DELETE("account/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("account/{id}?action=activate")
   Call<Account> activate(@Path("id") String id);
@@ -46,7 +45,7 @@ public interface AccountService {
   @POST("account/{id}?action=remove")
   Call<Account> remove(@Path("id") String id);
   
-  @POST("account/{id}?action=restore")
-  Call<Account> restore(@Path("id") String id);
+  @POST("account/{id}?action=upgrade")
+  Call<Account> upgrade(@Path("id") String id);
   
 }

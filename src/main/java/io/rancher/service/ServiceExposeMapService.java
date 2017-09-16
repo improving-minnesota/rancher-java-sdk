@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceExposeMap;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ServiceExposeMapService {
   Call<TypeCollection<ServiceExposeMap>> list();
 
   @GET("serviceExposeMap")
-  Call<TypeCollection<ServiceExposeMap>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceExposeMap>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("serviceExposeMap/{id}")
   Call<ServiceExposeMap> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface ServiceExposeMapService {
   Call<ServiceExposeMap> update(@Path("id") String id, @Body ServiceExposeMap serviceExposeMap);
 
   @DELETE("serviceExposeMap/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("serviceExposeMap/{id}?action=remove")
   Call<ServiceExposeMap> remove(@Path("id") String id);

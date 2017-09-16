@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceUpgradeStrategy;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ServiceUpgradeStrategyService {
   Call<TypeCollection<ServiceUpgradeStrategy>> list();
 
   @GET("serviceUpgradeStrategy")
-  Call<TypeCollection<ServiceUpgradeStrategy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceUpgradeStrategy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("serviceUpgradeStrategy/{id}")
   Call<ServiceUpgradeStrategy> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface ServiceUpgradeStrategyService {
   Call<ServiceUpgradeStrategy> update(@Path("id") String id, @Body ServiceUpgradeStrategy serviceUpgradeStrategy);
 
   @DELETE("serviceUpgradeStrategy/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Image;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ImageService {
   Call<TypeCollection<Image>> list();
 
   @GET("image")
-  Call<TypeCollection<Image>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Image>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("image/{id}")
   Call<Image> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface ImageService {
   Call<Image> update(@Path("id") String id, @Body Image image);
 
   @DELETE("image/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("image/{id}?action=activate")
   Call<Image> activate(@Path("id") String id);
@@ -45,8 +44,5 @@ public interface ImageService {
   
   @POST("image/{id}?action=remove")
   Call<Image> remove(@Path("id") String id);
-  
-  @POST("image/{id}?action=restore")
-  Call<Image> restore(@Path("id") String id);
   
 }

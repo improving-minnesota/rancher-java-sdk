@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PhysicalHost;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface PhysicalHostService {
   Call<TypeCollection<PhysicalHost>> list();
 
   @GET("physicalHost")
-  Call<TypeCollection<PhysicalHost>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PhysicalHost>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("physicalHost/{id}")
   Call<PhysicalHost> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface PhysicalHostService {
   Call<PhysicalHost> update(@Path("id") String id, @Body PhysicalHost physicalHost);
 
   @DELETE("physicalHost/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("physicalHost/{id}?action=bootstrap")
   Call<PhysicalHost> bootstrap(@Path("id") String id);

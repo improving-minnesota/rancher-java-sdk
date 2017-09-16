@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalHandlerExternalHandlerProcessMap;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ExternalHandlerExternalHandlerProcessMapService {
   Call<TypeCollection<ExternalHandlerExternalHandlerProcessMap>> list();
 
   @GET("externalHandlerExternalHandlerProcessMap")
-  Call<TypeCollection<ExternalHandlerExternalHandlerProcessMap>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalHandlerExternalHandlerProcessMap>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalHandlerExternalHandlerProcessMap/{id}")
   Call<ExternalHandlerExternalHandlerProcessMap> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface ExternalHandlerExternalHandlerProcessMapService {
   Call<ExternalHandlerExternalHandlerProcessMap> update(@Path("id") String id, @Body ExternalHandlerExternalHandlerProcessMap externalHandlerExternalHandlerProcessMap);
 
   @DELETE("externalHandlerExternalHandlerProcessMap/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalHandlerExternalHandlerProcessMap/{id}?action=activate")
   Call<ExternalHandlerExternalHandlerProcessMap> activate(@Path("id") String id);
@@ -45,8 +44,5 @@ public interface ExternalHandlerExternalHandlerProcessMapService {
   
   @POST("externalHandlerExternalHandlerProcessMap/{id}?action=remove")
   Call<ExternalHandlerExternalHandlerProcessMap> remove(@Path("id") String id);
-  
-  @POST("externalHandlerExternalHandlerProcessMap/{id}?action=restore")
-  Call<ExternalHandlerExternalHandlerProcessMap> restore(@Path("id") String id);
   
 }

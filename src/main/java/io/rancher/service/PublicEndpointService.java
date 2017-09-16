@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PublicEndpoint;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface PublicEndpointService {
   Call<TypeCollection<PublicEndpoint>> list();
 
   @GET("publicEndpoint")
-  Call<TypeCollection<PublicEndpoint>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PublicEndpoint>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("publicEndpoint/{id}")
   Call<PublicEndpoint> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface PublicEndpointService {
   Call<PublicEndpoint> update(@Path("id") String id, @Body PublicEndpoint publicEndpoint);
 
   @DELETE("publicEndpoint/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

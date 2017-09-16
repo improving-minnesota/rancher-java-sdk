@@ -1,16 +1,15 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.KubernetesService;
-import io.rancher.type.SetServiceLinksInput;
 import io.rancher.type.ServiceUpgrade;
-import io.rancher.type.ServiceRestart;
-import io.rancher.type.Service;
 import io.rancher.type.AddRemoveServiceLinkInput;
+import io.rancher.type.Service;
+import io.rancher.type.SetServiceLinksInput;
+import io.rancher.type.ServiceRestart;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -25,7 +24,7 @@ public interface KubernetesServiceService {
   Call<TypeCollection<KubernetesService>> list();
 
   @GET("kubernetesService")
-  Call<TypeCollection<KubernetesService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<KubernetesService>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("kubernetesService/{id}")
   Call<KubernetesService> get(@Path("id") String id);
@@ -37,7 +36,7 @@ public interface KubernetesServiceService {
   Call<KubernetesService> update(@Path("id") String id, @Body KubernetesService kubernetesService);
 
   @DELETE("kubernetesService/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("kubernetesService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);
@@ -45,11 +44,11 @@ public interface KubernetesServiceService {
   @POST("kubernetesService/{id}?action=addservicelink")
   Call<Service> addservicelink(@Path("id") String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput);
   
-  @POST("kubernetesService/{id}?action=cancelrollback")
-  Call<Service> cancelrollback(@Path("id") String id);
-  
   @POST("kubernetesService/{id}?action=cancelupgrade")
   Call<Service> cancelupgrade(@Path("id") String id);
+  
+  @POST("kubernetesService/{id}?action=continueupgrade")
+  Call<Service> continueupgrade(@Path("id") String id);
   
   @POST("kubernetesService/{id}?action=deactivate")
   Call<Service> deactivate(@Path("id") String id);

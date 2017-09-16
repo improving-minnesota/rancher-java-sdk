@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Identity;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface IdentityService {
   Call<TypeCollection<Identity>> list();
 
   @GET("identity")
-  Call<TypeCollection<Identity>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Identity>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("identity/{id}")
   Call<Identity> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface IdentityService {
   Call<Identity> update(@Path("id") String id, @Body Identity identity);
 
   @DELETE("identity/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

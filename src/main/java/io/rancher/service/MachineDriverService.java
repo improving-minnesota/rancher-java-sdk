@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.MachineDriver;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface MachineDriverService {
   Call<TypeCollection<MachineDriver>> list();
 
   @GET("machineDriver")
-  Call<TypeCollection<MachineDriver>> list(@QueryMap Filters filters);
+  Call<TypeCollection<MachineDriver>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("machineDriver/{id}")
   Call<MachineDriver> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface MachineDriverService {
   Call<MachineDriver> update(@Path("id") String id, @Body MachineDriver machineDriver);
 
   @DELETE("machineDriver/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("machineDriver/{id}?action=activate")
   Call<MachineDriver> activate(@Path("id") String id);

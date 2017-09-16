@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Port;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface PortService {
   Call<TypeCollection<Port>> list();
 
   @GET("port")
-  Call<TypeCollection<Port>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Port>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("port/{id}")
   Call<Port> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface PortService {
   Call<Port> update(@Path("id") String id, @Body Port port);
 
   @DELETE("port/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("port/{id}?action=activate")
   Call<Port> activate(@Path("id") String id);
@@ -45,8 +44,5 @@ public interface PortService {
   
   @POST("port/{id}?action=remove")
   Call<Port> remove(@Path("id") String id);
-  
-  @POST("port/{id}?action=restore")
-  Call<Port> restore(@Path("id") String id);
   
 }

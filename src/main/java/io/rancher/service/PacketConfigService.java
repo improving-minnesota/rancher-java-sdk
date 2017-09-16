@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PacketConfig;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface PacketConfigService {
   Call<TypeCollection<PacketConfig>> list();
 
   @GET("packetConfig")
-  Call<TypeCollection<PacketConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PacketConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("packetConfig/{id}")
   Call<PacketConfig> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface PacketConfigService {
   Call<PacketConfig> update(@Path("id") String id, @Body PacketConfig packetConfig);
 
   @DELETE("packetConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

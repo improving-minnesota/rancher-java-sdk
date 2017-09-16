@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ProjectMember;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ProjectMemberService {
   Call<TypeCollection<ProjectMember>> list();
 
   @GET("projectMember")
-  Call<TypeCollection<ProjectMember>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ProjectMember>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("projectMember/{id}")
   Call<ProjectMember> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface ProjectMemberService {
   Call<ProjectMember> update(@Path("id") String id, @Body ProjectMember projectMember);
 
   @DELETE("projectMember/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("projectMember/{id}?action=activate")
   Call<ProjectMember> activate(@Path("id") String id);
@@ -45,8 +44,5 @@ public interface ProjectMemberService {
   
   @POST("projectMember/{id}?action=remove")
   Call<ProjectMember> remove(@Path("id") String id);
-  
-  @POST("projectMember/{id}?action=restore")
-  Call<ProjectMember> restore(@Path("id") String id);
   
 }

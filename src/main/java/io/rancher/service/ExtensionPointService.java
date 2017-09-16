@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExtensionPoint;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ExtensionPointService {
   Call<TypeCollection<ExtensionPoint>> list();
 
   @GET("extensionPoint")
-  Call<TypeCollection<ExtensionPoint>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExtensionPoint>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("extensionPoint/{id}")
   Call<ExtensionPoint> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface ExtensionPointService {
   Call<ExtensionPoint> update(@Path("id") String id, @Body ExtensionPoint extensionPoint);
 
   @DELETE("extensionPoint/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

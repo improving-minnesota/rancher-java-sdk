@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalEvent;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ExternalEventService {
   Call<TypeCollection<ExternalEvent>> list();
 
   @GET("externalEvent")
-  Call<TypeCollection<ExternalEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalEvent/{id}")
   Call<ExternalEvent> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface ExternalEventService {
   Call<ExternalEvent> update(@Path("id") String id, @Body ExternalEvent externalEvent);
 
   @DELETE("externalEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalEvent/{id}?action=remove")
   Call<ExternalEvent> remove(@Path("id") String id);

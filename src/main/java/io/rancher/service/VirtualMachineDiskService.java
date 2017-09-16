@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.VirtualMachineDisk;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface VirtualMachineDiskService {
   Call<TypeCollection<VirtualMachineDisk>> list();
 
   @GET("virtualMachineDisk")
-  Call<TypeCollection<VirtualMachineDisk>> list(@QueryMap Filters filters);
+  Call<TypeCollection<VirtualMachineDisk>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("virtualMachineDisk/{id}")
   Call<VirtualMachineDisk> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface VirtualMachineDiskService {
   Call<VirtualMachineDisk> update(@Path("id") String id, @Body VirtualMachineDisk virtualMachineDisk);
 
   @DELETE("virtualMachineDisk/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

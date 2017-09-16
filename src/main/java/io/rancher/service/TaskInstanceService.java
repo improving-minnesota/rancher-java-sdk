@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.TaskInstance;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface TaskInstanceService {
   Call<TypeCollection<TaskInstance>> list();
 
   @GET("taskInstance")
-  Call<TypeCollection<TaskInstance>> list(@QueryMap Filters filters);
+  Call<TypeCollection<TaskInstance>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("taskInstance/{id}")
   Call<TaskInstance> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface TaskInstanceService {
   Call<TaskInstance> update(@Path("id") String id, @Body TaskInstance taskInstance);
 
   @DELETE("taskInstance/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

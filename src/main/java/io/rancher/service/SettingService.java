@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Setting;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface SettingService {
   Call<TypeCollection<Setting>> list();
 
   @GET("setting")
-  Call<TypeCollection<Setting>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Setting>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("setting/{id}")
   Call<Setting> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface SettingService {
   Call<Setting> update(@Path("id") String id, @Body Setting setting);
 
   @DELETE("setting/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

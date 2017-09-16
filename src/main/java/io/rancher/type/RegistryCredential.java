@@ -13,8 +13,6 @@ public class RegistryCredential extends AbstractType {
     
     private String description;
     
-    private String email;
-    
     private String kind;
     
     private String name;
@@ -69,14 +67,6 @@ public class RegistryCredential extends AbstractType {
 
     public void setDescription(String description) {
       this.description = description;
-    }
-    
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-      this.email = email;
     }
     
     public String getKind() {

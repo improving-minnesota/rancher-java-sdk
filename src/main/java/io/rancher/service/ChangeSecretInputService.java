@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ChangeSecretInput;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ChangeSecretInputService {
   Call<TypeCollection<ChangeSecretInput>> list();
 
   @GET("changeSecretInput")
-  Call<TypeCollection<ChangeSecretInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ChangeSecretInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("changeSecretInput/{id}")
   Call<ChangeSecretInput> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface ChangeSecretInputService {
   Call<ChangeSecretInput> update(@Path("id") String id, @Body ChangeSecretInput changeSecretInput);
 
   @DELETE("changeSecretInput/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

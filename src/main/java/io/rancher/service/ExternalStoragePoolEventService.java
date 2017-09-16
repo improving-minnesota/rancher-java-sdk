@@ -1,12 +1,11 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalStoragePoolEvent;
 import io.rancher.type.ExternalEvent;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -21,7 +20,7 @@ public interface ExternalStoragePoolEventService {
   Call<TypeCollection<ExternalStoragePoolEvent>> list();
 
   @GET("externalStoragePoolEvent")
-  Call<TypeCollection<ExternalStoragePoolEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalStoragePoolEvent>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalStoragePoolEvent/{id}")
   Call<ExternalStoragePoolEvent> get(@Path("id") String id);
@@ -33,7 +32,7 @@ public interface ExternalStoragePoolEventService {
   Call<ExternalStoragePoolEvent> update(@Path("id") String id, @Body ExternalStoragePoolEvent externalStoragePoolEvent);
 
   @DELETE("externalStoragePoolEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalStoragePoolEvent/{id}?action=remove")
   Call<ExternalEvent> remove(@Path("id") String id);

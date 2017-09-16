@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.StateTransition;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface StateTransitionService {
   Call<TypeCollection<StateTransition>> list();
 
   @GET("stateTransition")
-  Call<TypeCollection<StateTransition>> list(@QueryMap Filters filters);
+  Call<TypeCollection<StateTransition>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("stateTransition/{id}")
   Call<StateTransition> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface StateTransitionService {
   Call<StateTransition> update(@Path("id") String id, @Body StateTransition stateTransition);
 
   @DELETE("stateTransition/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

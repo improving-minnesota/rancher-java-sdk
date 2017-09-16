@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.InstanceHealthCheck;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface InstanceHealthCheckService {
   Call<TypeCollection<InstanceHealthCheck>> list();
 
   @GET("instanceHealthCheck")
-  Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("instanceHealthCheck/{id}")
   Call<InstanceHealthCheck> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface InstanceHealthCheckService {
   Call<InstanceHealthCheck> update(@Path("id") String id, @Body InstanceHealthCheck instanceHealthCheck);
 
   @DELETE("instanceHealthCheck/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

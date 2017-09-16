@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ProcessExecution;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ProcessExecutionService {
   Call<TypeCollection<ProcessExecution>> list();
 
   @GET("processExecution")
-  Call<TypeCollection<ProcessExecution>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ProcessExecution>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("processExecution/{id}")
   Call<ProcessExecution> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface ProcessExecutionService {
   Call<ProcessExecution> update(@Path("id") String id, @Body ProcessExecution processExecution);
 
   @DELETE("processExecution/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

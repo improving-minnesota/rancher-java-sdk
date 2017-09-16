@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Network;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface NetworkService {
   Call<TypeCollection<Network>> list();
 
   @GET("network")
-  Call<TypeCollection<Network>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Network>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("network/{id}")
   Call<Network> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface NetworkService {
   Call<Network> update(@Path("id") String id, @Body Network network);
 
   @DELETE("network/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("network/{id}?action=activate")
   Call<Network> activate(@Path("id") String id);
@@ -45,8 +44,5 @@ public interface NetworkService {
   
   @POST("network/{id}?action=remove")
   Call<Network> remove(@Path("id") String id);
-  
-  @POST("network/{id}?action=restore")
-  Call<Network> restore(@Path("id") String id);
   
 }

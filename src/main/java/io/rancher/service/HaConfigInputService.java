@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.HaConfigInput;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface HaConfigInputService {
   Call<TypeCollection<HaConfigInput>> list();
 
   @GET("haConfigInput")
-  Call<TypeCollection<HaConfigInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HaConfigInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("haConfigInput/{id}")
   Call<HaConfigInput> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface HaConfigInputService {
   Call<HaConfigInput> update(@Path("id") String id, @Body HaConfigInput haConfigInput);
 
   @DELETE("haConfigInput/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

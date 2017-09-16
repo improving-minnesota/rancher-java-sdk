@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.TypeDocumentation;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface TypeDocumentationService {
   Call<TypeCollection<TypeDocumentation>> list();
 
   @GET("typeDocumentation")
-  Call<TypeCollection<TypeDocumentation>> list(@QueryMap Filters filters);
+  Call<TypeCollection<TypeDocumentation>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("typeDocumentation/{id}")
   Call<TypeDocumentation> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface TypeDocumentationService {
   Call<TypeDocumentation> update(@Path("id") String id, @Body TypeDocumentation typeDocumentation);
 
   @DELETE("typeDocumentation/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

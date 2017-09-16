@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ComposeConfig;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ComposeConfigService {
   Call<TypeCollection<ComposeConfig>> list();
 
   @GET("composeConfig")
-  Call<TypeCollection<ComposeConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ComposeConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("composeConfig/{id}")
   Call<ComposeConfig> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface ComposeConfigService {
   Call<ComposeConfig> update(@Path("id") String id, @Body ComposeConfig composeConfig);
 
   @DELETE("composeConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

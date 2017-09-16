@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Publish;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface PublishService {
   Call<TypeCollection<Publish>> list();
 
   @GET("publish")
-  Call<TypeCollection<Publish>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Publish>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("publish/{id}")
   Call<Publish> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface PublishService {
   Call<Publish> update(@Path("id") String id, @Body Publish publish);
 
   @DELETE("publish/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

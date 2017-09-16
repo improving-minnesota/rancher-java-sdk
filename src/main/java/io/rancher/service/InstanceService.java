@@ -1,6 +1,6 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Instance;
 import io.rancher.type.InstanceStop;
@@ -8,7 +8,6 @@ import io.rancher.type.InstanceConsoleInput;
 import io.rancher.type.InstanceConsole;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -23,7 +22,7 @@ public interface InstanceService {
   Call<TypeCollection<Instance>> list();
 
   @GET("instance")
-  Call<TypeCollection<Instance>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Instance>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("instance/{id}")
   Call<Instance> get(@Path("id") String id);
@@ -35,7 +34,7 @@ public interface InstanceService {
   Call<Instance> update(@Path("id") String id, @Body Instance instance);
 
   @DELETE("instance/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("instance/{id}?action=allocate")
   Call<Instance> allocate(@Path("id") String id);
@@ -60,9 +59,6 @@ public interface InstanceService {
   
   @POST("instance/{id}?action=restart")
   Call<Instance> restart(@Path("id") String id);
-  
-  @POST("instance/{id}?action=restore")
-  Call<Instance> restore(@Path("id") String id);
   
   @POST("instance/{id}?action=start")
   Call<Instance> start(@Path("id") String id);

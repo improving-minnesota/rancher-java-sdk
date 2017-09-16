@@ -1,12 +1,11 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ApiKey;
 import io.rancher.type.Credential;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -21,7 +20,7 @@ public interface ApiKeyService {
   Call<TypeCollection<ApiKey>> list();
 
   @GET("apiKey")
-  Call<TypeCollection<ApiKey>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ApiKey>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("apiKey/{id}")
   Call<ApiKey> get(@Path("id") String id);
@@ -33,7 +32,7 @@ public interface ApiKeyService {
   Call<ApiKey> update(@Path("id") String id, @Body ApiKey apiKey);
 
   @DELETE("apiKey/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("apiKey/{id}?action=activate")
   Call<Credential> activate(@Path("id") String id);

@@ -8,15 +8,21 @@ public class Machine extends AbstractType {
     
     private String accountId;
     
+    private Amazonec2Config amazonec2Config;
+    
     private String authCertificateAuthority;
     
     private String authKey;
+    
+    private AzureConfig azureConfig;
     
     private String created;
     
     private Map<String, Object> data;
     
     private String description;
+    
+    private DigitaloceanConfig digitaloceanConfig;
     
     private String dockerVersion;
     
@@ -38,13 +44,15 @@ public class Machine extends AbstractType {
     
     private String externalId;
     
-    private String extractedConfig;
+    private String hostTemplateId;
     
     private String kind;
     
     private Map<String, Object> labels;
     
     private String name;
+    
+    private PacketConfig packetConfig;
     
     private String removeTime;
     
@@ -68,6 +76,14 @@ public class Machine extends AbstractType {
       this.accountId = accountId;
     }
     
+    public Amazonec2Config getAmazonec2Config() {
+        return this.amazonec2Config;
+    }
+
+    public void setAmazonec2Config(Amazonec2Config amazonec2Config) {
+      this.amazonec2Config = amazonec2Config;
+    }
+    
     public String getAuthCertificateAuthority() {
         return this.authCertificateAuthority;
     }
@@ -82,6 +98,14 @@ public class Machine extends AbstractType {
 
     public void setAuthKey(String authKey) {
       this.authKey = authKey;
+    }
+    
+    public AzureConfig getAzureConfig() {
+        return this.azureConfig;
+    }
+
+    public void setAzureConfig(AzureConfig azureConfig) {
+      this.azureConfig = azureConfig;
     }
     
     public String getCreated() {
@@ -106,6 +130,14 @@ public class Machine extends AbstractType {
 
     public void setDescription(String description) {
       this.description = description;
+    }
+    
+    public DigitaloceanConfig getDigitaloceanConfig() {
+        return this.digitaloceanConfig;
+    }
+
+    public void setDigitaloceanConfig(DigitaloceanConfig digitaloceanConfig) {
+      this.digitaloceanConfig = digitaloceanConfig;
     }
     
     public String getDockerVersion() {
@@ -188,12 +220,12 @@ public class Machine extends AbstractType {
       this.externalId = externalId;
     }
     
-    public String getExtractedConfig() {
-        return this.extractedConfig;
+    public String getHostTemplateId() {
+        return this.hostTemplateId;
     }
 
-    public void setExtractedConfig(String extractedConfig) {
-      this.extractedConfig = extractedConfig;
+    public void setHostTemplateId(String hostTemplateId) {
+      this.hostTemplateId = hostTemplateId;
     }
     
     public String getKind() {
@@ -218,6 +250,14 @@ public class Machine extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
+    }
+    
+    public PacketConfig getPacketConfig() {
+        return this.packetConfig;
+    }
+
+    public void setPacketConfig(PacketConfig packetConfig) {
+      this.packetConfig = packetConfig;
     }
     
     public String getRemoveTime() {

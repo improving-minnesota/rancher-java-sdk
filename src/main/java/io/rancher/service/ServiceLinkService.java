@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ServiceLink;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ServiceLinkService {
   Call<TypeCollection<ServiceLink>> list();
 
   @GET("serviceLink")
-  Call<TypeCollection<ServiceLink>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceLink>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("serviceLink/{id}")
   Call<ServiceLink> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface ServiceLinkService {
   Call<ServiceLink> update(@Path("id") String id, @Body ServiceLink serviceLink);
 
   @DELETE("serviceLink/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

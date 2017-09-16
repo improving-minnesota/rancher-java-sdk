@@ -1,14 +1,13 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalService;
 import io.rancher.type.ServiceRestart;
-import io.rancher.type.Service;
 import io.rancher.type.ServiceUpgrade;
+import io.rancher.type.Service;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -23,7 +22,7 @@ public interface ExternalServiceService {
   Call<TypeCollection<ExternalService>> list();
 
   @GET("externalService")
-  Call<TypeCollection<ExternalService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalService>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalService/{id}")
   Call<ExternalService> get(@Path("id") String id);
@@ -35,16 +34,16 @@ public interface ExternalServiceService {
   Call<ExternalService> update(@Path("id") String id, @Body ExternalService externalService);
 
   @DELETE("externalService/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("externalService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);
   
-  @POST("externalService/{id}?action=cancelrollback")
-  Call<Service> cancelrollback(@Path("id") String id);
-  
   @POST("externalService/{id}?action=cancelupgrade")
   Call<Service> cancelupgrade(@Path("id") String id);
+  
+  @POST("externalService/{id}?action=continueupgrade")
+  Call<Service> continueupgrade(@Path("id") String id);
   
   @POST("externalService/{id}?action=deactivate")
   Call<Service> deactivate(@Path("id") String id);

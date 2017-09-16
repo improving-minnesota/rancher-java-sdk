@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.RestartPolicy;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface RestartPolicyService {
   Call<TypeCollection<RestartPolicy>> list();
 
   @GET("restartPolicy")
-  Call<TypeCollection<RestartPolicy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RestartPolicy>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("restartPolicy/{id}")
   Call<RestartPolicy> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface RestartPolicyService {
   Call<RestartPolicy> update(@Path("id") String id, @Body RestartPolicy restartPolicy);
 
   @DELETE("restartPolicy/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

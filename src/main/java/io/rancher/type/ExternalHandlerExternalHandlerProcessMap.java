@@ -11,6 +11,8 @@ public class ExternalHandlerExternalHandlerProcessMap extends AbstractType {
     
     private String description;
     
+    private String eventName;
+    
     private String externalHandlerId;
     
     private String externalHandlerProcessId;
@@ -57,6 +59,14 @@ public class ExternalHandlerExternalHandlerProcessMap extends AbstractType {
 
     public void setDescription(String description) {
       this.description = description;
+    }
+    
+    public String getEventName() {
+        return this.eventName;
+    }
+
+    public void setEventName(String eventName) {
+      this.eventName = eventName;
     }
     
     public String getExternalHandlerId() {

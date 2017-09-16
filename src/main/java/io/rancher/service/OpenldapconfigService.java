@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Openldapconfig;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface OpenldapconfigService {
   Call<TypeCollection<Openldapconfig>> list();
 
   @GET("openldapconfig")
-  Call<TypeCollection<Openldapconfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Openldapconfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("openldapconfig/{id}")
   Call<Openldapconfig> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface OpenldapconfigService {
   Call<Openldapconfig> update(@Path("id") String id, @Body Openldapconfig openldapconfig);
 
   @DELETE("openldapconfig/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

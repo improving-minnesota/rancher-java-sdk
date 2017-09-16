@@ -1,16 +1,15 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.DnsService;
+import io.rancher.type.AddRemoveServiceLinkInput;
 import io.rancher.type.ServiceRestart;
 import io.rancher.type.ServiceUpgrade;
-import io.rancher.type.AddRemoveServiceLinkInput;
 import io.rancher.type.SetServiceLinksInput;
 import io.rancher.type.Service;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -25,7 +24,7 @@ public interface DnsServiceService {
   Call<TypeCollection<DnsService>> list();
 
   @GET("dnsService")
-  Call<TypeCollection<DnsService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DnsService>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("dnsService/{id}")
   Call<DnsService> get(@Path("id") String id);
@@ -37,7 +36,7 @@ public interface DnsServiceService {
   Call<DnsService> update(@Path("id") String id, @Body DnsService dnsService);
 
   @DELETE("dnsService/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("dnsService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);
@@ -45,11 +44,11 @@ public interface DnsServiceService {
   @POST("dnsService/{id}?action=addservicelink")
   Call<Service> addservicelink(@Path("id") String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput);
   
-  @POST("dnsService/{id}?action=cancelrollback")
-  Call<Service> cancelrollback(@Path("id") String id);
-  
   @POST("dnsService/{id}?action=cancelupgrade")
   Call<Service> cancelupgrade(@Path("id") String id);
+  
+  @POST("dnsService/{id}?action=continueupgrade")
+  Call<Service> continueupgrade(@Path("id") String id);
   
   @POST("dnsService/{id}?action=deactivate")
   Call<Service> deactivate(@Path("id") String id);

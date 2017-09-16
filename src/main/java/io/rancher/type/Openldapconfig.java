@@ -1,10 +1,13 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.List;
 
 public class Openldapconfig extends AbstractType {
     
     private String accessMode;
+    
+    private List<Identity> allowedIdentities;
     
     private Integer connectionTimeout;
     
@@ -12,11 +15,17 @@ public class Openldapconfig extends AbstractType {
     
     private Boolean enabled;
     
+    private String groupDNField;
+    
     private String groupMemberMappingAttribute;
+    
+    private String groupMemberUserAttribute;
     
     private String groupNameField;
     
     private String groupObjectClass;
+    
+    private String groupSearchDomain;
     
     private String groupSearchField;
     
@@ -56,6 +65,14 @@ public class Openldapconfig extends AbstractType {
       this.accessMode = accessMode;
     }
     
+    public List<Identity> getAllowedIdentities() {
+        return this.allowedIdentities;
+    }
+
+    public void setAllowedIdentities(List<Identity> allowedIdentities) {
+      this.allowedIdentities = allowedIdentities;
+    }
+    
     public Integer getConnectionTimeout() {
         return this.connectionTimeout;
     }
@@ -80,12 +97,28 @@ public class Openldapconfig extends AbstractType {
       this.enabled = enabled;
     }
     
+    public String getGroupDNField() {
+        return this.groupDNField;
+    }
+
+    public void setGroupDNField(String groupDNField) {
+      this.groupDNField = groupDNField;
+    }
+    
     public String getGroupMemberMappingAttribute() {
         return this.groupMemberMappingAttribute;
     }
 
     public void setGroupMemberMappingAttribute(String groupMemberMappingAttribute) {
       this.groupMemberMappingAttribute = groupMemberMappingAttribute;
+    }
+    
+    public String getGroupMemberUserAttribute() {
+        return this.groupMemberUserAttribute;
+    }
+
+    public void setGroupMemberUserAttribute(String groupMemberUserAttribute) {
+      this.groupMemberUserAttribute = groupMemberUserAttribute;
     }
     
     public String getGroupNameField() {
@@ -102,6 +135,14 @@ public class Openldapconfig extends AbstractType {
 
     public void setGroupObjectClass(String groupObjectClass) {
       this.groupObjectClass = groupObjectClass;
+    }
+    
+    public String getGroupSearchDomain() {
+        return this.groupSearchDomain;
+    }
+
+    public void setGroupSearchDomain(String groupSearchDomain) {
+      this.groupSearchDomain = groupSearchDomain;
     }
     
     public String getGroupSearchField() {

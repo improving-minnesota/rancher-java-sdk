@@ -1,12 +1,11 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ComposeService;
 import io.rancher.type.Service;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -21,7 +20,7 @@ public interface ComposeServiceService {
   Call<TypeCollection<ComposeService>> list();
 
   @GET("composeService")
-  Call<TypeCollection<ComposeService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ComposeService>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("composeService/{id}")
   Call<ComposeService> get(@Path("id") String id);
@@ -33,16 +32,16 @@ public interface ComposeServiceService {
   Call<ComposeService> update(@Path("id") String id, @Body ComposeService composeService);
 
   @DELETE("composeService/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("composeService/{id}?action=activate")
   Call<Service> activate(@Path("id") String id);
   
-  @POST("composeService/{id}?action=cancelrollback")
-  Call<Service> cancelrollback(@Path("id") String id);
-  
   @POST("composeService/{id}?action=cancelupgrade")
   Call<Service> cancelupgrade(@Path("id") String id);
+  
+  @POST("composeService/{id}?action=continueupgrade")
+  Call<Service> continueupgrade(@Path("id") String id);
   
   @POST("composeService/{id}?action=finishupgrade")
   Call<Service> finishupgrade(@Path("id") String id);

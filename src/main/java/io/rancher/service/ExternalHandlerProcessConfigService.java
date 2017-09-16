@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalHandlerProcessConfig;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface ExternalHandlerProcessConfigService {
   Call<TypeCollection<ExternalHandlerProcessConfig>> list();
 
   @GET("externalHandlerProcessConfig")
-  Call<TypeCollection<ExternalHandlerProcessConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalHandlerProcessConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("externalHandlerProcessConfig/{id}")
   Call<ExternalHandlerProcessConfig> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface ExternalHandlerProcessConfigService {
   Call<ExternalHandlerProcessConfig> update(@Path("id") String id, @Body ExternalHandlerProcessConfig externalHandlerProcessConfig);
 
   @DELETE("externalHandlerProcessConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

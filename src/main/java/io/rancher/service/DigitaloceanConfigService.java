@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.DigitaloceanConfig;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface DigitaloceanConfigService {
   Call<TypeCollection<DigitaloceanConfig>> list();
 
   @GET("digitaloceanConfig")
-  Call<TypeCollection<DigitaloceanConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DigitaloceanConfig>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("digitaloceanConfig/{id}")
   Call<DigitaloceanConfig> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface DigitaloceanConfigService {
   Call<DigitaloceanConfig> update(@Path("id") String id, @Body DigitaloceanConfig digitaloceanConfig);
 
   @DELETE("digitaloceanConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class StoragePool extends AbstractType {
     
@@ -20,6 +20,8 @@ public class StoragePool extends AbstractType {
     
     private String externalId;
     
+    private List<String> hostIds;
+    
     private String kind;
     
     private String name;
@@ -29,6 +31,8 @@ public class StoragePool extends AbstractType {
     private String removed;
     
     private String state;
+    
+    private String storageDriverId;
     
     private String transitioning;
     
@@ -41,6 +45,8 @@ public class StoragePool extends AbstractType {
     private String volumeAccessMode;
     
     private List<String> volumeCapabilities;
+    
+    private List<String> volumeIds;
     
     public String getAccountId() {
         return this.accountId;
@@ -98,6 +104,14 @@ public class StoragePool extends AbstractType {
       this.externalId = externalId;
     }
     
+    public List<String> getHostIds() {
+        return this.hostIds;
+    }
+
+    public void setHostIds(List<String> hostIds) {
+      this.hostIds = hostIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -136,6 +150,14 @@ public class StoragePool extends AbstractType {
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public String getStorageDriverId() {
+        return this.storageDriverId;
+    }
+
+    public void setStorageDriverId(String storageDriverId) {
+      this.storageDriverId = storageDriverId;
     }
     
     public String getTransitioning() {
@@ -184,6 +206,14 @@ public class StoragePool extends AbstractType {
 
     public void setVolumeCapabilities(List<String> volumeCapabilities) {
       this.volumeCapabilities = volumeCapabilities;
+    }
+    
+    public List<String> getVolumeIds() {
+        return this.volumeIds;
+    }
+
+    public void setVolumeIds(List<String> volumeIds) {
+      this.volumeIds = volumeIds;
     }
     
 }

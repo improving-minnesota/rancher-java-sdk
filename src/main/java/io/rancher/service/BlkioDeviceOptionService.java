@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.BlkioDeviceOption;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface BlkioDeviceOptionService {
   Call<TypeCollection<BlkioDeviceOption>> list();
 
   @GET("blkioDeviceOption")
-  Call<TypeCollection<BlkioDeviceOption>> list(@QueryMap Filters filters);
+  Call<TypeCollection<BlkioDeviceOption>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("blkioDeviceOption/{id}")
   Call<BlkioDeviceOption> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface BlkioDeviceOptionService {
   Call<BlkioDeviceOption> update(@Path("id") String id, @Body BlkioDeviceOption blkioDeviceOption);
 
   @DELETE("blkioDeviceOption/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

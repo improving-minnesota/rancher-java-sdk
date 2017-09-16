@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Backup;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface BackupService {
   Call<TypeCollection<Backup>> list();
 
   @GET("backup")
-  Call<TypeCollection<Backup>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Backup>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("backup/{id}")
   Call<Backup> get(@Path("id") String id);
@@ -32,7 +31,7 @@ public interface BackupService {
   Call<Backup> update(@Path("id") String id, @Body Backup backup);
 
   @DELETE("backup/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("backup/{id}?action=remove")
   Call<Backup> remove(@Path("id") String id);

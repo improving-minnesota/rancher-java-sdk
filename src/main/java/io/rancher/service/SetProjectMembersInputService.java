@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.SetProjectMembersInput;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface SetProjectMembersInputService {
   Call<TypeCollection<SetProjectMembersInput>> list();
 
   @GET("setProjectMembersInput")
-  Call<TypeCollection<SetProjectMembersInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<SetProjectMembersInput>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("setProjectMembersInput/{id}")
   Call<SetProjectMembersInput> get(@Path("id") String id);
@@ -32,6 +31,6 @@ public interface SetProjectMembersInputService {
   Call<SetProjectMembersInput> update(@Path("id") String id, @Body SetProjectMembersInput setProjectMembersInput);
 
   @DELETE("setProjectMembersInput/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
 }

@@ -1,11 +1,10 @@
 package io.rancher.service;
 
-import io.rancher.base.Filters;
+import java.util.HashMap;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.IpAddress;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -20,7 +19,7 @@ public interface IpAddressService {
   Call<TypeCollection<IpAddress>> list();
 
   @GET("ipAddress")
-  Call<TypeCollection<IpAddress>> list(@QueryMap Filters filters);
+  Call<TypeCollection<IpAddress>> list(@QueryMap HashMap<String,String> filters);
 
   @GET("ipAddress/{id}")
   Call<IpAddress> get(@Path("id") String id);
@@ -32,10 +31,13 @@ public interface IpAddressService {
   Call<IpAddress> update(@Path("id") String id, @Body IpAddress ipAddress);
 
   @DELETE("ipAddress/{id}")
-  Call<Response> delete(@Path("id") String id);
+  Call<Void> delete(@Path("id") String id);
   
   @POST("ipAddress/{id}?action=activate")
   Call<IpAddress> activate(@Path("id") String id);
+  
+  @POST("ipAddress/{id}?action=associate")
+  Call<IpAddress> associate(@Path("id") String id);
   
   @POST("ipAddress/{id}?action=deactivate")
   Call<IpAddress> deactivate(@Path("id") String id);
@@ -48,8 +50,5 @@ public interface IpAddressService {
   
   @POST("ipAddress/{id}?action=remove")
   Call<IpAddress> remove(@Path("id") String id);
-  
-  @POST("ipAddress/{id}?action=restore")
-  Call<IpAddress> restore(@Path("id") String id);
   
 }
