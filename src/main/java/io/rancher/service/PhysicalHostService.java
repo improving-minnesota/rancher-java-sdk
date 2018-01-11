@@ -3,6 +3,8 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PhysicalHost;
+import io.rancher.type.Account;
+import io.rancher.type.Host;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -13,6 +15,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface PhysicalHostService {
 
@@ -20,7 +23,7 @@ public interface PhysicalHostService {
   Call<TypeCollection<PhysicalHost>> list();
 
   @GET("physicalHost")
-  Call<TypeCollection<PhysicalHost>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PhysicalHost>> list(@QueryMap Filters<String, String> filters);
 
   @GET("physicalHost/{id}")
   Call<PhysicalHost> get(@Path("id") String id);
@@ -42,5 +45,13 @@ public interface PhysicalHostService {
   
   @POST("physicalHost/{id}?action=remove")
   Call<PhysicalHost> remove(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Host>> getLinkHosts(@Url String url );
   
 }

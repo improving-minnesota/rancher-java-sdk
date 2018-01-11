@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface RevertToSnapshotInputService {
 
@@ -20,7 +21,7 @@ public interface RevertToSnapshotInputService {
   Call<TypeCollection<RevertToSnapshotInput>> list();
 
   @GET("revertToSnapshotInput")
-  Call<TypeCollection<RevertToSnapshotInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RevertToSnapshotInput>> list(@QueryMap Filters<String, String> filters);
 
   @GET("revertToSnapshotInput/{id}")
   Call<RevertToSnapshotInput> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface RevertToSnapshotInputService {
 
   @DELETE("revertToSnapshotInput/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

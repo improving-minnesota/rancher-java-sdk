@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface DigitaloceanConfigService {
 
@@ -20,7 +21,7 @@ public interface DigitaloceanConfigService {
   Call<TypeCollection<DigitaloceanConfig>> list();
 
   @GET("digitaloceanConfig")
-  Call<TypeCollection<DigitaloceanConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<DigitaloceanConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("digitaloceanConfig/{id}")
   Call<DigitaloceanConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface DigitaloceanConfigService {
 
   @DELETE("digitaloceanConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

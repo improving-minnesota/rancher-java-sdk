@@ -3,6 +3,8 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Machine;
+import io.rancher.type.Account;
+import io.rancher.type.Host;
 import io.rancher.type.PhysicalHost;
 
 import retrofit2.Call;
@@ -14,6 +16,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface MachineService {
 
@@ -21,7 +24,7 @@ public interface MachineService {
   Call<TypeCollection<Machine>> list();
 
   @GET("machine")
-  Call<TypeCollection<Machine>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Machine>> list(@QueryMap Filters<String, String> filters);
 
   @GET("machine/{id}")
   Call<Machine> get(@Path("id") String id);
@@ -43,5 +46,13 @@ public interface MachineService {
   
   @POST("machine/{id}?action=remove")
   Call<PhysicalHost> remove(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Host>> getLinkHosts(@Url String url );
   
 }

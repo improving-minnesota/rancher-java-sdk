@@ -3,6 +3,8 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ConfigItemStatus;
+import io.rancher.type.Account;
+import io.rancher.type.Agent;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -13,6 +15,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ConfigItemStatusService {
 
@@ -20,7 +23,7 @@ public interface ConfigItemStatusService {
   Call<TypeCollection<ConfigItemStatus>> list();
 
   @GET("configItemStatus")
-  Call<TypeCollection<ConfigItemStatus>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ConfigItemStatus>> list(@QueryMap Filters<String, String> filters);
 
   @GET("configItemStatus/{id}")
   Call<ConfigItemStatus> get(@Path("id") String id);
@@ -33,5 +36,13 @@ public interface ConfigItemStatusService {
 
   @DELETE("configItemStatus/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<Agent> getLinkAgent(@Url String url );
   
 }

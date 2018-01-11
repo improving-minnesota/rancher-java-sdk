@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface IpAddressAssociateInputService {
 
@@ -20,7 +21,7 @@ public interface IpAddressAssociateInputService {
   Call<TypeCollection<IpAddressAssociateInput>> list();
 
   @GET("ipAddressAssociateInput")
-  Call<TypeCollection<IpAddressAssociateInput>> list(@QueryMap Filters filters);
+  Call<TypeCollection<IpAddressAssociateInput>> list(@QueryMap Filters<String, String> filters);
 
   @GET("ipAddressAssociateInput/{id}")
   Call<IpAddressAssociateInput> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface IpAddressAssociateInputService {
 
   @DELETE("ipAddressAssociateInput/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

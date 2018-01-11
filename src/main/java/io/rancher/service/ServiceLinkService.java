@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ServiceLinkService {
 
@@ -20,7 +21,7 @@ public interface ServiceLinkService {
   Call<TypeCollection<ServiceLink>> list();
 
   @GET("serviceLink")
-  Call<TypeCollection<ServiceLink>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ServiceLink>> list(@QueryMap Filters<String, String> filters);
 
   @GET("serviceLink/{id}")
   Call<ServiceLink> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ServiceLinkService {
 
   @DELETE("serviceLink/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

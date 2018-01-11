@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ContainerProxyService {
 
@@ -20,7 +21,7 @@ public interface ContainerProxyService {
   Call<TypeCollection<ContainerProxy>> list();
 
   @GET("containerProxy")
-  Call<TypeCollection<ContainerProxy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ContainerProxy>> list(@QueryMap Filters<String, String> filters);
 
   @GET("containerProxy/{id}")
   Call<ContainerProxy> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ContainerProxyService {
 
   @DELETE("containerProxy/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

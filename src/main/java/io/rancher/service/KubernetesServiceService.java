@@ -3,11 +3,14 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.KubernetesService;
-import io.rancher.type.SetServiceLinksInput;
-import io.rancher.type.ServiceUpgrade;
-import io.rancher.type.ServiceRestart;
-import io.rancher.type.Service;
+import io.rancher.type.Account;
 import io.rancher.type.AddRemoveServiceLinkInput;
+import io.rancher.type.Environment;
+import io.rancher.type.Instance;
+import io.rancher.type.Service;
+import io.rancher.type.ServiceRestart;
+import io.rancher.type.ServiceUpgrade;
+import io.rancher.type.SetServiceLinksInput;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -18,6 +21,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface KubernetesServiceService {
 
@@ -25,7 +29,7 @@ public interface KubernetesServiceService {
   Call<TypeCollection<KubernetesService>> list();
 
   @GET("kubernetesService")
-  Call<TypeCollection<KubernetesService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<KubernetesService>> list(@QueryMap Filters<String, String> filters);
 
   @GET("kubernetesService/{id}")
   Call<KubernetesService> get(@Path("id") String id);
@@ -74,5 +78,16 @@ public interface KubernetesServiceService {
   
   @POST("kubernetesService/{id}?action=upgrade")
   Call<Service> upgrade(@Path("id") String id, @Body ServiceUpgrade serviceUpgrade);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<Environment> getLinkEnvironment(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Instance>> getLinkInstances(@Url String url );
   
 }

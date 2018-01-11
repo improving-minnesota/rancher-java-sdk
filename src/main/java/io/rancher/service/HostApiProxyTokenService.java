@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface HostApiProxyTokenService {
 
@@ -20,7 +21,7 @@ public interface HostApiProxyTokenService {
   Call<TypeCollection<HostApiProxyToken>> list();
 
   @GET("hostApiProxyToken")
-  Call<TypeCollection<HostApiProxyToken>> list(@QueryMap Filters filters);
+  Call<TypeCollection<HostApiProxyToken>> list(@QueryMap Filters<String, String> filters);
 
   @GET("hostApiProxyToken/{id}")
   Call<HostApiProxyToken> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface HostApiProxyTokenService {
 
   @DELETE("hostApiProxyToken/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

@@ -3,8 +3,11 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalService;
-import io.rancher.type.ServiceRestart;
+import io.rancher.type.Account;
+import io.rancher.type.Environment;
+import io.rancher.type.Instance;
 import io.rancher.type.Service;
+import io.rancher.type.ServiceRestart;
 import io.rancher.type.ServiceUpgrade;
 
 import retrofit2.Call;
@@ -16,6 +19,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ExternalServiceService {
 
@@ -23,7 +27,7 @@ public interface ExternalServiceService {
   Call<TypeCollection<ExternalService>> list();
 
   @GET("externalService")
-  Call<TypeCollection<ExternalService>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalService>> list(@QueryMap Filters<String, String> filters);
 
   @GET("externalService/{id}")
   Call<ExternalService> get(@Path("id") String id);
@@ -63,5 +67,16 @@ public interface ExternalServiceService {
   
   @POST("externalService/{id}?action=upgrade")
   Call<Service> upgrade(@Path("id") String id, @Body ServiceUpgrade serviceUpgrade);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
+  
+  @GET
+  Call<Environment> getLinkEnvironment(@Url String url );
+  
+  @GET
+  Call<TypeCollection<Instance>> getLinkInstances(@Url String url );
   
 }

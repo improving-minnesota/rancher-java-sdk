@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ComposeConfigService {
 
@@ -20,7 +21,7 @@ public interface ComposeConfigService {
   Call<TypeCollection<ComposeConfig>> list();
 
   @GET("composeConfig")
-  Call<TypeCollection<ComposeConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ComposeConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("composeConfig/{id}")
   Call<ComposeConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ComposeConfigService {
 
   @DELETE("composeConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

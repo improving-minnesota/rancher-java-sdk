@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface EnvironmentUpgradeService {
 
@@ -20,7 +21,7 @@ public interface EnvironmentUpgradeService {
   Call<TypeCollection<EnvironmentUpgrade>> list();
 
   @GET("environmentUpgrade")
-  Call<TypeCollection<EnvironmentUpgrade>> list(@QueryMap Filters filters);
+  Call<TypeCollection<EnvironmentUpgrade>> list(@QueryMap Filters<String, String> filters);
 
   @GET("environmentUpgrade/{id}")
   Call<EnvironmentUpgrade> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface EnvironmentUpgradeService {
 
   @DELETE("environmentUpgrade/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

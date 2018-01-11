@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ProcessExecutionService {
 
@@ -20,7 +21,7 @@ public interface ProcessExecutionService {
   Call<TypeCollection<ProcessExecution>> list();
 
   @GET("processExecution")
-  Call<TypeCollection<ProcessExecution>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ProcessExecution>> list(@QueryMap Filters<String, String> filters);
 
   @GET("processExecution/{id}")
   Call<ProcessExecution> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ProcessExecutionService {
 
   @DELETE("processExecution/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

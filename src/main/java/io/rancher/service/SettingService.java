@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface SettingService {
 
@@ -20,7 +21,7 @@ public interface SettingService {
   Call<TypeCollection<Setting>> list();
 
   @GET("setting")
-  Call<TypeCollection<Setting>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Setting>> list(@QueryMap Filters<String, String> filters);
 
   @GET("setting/{id}")
   Call<Setting> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface SettingService {
 
   @DELETE("setting/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

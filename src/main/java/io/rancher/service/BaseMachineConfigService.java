@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface BaseMachineConfigService {
 
@@ -20,7 +21,7 @@ public interface BaseMachineConfigService {
   Call<TypeCollection<BaseMachineConfig>> list();
 
   @GET("baseMachineConfig")
-  Call<TypeCollection<BaseMachineConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<BaseMachineConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("baseMachineConfig/{id}")
   Call<BaseMachineConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface BaseMachineConfigService {
 
   @DELETE("baseMachineConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

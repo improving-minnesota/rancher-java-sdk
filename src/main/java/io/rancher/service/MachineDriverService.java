@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface MachineDriverService {
 
@@ -20,7 +21,7 @@ public interface MachineDriverService {
   Call<TypeCollection<MachineDriver>> list();
 
   @GET("machineDriver")
-  Call<TypeCollection<MachineDriver>> list(@QueryMap Filters filters);
+  Call<TypeCollection<MachineDriver>> list(@QueryMap Filters<String, String> filters);
 
   @GET("machineDriver/{id}")
   Call<MachineDriver> get(@Path("id") String id);
@@ -48,5 +49,7 @@ public interface MachineDriverService {
   
   @POST("machineDriver/{id}?action=remove")
   Call<MachineDriver> remove(@Path("id") String id);
+  
+
   
 }

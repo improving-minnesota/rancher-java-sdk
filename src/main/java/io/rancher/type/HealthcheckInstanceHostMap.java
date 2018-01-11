@@ -1,9 +1,35 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 import java.util.Map;
 
 public class HealthcheckInstanceHostMap extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAccountLink() {
+        return this.links.get("account");
+    }
+    
+    public String getHostLink() {
+        return this.links.get("host");
+    }
+    
+    public String getInstanceLink() {
+        return this.links.get("instance");
+    }
+    
+
     
     private String accountId;
     

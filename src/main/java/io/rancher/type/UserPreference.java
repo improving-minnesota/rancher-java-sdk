@@ -1,20 +1,31 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 import java.util.Map;
-import java.util.List;
 
-public class Cluster extends AbstractType {
+public class UserPreference extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAccountLink() {
+        return this.links.get("account");
+    }
+    
+
     
     private String accountId;
     
-    private String agentId;
-    
-    private String agentState;
-    
-    private String apiProxy;
-    
-    private Integer computeTotal;
+    private Boolean all;
     
     private String created;
     
@@ -22,21 +33,9 @@ public class Cluster extends AbstractType {
     
     private String description;
     
-    private String discoverySpec;
-    
-    private Map<String, Object> info;
-    
     private String kind;
     
-    private Map<String, Object> labels;
-    
     private String name;
-    
-    private String physicalHostId;
-    
-    private Integer port;
-    
-    private List<PublicEndpoint> publicEndpoints;
     
     private String removeTime;
     
@@ -52,6 +51,8 @@ public class Cluster extends AbstractType {
     
     private String uuid;
     
+    private String value;
+    
     public String getAccountId() {
         return this.accountId;
     }
@@ -60,36 +61,12 @@ public class Cluster extends AbstractType {
       this.accountId = accountId;
     }
     
-    public String getAgentId() {
-        return this.agentId;
+    public Boolean getAll() {
+        return this.all;
     }
 
-    public void setAgentId(String agentId) {
-      this.agentId = agentId;
-    }
-    
-    public String getAgentState() {
-        return this.agentState;
-    }
-
-    public void setAgentState(String agentState) {
-      this.agentState = agentState;
-    }
-    
-    public String getApiProxy() {
-        return this.apiProxy;
-    }
-
-    public void setApiProxy(String apiProxy) {
-      this.apiProxy = apiProxy;
-    }
-    
-    public Integer getComputeTotal() {
-        return this.computeTotal;
-    }
-
-    public void setComputeTotal(Integer computeTotal) {
-      this.computeTotal = computeTotal;
+    public void setAll(Boolean all) {
+      this.all = all;
     }
     
     public String getCreated() {
@@ -116,22 +93,6 @@ public class Cluster extends AbstractType {
       this.description = description;
     }
     
-    public String getDiscoverySpec() {
-        return this.discoverySpec;
-    }
-
-    public void setDiscoverySpec(String discoverySpec) {
-      this.discoverySpec = discoverySpec;
-    }
-    
-    public Map<String, Object> getInfo() {
-        return this.info;
-    }
-
-    public void setInfo(Map<String, Object> info) {
-      this.info = info;
-    }
-    
     public String getKind() {
         return this.kind;
     }
@@ -140,44 +101,12 @@ public class Cluster extends AbstractType {
       this.kind = kind;
     }
     
-    public Map<String, Object> getLabels() {
-        return this.labels;
-    }
-
-    public void setLabels(Map<String, Object> labels) {
-      this.labels = labels;
-    }
-    
     public String getName() {
         return this.name;
     }
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getPhysicalHostId() {
-        return this.physicalHostId;
-    }
-
-    public void setPhysicalHostId(String physicalHostId) {
-      this.physicalHostId = physicalHostId;
-    }
-    
-    public Integer getPort() {
-        return this.port;
-    }
-
-    public void setPort(Integer port) {
-      this.port = port;
-    }
-    
-    public List<PublicEndpoint> getPublicEndpoints() {
-        return this.publicEndpoints;
-    }
-
-    public void setPublicEndpoints(List<PublicEndpoint> publicEndpoints) {
-      this.publicEndpoints = publicEndpoints;
     }
     
     public String getRemoveTime() {
@@ -234,6 +163,14 @@ public class Cluster extends AbstractType {
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
+    }
+    
+    public String getValue() {
+        return this.value;
+    }
+
+    public void setValue(String value) {
+      this.value = value;
     }
     
 }

@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface LoadBalancerCookieStickinessPolicyService {
 
@@ -20,7 +21,7 @@ public interface LoadBalancerCookieStickinessPolicyService {
   Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list();
 
   @GET("loadBalancerCookieStickinessPolicy")
-  Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list(@QueryMap Filters<String, String> filters);
 
   @GET("loadBalancerCookieStickinessPolicy/{id}")
   Call<LoadBalancerCookieStickinessPolicy> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface LoadBalancerCookieStickinessPolicyService {
 
   @DELETE("loadBalancerCookieStickinessPolicy/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

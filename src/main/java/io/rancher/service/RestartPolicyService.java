@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface RestartPolicyService {
 
@@ -20,7 +21,7 @@ public interface RestartPolicyService {
   Call<TypeCollection<RestartPolicy>> list();
 
   @GET("restartPolicy")
-  Call<TypeCollection<RestartPolicy>> list(@QueryMap Filters filters);
+  Call<TypeCollection<RestartPolicy>> list(@QueryMap Filters<String, String> filters);
 
   @GET("restartPolicy/{id}")
   Call<RestartPolicy> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface RestartPolicyService {
 
   @DELETE("restartPolicy/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

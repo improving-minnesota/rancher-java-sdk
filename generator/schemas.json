@@ -300,39 +300,39 @@
         }
       },
       "includeableLinks": [
-        "projectmembers",
-        "auditlogs",
-        "credentials",
-        "environments",
-        "instances",
-        "serviceexposemaps",
-        "networks",
-        "ports",
-        "serviceconsumemaps",
-        "instancelinks",
-        "ipaddresses",
-        "storagepools",
         "externalevents",
-        "images",
-        "hosts",
-        "volumes",
-        "mounts",
-        "serviceevents",
-        "services",
-        "dynamicschemas",
+        "serviceconsumemaps",
         "agents",
-        "labels",
-        "healthcheckinstancehostmaps",
-        "snapshots",
-        "certificates",
-        "backuptargets",
-        "configitemstatuses",
-        "physicalhosts",
+        "instancelinks",
         "containerevents",
-        "backups"
+        "volumes",
+        "instances",
+        "backuptargets",
+        "ipaddresses",
+        "serviceexposemaps",
+        "hosts",
+        "physicalhosts",
+        "credentials",
+        "backups",
+        "snapshots",
+        "healthcheckinstancehostmaps",
+        "certificates",
+        "networks",
+        "services",
+        "storagepools",
+        "configitemstatuses",
+        "labels",
+        "environments",
+        "userpreferences",
+        "ports",
+        "mounts",
+        "auditlogs",
+        "projectmembers",
+        "serviceevents",
+        "images"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "account"
         },
@@ -340,37 +340,37 @@
           "input": null,
           "output": "account"
         },
-        "create": {
-          "input": null,
-          "output": "account"
-        },
-        "update": {
-          "input": null,
-          "output": "account"
-        },
-        "purge": {
-          "input": null,
-          "output": "account"
-        },
         "remove": {
+          "input": null,
+          "output": "account"
+        },
+        "restore": {
           "input": null,
           "output": "account"
         },
         "deactivate": {
           "input": null,
           "output": "account"
+        },
+        "create": {
+          "input": null,
+          "output": "account"
+        },
+        "purge": {
+          "input": null,
+          "output": "account"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT",
         "DELETE"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -431,12 +431,12 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET",
         "PUT",
         "DELETE"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "addOutputsInput",
@@ -462,10 +462,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -492,10 +492,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "addRemoveServiceLinkInput",
@@ -520,12 +520,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "agent",
@@ -844,14 +842,26 @@
         }
       },
       "includeableLinks": [
-        "instances",
-        "hosts",
         "storagepools",
         "configitemstatuses",
         "physicalhosts",
-        "account"
+        "hosts",
+        "account",
+        "instances"
       ],
       "resourceActions": {
+        "update": {
+          "input": null,
+          "output": "agent"
+        },
+        "activate": {
+          "input": null,
+          "output": "agent"
+        },
+        "remove": {
+          "input": null,
+          "output": "agent"
+        },
         "reconnect": {
           "input": null,
           "output": "agent"
@@ -860,7 +870,7 @@
           "input": null,
           "output": "agent"
         },
-        "activate": {
+        "deactivate": {
           "input": null,
           "output": "agent"
         },
@@ -868,30 +878,221 @@
           "input": null,
           "output": "agent"
         },
-        "update": {
-          "input": null,
-          "output": "agent"
-        },
         "purge": {
-          "input": null,
-          "output": "agent"
-        },
-        "remove": {
-          "input": null,
-          "output": "agent"
-        },
-        "deactivate": {
           "input": null,
           "output": "agent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "GET"
+      ]
+    },
+    {
+      "id": "amazonec2Config",
+      "type": "schema",
+      "links": {
+        "self": "http://localhost:8082/v1/schemas/amazonec2config",
+        "collection": "http://localhost:8082/v1/amazonec2configs"
+      },
+      "actions": {},
+      "pluralName": "amazonec2Configs",
+      "resourceFields": {
+        "accessKey": {
+          "type": "string",
+          "description": "AWS Access Key",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "ami": {
+          "type": "string",
+          "description": "AWS machine image",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "deviceName": {
+          "type": "string",
+          "description": "AWS root device name",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "/dev/sda1"
+        },
+        "iamInstanceProfile": {
+          "type": "string",
+          "description": "AWS IAM Instance Profile",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "instanceType": {
+          "type": "string",
+          "description": "AWS instance type",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "t2.micro"
+        },
+        "monitoring": {
+          "type": "boolean",
+          "description": "Set this flag to enable CloudWatch monitoring",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "privateAddressOnly": {
+          "type": "boolean",
+          "description": "Only use a private IP address",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "region": {
+          "type": "string",
+          "description": "AWS region",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "us-east-1"
+        },
+        "requestSpotInstance": {
+          "type": "boolean",
+          "description": "Set this flag to request spot instance",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "rootSize": {
+          "type": "string",
+          "description": "AWS root disk size (in GB)",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "16"
+        },
+        "secretKey": {
+          "type": "string",
+          "description": "AWS Secret Key",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "securityGroup": {
+          "type": "string",
+          "description": "AWS VPC security group",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "docker-machine"
+        },
+        "sessionToken": {
+          "type": "string",
+          "description": "AWS Session Token",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "spotPrice": {
+          "type": "string",
+          "description": "AWS spot instance bid price (in dollar)",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "0.50"
+        },
+        "sshKeypath": {
+          "type": "string",
+          "description": "SSH Key for Instance",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "sshUser": {
+          "type": "string",
+          "description": "Set the name of the ssh user",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "ubuntu"
+        },
+        "subnetId": {
+          "type": "string",
+          "description": "AWS VPC subnet id",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "tags": {
+          "type": "string",
+          "description": "AWS Tags (e.g. key1,value1,key2,value2)",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "useEbsOptimizedInstance": {
+          "type": "boolean",
+          "description": "Create an EBS optimized instance",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "usePrivateAddress": {
+          "type": "boolean",
+          "description": "Force the usage of private IP address",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "volumeType": {
+          "type": "string",
+          "description": "Amazon EBS volume type",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "gp2"
+        },
+        "vpcId": {
+          "type": "string",
+          "description": "AWS VPC id",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "zone": {
+          "type": "string",
+          "description": "AWS zone for instance (i.e. a,b,c,d,e)",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "a"
+        }
+      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -1204,23 +1405,15 @@
       },
       "includeableLinks": [
         "images",
-        "instances",
-        "account"
+        "account",
+        "instances"
       ],
       "resourceActions": {
-        "activate": {
-          "input": null,
-          "output": "credential"
-        },
-        "create": {
-          "input": null,
-          "output": "credential"
-        },
         "update": {
           "input": null,
           "output": "credential"
         },
-        "purge": {
+        "activate": {
           "input": null,
           "output": "credential"
         },
@@ -1231,18 +1424,26 @@
         "deactivate": {
           "input": null,
           "output": "credential"
+        },
+        "create": {
+          "input": null,
+          "output": "credential"
+        },
+        "purge": {
+          "input": null,
+          "output": "credential"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT",
         "DELETE"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -1536,17 +1737,129 @@
         }
       },
       "includeableLinks": [
-        "authenticatedasaccount",
-        "account"
+        "account",
+        "authenticatedasaccount"
       ],
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "GET"
+      ]
+    },
+    {
+      "id": "azureConfig",
+      "type": "schema",
+      "links": {
+        "self": "http://localhost:8082/v1/schemas/azureconfig",
+        "collection": "http://localhost:8082/v1/azureconfigs"
+      },
+      "actions": {},
+      "pluralName": "azureConfigs",
+      "resourceFields": {
+        "dockerPort": {
+          "type": "string",
+          "description": "Azure Docker port",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "2376"
+        },
+        "dockerSwarmMasterPort": {
+          "type": "string",
+          "description": "Azure Docker Swarm master port",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "3376"
+        },
+        "image": {
+          "type": "string",
+          "description": "Azure image name. Default is Ubuntu 14.04 LTS x64",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "location": {
+          "type": "string",
+          "description": "Azure location",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "West US"
+        },
+        "password": {
+          "type": "string",
+          "description": "Azure user password",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "publishSettingsFile": {
+          "type": "string",
+          "description": "Azure publish settings file",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "size": {
+          "type": "string",
+          "description": "Azure size",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "Small"
+        },
+        "sshPort": {
+          "type": "string",
+          "description": "Azure SSH port",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "22"
+        },
+        "subscriptionCert": {
+          "type": "string",
+          "description": "Azure subscription cert",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "subscriptionId": {
+          "type": "string",
+          "description": "Azure subscription ID",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "username": {
+          "type": "string",
+          "description": "Azure username",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "ubuntu"
+        }
+      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -1640,13 +1953,13 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -1974,29 +2287,28 @@
         }
       },
       "includeableLinks": [
+        "snapshot",
         "volume",
         "account",
-        "snapshot",
         "backuptarget"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "backup"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "backup"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
-        "GET",
-        "DELETE"
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -2267,24 +2579,22 @@
         "backups"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "backupTarget"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "backupTarget"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -2301,10 +2611,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "blkioDeviceOption",
@@ -2361,12 +2671,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "certificate",
@@ -2381,7 +2689,7 @@
         "accountId": {
           "type": "reference[account]",
           "description": null,
-          "create": true,
+          "create": false,
           "update": false,
           "nullable": true,
           "readOnCreateOnly": false,
@@ -2758,10 +3066,6 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
-          "input": null,
-          "output": "certificate"
-        },
         "update": {
           "input": null,
           "output": "certificate"
@@ -2769,18 +3073,19 @@
         "remove": {
           "input": null,
           "output": "certificate"
+        },
+        "create": {
+          "input": null,
+          "output": "certificate"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -2814,11 +3119,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -2850,10 +3155,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "composeConfigInput",
@@ -2878,11 +3183,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -3223,16 +3528,12 @@
         }
       },
       "includeableLinks": [
-        "configitemstatuses",
         "services",
+        "configitemstatuses",
         "account"
       ],
       "resourceActions": {
-        "rollback": {
-          "input": null,
-          "output": "environment"
-        },
-        "error": {
+        "finishupgrade": {
           "input": null,
           "output": "environment"
         },
@@ -3240,11 +3541,15 @@
           "input": null,
           "output": "environment"
         },
-        "finishupgrade": {
+        "error": {
           "input": null,
           "output": "environment"
         },
-        "cancelrollback": {
+        "cancelupgrade": {
+          "input": null,
+          "output": "environment"
+        },
+        "rollback": {
           "input": null,
           "output": "environment"
         },
@@ -3252,21 +3557,18 @@
           "input": null,
           "output": "environment"
         },
-        "cancelupgrade": {
+        "cancelrollback": {
           "input": null,
           "output": "environment"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -3725,17 +4027,16 @@
         }
       },
       "includeableLinks": [
-        "consumedbyservices",
         "environment",
-        "instances",
         "consumedservices",
         "configitemstatuses",
         "serviceexposemaps",
-        "dynamicschemas",
-        "account"
+        "account",
+        "instances",
+        "consumedbyservices"
       ],
       "resourceActions": {
-        "rollback": {
+        "finishupgrade": {
           "input": null,
           "output": "service"
         },
@@ -3743,15 +4044,11 @@
           "input": null,
           "output": "service"
         },
-        "finishupgrade": {
+        "cancelupgrade": {
           "input": null,
           "output": "service"
         },
-        "cancelrollback": {
-          "input": null,
-          "output": "service"
-        },
-        "activate": {
+        "rollback": {
           "input": null,
           "output": "service"
         },
@@ -3759,19 +4056,22 @@
           "input": null,
           "output": "service"
         },
-        "cancelupgrade": {
+        "activate": {
+          "input": null,
+          "output": "service"
+        },
+        "cancelrollback": {
           "input": null,
           "output": "service"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
-        "GET",
-        "DELETE"
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -3851,10 +4151,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -4086,18 +4386,18 @@
         }
       },
       "includeableLinks": [
-        "agent",
-        "account"
+        "account",
+        "agent"
       ],
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -5241,58 +5541,38 @@
         }
       },
       "includeableLinks": [
-        "agent",
-        "networkcontainer",
-        "credentials",
-        "instances",
-        "hosts",
-        "volumes",
-        "mounts",
-        "serviceevents",
-        "serviceexposemaps",
         "services",
-        "ports",
+        "networkcontainer",
         "instancelinks",
-        "healthcheckinstancehostmaps",
-        "registrycredential",
+        "volumes",
         "targetinstancelinks",
+        "instances",
+        "agent",
+        "registrycredential",
         "instancelabels",
-        "account"
+        "ports",
+        "mounts",
+        "serviceexposemaps",
+        "serviceevents",
+        "hosts",
+        "account",
+        "credentials",
+        "healthcheckinstancehostmaps"
       ],
       "resourceActions": {
-        "updateunhealthy": {
+        "update": {
           "input": null,
           "output": "instance"
         },
-        "console": {
-          "input": "instanceConsoleInput",
-          "output": "instanceConsole"
-        },
-        "restore": {
-          "input": null,
+        "stop": {
+          "input": "instanceStop",
           "output": "instance"
         },
         "restart": {
           "input": null,
           "output": "instance"
         },
-        "deallocate": {
-          "input": null,
-          "output": "instance"
-        },
-        "start": {
-          "input": null,
-          "output": "instance"
-        },
         "updatereinitializing": {
-          "input": null,
-          "output": "instance"
-        },
-        "update": {
-          "input": null,
-          "output": "instance"
-        },
-        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -5304,23 +5584,43 @@
           "input": null,
           "output": "instance"
         },
-        "allocate": {
+        "updatehealthy": {
           "input": null,
           "output": "instance"
         },
-        "stop": {
-          "input": "instanceStop",
+        "migrate": {
+          "input": null,
+          "output": "instance"
+        },
+        "allocate": {
+          "input": null,
           "output": "instance"
         },
         "create": {
           "input": null,
           "output": "instance"
         },
-        "updatehealthy": {
+        "console": {
+          "input": "instanceConsoleInput",
+          "output": "instanceConsole"
+        },
+        "start": {
           "input": null,
           "output": "instance"
         },
-        "migrate": {
+        "restore": {
+          "input": null,
+          "output": "instance"
+        },
+        "deallocate": {
+          "input": null,
+          "output": "instance"
+        },
+        "updateunhealthy": {
+          "input": null,
+          "output": "instance"
+        },
+        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -5343,14 +5643,11 @@
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -5634,21 +5931,21 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "containerEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "containerEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -5704,11 +6001,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -5747,12 +6043,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "containerProxy",
@@ -5793,12 +6087,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "credential",
@@ -6110,23 +6402,15 @@
       },
       "includeableLinks": [
         "images",
-        "instances",
-        "account"
+        "account",
+        "instances"
       ],
       "resourceActions": {
-        "activate": {
-          "input": null,
-          "output": "credential"
-        },
-        "create": {
-          "input": null,
-          "output": "credential"
-        },
         "update": {
           "input": null,
           "output": "credential"
         },
-        "purge": {
+        "activate": {
           "input": null,
           "output": "credential"
         },
@@ -6137,16 +6421,24 @@
         "deactivate": {
           "input": null,
           "output": "credential"
+        },
+        "create": {
+          "input": null,
+          "output": "credential"
+        },
+        "purge": {
+          "input": null,
+          "output": "credential"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
       "collectionMethods": [
         "GET",
         "POST"
-      ],
-      "resourceMethods": [
-        "GET"
       ]
     },
     {
@@ -6384,12 +6676,12 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET",
         "DELETE"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -6486,12 +6778,113 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET",
         "DELETE"
+      ],
+      "collectionMethods": [
+        "GET"
+      ]
+    },
+    {
+      "id": "digitaloceanConfig",
+      "type": "schema",
+      "links": {
+        "self": "http://localhost:8082/v1/schemas/digitaloceanconfig",
+        "collection": "http://localhost:8082/v1/digitaloceanconfigs"
+      },
+      "actions": {},
+      "pluralName": "digitaloceanConfigs",
+      "resourceFields": {
+        "accessToken": {
+          "type": "string",
+          "description": "Digital Ocean access token",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "backups": {
+          "type": "boolean",
+          "description": "enable backups for droplet",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "image": {
+          "type": "string",
+          "description": "Digital Ocean Image",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "ubuntu-15-10-x64"
+        },
+        "ipv6": {
+          "type": "boolean",
+          "description": "enable ipv6 for droplet",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "privateNetworking": {
+          "type": "boolean",
+          "description": "enable private networking for droplet",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false
+        },
+        "region": {
+          "type": "string",
+          "description": "Digital Ocean region",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "nyc3"
+        },
+        "size": {
+          "type": "string",
+          "description": "Digital Ocean size",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "512mb"
+        },
+        "sshPort": {
+          "type": "string",
+          "description": "SSH port",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "22"
+        },
+        "sshUser": {
+          "type": "string",
+          "description": "SSH username",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "root"
+        },
+        "userdata": {
+          "type": "string",
+          "description": "path to file with cloud-init user-data",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        }
+      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -6650,7 +7043,7 @@
           "type": "boolean",
           "description": null,
           "create": true,
-          "update": false,
+          "update": true,
           "nullable": true,
           "readOnCreateOnly": false
         },
@@ -6933,37 +7326,16 @@
         }
       },
       "includeableLinks": [
-        "consumedbyservices",
         "environment",
-        "instances",
         "consumedservices",
         "configitemstatuses",
         "serviceexposemaps",
-        "dynamicschemas",
-        "account"
+        "account",
+        "instances",
+        "consumedbyservices"
       ],
       "resourceActions": {
-        "rollback": {
-          "input": null,
-          "output": "service"
-        },
-        "upgrade": {
-          "input": "serviceUpgrade",
-          "output": "service"
-        },
-        "restart": {
-          "input": "serviceRestart",
-          "output": "service"
-        },
         "update": {
-          "input": null,
-          "output": "service"
-        },
-        "remove": {
-          "input": null,
-          "output": "service"
-        },
-        "deactivate": {
           "input": null,
           "output": "service"
         },
@@ -6971,7 +7343,19 @@
           "input": null,
           "output": "service"
         },
-        "cancelrollback": {
+        "restart": {
+          "input": "serviceRestart",
+          "output": "service"
+        },
+        "remove": {
+          "input": null,
+          "output": "service"
+        },
+        "setservicelinks": {
+          "input": "setServiceLinksInput",
+          "output": "service"
+        },
+        "cancelupgrade": {
           "input": null,
           "output": "service"
         },
@@ -6979,37 +7363,42 @@
           "input": "addRemoveServiceLinkInput",
           "output": "service"
         },
-        "activate": {
+        "rollback": {
           "input": null,
-          "output": "service"
-        },
-        "addservicelink": {
-          "input": "addRemoveServiceLinkInput",
           "output": "service"
         },
         "create": {
           "input": null,
           "output": "service"
         },
-        "cancelupgrade": {
+        "activate": {
           "input": null,
           "output": "service"
         },
-        "setservicelinks": {
-          "input": "setServiceLinksInput",
+        "upgrade": {
+          "input": "serviceUpgrade",
+          "output": "service"
+        },
+        "addservicelink": {
+          "input": "addRemoveServiceLinkInput",
+          "output": "service"
+        },
+        "deactivate": {
+          "input": null,
+          "output": "service"
+        },
+        "cancelrollback": {
+          "input": null,
           "output": "service"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -7076,324 +7465,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
-    },
-    {
-      "id": "dynamicSchema",
-      "type": "schema",
-      "links": {
-        "self": "http://localhost:8082/v1/schemas/dynamicschema",
-        "collection": "http://localhost:8082/v1/dynamicschemas"
-      },
-      "actions": {},
-      "pluralName": "dynamicSchemas",
-      "resourceFields": {
-        "accountId": {
-          "type": "reference[account]",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 255
-        },
-        "created": {
-          "type": "date",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 255
-        },
-        "data": {
-          "type": "map[json]",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 65535
-        },
-        "definition": {
-          "type": "string",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 16777215
-        },
-        "description": {
-          "type": "string",
-          "description": null,
-          "create": true,
-          "update": true,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 1024
-        },
-        "id": {
-          "type": "int",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "kind": {
-          "type": "string",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 255
-        },
-        "name": {
-          "type": "string",
-          "description": null,
-          "create": true,
-          "update": true,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 255
-        },
-        "parent": {
-          "type": "string",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 255
-        },
-        "removed": {
-          "type": "date",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 255
-        },
-        "state": {
-          "type": "enum",
-          "description": null,
-          "create": false,
-          "update": false,
-          "readOnCreateOnly": false,
-          "maxLength": 128,
-          "options": [
-            "active",
-            "creating",
-            "purged",
-            "removing",
-            "requested"
-          ]
-        },
-        "uuid": {
-          "type": "string",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 128
-        },
-        "transitioning": {
-          "type": "enum",
-          "description": null,
-          "create": false,
-          "update": false,
-          "readOnCreateOnly": false,
-          "options": [
-            "yes",
-            "no",
-            "error"
-          ]
-        },
-        "transitioningMessage": {
-          "type": "string",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "transitioningProgress": {
-          "type": "int",
-          "description": null,
-          "create": false,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "roles": {
-          "type": "array[string]",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        }
-      },
-      "collectionFilters": {
-        "accountId": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "null",
-            "notnull"
-          ]
-        },
-        "created": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "lt",
-            "lte",
-            "gt",
-            "gte",
-            "null",
-            "notnull"
-          ]
-        },
-        "definition": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "prefix",
-            "like",
-            "notlike",
-            "null",
-            "notnull"
-          ]
-        },
-        "description": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "prefix",
-            "like",
-            "notlike",
-            "null",
-            "notnull"
-          ]
-        },
-        "id": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "lt",
-            "lte",
-            "gt",
-            "gte",
-            "null",
-            "notnull"
-          ]
-        },
-        "kind": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "prefix",
-            "like",
-            "notlike",
-            "null",
-            "notnull"
-          ]
-        },
-        "name": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "prefix",
-            "like",
-            "notlike",
-            "null",
-            "notnull"
-          ]
-        },
-        "parent": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "prefix",
-            "like",
-            "notlike",
-            "null",
-            "notnull"
-          ]
-        },
-        "removed": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "lt",
-            "lte",
-            "gt",
-            "gte",
-            "null",
-            "notnull"
-          ]
-        },
-        "serviceId": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "null",
-            "notnull"
-          ]
-        },
-        "state": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "null",
-            "notnull"
-          ]
-        },
-        "uuid": {
-          "modifiers": [
-            "eq",
-            "ne",
-            "prefix",
-            "like",
-            "notlike",
-            "null",
-            "notnull"
-          ]
-        }
-      },
-      "includeableLinks": [
-        "account"
       ],
-      "resourceActions": {
-        "create": {
-          "input": null,
-          "output": "dynamicSchema"
-        },
-        "remove": {
-          "input": null,
-          "output": "dynamicSchema"
-        }
-      },
-      "collectionActions": {},
-      "collectionFields": {},
       "collectionMethods": [
-        "GET",
-        "POST"
-      ],
-      "resourceMethods": [
-        "GET",
-        "DELETE"
+        "GET"
       ]
     },
     {
@@ -7756,32 +7832,16 @@
         }
       },
       "includeableLinks": [
-        "configitemstatuses",
         "services",
+        "configitemstatuses",
         "account"
       ],
       "resourceActions": {
-        "rollback": {
-          "input": null,
-          "output": "environment"
-        },
         "upgrade": {
           "input": "environmentUpgrade",
           "output": "environment"
         },
-        "addoutputs": {
-          "input": "addOutputsInput",
-          "output": "environment"
-        },
         "update": {
-          "input": null,
-          "output": "environment"
-        },
-        "error": {
-          "input": null,
-          "output": "environment"
-        },
-        "remove": {
           "input": null,
           "output": "environment"
         },
@@ -7789,7 +7849,27 @@
           "input": null,
           "output": "environment"
         },
-        "cancelrollback": {
+        "remove": {
+          "input": null,
+          "output": "environment"
+        },
+        "error": {
+          "input": null,
+          "output": "environment"
+        },
+        "cancelupgrade": {
+          "input": null,
+          "output": "environment"
+        },
+        "addoutputs": {
+          "input": "addOutputsInput",
+          "output": "environment"
+        },
+        "activateservices": {
+          "input": null,
+          "output": "environment"
+        },
+        "rollback": {
           "input": null,
           "output": "environment"
         },
@@ -7797,33 +7877,26 @@
           "input": null,
           "output": "environment"
         },
-        "activateservices": {
+        "create": {
           "input": null,
           "output": "environment"
         },
-        "create": {
+        "cancelrollback": {
           "input": null,
           "output": "environment"
         },
         "exportconfig": {
           "input": "composeConfigInput",
           "output": "composeConfig"
-        },
-        "cancelupgrade": {
-          "input": null,
-          "output": "environment"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -7870,11 +7943,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -7914,10 +7986,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "extensionPoint",
@@ -7970,10 +8042,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -8231,21 +8303,21 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "externalEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "externalEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -8482,21 +8554,21 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "externalEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "externalEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -8792,11 +8864,11 @@
         }
       },
       "includeableLinks": [
-        "externalhandlerprocesses",
-        "externalhandlerexternalhandlerprocessmaps"
+        "externalhandlerexternalhandlerprocessmaps",
+        "externalhandlerprocesses"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "externalHandler"
         },
@@ -8804,36 +8876,36 @@
           "input": null,
           "output": "externalHandler"
         },
-        "create": {
-          "input": null,
-          "output": "externalHandler"
-        },
-        "update": {
-          "input": null,
-          "output": "externalHandler"
-        },
-        "purge": {
-          "input": null,
-          "output": "externalHandler"
-        },
         "remove": {
+          "input": null,
+          "output": "externalHandler"
+        },
+        "restore": {
           "input": null,
           "output": "externalHandler"
         },
         "deactivate": {
           "input": null,
           "output": "externalHandler"
+        },
+        "create": {
+          "input": null,
+          "output": "externalHandler"
+        },
+        "purge": {
+          "input": null,
+          "output": "externalHandler"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -9139,7 +9211,7 @@
         "externalhandlerprocess"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "externalHandlerExternalHandlerProcessMap"
         },
@@ -9147,33 +9219,33 @@
           "input": null,
           "output": "externalHandlerExternalHandlerProcessMap"
         },
-        "create": {
-          "input": null,
-          "output": "externalHandlerExternalHandlerProcessMap"
-        },
-        "update": {
-          "input": null,
-          "output": "externalHandlerExternalHandlerProcessMap"
-        },
-        "purge": {
-          "input": null,
-          "output": "externalHandlerExternalHandlerProcessMap"
-        },
         "remove": {
+          "input": null,
+          "output": "externalHandlerExternalHandlerProcessMap"
+        },
+        "restore": {
           "input": null,
           "output": "externalHandlerExternalHandlerProcessMap"
         },
         "deactivate": {
           "input": null,
           "output": "externalHandlerExternalHandlerProcessMap"
+        },
+        "create": {
+          "input": null,
+          "output": "externalHandlerExternalHandlerProcessMap"
+        },
+        "purge": {
+          "input": null,
+          "output": "externalHandlerExternalHandlerProcessMap"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -9426,7 +9498,7 @@
         "externalhandlers"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "externalHandlerProcess"
         },
@@ -9434,33 +9506,33 @@
           "input": null,
           "output": "externalHandlerProcess"
         },
-        "create": {
-          "input": null,
-          "output": "externalHandlerProcess"
-        },
-        "update": {
-          "input": null,
-          "output": "externalHandlerProcess"
-        },
-        "purge": {
-          "input": null,
-          "output": "externalHandlerProcess"
-        },
         "remove": {
+          "input": null,
+          "output": "externalHandlerProcess"
+        },
+        "restore": {
           "input": null,
           "output": "externalHandlerProcess"
         },
         "deactivate": {
           "input": null,
           "output": "externalHandlerProcess"
+        },
+        "create": {
+          "input": null,
+          "output": "externalHandlerProcess"
+        },
+        "purge": {
+          "input": null,
+          "output": "externalHandlerProcess"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -9493,11 +9565,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -9757,22 +9829,21 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "externalEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "externalEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -10214,37 +10285,16 @@
         }
       },
       "includeableLinks": [
-        "consumedbyservices",
         "environment",
-        "instances",
         "consumedservices",
         "configitemstatuses",
         "serviceexposemaps",
-        "dynamicschemas",
-        "account"
+        "account",
+        "instances",
+        "consumedbyservices"
       ],
       "resourceActions": {
-        "rollback": {
-          "input": null,
-          "output": "service"
-        },
-        "upgrade": {
-          "input": "serviceUpgrade",
-          "output": "service"
-        },
-        "restart": {
-          "input": "serviceRestart",
-          "output": "service"
-        },
         "update": {
-          "input": null,
-          "output": "service"
-        },
-        "remove": {
-          "input": null,
-          "output": "service"
-        },
-        "deactivate": {
           "input": null,
           "output": "service"
         },
@@ -10252,11 +10302,19 @@
           "input": null,
           "output": "service"
         },
-        "cancelrollback": {
+        "restart": {
+          "input": "serviceRestart",
+          "output": "service"
+        },
+        "remove": {
           "input": null,
           "output": "service"
         },
-        "activate": {
+        "cancelupgrade": {
+          "input": null,
+          "output": "service"
+        },
+        "rollback": {
           "input": null,
           "output": "service"
         },
@@ -10264,21 +10322,30 @@
           "input": null,
           "output": "service"
         },
-        "cancelupgrade": {
+        "activate": {
+          "input": null,
+          "output": "service"
+        },
+        "upgrade": {
+          "input": "serviceUpgrade",
+          "output": "service"
+        },
+        "deactivate": {
+          "input": null,
+          "output": "service"
+        },
+        "cancelrollback": {
           "input": null,
           "output": "service"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -10529,21 +10596,21 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "externalEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "externalEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -10795,21 +10862,21 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "externalEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "externalEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -11054,21 +11121,21 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "externalEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "externalEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -11094,10 +11161,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "githubconfig",
@@ -11191,13 +11258,13 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -11252,12 +11319,12 @@
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -11443,12 +11510,12 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
       "collectionMethods": [
         "GET",
         "POST"
-      ],
-      "resourceMethods": [
-        "GET"
       ]
     },
     {
@@ -11484,13 +11551,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT"
-      ]
+        "GET"
+      ],
+      "collectionMethods": []
     },
     {
       "id": "healthcheckInstanceHostMap",
@@ -11820,26 +11884,26 @@
         }
       },
       "includeableLinks": [
-        "instance",
         "host",
-        "account"
+        "account",
+        "instance"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "healthcheckInstanceHostMap"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "healthcheckInstanceHostMap"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -12248,21 +12312,33 @@
         }
       },
       "includeableLinks": [
-        "agent",
-        "instances",
-        "hosts",
-        "volumes",
-        "serviceevents",
-        "hostlabels",
-        "healthcheckinstancehostmaps",
         "ipaddresses",
         "storagepools",
-        "physicalhost",
-        "account",
         "clusters",
-        "containerevents"
+        "physicalhost",
+        "hostlabels",
+        "serviceevents",
+        "hosts",
+        "containerevents",
+        "account",
+        "volumes",
+        "instances",
+        "healthcheckinstancehostmaps",
+        "agent"
       ],
       "resourceActions": {
+        "update": {
+          "input": null,
+          "output": "host"
+        },
+        "activate": {
+          "input": null,
+          "output": "host"
+        },
+        "remove": {
+          "input": null,
+          "output": "host"
+        },
         "restore": {
           "input": null,
           "output": "host"
@@ -12271,7 +12347,7 @@
           "input": null,
           "output": "hostAccess"
         },
-        "activate": {
+        "deactivate": {
           "input": null,
           "output": "host"
         },
@@ -12279,32 +12355,18 @@
           "input": null,
           "output": "host"
         },
-        "update": {
-          "input": null,
-          "output": "host"
-        },
         "purge": {
-          "input": null,
-          "output": "host"
-        },
-        "remove": {
-          "input": null,
-          "output": "host"
-        },
-        "deactivate": {
           "input": null,
           "output": "host"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -12337,10 +12399,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -12381,10 +12443,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -12505,10 +12567,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -12858,13 +12920,13 @@
         }
       },
       "includeableLinks": [
-        "instances",
         "storagepools",
+        "account",
         "volumes",
-        "account"
+        "instances"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "image"
         },
@@ -12872,33 +12934,33 @@
           "input": null,
           "output": "image"
         },
-        "create": {
-          "input": null,
-          "output": "image"
-        },
-        "update": {
-          "input": null,
-          "output": "image"
-        },
-        "purge": {
-          "input": null,
-          "output": "image"
-        },
         "remove": {
+          "input": null,
+          "output": "image"
+        },
+        "restore": {
           "input": null,
           "output": "image"
         },
         "deactivate": {
           "input": null,
           "output": "image"
+        },
+        "create": {
+          "input": null,
+          "output": "image"
+        },
+        "purge": {
+          "input": null,
+          "output": "image"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -12978,12 +13040,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "instance",
@@ -13547,55 +13607,35 @@
         }
       },
       "includeableLinks": [
-        "credentials",
-        "instances",
-        "hosts",
+        "services",
+        "instancelinks",
         "volumes",
+        "targetinstancelinks",
+        "instances",
+        "instancelabels",
+        "ports",
         "mounts",
+        "hosts",
         "serviceevents",
         "serviceexposemaps",
-        "services",
-        "ports",
-        "instancelinks",
-        "healthcheckinstancehostmaps",
-        "targetinstancelinks",
-        "instancelabels",
-        "account"
+        "account",
+        "credentials",
+        "healthcheckinstancehostmaps"
       ],
       "resourceActions": {
-        "updateunhealthy": {
+        "update": {
           "input": null,
           "output": "instance"
         },
-        "console": {
-          "input": "instanceConsoleInput",
-          "output": "instanceConsole"
-        },
-        "restore": {
-          "input": null,
+        "stop": {
+          "input": "instanceStop",
           "output": "instance"
         },
         "restart": {
           "input": null,
           "output": "instance"
         },
-        "deallocate": {
-          "input": null,
-          "output": "instance"
-        },
-        "start": {
-          "input": null,
-          "output": "instance"
-        },
         "updatereinitializing": {
-          "input": null,
-          "output": "instance"
-        },
-        "update": {
-          "input": null,
-          "output": "instance"
-        },
-        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -13607,18 +13647,6 @@
           "input": null,
           "output": "instance"
         },
-        "allocate": {
-          "input": null,
-          "output": "instance"
-        },
-        "stop": {
-          "input": "instanceStop",
-          "output": "instance"
-        },
-        "create": {
-          "input": null,
-          "output": "instance"
-        },
         "updatehealthy": {
           "input": null,
           "output": "instance"
@@ -13626,14 +13654,46 @@
         "migrate": {
           "input": null,
           "output": "instance"
+        },
+        "allocate": {
+          "input": null,
+          "output": "instance"
+        },
+        "create": {
+          "input": null,
+          "output": "instance"
+        },
+        "console": {
+          "input": "instanceConsoleInput",
+          "output": "instanceConsole"
+        },
+        "start": {
+          "input": null,
+          "output": "instance"
+        },
+        "restore": {
+          "input": null,
+          "output": "instance"
+        },
+        "deallocate": {
+          "input": null,
+          "output": "instance"
+        },
+        "updateunhealthy": {
+          "input": null,
+          "output": "instance"
+        },
+        "purge": {
+          "input": null,
+          "output": "instance"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -13673,10 +13733,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "instanceConsoleInput",
@@ -13692,10 +13752,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "instanceHealthCheck",
@@ -13814,11 +13874,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -14153,11 +14213,11 @@
       },
       "includeableLinks": [
         "targetinstance",
-        "instance",
-        "account"
+        "account",
+        "instance"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "instanceLink"
         },
@@ -14165,35 +14225,34 @@
           "input": null,
           "output": "instanceLink"
         },
-        "create": {
-          "input": null,
-          "output": "instanceLink"
-        },
-        "update": {
-          "input": null,
-          "output": "instanceLink"
-        },
-        "purge": {
-          "input": null,
-          "output": "instanceLink"
-        },
         "remove": {
+          "input": null,
+          "output": "instanceLink"
+        },
+        "restore": {
           "input": null,
           "output": "instanceLink"
         },
         "deactivate": {
           "input": null,
           "output": "instanceLink"
+        },
+        "create": {
+          "input": null,
+          "output": "instanceLink"
+        },
+        "purge": {
+          "input": null,
+          "output": "instanceLink"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
-        "GET",
-        "PUT"
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -14225,12 +14284,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "ipAddress",
@@ -14580,14 +14637,14 @@
         }
       },
       "includeableLinks": [
+        "privateports",
         "publicports",
         "hosts",
-        "privateports",
         "account",
         "network"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "ipAddress"
         },
@@ -14595,11 +14652,23 @@
           "input": null,
           "output": "ipAddress"
         },
-        "create": {
+        "remove": {
           "input": null,
           "output": "ipAddress"
         },
-        "update": {
+        "disassociate": {
+          "input": null,
+          "output": "ipAddress"
+        },
+        "restore": {
+          "input": null,
+          "output": "ipAddress"
+        },
+        "deactivate": {
+          "input": null,
+          "output": "ipAddress"
+        },
+        "create": {
           "input": null,
           "output": "ipAddress"
         },
@@ -14610,26 +14679,14 @@
         "associate": {
           "input": "ipAddressAssociateInput",
           "output": "ipPool"
-        },
-        "remove": {
-          "input": null,
-          "output": "ipAddress"
-        },
-        "deactivate": {
-          "input": null,
-          "output": "ipAddress"
-        },
-        "disassociate": {
-          "input": null,
-          "output": "ipAddress"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -14655,12 +14712,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "kubernetesService",
@@ -15060,37 +15115,16 @@
         }
       },
       "includeableLinks": [
-        "consumedbyservices",
         "environment",
-        "instances",
         "consumedservices",
         "configitemstatuses",
         "serviceexposemaps",
-        "dynamicschemas",
-        "account"
+        "account",
+        "instances",
+        "consumedbyservices"
       ],
       "resourceActions": {
-        "rollback": {
-          "input": null,
-          "output": "service"
-        },
-        "upgrade": {
-          "input": "serviceUpgrade",
-          "output": "service"
-        },
-        "restart": {
-          "input": "serviceRestart",
-          "output": "service"
-        },
         "update": {
-          "input": null,
-          "output": "service"
-        },
-        "remove": {
-          "input": null,
-          "output": "service"
-        },
-        "deactivate": {
           "input": null,
           "output": "service"
         },
@@ -15098,7 +15132,19 @@
           "input": null,
           "output": "service"
         },
-        "cancelrollback": {
+        "restart": {
+          "input": "serviceRestart",
+          "output": "service"
+        },
+        "remove": {
+          "input": null,
+          "output": "service"
+        },
+        "setservicelinks": {
+          "input": "setServiceLinksInput",
+          "output": "service"
+        },
+        "cancelupgrade": {
           "input": null,
           "output": "service"
         },
@@ -15106,33 +15152,41 @@
           "input": "addRemoveServiceLinkInput",
           "output": "service"
         },
-        "activate": {
+        "rollback": {
           "input": null,
-          "output": "service"
-        },
-        "addservicelink": {
-          "input": "addRemoveServiceLinkInput",
           "output": "service"
         },
         "create": {
           "input": null,
           "output": "service"
         },
-        "cancelupgrade": {
+        "activate": {
           "input": null,
           "output": "service"
         },
-        "setservicelinks": {
-          "input": "setServiceLinksInput",
+        "upgrade": {
+          "input": "serviceUpgrade",
+          "output": "service"
+        },
+        "addservicelink": {
+          "input": "addRemoveServiceLinkInput",
+          "output": "service"
+        },
+        "deactivate": {
+          "input": null,
+          "output": "service"
+        },
+        "cancelrollback": {
+          "input": null,
           "output": "service"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -15441,26 +15495,26 @@
         }
       },
       "includeableLinks": [
-        "instances",
         "hosts",
-        "account"
+        "account",
+        "instances"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "label"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "label"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -16651,58 +16705,38 @@
         }
       },
       "includeableLinks": [
-        "agent",
-        "networkcontainer",
-        "credentials",
-        "instances",
-        "hosts",
-        "volumes",
-        "mounts",
-        "serviceevents",
-        "serviceexposemaps",
         "services",
-        "ports",
+        "networkcontainer",
         "instancelinks",
-        "healthcheckinstancehostmaps",
-        "registrycredential",
+        "volumes",
         "targetinstancelinks",
+        "instances",
+        "agent",
+        "registrycredential",
         "instancelabels",
-        "account"
+        "ports",
+        "mounts",
+        "serviceexposemaps",
+        "serviceevents",
+        "hosts",
+        "account",
+        "credentials",
+        "healthcheckinstancehostmaps"
       ],
       "resourceActions": {
-        "updateunhealthy": {
+        "update": {
           "input": null,
           "output": "instance"
         },
-        "console": {
-          "input": "instanceConsoleInput",
-          "output": "instanceConsole"
-        },
-        "restore": {
-          "input": null,
+        "stop": {
+          "input": "instanceStop",
           "output": "instance"
         },
         "restart": {
           "input": null,
           "output": "instance"
         },
-        "deallocate": {
-          "input": null,
-          "output": "instance"
-        },
-        "start": {
-          "input": null,
-          "output": "instance"
-        },
         "updatereinitializing": {
-          "input": null,
-          "output": "instance"
-        },
-        "update": {
-          "input": null,
-          "output": "instance"
-        },
-        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -16714,23 +16748,43 @@
           "input": null,
           "output": "instance"
         },
-        "allocate": {
+        "updatehealthy": {
           "input": null,
           "output": "instance"
         },
-        "stop": {
-          "input": "instanceStop",
+        "migrate": {
+          "input": null,
+          "output": "instance"
+        },
+        "allocate": {
+          "input": null,
           "output": "instance"
         },
         "create": {
           "input": null,
           "output": "instance"
         },
-        "updatehealthy": {
+        "console": {
+          "input": "instanceConsoleInput",
+          "output": "instanceConsole"
+        },
+        "start": {
           "input": null,
           "output": "instance"
         },
-        "migrate": {
+        "restore": {
+          "input": null,
+          "output": "instance"
+        },
+        "deallocate": {
+          "input": null,
+          "output": "instance"
+        },
+        "updateunhealthy": {
+          "input": null,
+          "output": "instance"
+        },
+        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -16749,12 +16803,12 @@
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -17003,13 +17057,13 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -17087,13 +17141,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT"
-      ]
+        "GET"
+      ],
+      "collectionMethods": []
     },
     {
       "id": "loadBalancerConfig",
@@ -17127,14 +17178,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -17209,13 +17257,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT"
-      ]
+        "GET"
+      ],
+      "collectionMethods": []
     },
     {
       "id": "loadBalancerService",
@@ -17388,7 +17433,7 @@
           "type": "boolean",
           "description": null,
           "create": true,
-          "update": false,
+          "update": true,
           "nullable": true,
           "readOnCreateOnly": false
         },
@@ -17720,37 +17765,16 @@
         }
       },
       "includeableLinks": [
-        "consumedbyservices",
         "environment",
-        "instances",
         "consumedservices",
         "configitemstatuses",
         "serviceexposemaps",
-        "dynamicschemas",
-        "account"
+        "account",
+        "instances",
+        "consumedbyservices"
       ],
       "resourceActions": {
-        "rollback": {
-          "input": null,
-          "output": "service"
-        },
-        "upgrade": {
-          "input": "serviceUpgrade",
-          "output": "service"
-        },
-        "restart": {
-          "input": "serviceRestart",
-          "output": "service"
-        },
         "update": {
-          "input": null,
-          "output": "service"
-        },
-        "remove": {
-          "input": null,
-          "output": "service"
-        },
-        "deactivate": {
           "input": null,
           "output": "service"
         },
@@ -17758,7 +17782,19 @@
           "input": null,
           "output": "service"
         },
-        "cancelrollback": {
+        "restart": {
+          "input": "serviceRestart",
+          "output": "service"
+        },
+        "remove": {
+          "input": null,
+          "output": "service"
+        },
+        "setservicelinks": {
+          "input": "setLoadBalancerServiceLinksInput",
+          "output": "service"
+        },
+        "cancelupgrade": {
           "input": null,
           "output": "service"
         },
@@ -17766,37 +17802,42 @@
           "input": "addRemoveLoadBalancerServiceLinkInput",
           "output": "service"
         },
-        "activate": {
+        "rollback": {
           "input": null,
-          "output": "service"
-        },
-        "addservicelink": {
-          "input": "addRemoveLoadBalancerServiceLinkInput",
           "output": "service"
         },
         "create": {
           "input": null,
           "output": "service"
         },
-        "cancelupgrade": {
+        "activate": {
           "input": null,
           "output": "service"
         },
-        "setservicelinks": {
-          "input": "setLoadBalancerServiceLinksInput",
+        "upgrade": {
+          "input": "serviceUpgrade",
+          "output": "service"
+        },
+        "addservicelink": {
+          "input": "addRemoveLoadBalancerServiceLinkInput",
+          "output": "service"
+        },
+        "deactivate": {
+          "input": null,
+          "output": "service"
+        },
+        "cancelrollback": {
+          "input": null,
           "output": "service"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -17837,11 +17878,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -17907,12 +17948,12 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
       "collectionMethods": [
         "GET",
         "POST"
-      ],
-      "resourceMethods": [
-        "GET"
       ]
     },
     {
@@ -17948,12 +17989,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "machine",
@@ -18007,8 +18046,7 @@
           "create": false,
           "update": false,
           "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 128
+          "readOnCreateOnly": false
         },
         "externalId": {
           "type": "string",
@@ -18042,9 +18080,7 @@
           "create": true,
           "update": false,
           "required": true,
-          "readOnCreateOnly": false,
-          "minLength": 1,
-          "maxLength": 255
+          "readOnCreateOnly": false
         },
         "removeTime": {
           "type": "date",
@@ -18084,6 +18120,15 @@
             "updating"
           ]
         },
+        "uuid": {
+          "type": "string",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 128
+        },
         "transitioning": {
           "type": "enum",
           "description": null,
@@ -18112,19 +18157,18 @@
           "nullable": true,
           "readOnCreateOnly": false
         },
-        "uuid": {
-          "type": "string",
+        "amazonec2Config": {
+          "type": "amazonec2Config",
           "description": null,
           "create": false,
           "update": false,
           "nullable": true,
-          "readOnCreateOnly": false,
-          "maxLength": 128
+          "readOnCreateOnly": false
         },
         "authCertificateAuthority": {
           "type": "string",
           "description": null,
-          "create": true,
+          "create": false,
           "update": false,
           "nullable": true,
           "readOnCreateOnly": false
@@ -18132,31 +18176,23 @@
         "authKey": {
           "type": "string",
           "description": null,
-          "create": true,
+          "create": false,
           "update": false,
           "nullable": true,
           "readOnCreateOnly": false
         },
-        "extractedConfig": {
-          "type": "string",
+        "azureConfig": {
+          "type": "azureConfig",
           "description": null,
           "create": false,
-          "update": true,
+          "update": false,
           "nullable": true,
           "readOnCreateOnly": false
         },
-        "labels": {
-          "type": "map[string]",
+        "digitaloceanConfig": {
+          "type": "digitaloceanConfig",
           "description": null,
-          "create": true,
-          "update": true,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "engineInstallUrl": {
-          "type": "string",
-          "description": null,
-          "create": true,
+          "create": false,
           "update": false,
           "nullable": true,
           "readOnCreateOnly": false
@@ -18164,47 +18200,7 @@
         "dockerVersion": {
           "type": "string",
           "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "engineOpt": {
-          "type": "map[string]",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "engineInsecureRegistry": {
-          "type": "array[string]",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "engineRegistryMirror": {
-          "type": "array[string]",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "engineLabel": {
-          "type": "map[string]",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
-        },
-        "engineStorageDriver": {
-          "type": "string",
-          "description": null,
-          "create": true,
+          "create": false,
           "update": false,
           "nullable": true,
           "readOnCreateOnly": false
@@ -18212,7 +18208,71 @@
         "engineEnv": {
           "type": "map[string]",
           "description": null,
-          "create": true,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "engineInsecureRegistry": {
+          "type": "array[string]",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "engineInstallUrl": {
+          "type": "string",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "engineLabel": {
+          "type": "map[string]",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "engineOpt": {
+          "type": "map[string]",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "engineRegistryMirror": {
+          "type": "array[string]",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "engineStorageDriver": {
+          "type": "string",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "labels": {
+          "type": "map[string]",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "packetConfig": {
+          "type": "packetConfig",
+          "description": null,
+          "create": false,
           "update": false,
           "nullable": true,
           "readOnCreateOnly": false
@@ -18363,10 +18423,6 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
-          "input": null,
-          "output": "physicalHost"
-        },
         "update": {
           "input": null,
           "output": "physicalHost"
@@ -18375,25 +18431,26 @@
           "input": null,
           "output": "physicalHost"
         },
+        "remove": {
+          "input": null,
+          "output": "physicalHost"
+        },
         "error": {
           "input": null,
           "output": "physicalHost"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "physicalHost"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -18453,8 +18510,8 @@
         "name": {
           "type": "string",
           "description": null,
-          "create": true,
-          "update": true,
+          "create": false,
+          "update": false,
           "nullable": true,
           "readOnCreateOnly": false,
           "maxLength": 255
@@ -18715,7 +18772,7 @@
       },
       "includeableLinks": [],
       "resourceActions": {
-        "reactivate": {
+        "update": {
           "input": null,
           "output": "machineDriver"
         },
@@ -18723,7 +18780,7 @@
           "input": null,
           "output": "machineDriver"
         },
-        "update": {
+        "remove": {
           "input": null,
           "output": "machineDriver"
         },
@@ -18731,25 +18788,29 @@
           "input": null,
           "output": "machineDriver"
         },
-        "remove": {
+        "deactivate": {
           "input": null,
           "output": "machineDriver"
         },
-        "deactivate": {
+        "reactivate": {
+          "input": null,
+          "output": "machineDriver"
+        },
+        "create": {
           "input": null,
           "output": "machineDriver"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT",
         "DELETE"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -19083,14 +19144,10 @@
       },
       "includeableLinks": [
         "volume",
-        "instance",
-        "account"
+        "account",
+        "instance"
       ],
       "resourceActions": {
-        "create": {
-          "input": null,
-          "output": "mount"
-        },
         "remove": {
           "input": null,
           "output": "mount"
@@ -19098,14 +19155,18 @@
         "deactivate": {
           "input": null,
           "output": "mount"
+        },
+        "create": {
+          "input": null,
+          "output": "mount"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -19394,7 +19455,7 @@
         "account"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "network"
         },
@@ -19402,33 +19463,33 @@
           "input": null,
           "output": "network"
         },
-        "create": {
-          "input": null,
-          "output": "network"
-        },
-        "update": {
-          "input": null,
-          "output": "network"
-        },
-        "purge": {
-          "input": null,
-          "output": "network"
-        },
         "remove": {
+          "input": null,
+          "output": "network"
+        },
+        "restore": {
           "input": null,
           "output": "network"
         },
         "deactivate": {
           "input": null,
           "output": "network"
+        },
+        "create": {
+          "input": null,
+          "output": "network"
+        },
+        "purge": {
+          "input": null,
+          "output": "network"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -19471,10 +19532,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "openldapconfig",
@@ -19708,13 +19769,85 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "id": "packetConfig",
+      "type": "schema",
+      "links": {
+        "self": "http://localhost:8082/v1/schemas/packetconfig",
+        "collection": "http://localhost:8082/v1/packetconfigs"
+      },
+      "actions": {},
+      "pluralName": "packetConfigs",
+      "resourceFields": {
+        "apiKey": {
+          "type": "string",
+          "description": "Packet api key",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        },
+        "billingCycle": {
+          "type": "string",
+          "description": "Packet billing cycle, hourly or monthly",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "hourly"
+        },
+        "facilityCode": {
+          "type": "string",
+          "description": "Packet facility code",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "ewr1"
+        },
+        "os": {
+          "type": "string",
+          "description": "Packet OS, possible values are: ubuntu_14_04",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "ubuntu_14_04"
+        },
+        "plan": {
+          "type": "string",
+          "description": "Packet Server Plan",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": "baremetal_1"
+        },
+        "projectId": {
+          "type": "string",
+          "description": "Packet Project Id",
+          "create": true,
+          "update": false,
+          "readOnCreateOnly": false,
+          "default": ""
+        }
+      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -20028,23 +20161,15 @@
       },
       "includeableLinks": [
         "images",
-        "instances",
-        "account"
+        "account",
+        "instances"
       ],
       "resourceActions": {
-        "activate": {
-          "input": null,
-          "output": "credential"
-        },
-        "create": {
-          "input": null,
-          "output": "credential"
-        },
         "update": {
           "input": null,
           "output": "credential"
         },
-        "purge": {
+        "activate": {
           "input": null,
           "output": "credential"
         },
@@ -20056,6 +20181,14 @@
           "input": null,
           "output": "credential"
         },
+        "create": {
+          "input": null,
+          "output": "credential"
+        },
+        "purge": {
+          "input": null,
+          "output": "credential"
+        },
         "changesecret": {
           "input": "changeSecretInput",
           "output": "changeSecretInput"
@@ -20063,14 +20196,14 @@
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT",
         "DELETE"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -20384,10 +20517,6 @@
         "account"
       ],
       "resourceActions": {
-        "create": {
-          "input": null,
-          "output": "physicalHost"
-        },
         "update": {
           "input": null,
           "output": "physicalHost"
@@ -20396,21 +20525,25 @@
           "input": null,
           "output": "physicalHost"
         },
+        "remove": {
+          "input": null,
+          "output": "physicalHost"
+        },
         "error": {
           "input": null,
           "output": "physicalHost"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "physicalHost"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -20799,11 +20932,11 @@
       "includeableLinks": [
         "privateipaddress",
         "publicipaddress",
-        "instance",
-        "account"
+        "account",
+        "instance"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "port"
         },
@@ -20811,35 +20944,34 @@
           "input": null,
           "output": "port"
         },
-        "create": {
-          "input": null,
-          "output": "port"
-        },
-        "update": {
-          "input": null,
-          "output": "port"
-        },
-        "purge": {
-          "input": null,
-          "output": "port"
-        },
         "remove": {
+          "input": null,
+          "output": "port"
+        },
+        "restore": {
           "input": null,
           "output": "port"
         },
         "deactivate": {
           "input": null,
           "output": "port"
+        },
+        "create": {
+          "input": null,
+          "output": "port"
+        },
+        "purge": {
+          "input": null,
+          "output": "port"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
-        "GET",
-        "PUT"
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -20914,10 +21046,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -21026,10 +21158,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -21304,10 +21436,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -21343,7 +21475,7 @@
           "type": "string",
           "description": null,
           "create": true,
-          "update": false,
+          "update": true,
           "nullable": true,
           "readOnCreateOnly": false,
           "maxLength": 1024
@@ -21370,7 +21502,7 @@
           "type": "string",
           "description": null,
           "create": true,
-          "update": false,
+          "update": true,
           "nullable": true,
           "readOnCreateOnly": false,
           "maxLength": 255
@@ -21643,39 +21775,39 @@
         }
       },
       "includeableLinks": [
-        "projectmembers",
-        "auditlogs",
-        "credentials",
-        "environments",
-        "instances",
-        "serviceexposemaps",
-        "networks",
-        "ports",
-        "serviceconsumemaps",
-        "instancelinks",
-        "ipaddresses",
-        "storagepools",
         "externalevents",
-        "images",
-        "hosts",
-        "volumes",
-        "mounts",
-        "serviceevents",
-        "services",
-        "dynamicschemas",
+        "serviceconsumemaps",
         "agents",
-        "labels",
-        "healthcheckinstancehostmaps",
-        "snapshots",
-        "certificates",
-        "backuptargets",
-        "configitemstatuses",
-        "physicalhosts",
+        "instancelinks",
         "containerevents",
-        "backups"
+        "volumes",
+        "instances",
+        "backuptargets",
+        "ipaddresses",
+        "serviceexposemaps",
+        "hosts",
+        "physicalhosts",
+        "credentials",
+        "backups",
+        "snapshots",
+        "healthcheckinstancehostmaps",
+        "certificates",
+        "networks",
+        "services",
+        "storagepools",
+        "configitemstatuses",
+        "labels",
+        "environments",
+        "userpreferences",
+        "ports",
+        "mounts",
+        "auditlogs",
+        "projectmembers",
+        "serviceevents",
+        "images"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "account"
         },
@@ -21683,23 +21815,23 @@
           "input": null,
           "output": "account"
         },
-        "create": {
-          "input": null,
-          "output": "account"
-        },
-        "update": {
-          "input": null,
-          "output": "account"
-        },
-        "purge": {
-          "input": null,
-          "output": "account"
-        },
         "remove": {
           "input": null,
           "output": "account"
         },
+        "restore": {
+          "input": null,
+          "output": "account"
+        },
         "deactivate": {
+          "input": null,
+          "output": "account"
+        },
+        "create": {
+          "input": null,
+          "output": "account"
+        },
+        "purge": {
           "input": null,
           "output": "account"
         },
@@ -21714,12 +21846,14 @@
       },
       "collectionActions": {},
       "collectionFields": {},
+      "resourceMethods": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
       "collectionMethods": [
         "GET",
         "POST"
-      ],
-      "resourceMethods": [
-        "GET"
       ]
     },
     {
@@ -22074,7 +22208,7 @@
         "project"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "projectMember"
         },
@@ -22082,34 +22216,35 @@
           "input": null,
           "output": "projectMember"
         },
-        "create": {
-          "input": null,
-          "output": "projectMember"
-        },
-        "update": {
-          "input": null,
-          "output": "projectMember"
-        },
-        "purge": {
-          "input": null,
-          "output": "projectMember"
-        },
         "remove": {
+          "input": null,
+          "output": "projectMember"
+        },
+        "restore": {
           "input": null,
           "output": "projectMember"
         },
         "deactivate": {
           "input": null,
           "output": "projectMember"
+        },
+        "create": {
+          "input": null,
+          "output": "projectMember"
+        },
+        "purge": {
+          "input": null,
+          "output": "projectMember"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -22166,10 +22301,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "publish",
@@ -22288,11 +22423,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -22606,7 +22741,7 @@
         "account"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "genericObject"
         },
@@ -22614,34 +22749,33 @@
           "input": null,
           "output": "genericObject"
         },
-        "create": {
-          "input": null,
-          "output": "genericObject"
-        },
-        "update": {
-          "input": null,
-          "output": "genericObject"
-        },
-        "purge": {
-          "input": null,
-          "output": "genericObject"
-        },
         "remove": {
+          "input": null,
+          "output": "genericObject"
+        },
+        "restore": {
           "input": null,
           "output": "genericObject"
         },
         "deactivate": {
           "input": null,
           "output": "genericObject"
+        },
+        "create": {
+          "input": null,
+          "output": "genericObject"
+        },
+        "purge": {
+          "input": null,
+          "output": "genericObject"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -22670,12 +22804,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "register",
@@ -22982,7 +23114,7 @@
         "account"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "genericObject"
         },
@@ -22990,23 +23122,23 @@
           "input": null,
           "output": "genericObject"
         },
-        "create": {
-          "input": null,
-          "output": "genericObject"
-        },
-        "update": {
-          "input": null,
-          "output": "genericObject"
-        },
-        "purge": {
-          "input": null,
-          "output": "genericObject"
-        },
         "remove": {
           "input": null,
           "output": "genericObject"
         },
+        "restore": {
+          "input": null,
+          "output": "genericObject"
+        },
         "deactivate": {
+          "input": null,
+          "output": "genericObject"
+        },
+        "create": {
+          "input": null,
+          "output": "genericObject"
+        },
+        "purge": {
           "input": null,
           "output": "genericObject"
         },
@@ -23017,11 +23149,10 @@
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -23038,7 +23169,7 @@
         "accountId": {
           "type": "reference[account]",
           "description": null,
-          "create": true,
+          "create": false,
           "update": false,
           "nullable": true,
           "readOnCreateOnly": false,
@@ -23345,23 +23476,15 @@
       },
       "includeableLinks": [
         "images",
-        "instances",
-        "account"
+        "account",
+        "instances"
       ],
       "resourceActions": {
-        "activate": {
-          "input": null,
-          "output": "credential"
-        },
-        "create": {
-          "input": null,
-          "output": "credential"
-        },
         "update": {
           "input": null,
           "output": "credential"
         },
-        "purge": {
+        "activate": {
           "input": null,
           "output": "credential"
         },
@@ -23372,15 +23495,22 @@
         "deactivate": {
           "input": null,
           "output": "credential"
+        },
+        "create": {
+          "input": null,
+          "output": "credential"
+        },
+        "purge": {
+          "input": null,
+          "output": "credential"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -23779,14 +23909,14 @@
         }
       },
       "includeableLinks": [
-        "images",
-        "credentials",
         "hosts",
-        "volumes",
-        "account"
+        "images",
+        "account",
+        "credentials",
+        "volumes"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "storagePool"
         },
@@ -23794,37 +23924,34 @@
           "input": null,
           "output": "storagePool"
         },
-        "create": {
-          "input": null,
-          "output": "storagePool"
-        },
-        "update": {
-          "input": null,
-          "output": "storagePool"
-        },
-        "purge": {
-          "input": null,
-          "output": "storagePool"
-        },
         "remove": {
+          "input": null,
+          "output": "storagePool"
+        },
+        "restore": {
           "input": null,
           "output": "storagePool"
         },
         "deactivate": {
           "input": null,
           "output": "storagePool"
+        },
+        "create": {
+          "input": null,
+          "output": "storagePool"
+        },
+        "purge": {
+          "input": null,
+          "output": "storagePool"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -24154,25 +24281,17 @@
         }
       },
       "includeableLinks": [
-        "registry",
         "images",
-        "instances",
-        "account"
+        "account",
+        "registry",
+        "instances"
       ],
       "resourceActions": {
-        "activate": {
-          "input": null,
-          "output": "credential"
-        },
-        "create": {
-          "input": null,
-          "output": "credential"
-        },
         "update": {
           "input": null,
           "output": "credential"
         },
-        "purge": {
+        "activate": {
           "input": null,
           "output": "credential"
         },
@@ -24183,18 +24302,23 @@
         "deactivate": {
           "input": null,
           "output": "credential"
+        },
+        "create": {
+          "input": null,
+          "output": "credential"
+        },
+        "purge": {
+          "input": null,
+          "output": "credential"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -24227,10 +24351,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -24263,12 +24387,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "restoreFromBackupInput",
@@ -24293,10 +24415,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "revertToSnapshotInput",
@@ -24321,10 +24443,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "rollingRestartStrategy",
@@ -24363,12 +24485,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "scalePolicy",
@@ -24420,10 +24540,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -24506,10 +24626,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -25711,58 +25831,38 @@
         }
       },
       "includeableLinks": [
-        "agent",
-        "networkcontainer",
-        "credentials",
-        "instances",
-        "hosts",
-        "volumes",
-        "mounts",
-        "serviceevents",
-        "serviceexposemaps",
         "services",
-        "ports",
+        "networkcontainer",
         "instancelinks",
-        "healthcheckinstancehostmaps",
-        "registrycredential",
+        "volumes",
         "targetinstancelinks",
+        "instances",
+        "agent",
+        "registrycredential",
         "instancelabels",
-        "account"
+        "ports",
+        "mounts",
+        "serviceexposemaps",
+        "serviceevents",
+        "hosts",
+        "account",
+        "credentials",
+        "healthcheckinstancehostmaps"
       ],
       "resourceActions": {
-        "updateunhealthy": {
+        "update": {
           "input": null,
           "output": "instance"
         },
-        "console": {
-          "input": "instanceConsoleInput",
-          "output": "instanceConsole"
-        },
-        "restore": {
-          "input": null,
+        "stop": {
+          "input": "instanceStop",
           "output": "instance"
         },
         "restart": {
           "input": null,
           "output": "instance"
         },
-        "deallocate": {
-          "input": null,
-          "output": "instance"
-        },
-        "start": {
-          "input": null,
-          "output": "instance"
-        },
         "updatereinitializing": {
-          "input": null,
-          "output": "instance"
-        },
-        "update": {
-          "input": null,
-          "output": "instance"
-        },
-        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -25774,23 +25874,43 @@
           "input": null,
           "output": "instance"
         },
-        "allocate": {
+        "updatehealthy": {
           "input": null,
           "output": "instance"
         },
-        "stop": {
-          "input": "instanceStop",
+        "migrate": {
+          "input": null,
+          "output": "instance"
+        },
+        "allocate": {
+          "input": null,
           "output": "instance"
         },
         "create": {
           "input": null,
           "output": "instance"
         },
-        "updatehealthy": {
+        "console": {
+          "input": "instanceConsoleInput",
+          "output": "instanceConsole"
+        },
+        "start": {
           "input": null,
           "output": "instance"
         },
-        "migrate": {
+        "restore": {
+          "input": null,
+          "output": "instance"
+        },
+        "deallocate": {
+          "input": null,
+          "output": "instance"
+        },
+        "updateunhealthy": {
+          "input": null,
+          "output": "instance"
+        },
+        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -25809,12 +25929,11 @@
       },
       "collectionActions": {},
       "collectionFields": {},
+      "resourceMethods": [
+        "GET"
+      ],
       "collectionMethods": [
         "POST"
-      ],
-      "resourceMethods": [
-        "GET",
-        "PUT"
       ]
     },
     {
@@ -26113,7 +26232,7 @@
           "type": "boolean",
           "description": null,
           "create": true,
-          "update": false,
+          "update": true,
           "nullable": true,
           "readOnCreateOnly": false
         },
@@ -26321,37 +26440,16 @@
         }
       },
       "includeableLinks": [
-        "consumedbyservices",
         "environment",
-        "instances",
         "consumedservices",
         "configitemstatuses",
         "serviceexposemaps",
-        "dynamicschemas",
-        "account"
+        "account",
+        "instances",
+        "consumedbyservices"
       ],
       "resourceActions": {
-        "rollback": {
-          "input": null,
-          "output": "service"
-        },
-        "upgrade": {
-          "input": "serviceUpgrade",
-          "output": "service"
-        },
-        "restart": {
-          "input": "serviceRestart",
-          "output": "service"
-        },
         "update": {
-          "input": null,
-          "output": "service"
-        },
-        "remove": {
-          "input": null,
-          "output": "service"
-        },
-        "deactivate": {
           "input": null,
           "output": "service"
         },
@@ -26359,7 +26457,19 @@
           "input": null,
           "output": "service"
         },
-        "cancelrollback": {
+        "restart": {
+          "input": "serviceRestart",
+          "output": "service"
+        },
+        "remove": {
+          "input": null,
+          "output": "service"
+        },
+        "setservicelinks": {
+          "input": "setServiceLinksInput",
+          "output": "service"
+        },
+        "cancelupgrade": {
           "input": null,
           "output": "service"
         },
@@ -26367,37 +26477,42 @@
           "input": "addRemoveServiceLinkInput",
           "output": "service"
         },
-        "activate": {
+        "rollback": {
           "input": null,
-          "output": "service"
-        },
-        "addservicelink": {
-          "input": "addRemoveServiceLinkInput",
           "output": "service"
         },
         "create": {
           "input": null,
           "output": "service"
         },
-        "cancelupgrade": {
+        "activate": {
           "input": null,
           "output": "service"
         },
-        "setservicelinks": {
-          "input": "setServiceLinksInput",
+        "upgrade": {
+          "input": "serviceUpgrade",
+          "output": "service"
+        },
+        "addservicelink": {
+          "input": "addRemoveServiceLinkInput",
+          "output": "service"
+        },
+        "deactivate": {
+          "input": null,
+          "output": "service"
+        },
+        "cancelrollback": {
+          "input": null,
           "output": "service"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -26699,15 +26814,11 @@
       },
       "includeableLinks": [
         "service",
-        "account",
+        "instancelinks",
         "consumedservice",
-        "instancelinks"
+        "account"
       ],
       "resourceActions": {
-        "create": {
-          "input": null,
-          "output": "serviceConsumeMap"
-        },
         "update": {
           "input": null,
           "output": "serviceConsumeMap"
@@ -26715,14 +26826,18 @@
         "remove": {
           "input": null,
           "output": "serviceConsumeMap"
+        },
+        "create": {
+          "input": null,
+          "output": "serviceConsumeMap"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -27083,26 +27198,26 @@
         }
       },
       "includeableLinks": [
-        "instance",
         "host",
-        "account"
+        "account",
+        "instance"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "serviceEvent"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "serviceEvent"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -27460,26 +27575,26 @@
         }
       },
       "includeableLinks": [
-        "instance",
         "service",
-        "account"
+        "account",
+        "instance"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "serviceExposeMap"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "serviceExposeMap"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -27522,11 +27637,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -27593,11 +27708,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -27625,12 +27739,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "serviceUpgrade",
@@ -27665,12 +27777,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "serviceUpgradeStrategy",
@@ -27709,10 +27819,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "servicesPortRange",
@@ -27753,12 +27863,12 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -27783,11 +27893,11 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "POST"
       ]
     },
     {
@@ -27813,10 +27923,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "setProjectMembersInput",
@@ -27842,12 +27952,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "setServiceLinksInput",
@@ -27872,12 +27980,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "setting",
@@ -27977,14 +28083,14 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
         "GET",
         "PUT",
         "DELETE"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -28263,27 +28369,26 @@
         "backups"
       ],
       "resourceActions": {
-        "backup": {
-          "input": "snapshotBackupInput",
-          "output": "backup"
+        "remove": {
+          "input": null,
+          "output": "snapshot"
         },
         "create": {
           "input": null,
           "output": "snapshot"
         },
-        "remove": {
-          "input": null,
-          "output": "snapshot"
+        "backup": {
+          "input": "snapshotBackupInput",
+          "output": "backup"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
-        "GET",
-        "DELETE"
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -28482,21 +28587,21 @@
         "backuptarget"
       ],
       "resourceActions": {
-        "create": {
+        "remove": {
           "input": null,
           "output": "backup"
         },
-        "remove": {
+        "create": {
           "input": null,
           "output": "backup"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -28514,10 +28619,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "statsAccess",
@@ -28549,10 +28654,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -28942,14 +29047,14 @@
         }
       },
       "includeableLinks": [
-        "images",
-        "credentials",
         "hosts",
-        "volumes",
-        "account"
+        "images",
+        "account",
+        "credentials",
+        "volumes"
       ],
       "resourceActions": {
-        "restore": {
+        "update": {
           "input": null,
           "output": "storagePool"
         },
@@ -28957,81 +29062,33 @@
           "input": null,
           "output": "storagePool"
         },
-        "create": {
-          "input": null,
-          "output": "storagePool"
-        },
-        "update": {
-          "input": null,
-          "output": "storagePool"
-        },
-        "purge": {
-          "input": null,
-          "output": "storagePool"
-        },
         "remove": {
+          "input": null,
+          "output": "storagePool"
+        },
+        "restore": {
           "input": null,
           "output": "storagePool"
         },
         "deactivate": {
           "input": null,
           "output": "storagePool"
-        }
-      },
-      "collectionActions": {},
-      "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
-      "resourceMethods": [
-        "GET"
-      ]
-    },
-    {
-      "id": "subscribe",
-      "type": "schema",
-      "links": {
-        "self": "http://localhost:8082/v1/schemas/subscribe",
-        "collection": "http://localhost:8082/v1/subscribe"
-      },
-      "actions": {},
-      "pluralName": "subscribe",
-      "resourceFields": {
-        "agentId": {
-          "type": "reference[agent]",
-          "description": null,
-          "create": true,
-          "update": false,
-          "nullable": true,
-          "readOnCreateOnly": false
         },
-        "eventNames": {
-          "type": "array[string]",
-          "validChars": "*._0-9a-zA-Z;=",
-          "transform": "",
-          "description": null,
-          "create": true,
-          "update": false,
-          "readOnCreateOnly": false,
-          "minLength": 1
+        "create": {
+          "input": null,
+          "output": "storagePool"
+        },
+        "purge": {
+          "input": null,
+          "output": "storagePool"
         }
       },
-      "collectionFilters": {
-        "eventNames": {
-          "modifiers": [
-            "eq"
-          ]
-        }
-      },
-      "includeableLinks": [],
-      "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
+        "GET"
+      ],
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -29099,10 +29156,10 @@
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -29262,10 +29319,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
+      "resourceMethods": [
         "GET"
       ],
-      "resourceMethods": [
+      "collectionMethods": [
         "GET"
       ]
     },
@@ -29332,12 +29389,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "typeDocumentation",
@@ -29376,11 +29431,349 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET"
-      ],
       "resourceMethods": [
         "GET"
+      ],
+      "collectionMethods": [
+        "GET"
+      ]
+    },
+    {
+      "id": "userPreference",
+      "type": "schema",
+      "links": {
+        "self": "http://localhost:8082/v1/schemas/userpreference",
+        "collection": "http://localhost:8082/v1/userpreferences"
+      },
+      "actions": {},
+      "pluralName": "userPreferences",
+      "resourceFields": {
+        "accountId": {
+          "type": "reference[account]",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 255
+        },
+        "created": {
+          "type": "date",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 255
+        },
+        "data": {
+          "type": "map[json]",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 16777215
+        },
+        "description": {
+          "type": "string",
+          "description": null,
+          "create": true,
+          "update": true,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 1024
+        },
+        "id": {
+          "type": "int",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "kind": {
+          "type": "string",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 255
+        },
+        "name": {
+          "type": "string",
+          "description": null,
+          "create": true,
+          "update": true,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 255
+        },
+        "removeTime": {
+          "type": "date",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 255
+        },
+        "removed": {
+          "type": "date",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 255
+        },
+        "state": {
+          "type": "enum",
+          "description": null,
+          "create": false,
+          "update": false,
+          "readOnCreateOnly": false,
+          "maxLength": 128,
+          "options": [
+            "activating",
+            "active",
+            "deactivating",
+            "inactive",
+            "purged",
+            "purging",
+            "registering",
+            "removed",
+            "removing",
+            "requested",
+            "restoring",
+            "updating-active",
+            "updating-inactive"
+          ]
+        },
+        "uuid": {
+          "type": "string",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 128
+        },
+        "value": {
+          "type": "string",
+          "description": null,
+          "create": true,
+          "update": true,
+          "nullable": true,
+          "readOnCreateOnly": false,
+          "maxLength": 16777215
+        },
+        "transitioning": {
+          "type": "enum",
+          "description": null,
+          "create": false,
+          "update": false,
+          "readOnCreateOnly": false,
+          "options": [
+            "yes",
+            "no",
+            "error"
+          ]
+        },
+        "transitioningMessage": {
+          "type": "string",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "transitioningProgress": {
+          "type": "int",
+          "description": null,
+          "create": false,
+          "update": false,
+          "nullable": true,
+          "readOnCreateOnly": false
+        },
+        "all": {
+          "type": "boolean",
+          "description": null,
+          "create": false,
+          "update": false,
+          "readOnCreateOnly": false
+        }
+      },
+      "collectionFilters": {
+        "accountId": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "null",
+            "notnull"
+          ]
+        },
+        "all": {
+          "modifiers": [
+            "eq"
+          ]
+        },
+        "created": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "lt",
+            "lte",
+            "gt",
+            "gte",
+            "null",
+            "notnull"
+          ]
+        },
+        "description": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "prefix",
+            "like",
+            "notlike",
+            "null",
+            "notnull"
+          ]
+        },
+        "id": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "lt",
+            "lte",
+            "gt",
+            "gte",
+            "null",
+            "notnull"
+          ]
+        },
+        "kind": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "prefix",
+            "like",
+            "notlike",
+            "null",
+            "notnull"
+          ]
+        },
+        "name": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "prefix",
+            "like",
+            "notlike",
+            "null",
+            "notnull"
+          ]
+        },
+        "removeTime": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "lt",
+            "lte",
+            "gt",
+            "gte",
+            "null",
+            "notnull"
+          ]
+        },
+        "removed": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "lt",
+            "lte",
+            "gt",
+            "gte",
+            "null",
+            "notnull"
+          ]
+        },
+        "state": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "null",
+            "notnull"
+          ]
+        },
+        "uuid": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "prefix",
+            "like",
+            "notlike",
+            "null",
+            "notnull"
+          ]
+        },
+        "value": {
+          "modifiers": [
+            "eq",
+            "ne",
+            "prefix",
+            "like",
+            "notlike",
+            "null",
+            "notnull"
+          ]
+        }
+      },
+      "includeableLinks": [
+        "account"
+      ],
+      "resourceActions": {
+        "update": {
+          "input": null,
+          "output": "userPreference"
+        },
+        "activate": {
+          "input": null,
+          "output": "userPreference"
+        },
+        "remove": {
+          "input": null,
+          "output": "userPreference"
+        },
+        "restore": {
+          "input": null,
+          "output": "userPreference"
+        },
+        "deactivate": {
+          "input": null,
+          "output": "userPreference"
+        },
+        "create": {
+          "input": null,
+          "output": "userPreference"
+        },
+        "purge": {
+          "input": null,
+          "output": "userPreference"
+        }
+      },
+      "collectionActions": {},
+      "collectionFields": {},
+      "resourceMethods": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "collectionMethods": [
+        "GET",
+        "POST"
       ]
     },
     {
@@ -30323,57 +30716,37 @@
         }
       },
       "includeableLinks": [
-        "agent",
-        "credentials",
-        "instances",
-        "hosts",
-        "volumes",
-        "mounts",
-        "serviceevents",
-        "serviceexposemaps",
         "services",
-        "ports",
         "instancelinks",
-        "healthcheckinstancehostmaps",
-        "registrycredential",
+        "volumes",
         "targetinstancelinks",
+        "instances",
+        "agent",
+        "registrycredential",
         "instancelabels",
-        "account"
+        "ports",
+        "mounts",
+        "serviceexposemaps",
+        "hosts",
+        "serviceevents",
+        "account",
+        "credentials",
+        "healthcheckinstancehostmaps"
       ],
       "resourceActions": {
-        "updateunhealthy": {
+        "update": {
           "input": null,
           "output": "instance"
         },
-        "console": {
-          "input": "instanceConsoleInput",
-          "output": "instanceConsole"
-        },
-        "restore": {
-          "input": null,
+        "stop": {
+          "input": "instanceStop",
           "output": "instance"
         },
         "restart": {
           "input": null,
           "output": "instance"
         },
-        "deallocate": {
-          "input": null,
-          "output": "instance"
-        },
-        "start": {
-          "input": null,
-          "output": "instance"
-        },
         "updatereinitializing": {
-          "input": null,
-          "output": "instance"
-        },
-        "update": {
-          "input": null,
-          "output": "instance"
-        },
-        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -30385,23 +30758,43 @@
           "input": null,
           "output": "instance"
         },
-        "allocate": {
+        "updatehealthy": {
           "input": null,
           "output": "instance"
         },
-        "stop": {
-          "input": "instanceStop",
+        "migrate": {
+          "input": null,
+          "output": "instance"
+        },
+        "allocate": {
+          "input": null,
           "output": "instance"
         },
         "create": {
           "input": null,
           "output": "instance"
         },
-        "updatehealthy": {
+        "console": {
+          "input": "instanceConsoleInput",
+          "output": "instanceConsole"
+        },
+        "start": {
           "input": null,
           "output": "instance"
         },
-        "migrate": {
+        "restore": {
+          "input": null,
+          "output": "instance"
+        },
+        "deallocate": {
+          "input": null,
+          "output": "instance"
+        },
+        "updateunhealthy": {
+          "input": null,
+          "output": "instance"
+        },
+        "purge": {
           "input": null,
           "output": "instance"
         },
@@ -30424,14 +30817,11 @@
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "PUT",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -30506,12 +30896,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "POST"
-      ],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     },
     {
       "id": "volume",
@@ -30992,18 +31380,30 @@
         }
       },
       "includeableLinks": [
-        "snapshots",
-        "image",
-        "instance",
-        "storagepools",
         "mounts",
+        "storagepools",
+        "image",
         "account",
-        "backups"
+        "backups",
+        "snapshots",
+        "instance"
       ],
       "resourceActions": {
-        "allocate": {
+        "update": {
           "input": null,
           "output": "volume"
+        },
+        "activate": {
+          "input": null,
+          "output": "volume"
+        },
+        "remove": {
+          "input": null,
+          "output": "volume"
+        },
+        "snapshot": {
+          "input": "volumeSnapshotInput",
+          "output": "snapshot"
         },
         "restore": {
           "input": null,
@@ -31017,7 +31417,7 @@
           "input": null,
           "output": "volume"
         },
-        "activate": {
+        "allocate": {
           "input": null,
           "output": "volume"
         },
@@ -31025,36 +31425,22 @@
           "input": null,
           "output": "volume"
         },
-        "update": {
-          "input": null,
-          "output": "volume"
-        },
         "purge": {
-          "input": null,
-          "output": "volume"
-        },
-        "remove": {
           "input": null,
           "output": "volume"
         },
         "reverttosnapshot": {
           "input": "revertToSnapshotInput",
           "output": "volume"
-        },
-        "snapshot": {
-          "input": "volumeSnapshotInput",
-          "output": "snapshot"
         }
       },
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [
-        "GET",
-        "POST"
-      ],
       "resourceMethods": [
-        "GET",
-        "DELETE"
+        "GET"
+      ],
+      "collectionMethods": [
+        "GET"
       ]
     },
     {
@@ -31080,10 +31466,10 @@
       "resourceActions": {},
       "collectionActions": {},
       "collectionFields": {},
-      "collectionMethods": [],
       "resourceMethods": [
         "GET"
-      ]
+      ],
+      "collectionMethods": []
     }
   ],
   "sortLinks": {},

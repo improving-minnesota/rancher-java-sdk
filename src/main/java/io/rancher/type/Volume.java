@@ -1,9 +1,47 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 import java.util.Map;
 
 public class Volume extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAccountLink() {
+        return this.links.get("account");
+    }
+    
+    public String getBackupsLink() {
+        return this.links.get("backups");
+    }
+    
+    public String getImageLink() {
+        return this.links.get("image");
+    }
+    
+    public String getInstanceLink() {
+        return this.links.get("instance");
+    }
+    
+    public String getMountsLink() {
+        return this.links.get("mounts");
+    }
+    
+    public String getSnapshotsLink() {
+        return this.links.get("snapshots");
+    }
+    
+
     
     private String accessMode;
     

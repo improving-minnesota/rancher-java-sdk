@@ -2,5 +2,5 @@ package io.rancher.base;
 
 import java.util.HashMap;
 
-public class Filters extends HashMap<String, String> {
+public class Filters<K,V> extends HashMap<K, V> {
 }

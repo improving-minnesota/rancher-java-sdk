@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface InstanceStopService {
 
@@ -20,7 +21,7 @@ public interface InstanceStopService {
   Call<TypeCollection<InstanceStop>> list();
 
   @GET("instanceStop")
-  Call<TypeCollection<InstanceStop>> list(@QueryMap Filters filters);
+  Call<TypeCollection<InstanceStop>> list(@QueryMap Filters<String, String> filters);
 
   @GET("instanceStop/{id}")
   Call<InstanceStop> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface InstanceStopService {
 
   @DELETE("instanceStop/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

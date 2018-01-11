@@ -1,10 +1,84 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 import java.util.List;
 import java.util.Map;
 
 public class Project extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAgentsLink() {
+        return this.links.get("agents");
+    }
+    
+    public String getBackupsLink() {
+        return this.links.get("backups");
+    }
+    
+    public String getCertificatesLink() {
+        return this.links.get("certificates");
+    }
+    
+    public String getCredentialsLink() {
+        return this.links.get("credentials");
+    }
+    
+    public String getEnvironmentsLink() {
+        return this.links.get("environments");
+    }
+    
+    public String getHostsLink() {
+        return this.links.get("hosts");
+    }
+    
+    public String getImagesLink() {
+        return this.links.get("images");
+    }
+    
+    public String getInstancesLink() {
+        return this.links.get("instances");
+    }
+    
+    public String getLabelsLink() {
+        return this.links.get("labels");
+    }
+    
+    public String getMountsLink() {
+        return this.links.get("mounts");
+    }
+    
+    public String getNetworksLink() {
+        return this.links.get("networks");
+    }
+    
+    public String getPortsLink() {
+        return this.links.get("ports");
+    }
+    
+    public String getServicesLink() {
+        return this.links.get("services");
+    }
+    
+    public String getSnapshotsLink() {
+        return this.links.get("snapshots");
+    }
+    
+    public String getVolumesLink() {
+        return this.links.get("volumes");
+    }
+    
+
     
     private Boolean allowSystemRole;
     

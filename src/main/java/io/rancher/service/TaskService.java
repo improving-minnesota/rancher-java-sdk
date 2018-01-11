@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface TaskService {
 
@@ -20,7 +21,7 @@ public interface TaskService {
   Call<TypeCollection<Task>> list();
 
   @GET("task")
-  Call<TypeCollection<Task>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Task>> list(@QueryMap Filters<String, String> filters);
 
   @GET("task/{id}")
   Call<Task> get(@Path("id") String id);
@@ -36,5 +37,7 @@ public interface TaskService {
   
   @POST("task/{id}?action=execute")
   Call<Task> execute(@Path("id") String id);
+  
+
   
 }

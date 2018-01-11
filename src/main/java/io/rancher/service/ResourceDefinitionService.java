@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ResourceDefinitionService {
 
@@ -20,7 +21,7 @@ public interface ResourceDefinitionService {
   Call<TypeCollection<ResourceDefinition>> list();
 
   @GET("resourceDefinition")
-  Call<TypeCollection<ResourceDefinition>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ResourceDefinition>> list(@QueryMap Filters<String, String> filters);
 
   @GET("resourceDefinition/{id}")
   Call<ResourceDefinition> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ResourceDefinitionService {
 
   @DELETE("resourceDefinition/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

@@ -1,9 +1,27 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;{{range $import := .meta.ListImports}}
 import {{$import}};{{end}}
 
 public class {{.class}} extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    {{range $key, $value := .links}}
+    public String get{{$value}}Link() {
+        return this.links.get("{{$key}}");
+    }
+    {{end}}
+
     {{range $key, $value := .structFields}}
     private {{$value}} {{$key | toCamelCase}};
     {{end}}{{range $key, $value := .structFields}}

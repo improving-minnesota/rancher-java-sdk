@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ContainerExecService {
 
@@ -20,7 +21,7 @@ public interface ContainerExecService {
   Call<TypeCollection<ContainerExec>> list();
 
   @GET("containerExec")
-  Call<TypeCollection<ContainerExec>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ContainerExec>> list(@QueryMap Filters<String, String> filters);
 
   @GET("containerExec/{id}")
   Call<ContainerExec> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface ContainerExecService {
 
   @DELETE("containerExec/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

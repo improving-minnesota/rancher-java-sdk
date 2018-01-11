@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.ExternalServiceEvent;
+import io.rancher.type.Account;
 import io.rancher.type.ExternalEvent;
 
 import retrofit2.Call;
@@ -14,6 +15,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ExternalServiceEventService {
 
@@ -21,7 +23,7 @@ public interface ExternalServiceEventService {
   Call<TypeCollection<ExternalServiceEvent>> list();
 
   @GET("externalServiceEvent")
-  Call<TypeCollection<ExternalServiceEvent>> list(@QueryMap Filters filters);
+  Call<TypeCollection<ExternalServiceEvent>> list(@QueryMap Filters<String, String> filters);
 
   @GET("externalServiceEvent/{id}")
   Call<ExternalServiceEvent> get(@Path("id") String id);
@@ -37,5 +39,10 @@ public interface ExternalServiceEventService {
   
   @POST("externalServiceEvent/{id}?action=remove")
   Call<ExternalEvent> remove(@Path("id") String id);
+  
+
+  
+  @GET
+  Call<Account> getLinkAccount(@Url String url );
   
 }

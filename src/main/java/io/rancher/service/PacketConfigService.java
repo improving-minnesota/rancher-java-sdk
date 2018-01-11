@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface PacketConfigService {
 
@@ -20,7 +21,7 @@ public interface PacketConfigService {
   Call<TypeCollection<PacketConfig>> list();
 
   @GET("packetConfig")
-  Call<TypeCollection<PacketConfig>> list(@QueryMap Filters filters);
+  Call<TypeCollection<PacketConfig>> list(@QueryMap Filters<String, String> filters);
 
   @GET("packetConfig/{id}")
   Call<PacketConfig> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface PacketConfigService {
 
   @DELETE("packetConfig/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

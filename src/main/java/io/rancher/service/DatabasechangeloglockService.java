@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface DatabasechangeloglockService {
 
@@ -20,7 +21,7 @@ public interface DatabasechangeloglockService {
   Call<TypeCollection<Databasechangeloglock>> list();
 
   @GET("databasechangeloglock")
-  Call<TypeCollection<Databasechangeloglock>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Databasechangeloglock>> list(@QueryMap Filters<String, String> filters);
 
   @GET("databasechangeloglock/{id}")
   Call<Databasechangeloglock> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface DatabasechangeloglockService {
 
   @DELETE("databasechangeloglock/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

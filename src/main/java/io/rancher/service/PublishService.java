@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface PublishService {
 
@@ -20,7 +21,7 @@ public interface PublishService {
   Call<TypeCollection<Publish>> list();
 
   @GET("publish")
-  Call<TypeCollection<Publish>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Publish>> list(@QueryMap Filters<String, String> filters);
 
   @GET("publish/{id}")
   Call<Publish> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface PublishService {
 
   @DELETE("publish/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

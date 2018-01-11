@@ -14,6 +14,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface {{.class}}Service {
 
@@ -21,7 +22,7 @@ public interface {{.class}}Service {
   Call<TypeCollection<{{.class}}>> list();
 
   @GET("{{.type}}")
-  Call<TypeCollection<{{.class}}>> list(@QueryMap Filters filters);
+  Call<TypeCollection<{{.class}}>> list(@QueryMap Filters<String, String> filters);
 
   @GET("{{.type}}/{id}")
   Call<{{.class}}> get(@Path("id") String id);
@@ -40,4 +41,9 @@ public interface {{.class}}Service {
   {{else}}
   Call<{{.Output | capitalize}}> {{$key}}(@Path("id") String id, @Body {{.Input | capitalize}} {{.Input}});
   {{end}}{{end}}
+
+  {{range $key, $value := .serviceLinks}}
+  @GET
+  Call<{{$value}}> getLink{{$key | capitalize}}(@Url String url );
+  {{end}}
 }

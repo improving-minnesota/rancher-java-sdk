@@ -13,6 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface Amazonec2ConfigService {
 
@@ -20,7 +21,7 @@ public interface Amazonec2ConfigService {
   Call<TypeCollection<Amazonec2Config>> list();
 
   @GET("amazonec2Config")
-  Call<TypeCollection<Amazonec2Config>> list(@QueryMap Filters filters);
+  Call<TypeCollection<Amazonec2Config>> list(@QueryMap Filters<String, String> filters);
 
   @GET("amazonec2Config/{id}")
   Call<Amazonec2Config> get(@Path("id") String id);
@@ -33,5 +34,7 @@ public interface Amazonec2ConfigService {
 
   @DELETE("amazonec2Config/{id}")
   Call<Response> delete(@Path("id") String id);
+  
+
   
 }

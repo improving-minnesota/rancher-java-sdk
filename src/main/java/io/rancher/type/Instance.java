@@ -1,9 +1,55 @@
 package io.rancher.type;
 
+import java.util.Map;
+
 import io.rancher.base.AbstractType;
 import java.util.Map;
 
 public class Instance extends AbstractType {
+
+    private Map<String, String> links;
+
+    public Map<String, String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(Map<String, String> links) {
+        this.links = links;
+    }
+    
+    public String getAccountLink() {
+        return this.links.get("account");
+    }
+    
+    public String getCredentialsLink() {
+        return this.links.get("credentials");
+    }
+    
+    public String getHostsLink() {
+        return this.links.get("hosts");
+    }
+    
+    public String getInstancesLink() {
+        return this.links.get("instances");
+    }
+    
+    public String getMountsLink() {
+        return this.links.get("mounts");
+    }
+    
+    public String getPortsLink() {
+        return this.links.get("ports");
+    }
+    
+    public String getServicesLink() {
+        return this.links.get("services");
+    }
+    
+    public String getVolumesLink() {
+        return this.links.get("volumes");
+    }
+    
+
     
     private String accountId;
     
