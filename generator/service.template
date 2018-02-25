@@ -1,43 +1,40 @@
-package io.rancher.service;
+package io.rancher.service
 
-import io.rancher.base.Filters;
-import io.rancher.base.TypeCollection;
-import io.rancher.type.{{$.class}};{{range $import := .meta.ListActionImports}}
-import {{$import}};{{end}}
+import io.rancher.base.Filters
+import io.rancher.base.TypeCollection
+import io.rancher.type.{{.class}}{{range $import := .meta.ListActionImports}}
+import {{$import}}{{end}}
 
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.http.Body;
-import retrofit2.http.DELETE;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.PUT;
-import retrofit2.http.Path;
-import retrofit2.http.QueryMap;
+import retrofit2.Call
+import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.DELETE
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
+import retrofit2.http.QueryMap
 
-public interface {{.class}}Service {
+interface {{.class}}Api {
+  @GET("{{.typePrefix}}{{.type}}")
+  Call<TypeCollection<{{.class}}>> list({{if ne .typePrefix ""}}@Path("projectId") String projectId{{end}})
 
-  @GET("{{.type}}")
-  Call<TypeCollection<{{.class}}>> list();
+  @GET("{{.typePrefix}}{{.type}}")
+  Call<TypeCollection<{{.class}}>> query({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@QueryMap Filters<String, String> filters)
 
-  @GET("{{.type}}")
-  Call<TypeCollection<{{.class}}>> list(@QueryMap Filters filters);
+  @GET("{{.typePrefix}}{{.type}}/{id}")
+  Call<{{.class}}> findById({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id)
 
-  @GET("{{.type}}/{id}")
-  Call<{{.class}}> get(@Path("id") String id);
+  @POST("{{.typePrefix}}{{.type}}")
+  Call<{{.class}}> create({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Body {{.class}} {{.type}})
 
-  @POST("{{.type}}")
-  Call<{{.class}}> create(@Body {{.class}} {{.type}});
+  @PUT("{{.typePrefix}}{{.type}}/{id}")
+  Call<{{.class}}> update({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id, @Body {{.class}} {{.type}})
 
-  @PUT("{{.type}}/{id}")
-  Call<{{.class}}> update(@Path("id") String id, @Body {{.class}} {{.type}});
+  @DELETE("{{.typePrefix}}{{.type}}/{id}")
+  Call<Response> delete({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id){{range $key, $value := .resourceActions}}
 
-  @DELETE("{{.type}}/{id}")
-  Call<Response> delete(@Path("id") String id);
-  {{range $key, $value := .resourceActions}}
-  @POST("{{$.type}}/{id}?action={{$key}}"){{if eq $value.Input "" }}
-  Call<{{.Output | capitalize}}> {{$key}}(@Path("id") String id);
-  {{else}}
-  Call<{{.Output | capitalize}}> {{$key}}(@Path("id") String id, @Body {{.Input | capitalize}} {{.Input}});
-  {{end}}{{end}}
+  @POST("{{$.typePrefix}}{{$.type}}/{id}?action={{$key}}"){{if eq $value.Input "" }}
+  Call<{{.Output | capitalize}}> {{$key}}({{if ne $.typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id){{else}}
+  Call<{{.Output | capitalize}}> {{$key}}({{if ne $.typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id, @Body {{.Input | capitalize}} {{.Input}}){{end}}{{end}}
 }

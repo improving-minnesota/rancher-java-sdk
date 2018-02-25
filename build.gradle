@@ -1,36 +1,24 @@
-apply plugin: 'java'
-apply plugin: 'maven-publish'
-
+plugins {
+  id 'groovy'
+  id 'maven-publish'
+}
 repositories {
-    jcenter()
+  mavenCentral()
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
-    compile "com.squareup.retrofit2:retrofit:2.0.0-beta3"
-    compile "com.squareup.retrofit2:converter-jackson:2.0.0-beta3"
-}
-
-task sourceJar(type: Jar) {
-    from sourceSets.main.allJava
-}
-
-task javadocJar(type: Jar) {
-    from javadoc.destinationDir
+  compile 'org.codehaus.groovy:groovy-all:2.4.9:indy'
+  compile 'com.squareup.retrofit2:retrofit:2.3.0'
+  compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
 }
 
 publishing {
-    publications {
-        sdk(MavenPublication) {
-            from components.java
-            artifact sourceJar {
-                classifier 'sources'
-            }
-            artifact javadocJar {
-                classifier 'javadoc'
-            }
-        }
+  publications {
+    maven(MavenPublication) {
+      from components.java
     }
+  }
 }

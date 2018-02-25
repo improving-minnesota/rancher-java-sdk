@@ -1,0 +1,19 @@
+package io.rancher.type
+
+import io.rancher.base.RancherModel
+import io.rancher.base.RancherType
+
+@RancherModel
+class ServiceLog extends RancherType { 
+  String accountId
+  String created
+  String description
+  String endTime
+  String eventType
+  String instanceId
+  String kind
+  String level
+  String serviceId
+  Boolean subLog
+  String transactionId
+}

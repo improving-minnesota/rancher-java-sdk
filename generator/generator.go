@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	SOURCE_OUTPUT_DIR = "../src/main/java/io/rancher"
+	SOURCE_OUTPUT_DIR = "../src/main/groovy/io/rancher"
 )
 
 var TYPE_SOURCE_OUTPUT_DIR = path.Join(SOURCE_OUTPUT_DIR, "type")
@@ -115,7 +115,7 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 			case "array[string]":
 				result[fieldName] = "List<String>"
 			case "array[int]":
-				result[fieldName] = "List<Integer>"
+				result[fieldName] = "List<BigInteger>"
 			case "array[float64]":
 				result[fieldName] = "List<Float>"
 			case "array[json]":
@@ -139,7 +139,7 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 		} else if strings.HasPrefix(field.Type, "float") {
 			result[fieldName] = "Float"
 		} else if strings.HasPrefix(field.Type, "int") {
-			result[fieldName] = "Integer"
+			result[fieldName] = "BigInteger"
 		} else {
 			result[fieldName] = capitalize(field.Type)
 		}
@@ -169,11 +169,11 @@ func getResourceActions(schema client.Schema, m metadata) map[string]client.Acti
 }
 
 func generateType(schema client.Schema) error {
-	return generateTemplate(schema, path.Join(TYPE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+".java"), "type.template")
+	return generateTemplate(schema, path.Join(TYPE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+".groovy"), "type.template")
 }
 
 func generateService(schema client.Schema) error {
-	return generateTemplate(schema, path.Join(SERVICE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+"Service.java"), "service.template")
+	return generateTemplate(schema, path.Join(SERVICE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+"Api.groovy"), "service.template")
 }
 
 func generateTemplate(schema client.Schema, outputPath string, templateName string) error {
@@ -191,6 +191,11 @@ func generateTemplate(schema client.Schema, outputPath string, templateName stri
 	defer output.Close()
 
 	typeMap, metadata := getTypeMap(schema)
+	var typePrefix string
+	typePrefix = "projects/{projectId}/"
+	if schema.Id == "project" {
+	  typePrefix = ""
+	}
 	data := map[string]interface{}{
 		"schema":          schema,
 		"class":           capitalize(schema.Id),
@@ -198,6 +203,7 @@ func generateTemplate(schema client.Schema, outputPath string, templateName stri
 		"structFields":    typeMap,
 		"resourceActions": getResourceActions(schema, metadata),
 		"type":            schema.Id,
+		"typePrefix":      typePrefix,
 		"meta":            metadata,
 	}
 
