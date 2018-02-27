@@ -1,6 +1,7 @@
 plugins {
   id 'groovy'
-  id 'maven-publish'
+  id 'maven'
+  id 'signing'
 }
 repositories {
   mavenCentral()
@@ -15,10 +16,65 @@ dependencies {
   compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
 }
 
-publishing {
-  publications {
-    maven(MavenPublication) {
-      from components.java
+task javadocJar(type: Jar) {
+  classifier = 'javadoc'
+  from javadoc
+}
+
+task sourcesJar(type: Jar) {
+  classifier = 'sources'
+  from sourceSets.main.allSource
+}
+
+artifacts {
+  archives javadocJar, sourcesJar
+}
+
+signing {
+  sign configurations.archives
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+      repository(url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2/') {
+        authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      snapshotRepository(url: 'https://oss.sonatype.org/content/repositories/snapshots/') {
+        authentication(userName: ossrhUsername, password: ossrhPassword)
+      }
+
+      pom.project {
+        name 'Rancher API Client'
+        url 'https://github.com/kod4n/rancher-client'
+        packaging 'jar'
+        // optionally artifactId can be defined here
+        description 'Client for interacting with the Rancher API'
+
+        scm {
+          url 'https://github.com/kod4n/rancher-client'
+          connection 'scm:https://github.com/kod4n/rancher-client.git'
+          developerConnection 'scm:git@github.com:kod4n/rancher-client.git'
+        }
+
+        licenses {
+          license {
+            name 'The Apache License, Version 2.0'
+            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          }
+        }
+
+        developers {
+          developer {
+            id 'kod4n'
+            name 'Andrew Allen'
+            email 'andrew.st.allen@gmail.com'
+          }
+        }
+      }
     }
   }
 }

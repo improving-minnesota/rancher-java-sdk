@@ -8,10 +8,12 @@ class IpAddress extends RancherType {
   String accountId
   String address
   String created
+  Map<String, Object> data
   String description
   String kind
   String name
   String networkId
+  String removeTime
   String removed
   String state
   String transitioning

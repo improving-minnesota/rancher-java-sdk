@@ -9,11 +9,13 @@ class MachineDriver extends RancherType {
   Boolean builtin
   String checksum
   String created
+  Map<String, Object> data
   Boolean defaultActive
   String description
   String externalId
   String kind
   String name
+  String removeTime
   String removed
   String state
   String transitioning

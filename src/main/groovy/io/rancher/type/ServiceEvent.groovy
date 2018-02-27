@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class ServiceEvent extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   BigInteger externalTimestamp
   String healthcheckUuid
@@ -14,6 +15,7 @@ class ServiceEvent extends RancherType {
   String instanceId
   String kind
   String name
+  String removeTime
   String removed
   String reportedHealth
   String state

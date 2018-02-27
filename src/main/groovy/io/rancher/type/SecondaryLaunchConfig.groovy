@@ -6,6 +6,8 @@ import io.rancher.base.RancherType
 @RancherModel
 class SecondaryLaunchConfig extends RancherType { 
   String accountId
+  String agentId
+  String allocationState
   Map<String, Object> blkioDeviceOptions
   BigInteger blkioWeight
   DockerBuild build
@@ -25,6 +27,7 @@ class SecondaryLaunchConfig extends RancherType {
   BigInteger cpuShares
   BigInteger createIndex
   String created
+  Map<String, Object> data
   Map<String, Object> dataVolumeMounts
   List<String> dataVolumes
   List<String> dataVolumesFrom
@@ -92,6 +95,7 @@ class SecondaryLaunchConfig extends RancherType {
   Boolean publishAllPorts
   Boolean readOnly
   String registryCredentialId
+  String removeTime
   String removed
   String requestedHostId
   String requestedIpAddress
@@ -112,6 +116,7 @@ class SecondaryLaunchConfig extends RancherType {
   Map<String, Object> sysctls
   Boolean system
   Map<String, Object> tmpfs
+  String token
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress

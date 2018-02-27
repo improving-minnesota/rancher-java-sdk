@@ -7,12 +7,14 @@ import io.rancher.base.RancherType
 class HostTemplate extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String driver
   String flavorPrefix
   String kind
   String name
   Map<String, Object> publicValues
+  String removeTime
   String removed
   Map<String, Object> secretValues
   String state

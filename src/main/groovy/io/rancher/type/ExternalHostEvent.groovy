@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class ExternalHostEvent extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   Boolean deleteHost
   String eventType
   String externalId

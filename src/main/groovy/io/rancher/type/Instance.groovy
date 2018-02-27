@@ -7,11 +7,13 @@ import io.rancher.base.RancherType
 class Instance extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String externalId
   String hostId
   String kind
   String name
+  String removeTime
   String removed
   String state
   String transitioning

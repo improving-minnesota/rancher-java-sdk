@@ -8,11 +8,13 @@ class NetworkDriver extends RancherType {
   String accountId
   Map<String, Object> cniConfig
   String created
+  Map<String, Object> data
   DefaultNetwork defaultNetwork
   String description
   String kind
   String name
   Map<String, Object> networkMetadata
+  String removeTime
   String removed
   String serviceId
   String state

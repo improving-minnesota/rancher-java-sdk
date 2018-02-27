@@ -8,6 +8,7 @@ class Port extends RancherType {
   String accountId
   String bindAddress
   String created
+  Map<String, Object> data
   String description
   String instanceId
   String kind
@@ -17,6 +18,7 @@ class Port extends RancherType {
   String protocol
   String publicIpAddressId
   BigInteger publicPort
+  String removeTime
   String removed
   String state
   String transitioning

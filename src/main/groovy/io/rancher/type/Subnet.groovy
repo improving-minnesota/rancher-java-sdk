@@ -8,6 +8,7 @@ class Subnet extends RancherType {
   String accountId
   BigInteger cidrSize
   String created
+  Map<String, Object> data
   String description
   String endAddress
   String gateway
@@ -15,6 +16,7 @@ class Subnet extends RancherType {
   String name
   String networkAddress
   String networkId
+  String removeTime
   String removed
   String startAddress
   String state

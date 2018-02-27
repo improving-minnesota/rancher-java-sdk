@@ -9,6 +9,7 @@ class KubernetesStack extends RancherType {
   Map<String, Object> answers
   Binding binding
   String created
+  Map<String, Object> data
   String description
   Map<String, Object> environment
   String externalId
@@ -19,6 +20,7 @@ class KubernetesStack extends RancherType {
   String namespace
   Map<String, Object> previousEnvironment
   String previousExternalId
+  String removeTime
   String removed
   List<String> serviceIds
   String state

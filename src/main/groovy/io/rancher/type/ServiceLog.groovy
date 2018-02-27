@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class ServiceLog extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String endTime
   String eventType

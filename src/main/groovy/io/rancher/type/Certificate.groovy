@@ -12,6 +12,7 @@ class Certificate extends RancherType {
   String certChain
   String certFingerprint
   String created
+  Map<String, Object> data
   String description
   String expiresAt
   String issuedAt
@@ -20,6 +21,7 @@ class Certificate extends RancherType {
   BigInteger keySize
   String kind
   String name
+  String removeTime
   String removed
   String serialNumber
   String state

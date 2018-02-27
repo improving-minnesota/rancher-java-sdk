@@ -7,7 +7,9 @@ import io.rancher.base.RancherType
 class ScheduledUpgrade extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String kind
+  String removeTime
   String removed
   String stackId
   String started

@@ -7,10 +7,13 @@ import io.rancher.base.RancherType
 class ProjectTemplate extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String externalId
+  Boolean isPublic
   String kind
   String name
+  String removeTime
   String removed
   List<CatalogTemplate> stacks
   String state

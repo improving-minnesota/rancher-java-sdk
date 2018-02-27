@@ -8,11 +8,13 @@ class Registry extends RancherType {
   String accountId
   String blockDevicePath
   String created
+  Map<String, Object> data
   String description
   String driverName
   String externalId
   String kind
   String name
+  String removeTime
   String removed
   String serverAddress
   String state

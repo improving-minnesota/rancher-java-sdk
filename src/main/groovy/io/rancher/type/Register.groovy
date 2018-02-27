@@ -8,10 +8,12 @@ class Register extends RancherType {
   String accessKey
   String accountId
   String created
+  Map<String, Object> data
   String description
   String key
   String kind
   String name
+  String removeTime
   String removed
   Map<String, Object> resourceData
   String secretKey

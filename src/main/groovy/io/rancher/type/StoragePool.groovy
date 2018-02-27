@@ -8,12 +8,14 @@ class StoragePool extends RancherType {
   String accountId
   String blockDevicePath
   String created
+  Map<String, Object> data
   String description
   String driverName
   String externalId
   List<String> hostIds
   String kind
   String name
+  String removeTime
   String removed
   String state
   String storageDriverId

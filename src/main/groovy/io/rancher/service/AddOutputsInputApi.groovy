@@ -1,34 +1,12 @@
 package io.rancher.service
 
-import io.rancher.base.Filters
-import io.rancher.base.TypeCollection
 import io.rancher.type.AddOutputsInput
 import retrofit2.Call
-import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.DELETE
 import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
 import retrofit2.http.Path
-import retrofit2.http.QueryMap
 
 interface AddOutputsInputApi {
-  @GET("projects/{projectId}/addOutputsInput")
-  Call<TypeCollection<AddOutputsInput>> list(@Path("projectId") String projectId)
-
-  @GET("projects/{projectId}/addOutputsInput")
-  Call<TypeCollection<AddOutputsInput>> query(@Path("projectId") String projectId, @QueryMap Filters<String, String> filters)
-
-  @GET("projects/{projectId}/addOutputsInput/{id}")
-  Call<AddOutputsInput> get(@Path("projectId") String projectId, @Path("id") String id)
-
-  @POST("projects/{projectId}/addOutputsInput")
-  Call<AddOutputsInput> create(@Path("projectId") String projectId, @Body AddOutputsInput addOutputsInput)
-
-  @PUT("projects/{projectId}/addOutputsInput/{id}")
-  Call<AddOutputsInput> update(@Path("projectId") String projectId, @Path("id") String id, @Body AddOutputsInput addOutputsInput)
-
-  @DELETE("projects/{projectId}/addOutputsInput/{id}")
-  Call<Response> delete(@Path("projectId") String projectId, @Path("id") String id)
+  
+  @GET("addOutputsInput/{id}")
+  Call<AddOutputsInput> findById(@Path("id") String id)
 }

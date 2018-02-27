@@ -9,10 +9,12 @@ class ServiceConsumeMap extends RancherType {
   String consumedService
   String consumedServiceId
   String created
+  Map<String, Object> data
   String description
   String kind
   String name
   List<String> ports
+  String removeTime
   String removed
   String serviceId
   String state

@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class ExternalServiceEvent extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   Map<String, Object> environment
   String eventType
   String externalId

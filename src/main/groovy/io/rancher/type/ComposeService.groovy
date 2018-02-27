@@ -8,6 +8,7 @@ class ComposeService extends RancherType {
   String accountId
   String created
   BigInteger currentScale
+  Map<String, Object> data
   String description
   String externalId
   String fqdn
@@ -18,6 +19,7 @@ class ComposeService extends RancherType {
   Map<String, Object> linkedServices
   String name
   List<PublicEndpoint> publicEndpoints
+  String removeTime
   String removed
   BigInteger scale
   ScalePolicy scalePolicy

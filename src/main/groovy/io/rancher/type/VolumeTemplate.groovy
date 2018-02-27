@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class VolumeTemplate extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String driver
   Map<String, Object> driverOpts
@@ -14,6 +15,7 @@ class VolumeTemplate extends RancherType {
   String kind
   String name
   Boolean perContainer
+  String removeTime
   String removed
   String stackId
   String state

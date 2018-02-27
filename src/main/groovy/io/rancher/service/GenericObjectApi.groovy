@@ -1,10 +1,8 @@
 package io.rancher.service
 
-import io.rancher.base.Filters
 import io.rancher.base.TypeCollection
 import io.rancher.type.GenericObject
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
@@ -14,24 +12,24 @@ import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
 interface GenericObjectApi {
-  @GET("projects/{projectId}/genericObject")
-  Call<TypeCollection<GenericObject>> list(@Path("projectId") String projectId)
+  @GET("genericObject")
+  Call<TypeCollection<GenericObject>> list()
 
-  @GET("projects/{projectId}/genericObject")
-  Call<TypeCollection<GenericObject>> query(@Path("projectId") String projectId, @QueryMap Filters<String, String> filters)
+  @GET("genericObject")
+  Call<TypeCollection<GenericObject>> query(@QueryMap Map<String, String> filters)
 
-  @GET("projects/{projectId}/genericObject/{id}")
-  Call<GenericObject> get(@Path("projectId") String projectId, @Path("id") String id)
+  @POST("genericObject")
+  Call<GenericObject> create(@Body GenericObject genericObject)
+  
+  @GET("genericObject/{id}")
+  Call<GenericObject> findById(@Path("id") String id)
 
-  @POST("projects/{projectId}/genericObject")
-  Call<GenericObject> create(@Path("projectId") String projectId, @Body GenericObject genericObject)
+  @PUT("genericObject/{id}")
+  Call<GenericObject> update(@Path("id") String id, @Body GenericObject genericObject)
 
-  @PUT("projects/{projectId}/genericObject/{id}")
-  Call<GenericObject> update(@Path("projectId") String projectId, @Path("id") String id, @Body GenericObject genericObject)
+  @DELETE("genericObject/{id}")
+  Call<GenericObject> delete(@Path("id") String id)
 
-  @DELETE("projects/{projectId}/genericObject/{id}")
-  Call<Response> delete(@Path("projectId") String projectId, @Path("id") String id)
-
-  @POST("projects/{projectId}/genericObject/{id}?action=remove")
-  Call<GenericObject> remove(@Path("projectId") String projectId, @Path("id") String id)
+  @POST("genericObject/{id}?action=remove")
+  Call<GenericObject> remove(@Path("id") String id)
 }

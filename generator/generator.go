@@ -191,20 +191,16 @@ func generateTemplate(schema client.Schema, outputPath string, templateName stri
 	defer output.Close()
 
 	typeMap, metadata := getTypeMap(schema)
-	var typePrefix string
-	typePrefix = "projects/{projectId}/"
-	if schema.Id == "project" {
-	  typePrefix = ""
-	}
 	data := map[string]interface{}{
-		"schema":          schema,
-		"class":           capitalize(schema.Id),
-		"collection":      capitalize(schema.Id) + "Collection",
-		"structFields":    typeMap,
-		"resourceActions": getResourceActions(schema, metadata),
-		"type":            schema.Id,
-		"typePrefix":      typePrefix,
-		"meta":            metadata,
+		"schema":             schema,
+		"class":              capitalize(schema.Id),
+		"collection":         capitalize(schema.Id) + "Collection",
+		"structFields":       typeMap,
+		"resourceActions":    getResourceActions(schema, metadata),
+		"type":               schema.Id,
+		"meta":               metadata,
+		"resourceMethods":    schema.ResourceMethods,
+		"collectionMethods":  schema.CollectionMethods,
 	}
 
 	funcMap := template.FuncMap{

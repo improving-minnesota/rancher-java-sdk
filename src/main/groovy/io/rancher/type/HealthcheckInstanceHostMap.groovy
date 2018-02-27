@@ -7,12 +7,14 @@ import io.rancher.base.RancherType
 class HealthcheckInstanceHostMap extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String healthState
   String hostId
   String instanceId
   String kind
   String name
+  String removeTime
   String removed
   String state
   String transitioning

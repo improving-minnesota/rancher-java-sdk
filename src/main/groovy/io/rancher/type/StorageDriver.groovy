@@ -8,9 +8,11 @@ class StorageDriver extends RancherType {
   String accountId
   String blockDevicePath
   String created
+  Map<String, Object> data
   String description
   String kind
   String name
+  String removeTime
   String removed
   String scope
   String serviceId

@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class DefaultNetwork extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String defaultPolicyAction
   String description
   List<String> dns
@@ -16,6 +17,7 @@ class DefaultNetwork extends RancherType {
   Map<String, Object> metadata
   String name
   List<NetworkPolicyRule> policy
+  String removeTime
   String removed
   String state
   List<Subnet> subnets

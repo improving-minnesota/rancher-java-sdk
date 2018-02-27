@@ -8,9 +8,11 @@ class Backup extends RancherType {
   String accountId
   String backupTargetId
   String created
+  Map<String, Object> data
   String description
   String kind
   String name
+  String removeTime
   String removed
   String snapshotId
   String state

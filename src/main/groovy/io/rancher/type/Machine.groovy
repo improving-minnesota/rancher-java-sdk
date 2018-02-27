@@ -11,6 +11,7 @@ class Machine extends RancherType {
   String authKey
   AzureConfig azureConfig
   String created
+  Map<String, Object> data
   String description
   DigitaloceanConfig digitaloceanConfig
   String dockerVersion
@@ -28,6 +29,7 @@ class Machine extends RancherType {
   Map<String, Object> labels
   String name
   PacketConfig packetConfig
+  String removeTime
   String removed
   String state
   String transitioning

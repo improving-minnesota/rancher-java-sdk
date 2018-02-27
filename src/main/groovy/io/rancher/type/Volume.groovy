@@ -8,6 +8,7 @@ class Volume extends RancherType {
   String accessMode
   String accountId
   String created
+  Map<String, Object> data
   String description
   String driver
   Map<String, Object> driverOpts
@@ -19,6 +20,7 @@ class Volume extends RancherType {
   String kind
   List<MountEntry> mounts
   String name
+  String removeTime
   String removed
   BigInteger sizeMb
   String stackId

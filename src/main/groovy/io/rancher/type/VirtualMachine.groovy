@@ -6,6 +6,8 @@ import io.rancher.base.RancherType
 @RancherModel
 class VirtualMachine extends RancherType { 
   String accountId
+  String agentId
+  String allocationState
   Map<String, Object> blkioDeviceOptions
   BigInteger blkioWeight
   String cgroupParent
@@ -22,6 +24,7 @@ class VirtualMachine extends RancherType {
   BigInteger cpuShares
   BigInteger createIndex
   String created
+  Map<String, Object> data
   String deploymentUnitUuid
   String description
   BigInteger diskQuota
@@ -75,6 +78,7 @@ class VirtualMachine extends RancherType {
   String primaryIpAddress
   String primaryNetworkId
   String registryCredentialId
+  String removeTime
   String removed
   String requestedHostId
   RestartPolicy restartPolicy
@@ -93,6 +97,7 @@ class VirtualMachine extends RancherType {
   Map<String, Object> sysctls
   Boolean system
   Map<String, Object> tmpfs
+  String token
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress

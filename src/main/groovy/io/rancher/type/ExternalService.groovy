@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class ExternalService extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String externalId
   List<String> externalIpAddresses
@@ -20,6 +21,7 @@ class ExternalService extends RancherType {
   Map<String, Object> linkedServices
   Map<String, Object> metadata
   String name
+  String removeTime
   String removed
   String stackId
   Boolean startOnCreate

@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class ExternalStoragePoolEvent extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String eventType
   String externalId
   List<String> hostUuids

@@ -10,6 +10,7 @@ class NetworkDriverService extends RancherType {
   BigInteger createIndex
   String created
   BigInteger currentScale
+  Map<String, Object> data
   String description
   String externalId
   String fqdn
@@ -23,6 +24,7 @@ class NetworkDriverService extends RancherType {
   String name
   NetworkDriver networkDriver
   List<PublicEndpoint> publicEndpoints
+  String removeTime
   String removed
   Boolean retainIp
   BigInteger scale

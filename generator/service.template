@@ -1,10 +1,8 @@
 package io.rancher.service
 
-import io.rancher.base.Filters
 import io.rancher.base.TypeCollection
 import io.rancher.type.{{.class}}{{range $import := .meta.ListActionImports}}
 import {{$import}}{{end}}
-
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -15,26 +13,26 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface {{.class}}Api {
-  @GET("{{.typePrefix}}{{.type}}")
-  Call<TypeCollection<{{.class}}>> list({{if ne .typePrefix ""}}@Path("projectId") String projectId{{end}})
+interface {{.class}}Api { {{ range $index, $elem := .collectionMethods }}{{if eq $elem "GET" }}
+  @GET("{{$.type}}")
+  Call<TypeCollection<{{$.class}}>> list()
 
-  @GET("{{.typePrefix}}{{.type}}")
-  Call<TypeCollection<{{.class}}>> query({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@QueryMap Filters<String, String> filters)
+  @GET("{{$.type}}")
+  Call<TypeCollection<{{$.class}}>> query(@QueryMap Map<String, String> filters){{ else if eq $elem "POST" }}
 
-  @GET("{{.typePrefix}}{{.type}}/{id}")
-  Call<{{.class}}> findById({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id)
+  @POST("{{$.type}}")
+  Call<{{$.class}}> create(@Body {{$.class}} {{$.type}}){{ end }}{{ end }}
+  {{ range $index, $elem := .resourceMethods }}{{ if eq $elem "GET" }}
+  @GET("{{$.type}}/{id}")
+  Call<{{$.class}}> findById(@Path("id") String id){{ else if eq $elem "PUT" }}
 
-  @POST("{{.typePrefix}}{{.type}}")
-  Call<{{.class}}> create({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Body {{.class}} {{.type}})
+  @PUT("{{$.type}}/{id}")
+  Call<{{$.class}}> update(@Path("id") String id, @Body {{$.class}} {{$.type}}){{ else if eq $elem "DELETE" }}
 
-  @PUT("{{.typePrefix}}{{.type}}/{id}")
-  Call<{{.class}}> update({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id, @Body {{.class}} {{.type}})
+  @DELETE("{{$.type}}/{id}")
+  Call<{{$.class}}> delete(@Path("id") String id){{ end }}{{ end }}{{range $key, $value := .resourceActions}}
 
-  @DELETE("{{.typePrefix}}{{.type}}/{id}")
-  Call<Response> delete({{if ne .typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id){{range $key, $value := .resourceActions}}
-
-  @POST("{{$.typePrefix}}{{$.type}}/{id}?action={{$key}}"){{if eq $value.Input "" }}
-  Call<{{.Output | capitalize}}> {{$key}}({{if ne $.typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id){{else}}
-  Call<{{.Output | capitalize}}> {{$key}}({{if ne $.typePrefix ""}}@Path("projectId") String projectId, {{end}}@Path("id") String id, @Body {{.Input | capitalize}} {{.Input}}){{end}}{{end}}
+  @POST("{{$.type}}/{id}?action={{$key}}"){{if eq $value.Input "" }}
+  Call<{{.Output | capitalize}}> {{$key}}(@Path("id") String id){{else}}
+  Call<{{.Output | capitalize}}> {{$key}}(@Path("id") String id, @Body {{.Input | capitalize}} {{.Input}}){{end}}{{end}}
 }

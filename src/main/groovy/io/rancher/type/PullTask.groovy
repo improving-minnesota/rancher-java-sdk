@@ -7,12 +7,14 @@ import io.rancher.base.RancherType
 class PullTask extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String image
   String kind
   Map<String, Object> labels
   String mode
   String name
+  String removeTime
   String removed
   String state
   Map<String, Object> status

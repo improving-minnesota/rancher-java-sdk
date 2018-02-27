@@ -8,6 +8,7 @@ class DnsService extends RancherType {
   String accountId
   Boolean assignServiceIpAddress
   String created
+  Map<String, Object> data
   String description
   String externalId
   String fqdn
@@ -18,6 +19,7 @@ class DnsService extends RancherType {
   Map<String, Object> linkedServices
   Map<String, Object> metadata
   String name
+  String removeTime
   String removed
   Boolean retainIp
   String selectorLink

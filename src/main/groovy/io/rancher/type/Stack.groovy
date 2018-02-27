@@ -9,6 +9,7 @@ class Stack extends RancherType {
   Map<String, Object> answers
   Binding binding
   String created
+  Map<String, Object> data
   String description
   String dockerCompose
   Map<String, Object> environment
@@ -21,6 +22,7 @@ class Stack extends RancherType {
   Map<String, Object> previousEnvironment
   String previousExternalId
   String rancherCompose
+  String removeTime
   String removed
   List<String> serviceIds
   Boolean startOnCreate

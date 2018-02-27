@@ -10,6 +10,7 @@ class StorageDriverService extends RancherType {
   BigInteger createIndex
   String created
   BigInteger currentScale
+  Map<String, Object> data
   String description
   String externalId
   String fqdn
@@ -22,6 +23,7 @@ class StorageDriverService extends RancherType {
   Map<String, Object> metadata
   String name
   List<PublicEndpoint> publicEndpoints
+  String removeTime
   String removed
   Boolean retainIp
   BigInteger scale

@@ -7,11 +7,13 @@ import io.rancher.base.RancherType
 class PhysicalHost extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String driver
   String externalId
   String kind
   String name
+  String removeTime
   String removed
   String state
   String transitioning

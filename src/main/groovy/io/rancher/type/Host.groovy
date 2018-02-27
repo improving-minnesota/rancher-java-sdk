@@ -6,14 +6,17 @@ import io.rancher.base.RancherType
 @RancherModel
 class Host extends RancherType { 
   String accountId
+  String agentId
   String agentIpAddress
   String agentState
   Amazonec2Config amazonec2Config
+  String apiProxy
   String authCertificateAuthority
   String authKey
   AzureConfig azureConfig
   BigInteger computeTotal
   String created
+  Map<String, Object> data
   String description
   DigitaloceanConfig digitaloceanConfig
   String dockerVersion
@@ -38,6 +41,7 @@ class Host extends RancherType {
   PacketConfig packetConfig
   String physicalHostId
   List<PublicEndpoint> publicEndpoints
+  String removeTime
   String removed
   String stackId
   String state

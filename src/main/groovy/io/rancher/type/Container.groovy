@@ -6,6 +6,8 @@ import io.rancher.base.RancherType
 @RancherModel
 class Container extends RancherType { 
   String accountId
+  String agentId
+  String allocationState
   Map<String, Object> blkioDeviceOptions
   BigInteger blkioWeight
   DockerBuild build
@@ -25,6 +27,7 @@ class Container extends RancherType {
   BigInteger cpuShares
   BigInteger createIndex
   String created
+  Map<String, Object> data
   Map<String, Object> dataVolumeMounts
   List<String> dataVolumes
   List<String> dataVolumesFrom
@@ -88,6 +91,7 @@ class Container extends RancherType {
   Boolean publishAllPorts
   Boolean readOnly
   String registryCredentialId
+  String removeTime
   String removed
   String requestedHostId
   RestartPolicy restartPolicy
@@ -108,6 +112,7 @@ class Container extends RancherType {
   Map<String, Object> sysctls
   Boolean system
   Map<String, Object> tmpfs
+  String token
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress

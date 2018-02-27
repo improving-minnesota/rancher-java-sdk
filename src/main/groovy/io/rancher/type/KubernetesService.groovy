@@ -7,6 +7,7 @@ import io.rancher.base.RancherType
 class KubernetesService extends RancherType { 
   String accountId
   String created
+  Map<String, Object> data
   String description
   String externalId
   String healthState
@@ -14,6 +15,7 @@ class KubernetesService extends RancherType {
   String kind
   Map<String, Object> linkedServices
   String name
+  String removeTime
   String removed
   String selectorContainer
   String stackId
