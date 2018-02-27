@@ -19,7 +19,7 @@ interface ServiceApi {
 
   @GET("service")
   Call<TypeCollection<Service>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("service/{id}")
   Call<Service> findById(@Path("id") String id)
 

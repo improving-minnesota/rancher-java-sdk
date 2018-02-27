@@ -20,7 +20,7 @@ interface DnsServiceApi {
 
   @GET("dnsService")
   Call<TypeCollection<DnsService>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("dnsService/{id}")
   Call<DnsService> findById(@Path("id") String id)
 

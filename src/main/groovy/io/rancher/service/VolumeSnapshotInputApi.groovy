@@ -5,8 +5,8 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface VolumeSnapshotInputApi {
-  
+interface VolumeSnapshotInputApi { 
+
   @GET("volumeSnapshotInput/{id}")
   Call<VolumeSnapshotInput> findById(@Path("id") String id)
 }

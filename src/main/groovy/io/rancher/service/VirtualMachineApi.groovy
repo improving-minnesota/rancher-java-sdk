@@ -23,7 +23,7 @@ interface VirtualMachineApi {
 
   @GET("virtualMachine")
   Call<TypeCollection<VirtualMachine>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("virtualMachine/{id}")
   Call<VirtualMachine> findById(@Path("id") String id)
 

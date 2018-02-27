@@ -14,7 +14,7 @@ interface StorageDriverApi {
 
   @GET("storageDriver")
   Call<TypeCollection<StorageDriver>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("storageDriver/{id}")
   Call<StorageDriver> findById(@Path("id") String id)
 

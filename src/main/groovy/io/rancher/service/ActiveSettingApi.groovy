@@ -9,7 +9,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface ActiveSettingApi {
-  
+
   @GET("activeSetting/{id}")
   Call<ActiveSetting> findById(@Path("id") String id)
 

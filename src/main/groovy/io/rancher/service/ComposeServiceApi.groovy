@@ -15,7 +15,7 @@ interface ComposeServiceApi {
 
   @GET("composeService")
   Call<TypeCollection<ComposeService>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("composeService/{id}")
   Call<ComposeService> findById(@Path("id") String id)
 

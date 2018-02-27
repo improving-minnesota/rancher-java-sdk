@@ -14,7 +14,7 @@ interface ContainerEventApi {
 
   @GET("containerEvent")
   Call<TypeCollection<ContainerEvent>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("containerEvent/{id}")
   Call<ContainerEvent> findById(@Path("id") String id)
 

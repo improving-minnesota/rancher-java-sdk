@@ -8,7 +8,7 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface SnapshotBackupInputApi {
-  
+
   @GET("snapshotBackupInput/{id}")
   Call<SnapshotBackupInput> findById(@Path("id") String id)
 

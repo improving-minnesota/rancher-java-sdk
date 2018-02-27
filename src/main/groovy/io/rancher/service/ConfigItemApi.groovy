@@ -13,7 +13,7 @@ interface ConfigItemApi {
 
   @GET("configItem")
   Call<TypeCollection<ConfigItem>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("configItem/{id}")
   Call<ConfigItem> findById(@Path("id") String id)
 }

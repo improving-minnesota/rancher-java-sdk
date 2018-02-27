@@ -19,7 +19,7 @@ interface ExternalHandlerApi {
 
   @POST("externalHandler")
   Call<ExternalHandler> create(@Body ExternalHandler externalHandler)
-  
+
   @GET("externalHandler/{id}")
   Call<ExternalHandler> findById(@Path("id") String id)
 

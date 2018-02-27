@@ -5,8 +5,8 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface VolumeActivateInputApi {
-  
+interface VolumeActivateInputApi { 
+
   @GET("volumeActivateInput/{id}")
   Call<VolumeActivateInput> findById(@Path("id") String id)
 }

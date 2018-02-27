@@ -8,13 +8,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface ExternalHandlerExternalHandlerProcessMapApi {
+interface ExternalHandlerExternalHandlerProcessMapApi { 
   @GET("externalHandlerExternalHandlerProcessMap")
   Call<TypeCollection<ExternalHandlerExternalHandlerProcessMap>> list()
 
   @GET("externalHandlerExternalHandlerProcessMap")
   Call<TypeCollection<ExternalHandlerExternalHandlerProcessMap>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalHandlerExternalHandlerProcessMap/{id}")
   Call<ExternalHandlerExternalHandlerProcessMap> findById(@Path("id") String id)
 

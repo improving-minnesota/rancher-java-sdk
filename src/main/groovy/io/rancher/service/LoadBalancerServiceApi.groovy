@@ -14,13 +14,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface LoadBalancerServiceApi { 
+interface LoadBalancerServiceApi {
   @GET("loadBalancerService")
   Call<TypeCollection<LoadBalancerService>> list()
 
   @GET("loadBalancerService")
   Call<TypeCollection<LoadBalancerService>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("loadBalancerService/{id}")
   Call<LoadBalancerService> findById(@Path("id") String id)
 

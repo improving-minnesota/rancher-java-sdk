@@ -15,7 +15,7 @@ interface ExternalDnsEventApi {
 
   @GET("externalDnsEvent")
   Call<TypeCollection<ExternalDnsEvent>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalDnsEvent/{id}")
   Call<ExternalDnsEvent> findById(@Path("id") String id)
 

@@ -14,7 +14,7 @@ interface HostTemplateApi {
 
   @GET("hostTemplate")
   Call<TypeCollection<HostTemplate>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("hostTemplate/{id}")
   Call<HostTemplate> findById(@Path("id") String id)
 

@@ -11,7 +11,7 @@ interface AzureConfigApi {
 
   @POST("azureConfig")
   Call<AzureConfig> create(@Body AzureConfig azureConfig)
-  
+
   @GET("azureConfig/{id}")
   Call<AzureConfig> findById(@Path("id") String id)
 }

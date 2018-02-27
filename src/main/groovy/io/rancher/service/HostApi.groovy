@@ -9,13 +9,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface HostApi { 
+interface HostApi {
   @GET("host")
   Call<TypeCollection<Host>> list()
 
   @GET("host")
   Call<TypeCollection<Host>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("host/{id}")
   Call<Host> findById(@Path("id") String id)
 

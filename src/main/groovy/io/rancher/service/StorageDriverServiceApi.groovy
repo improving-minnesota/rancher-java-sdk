@@ -14,13 +14,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface StorageDriverServiceApi { 
+interface StorageDriverServiceApi {
   @GET("storageDriverService")
   Call<TypeCollection<StorageDriverService>> list()
 
   @GET("storageDriverService")
   Call<TypeCollection<StorageDriverService>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("storageDriverService/{id}")
   Call<StorageDriverService> findById(@Path("id") String id)
 

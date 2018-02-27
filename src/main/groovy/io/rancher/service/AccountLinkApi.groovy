@@ -14,7 +14,7 @@ interface AccountLinkApi {
 
   @GET("accountLink")
   Call<TypeCollection<AccountLink>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("accountLink/{id}")
   Call<AccountLink> findById(@Path("id") String id)
 

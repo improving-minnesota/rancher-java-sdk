@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import groovy.transform.Canonical
 import io.rancher.client.BasicAuthInterceptor
+import io.rancher.service.ProjectApi
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -66,5 +67,18 @@ class Rancher {
 
   static <T> T extractBody(Call<T> call) {
     call.execute().body()
+  }
+
+  static void main(String[] args) {
+    def rancher = new Rancher(
+      new Config(
+        new URL('http://localhost:8080/v2-beta/'),
+        '76DFA45EE2681E98A851',
+        'JY1iq4VT4GwhV3oSEPdw9eDkySDirGwwvfJZ7xW4'
+      )
+    )
+    def projects = rancher.type ProjectApi
+    def stack = extractBody projects.findStackById('1a5', '1st4')
+    println 'foo'
   }
 }

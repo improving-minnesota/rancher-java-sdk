@@ -11,7 +11,7 @@ interface ServiceLinkApi {
 
   @POST("serviceLink")
   Call<ServiceLink> create(@Body ServiceLink serviceLink)
-  
+
   @GET("serviceLink/{id}")
   Call<ServiceLink> findById(@Path("id") String id)
 }

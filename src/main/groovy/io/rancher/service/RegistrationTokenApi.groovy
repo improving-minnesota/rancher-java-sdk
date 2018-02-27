@@ -15,7 +15,7 @@ interface RegistrationTokenApi {
 
   @GET("registrationToken")
   Call<TypeCollection<RegistrationToken>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("registrationToken/{id}")
   Call<RegistrationToken> findById(@Path("id") String id)
 

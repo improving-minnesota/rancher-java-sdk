@@ -11,7 +11,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface RegionApi {
+interface RegionApi { 
   @GET("region")
   Call<TypeCollection<Region>> list()
 
@@ -20,7 +20,7 @@ interface RegionApi {
 
   @POST("region")
   Call<Region> create(@Body Region region)
-  
+
   @GET("region/{id}")
   Call<Region> findById(@Path("id") String id)
 

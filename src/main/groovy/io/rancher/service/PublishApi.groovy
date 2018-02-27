@@ -11,7 +11,7 @@ interface PublishApi {
 
   @POST("publish")
   Call<Publish> create(@Body Publish publish)
-  
+
   @GET("publish/{id}")
   Call<Publish> findById(@Path("id") String id)
 }

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface RestartPolicyApi {
-  
+
   @GET("restartPolicy/{id}")
   Call<RestartPolicy> findById(@Path("id") String id)
 }

@@ -18,7 +18,7 @@ interface ProjectMemberApi {
 
   @POST("projectMember")
   Call<ProjectMember> create(@Body ProjectMember projectMember)
-  
+
   @GET("projectMember/{id}")
   Call<ProjectMember> findById(@Path("id") String id)
 

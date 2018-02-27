@@ -18,7 +18,7 @@ interface ExternalServiceApi {
 
   @GET("externalService")
   Call<TypeCollection<ExternalService>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalService/{id}")
   Call<ExternalService> findById(@Path("id") String id)
 

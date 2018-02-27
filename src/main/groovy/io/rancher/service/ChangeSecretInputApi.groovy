@@ -7,11 +7,11 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-interface ChangeSecretInputApi { 
+interface ChangeSecretInputApi {
 
   @POST("changeSecretInput")
   Call<ChangeSecretInput> create(@Body ChangeSecretInput changeSecretInput)
-  
+
   @GET("changeSecretInput/{id}")
   Call<ChangeSecretInput> findById(@Path("id") String id)
 }

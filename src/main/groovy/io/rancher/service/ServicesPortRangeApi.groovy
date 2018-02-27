@@ -8,11 +8,11 @@ import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
 
-interface ServicesPortRangeApi {
+interface ServicesPortRangeApi { 
 
   @POST("servicesPortRange")
   Call<ServicesPortRange> create(@Body ServicesPortRange servicesPortRange)
-  
+
   @GET("servicesPortRange/{id}")
   Call<ServicesPortRange> findById(@Path("id") String id)
 

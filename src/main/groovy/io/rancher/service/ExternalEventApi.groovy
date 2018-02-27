@@ -14,7 +14,7 @@ interface ExternalEventApi {
 
   @GET("externalEvent")
   Call<TypeCollection<ExternalEvent>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalEvent/{id}")
   Call<ExternalEvent> findById(@Path("id") String id)
 

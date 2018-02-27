@@ -13,7 +13,7 @@ interface ProcessSummaryApi {
 
   @GET("processSummary")
   Call<TypeCollection<ProcessSummary>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("processSummary/{id}")
   Call<ProcessSummary> findById(@Path("id") String id)
 }

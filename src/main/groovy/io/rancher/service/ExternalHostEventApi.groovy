@@ -15,7 +15,7 @@ interface ExternalHostEventApi {
 
   @GET("externalHostEvent")
   Call<TypeCollection<ExternalHostEvent>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalHostEvent/{id}")
   Call<ExternalHostEvent> findById(@Path("id") String id)
 

@@ -11,7 +11,7 @@ interface DigitaloceanConfigApi {
 
   @POST("digitaloceanConfig")
   Call<DigitaloceanConfig> create(@Body DigitaloceanConfig digitaloceanConfig)
-  
+
   @GET("digitaloceanConfig/{id}")
   Call<DigitaloceanConfig> findById(@Path("id") String id)
 }

@@ -19,7 +19,7 @@ interface OpenldapconfigApi {
 
   @POST("openldapconfig")
   Call<Openldapconfig> create(@Body Openldapconfig openldapconfig)
-  
+
   @GET("openldapconfig/{id}")
   Call<Openldapconfig> findById(@Path("id") String id)
 

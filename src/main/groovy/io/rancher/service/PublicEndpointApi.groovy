@@ -11,7 +11,7 @@ interface PublicEndpointApi {
 
   @POST("publicEndpoint")
   Call<PublicEndpoint> create(@Body PublicEndpoint publicEndpoint)
-  
+
   @GET("publicEndpoint/{id}")
   Call<PublicEndpoint> findById(@Path("id") String id)
 }

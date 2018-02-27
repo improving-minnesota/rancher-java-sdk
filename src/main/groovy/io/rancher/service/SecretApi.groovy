@@ -14,7 +14,7 @@ interface SecretApi {
 
   @GET("secret")
   Call<TypeCollection<Secret>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("secret/{id}")
   Call<Secret> findById(@Path("id") String id)
 

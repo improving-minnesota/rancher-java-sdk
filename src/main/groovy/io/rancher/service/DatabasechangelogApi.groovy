@@ -14,7 +14,7 @@ interface DatabasechangelogApi {
 
   @GET("databasechangelog")
   Call<TypeCollection<Databasechangelog>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("databasechangelog/{id}")
   Call<Databasechangelog> findById(@Path("id") String id)
 

@@ -13,7 +13,7 @@ interface ExternalCredentialApi {
 
   @GET("externalCredential")
   Call<TypeCollection<ExternalCredential>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalCredential/{id}")
   Call<ExternalCredential> findById(@Path("id") String id)
 }

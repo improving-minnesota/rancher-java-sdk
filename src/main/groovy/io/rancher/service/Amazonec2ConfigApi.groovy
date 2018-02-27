@@ -11,7 +11,7 @@ interface Amazonec2ConfigApi {
 
   @POST("amazonec2Config")
   Call<Amazonec2Config> create(@Body Amazonec2Config amazonec2Config)
-  
+
   @GET("amazonec2Config/{id}")
   Call<Amazonec2Config> findById(@Path("id") String id)
 }

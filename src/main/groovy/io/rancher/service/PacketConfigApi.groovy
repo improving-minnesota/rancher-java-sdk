@@ -11,7 +11,7 @@ interface PacketConfigApi {
 
   @POST("packetConfig")
   Call<PacketConfig> create(@Body PacketConfig packetConfig)
-  
+
   @GET("packetConfig/{id}")
   Call<PacketConfig> findById(@Path("id") String id)
 }

@@ -8,13 +8,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface ProcessInstanceApi { 
+interface ProcessInstanceApi {
   @GET("processInstance")
   Call<TypeCollection<ProcessInstance>> list()
 
   @GET("processInstance")
   Call<TypeCollection<ProcessInstance>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("processInstance/{id}")
   Call<ProcessInstance> findById(@Path("id") String id)
 

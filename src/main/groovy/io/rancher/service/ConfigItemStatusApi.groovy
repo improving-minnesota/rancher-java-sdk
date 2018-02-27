@@ -15,7 +15,7 @@ interface ConfigItemStatusApi {
 
   @GET("configItemStatus")
   Call<TypeCollection<ConfigItemStatus>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("configItemStatus/{id}")
   Call<ConfigItemStatus> findById(@Path("id") String id)
 

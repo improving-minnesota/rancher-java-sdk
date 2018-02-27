@@ -8,13 +8,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface ScheduledUpgradeApi { 
+interface ScheduledUpgradeApi {
   @GET("scheduledUpgrade")
   Call<TypeCollection<ScheduledUpgrade>> list()
 
   @GET("scheduledUpgrade")
   Call<TypeCollection<ScheduledUpgrade>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("scheduledUpgrade/{id}")
   Call<ScheduledUpgrade> findById(@Path("id") String id)
 

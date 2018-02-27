@@ -13,7 +13,7 @@ interface TaskInstanceApi {
 
   @GET("taskInstance")
   Call<TypeCollection<TaskInstance>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("taskInstance/{id}")
   Call<TaskInstance> findById(@Path("id") String id)
 }

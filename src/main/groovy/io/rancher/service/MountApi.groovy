@@ -8,13 +8,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface MountApi { 
+interface MountApi {
   @GET("mount")
   Call<TypeCollection<Mount>> list()
 
   @GET("mount")
   Call<TypeCollection<Mount>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("mount/{id}")
   Call<Mount> findById(@Path("id") String id)
 

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface BindingApi {
-  
+
   @GET("binding/{id}")
   Call<Binding> findById(@Path("id") String id)
 }

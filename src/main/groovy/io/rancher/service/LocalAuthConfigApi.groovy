@@ -18,7 +18,7 @@ interface LocalAuthConfigApi {
 
   @POST("localAuthConfig")
   Call<LocalAuthConfig> create(@Body LocalAuthConfig localAuthConfig)
-  
+
   @GET("localAuthConfig/{id}")
   Call<LocalAuthConfig> findById(@Path("id") String id)
 }

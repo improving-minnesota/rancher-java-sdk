@@ -23,7 +23,7 @@ interface ContainerApi {
 
   @GET("container")
   Call<TypeCollection<Container>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("container/{id}")
   Call<Container> findById(@Path("id") String id)
 

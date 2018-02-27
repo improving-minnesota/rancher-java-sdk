@@ -17,7 +17,7 @@ interface KubernetesStackApi {
 
   @GET("kubernetesStack")
   Call<TypeCollection<KubernetesStack>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("kubernetesStack/{id}")
   Call<KubernetesStack> findById(@Path("id") String id)
 

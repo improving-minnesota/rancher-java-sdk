@@ -15,7 +15,7 @@ interface HaConfigApi {
 
   @GET("haConfig")
   Call<TypeCollection<HaConfig>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("haConfig/{id}")
   Call<HaConfig> findById(@Path("id") String id)
 

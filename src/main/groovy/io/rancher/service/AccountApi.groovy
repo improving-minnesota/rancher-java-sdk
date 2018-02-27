@@ -11,7 +11,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface AccountApi {
+interface AccountApi { 
   @GET("account")
   Call<TypeCollection<Account>> list()
 
@@ -20,7 +20,7 @@ interface AccountApi {
 
   @POST("account")
   Call<Account> create(@Body Account account)
-  
+
   @GET("account/{id}")
   Call<Account> findById(@Path("id") String id)
 

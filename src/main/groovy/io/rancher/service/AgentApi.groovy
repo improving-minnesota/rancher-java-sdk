@@ -11,7 +11,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface AgentApi {
+interface AgentApi { 
   @GET("agent")
   Call<TypeCollection<Agent>> list()
 
@@ -20,7 +20,7 @@ interface AgentApi {
 
   @POST("agent")
   Call<Agent> create(@Body Agent agent)
-  
+
   @GET("agent/{id}")
   Call<Agent> findById(@Path("id") String id)
 

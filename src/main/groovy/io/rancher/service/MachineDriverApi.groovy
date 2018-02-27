@@ -11,7 +11,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface MachineDriverApi {
+interface MachineDriverApi { 
   @GET("machineDriver")
   Call<TypeCollection<MachineDriver>> list()
 
@@ -20,7 +20,7 @@ interface MachineDriverApi {
 
   @POST("machineDriver")
   Call<MachineDriver> create(@Body MachineDriver machineDriver)
-  
+
   @GET("machineDriver/{id}")
   Call<MachineDriver> findById(@Path("id") String id)
 

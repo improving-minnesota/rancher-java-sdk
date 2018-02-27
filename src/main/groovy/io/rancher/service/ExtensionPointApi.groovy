@@ -13,7 +13,7 @@ interface ExtensionPointApi {
 
   @GET("extensionPoint")
   Call<TypeCollection<ExtensionPoint>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("extensionPoint/{id}")
   Call<ExtensionPoint> findById(@Path("id") String id)
 }

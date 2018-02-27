@@ -14,7 +14,7 @@ interface StoragePoolApi {
 
   @GET("storagePool")
   Call<TypeCollection<StoragePool>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("storagePool/{id}")
   Call<StoragePool> findById(@Path("id") String id)
 

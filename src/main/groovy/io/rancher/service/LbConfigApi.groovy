@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface LbConfigApi {
-  
+
   @GET("lbConfig/{id}")
   Call<LbConfig> findById(@Path("id") String id)
 }

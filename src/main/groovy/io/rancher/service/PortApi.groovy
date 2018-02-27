@@ -8,13 +8,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface PortApi { 
+interface PortApi {
   @GET("port")
   Call<TypeCollection<Port>> list()
 
   @GET("port")
   Call<TypeCollection<Port>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("port/{id}")
   Call<Port> findById(@Path("id") String id)
 

@@ -13,7 +13,7 @@ interface AuditLogApi {
 
   @GET("auditLog")
   Call<TypeCollection<AuditLog>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("auditLog/{id}")
   Call<AuditLog> findById(@Path("id") String id)
 }

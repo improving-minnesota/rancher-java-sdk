@@ -14,7 +14,7 @@ interface DatabasechangeloglockApi {
 
   @GET("databasechangeloglock")
   Call<TypeCollection<Databasechangeloglock>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("databasechangeloglock/{id}")
   Call<Databasechangeloglock> findById(@Path("id") String id)
 

@@ -19,7 +19,7 @@ interface VolumeApi {
 
   @GET("volume")
   Call<TypeCollection<Volume>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("volume/{id}")
   Call<Volume> findById(@Path("id") String id)
 

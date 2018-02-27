@@ -14,11 +14,11 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-interface SecondaryLaunchConfigApi {
+interface SecondaryLaunchConfigApi { 
 
   @POST("secondaryLaunchConfig")
   Call<SecondaryLaunchConfig> create(@Body SecondaryLaunchConfig secondaryLaunchConfig)
-  
+
   @GET("secondaryLaunchConfig/{id}")
   Call<SecondaryLaunchConfig> findById(@Path("id") String id)
 

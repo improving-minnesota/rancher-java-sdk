@@ -15,7 +15,7 @@ interface MachineApi {
 
   @GET("machine")
   Call<TypeCollection<Machine>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("machine/{id}")
   Call<Machine> findById(@Path("id") String id)
 

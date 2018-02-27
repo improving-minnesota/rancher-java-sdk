@@ -18,7 +18,7 @@ interface CredentialApi {
 
   @POST("credential")
   Call<Credential> create(@Body Credential credential)
-  
+
   @GET("credential/{id}")
   Call<Credential> findById(@Path("id") String id)
 

@@ -13,7 +13,7 @@ interface ServiceLogApi {
 
   @GET("serviceLog")
   Call<TypeCollection<ServiceLog>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("serviceLog/{id}")
   Call<ServiceLog> findById(@Path("id") String id)
 }

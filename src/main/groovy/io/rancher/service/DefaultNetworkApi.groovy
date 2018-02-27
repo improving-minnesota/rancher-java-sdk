@@ -8,7 +8,7 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface DefaultNetworkApi {
-  
+
   @GET("defaultNetwork/{id}")
   Call<DefaultNetwork> findById(@Path("id") String id)
 

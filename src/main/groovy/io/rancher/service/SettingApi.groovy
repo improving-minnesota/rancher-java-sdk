@@ -11,7 +11,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface SettingApi {
+interface SettingApi { 
   @GET("setting")
   Call<TypeCollection<Setting>> list()
 
@@ -20,7 +20,7 @@ interface SettingApi {
 
   @POST("setting")
   Call<Setting> create(@Body Setting setting)
-  
+
   @GET("setting/{id}")
   Call<Setting> findById(@Path("id") String id)
 

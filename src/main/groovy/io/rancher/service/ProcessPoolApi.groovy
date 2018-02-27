@@ -13,7 +13,7 @@ interface ProcessPoolApi {
 
   @GET("processPool")
   Call<TypeCollection<ProcessPool>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("processPool/{id}")
   Call<ProcessPool> findById(@Path("id") String id)
 }

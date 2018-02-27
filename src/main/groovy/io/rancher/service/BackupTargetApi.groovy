@@ -14,7 +14,7 @@ interface BackupTargetApi {
 
   @GET("backupTarget")
   Call<TypeCollection<BackupTarget>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("backupTarget/{id}")
   Call<BackupTarget> findById(@Path("id") String id)
 

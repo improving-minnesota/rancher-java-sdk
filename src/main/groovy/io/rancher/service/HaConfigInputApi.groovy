@@ -18,7 +18,7 @@ interface HaConfigInputApi {
 
   @POST("haConfigInput")
   Call<HaConfigInput> create(@Body HaConfigInput haConfigInput)
-  
+
   @GET("haConfigInput/{id}")
   Call<HaConfigInput> findById(@Path("id") String id)
 }

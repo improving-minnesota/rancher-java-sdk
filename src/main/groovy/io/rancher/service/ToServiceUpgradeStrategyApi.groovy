@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ToServiceUpgradeStrategyApi { 
-  
+
   @GET("toServiceUpgradeStrategy/{id}")
   Call<ToServiceUpgradeStrategy> findById(@Path("id") String id)
 }

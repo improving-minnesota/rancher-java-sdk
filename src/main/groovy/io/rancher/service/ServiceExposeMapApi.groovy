@@ -8,13 +8,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface ServiceExposeMapApi { 
+interface ServiceExposeMapApi {
   @GET("serviceExposeMap")
   Call<TypeCollection<ServiceExposeMap>> list()
 
   @GET("serviceExposeMap")
   Call<TypeCollection<ServiceExposeMap>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("serviceExposeMap/{id}")
   Call<ServiceExposeMap> findById(@Path("id") String id)
 

@@ -22,7 +22,7 @@ interface PasswordApi {
 
   @POST("password")
   Call<Password> create(@Body Password password)
-  
+
   @GET("password/{id}")
   Call<Password> findById(@Path("id") String id)
 

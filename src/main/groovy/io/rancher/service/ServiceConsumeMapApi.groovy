@@ -14,7 +14,7 @@ interface ServiceConsumeMapApi {
 
   @GET("serviceConsumeMap")
   Call<TypeCollection<ServiceConsumeMap>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("serviceConsumeMap/{id}")
   Call<ServiceConsumeMap> findById(@Path("id") String id)
 

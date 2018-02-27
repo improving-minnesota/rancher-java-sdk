@@ -19,7 +19,7 @@ interface LaunchConfigApi {
 
   @POST("launchConfig")
   Call<LaunchConfig> create(@Body LaunchConfig launchConfig)
-  
+
   @GET("launchConfig/{id}")
   Call<LaunchConfig> findById(@Path("id") String id)
 

@@ -13,7 +13,7 @@ interface IdentityApi {
 
   @GET("identity")
   Call<TypeCollection<Identity>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("identity/{id}")
   Call<Identity> findById(@Path("id") String id)
 }

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ContainerExecApi {
-  
+
   @GET("containerExec/{id}")
   Call<ContainerExec> findById(@Path("id") String id)
 }

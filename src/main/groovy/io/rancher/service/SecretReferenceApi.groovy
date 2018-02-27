@@ -7,11 +7,11 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-interface SecretReferenceApi { 
+interface SecretReferenceApi {
 
   @POST("secretReference")
   Call<SecretReference> create(@Body SecretReference secretReference)
-  
+
   @GET("secretReference/{id}")
   Call<SecretReference> findById(@Path("id") String id)
 }

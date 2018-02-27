@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ContainerLogsApi {
-  
+
   @GET("containerLogs/{id}")
   Call<ContainerLogs> findById(@Path("id") String id)
 }

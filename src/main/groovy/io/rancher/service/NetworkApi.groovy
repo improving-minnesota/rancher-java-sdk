@@ -14,7 +14,7 @@ interface NetworkApi {
 
   @GET("network")
   Call<TypeCollection<Network>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("network/{id}")
   Call<Network> findById(@Path("id") String id)
 

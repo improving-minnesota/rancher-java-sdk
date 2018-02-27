@@ -20,7 +20,7 @@ interface ProjectTemplateApi {
 
   @POST("projectTemplate")
   Call<ProjectTemplate> create(@Body ProjectTemplate projectTemplate)
-  
+
   @GET("projectTemplate/{id}")
   Call<ProjectTemplate> findById(@Path("id") String id)
 

@@ -7,11 +7,11 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-interface NetworkPolicyRuleApi { 
+interface NetworkPolicyRuleApi {
 
   @POST("networkPolicyRule")
   Call<NetworkPolicyRule> create(@Body NetworkPolicyRule networkPolicyRule)
-  
+
   @GET("networkPolicyRule/{id}")
   Call<NetworkPolicyRule> findById(@Path("id") String id)
 }

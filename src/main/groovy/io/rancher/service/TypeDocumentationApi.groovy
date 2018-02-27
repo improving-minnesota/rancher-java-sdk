@@ -13,7 +13,7 @@ interface TypeDocumentationApi {
 
   @GET("typeDocumentation")
   Call<TypeCollection<TypeDocumentation>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("typeDocumentation/{id}")
   Call<TypeDocumentation> findById(@Path("id") String id)
 }

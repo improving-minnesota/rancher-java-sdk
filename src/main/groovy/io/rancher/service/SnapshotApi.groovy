@@ -17,7 +17,7 @@ interface SnapshotApi {
 
   @GET("snapshot")
   Call<TypeCollection<Snapshot>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("snapshot/{id}")
   Call<Snapshot> findById(@Path("id") String id)
 

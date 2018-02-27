@@ -19,7 +19,7 @@ interface StackApi {
 
   @GET("stack")
   Call<TypeCollection<Stack>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("stack/{id}")
   Call<Stack> findById(@Path("id") String id)
 

@@ -15,7 +15,7 @@ interface RegistryCredentialApi {
 
   @GET("registryCredential")
   Call<TypeCollection<RegistryCredential>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("registryCredential/{id}")
   Call<RegistryCredential> findById(@Path("id") String id)
 

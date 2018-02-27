@@ -14,7 +14,7 @@ interface PhysicalHostApi {
 
   @GET("physicalHost")
   Call<TypeCollection<PhysicalHost>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("physicalHost/{id}")
   Call<PhysicalHost> findById(@Path("id") String id)
 

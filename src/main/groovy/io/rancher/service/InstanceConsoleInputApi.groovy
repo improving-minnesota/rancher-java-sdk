@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface InstanceConsoleInputApi { 
-  
+
   @GET("instanceConsoleInput/{id}")
   Call<InstanceConsoleInput> findById(@Path("id") String id)
 }

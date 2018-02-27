@@ -14,7 +14,7 @@ interface InstanceLinkApi {
 
   @GET("instanceLink")
   Call<TypeCollection<InstanceLink>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("instanceLink/{id}")
   Call<InstanceLink> findById(@Path("id") String id)
 

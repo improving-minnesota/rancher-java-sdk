@@ -8,13 +8,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface LabelApi { 
+interface LabelApi {
   @GET("label")
   Call<TypeCollection<Label>> list()
 
   @GET("label")
   Call<TypeCollection<Label>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("label/{id}")
   Call<Label> findById(@Path("id") String id)
 

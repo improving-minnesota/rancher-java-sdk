@@ -14,7 +14,7 @@ interface VolumeTemplateApi {
 
   @GET("volumeTemplate")
   Call<TypeCollection<VolumeTemplate>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("volumeTemplate/{id}")
   Call<VolumeTemplate> findById(@Path("id") String id)
 

@@ -15,7 +15,7 @@ interface ComposeProjectApi {
 
   @GET("composeProject")
   Call<TypeCollection<ComposeProject>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("composeProject/{id}")
   Call<ComposeProject> findById(@Path("id") String id)
 

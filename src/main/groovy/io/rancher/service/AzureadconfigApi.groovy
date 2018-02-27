@@ -19,7 +19,7 @@ interface AzureadconfigApi {
 
   @POST("azureadconfig")
   Call<Azureadconfig> create(@Body Azureadconfig azureadconfig)
-  
+
   @GET("azureadconfig/{id}")
   Call<Azureadconfig> findById(@Path("id") String id)
 

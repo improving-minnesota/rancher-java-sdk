@@ -12,7 +12,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface ApiKeyApi {
+interface ApiKeyApi { 
   @GET("apiKey")
   Call<TypeCollection<ApiKey>> list()
 
@@ -21,7 +21,7 @@ interface ApiKeyApi {
 
   @POST("apiKey")
   Call<ApiKey> create(@Body ApiKey apiKey)
-  
+
   @GET("apiKey/{id}")
   Call<ApiKey> findById(@Path("id") String id)
 

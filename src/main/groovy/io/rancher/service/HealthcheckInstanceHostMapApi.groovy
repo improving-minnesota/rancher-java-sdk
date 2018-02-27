@@ -14,7 +14,7 @@ interface HealthcheckInstanceHostMapApi {
 
   @GET("healthcheckInstanceHostMap")
   Call<TypeCollection<HealthcheckInstanceHostMap>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("healthcheckInstanceHostMap/{id}")
   Call<HealthcheckInstanceHostMap> findById(@Path("id") String id)
 

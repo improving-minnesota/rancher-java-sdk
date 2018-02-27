@@ -14,7 +14,7 @@ interface SubnetApi {
 
   @GET("subnet")
   Call<TypeCollection<Subnet>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("subnet/{id}")
   Call<Subnet> findById(@Path("id") String id)
 

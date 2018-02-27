@@ -11,7 +11,7 @@ interface InstanceHealthCheckApi {
 
   @POST("instanceHealthCheck")
   Call<InstanceHealthCheck> create(@Body InstanceHealthCheck instanceHealthCheck)
-  
+
   @GET("instanceHealthCheck/{id}")
   Call<InstanceHealthCheck> findById(@Path("id") String id)
 }

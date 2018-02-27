@@ -14,7 +14,7 @@ interface ExternalHandlerProcessApi {
 
   @GET("externalHandlerProcess")
   Call<TypeCollection<ExternalHandlerProcess>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalHandlerProcess/{id}")
   Call<ExternalHandlerProcess> findById(@Path("id") String id)
 

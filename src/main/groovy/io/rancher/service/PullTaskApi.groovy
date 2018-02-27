@@ -15,7 +15,7 @@ interface PullTaskApi {
 
   @GET("pullTask")
   Call<TypeCollection<PullTask>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("pullTask/{id}")
   Call<PullTask> findById(@Path("id") String id)
 

@@ -18,7 +18,7 @@ interface NetworkPolicyRuleWithinApi {
 
   @POST("networkPolicyRuleWithin")
   Call<NetworkPolicyRuleWithin> create(@Body NetworkPolicyRuleWithin networkPolicyRuleWithin)
-  
+
   @GET("networkPolicyRuleWithin/{id}")
   Call<NetworkPolicyRuleWithin> findById(@Path("id") String id)
 }

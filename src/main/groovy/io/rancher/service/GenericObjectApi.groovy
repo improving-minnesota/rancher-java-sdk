@@ -11,7 +11,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface GenericObjectApi {
+interface GenericObjectApi { 
   @GET("genericObject")
   Call<TypeCollection<GenericObject>> list()
 
@@ -20,7 +20,7 @@ interface GenericObjectApi {
 
   @POST("genericObject")
   Call<GenericObject> create(@Body GenericObject genericObject)
-  
+
   @GET("genericObject/{id}")
   Call<GenericObject> findById(@Path("id") String id)
 

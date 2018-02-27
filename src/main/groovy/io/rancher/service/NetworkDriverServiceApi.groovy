@@ -20,7 +20,7 @@ interface NetworkDriverServiceApi {
 
   @GET("networkDriverService")
   Call<TypeCollection<NetworkDriverService>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("networkDriverService/{id}")
   Call<NetworkDriverService> findById(@Path("id") String id)
 

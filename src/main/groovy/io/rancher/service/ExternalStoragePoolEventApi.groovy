@@ -15,7 +15,7 @@ interface ExternalStoragePoolEventApi {
 
   @GET("externalStoragePoolEvent")
   Call<TypeCollection<ExternalStoragePoolEvent>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalStoragePoolEvent/{id}")
   Call<ExternalStoragePoolEvent> findById(@Path("id") String id)
 

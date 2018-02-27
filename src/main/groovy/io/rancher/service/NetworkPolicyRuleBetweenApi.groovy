@@ -7,11 +7,11 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-interface NetworkPolicyRuleBetweenApi { 
+interface NetworkPolicyRuleBetweenApi {
 
   @POST("networkPolicyRuleBetween")
   Call<NetworkPolicyRuleBetween> create(@Body NetworkPolicyRuleBetween networkPolicyRuleBetween)
-  
+
   @GET("networkPolicyRuleBetween/{id}")
   Call<NetworkPolicyRuleBetween> findById(@Path("id") String id)
 }

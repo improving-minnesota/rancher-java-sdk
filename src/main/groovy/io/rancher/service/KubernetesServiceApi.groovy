@@ -20,7 +20,7 @@ interface KubernetesServiceApi {
 
   @GET("kubernetesService")
   Call<TypeCollection<KubernetesService>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("kubernetesService/{id}")
   Call<KubernetesService> findById(@Path("id") String id)
 

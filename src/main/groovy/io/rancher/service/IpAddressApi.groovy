@@ -14,7 +14,7 @@ interface IpAddressApi {
 
   @GET("ipAddress")
   Call<TypeCollection<IpAddress>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("ipAddress/{id}")
   Call<IpAddress> findById(@Path("id") String id)
 

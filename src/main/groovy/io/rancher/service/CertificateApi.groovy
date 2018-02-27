@@ -14,7 +14,7 @@ interface CertificateApi {
 
   @GET("certificate")
   Call<TypeCollection<Certificate>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("certificate/{id}")
   Call<Certificate> findById(@Path("id") String id)
 

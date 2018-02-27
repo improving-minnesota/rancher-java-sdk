@@ -14,7 +14,7 @@ interface ImageApi {
 
   @GET("image")
   Call<TypeCollection<Image>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("image/{id}")
   Call<Image> findById(@Path("id") String id)
 

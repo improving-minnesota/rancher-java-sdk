@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ComposeConfigApi {
-  
+
   @GET("composeConfig/{id}")
   Call<ComposeConfig> findById(@Path("id") String id)
 }

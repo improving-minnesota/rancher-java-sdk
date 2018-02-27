@@ -15,7 +15,7 @@ interface ExternalVolumeEventApi {
 
   @GET("externalVolumeEvent")
   Call<TypeCollection<ExternalVolumeEvent>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("externalVolumeEvent/{id}")
   Call<ExternalVolumeEvent> findById(@Path("id") String id)
 

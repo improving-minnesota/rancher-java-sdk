@@ -13,7 +13,7 @@ interface ServiceProxyApi {
 
   @GET("serviceProxy")
   Call<TypeCollection<ServiceProxy>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("serviceProxy/{id}")
   Call<ServiceProxy> findById(@Path("id") String id)
 }

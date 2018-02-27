@@ -18,7 +18,7 @@ interface RegisterApi {
 
   @GET("register")
   Call<TypeCollection<Register>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("register/{id}")
   Call<Register> findById(@Path("id") String id)
 

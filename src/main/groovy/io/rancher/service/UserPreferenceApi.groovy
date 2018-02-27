@@ -11,7 +11,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface UserPreferenceApi {
+interface UserPreferenceApi { 
   @GET("userPreference")
   Call<TypeCollection<UserPreference>> list()
 
@@ -20,7 +20,7 @@ interface UserPreferenceApi {
 
   @POST("userPreference")
   Call<UserPreference> create(@Body UserPreference userPreference)
-  
+
   @GET("userPreference/{id}")
   Call<UserPreference> findById(@Path("id") String id)
 

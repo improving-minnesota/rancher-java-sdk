@@ -14,7 +14,7 @@ interface ServiceEventApi {
 
   @GET("serviceEvent")
   Call<TypeCollection<ServiceEvent>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("serviceEvent/{id}")
   Call<ServiceEvent> findById(@Path("id") String id)
 

@@ -18,7 +18,7 @@ interface InstanceApi {
 
   @GET("instance")
   Call<TypeCollection<Instance>> query(@QueryMap Map<String, String> filters)
-  
+
   @GET("instance/{id}")
   Call<Instance> findById(@Path("id") String id)
 

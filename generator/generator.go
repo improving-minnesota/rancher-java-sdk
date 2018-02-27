@@ -61,6 +61,16 @@ func (m metadata) ListActionImports() []string {
 	return imports
 }
 
+func (m metadata) ListClassImports() []string {
+	imports := make([]string, len(m.importTypes))
+	i := 0
+	for k := range m.importTypes {
+		imports[i] = k
+		i++
+	}
+	return imports
+}
+
 func init() {
 	blackListTypes = make(map[string]bool)
 	blackListTypes["schema"] = true
@@ -102,9 +112,7 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 			result[fieldName] = "String"
 		} else if strings.HasPrefix(field.Type, "array[reference[") {
 			result[fieldName] = "List<String>"
-			meta.importClass("java.util.List")
 		} else if strings.HasPrefix(field.Type, "array") {
-			meta.importClass("java.util.List")
 			switch field.Type {
 			case "array[reference]":
 				fallthrough
@@ -127,10 +135,8 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 				result[fieldName] = "List<" + class + ">"
 			}
 		} else if strings.HasPrefix(field.Type, "map") {
-			meta.importClass("java.util.Map")
 			result[fieldName] = "Map<String, Object>"
 		} else if strings.HasPrefix(field.Type, "json") {
-			meta.importClass("java.util.Map")
 			result[fieldName] = "Map<String, Object>"
 		} else if strings.HasPrefix(field.Type, "boolean") {
 			result[fieldName] = "Boolean"
@@ -168,6 +174,45 @@ func getResourceActions(schema client.Schema, m metadata) map[string]client.Acti
 	return result
 }
 
+func makeSubResources(schema client.Schema, metadata metadata) (map[string]interface{}) {
+  result := make(map[string]interface{})
+
+  if schema.Id == "project" {
+    schemaBytes, err := ioutil.ReadFile("subresources.json")
+    if (err != nil) {
+
+    }
+
+    var schemas client.Schemas
+
+    err = json.Unmarshal(schemaBytes, &schemas)
+    if err != nil {
+
+    }
+
+    for _, sch := range schemas.Data {
+      if _, ok := blackListTypes[sch.Id]; ok || sch.Id == "project" {
+        continue
+      }
+      metadata.importClass("io.rancher.type." + capitalize(sch.Id))
+
+      result[sch.Id] = map[string]interface{} {
+        "schema":             sch,
+        "class":              capitalize(sch.Id),
+        "collection":         capitalize(sch.Id) + "Collection",
+        "plural":             capitalize(sch.PluralName),
+        "resourceActions":    getResourceActions(sch, metadata),
+        "type":               sch.Id,
+        "meta":               metadata,
+        "resourceMethods":    sch.ResourceMethods,
+        "collectionMethods":  sch.CollectionMethods,
+      }
+    }
+  }
+
+  return result
+}
+
 func generateType(schema client.Schema) error {
 	return generateTemplate(schema, path.Join(TYPE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+".groovy"), "type.template")
 }
@@ -191,6 +236,7 @@ func generateTemplate(schema client.Schema, outputPath string, templateName stri
 	defer output.Close()
 
 	typeMap, metadata := getTypeMap(schema)
+  subResources := makeSubResources(schema, metadata)
 	data := map[string]interface{}{
 		"schema":             schema,
 		"class":              capitalize(schema.Id),
@@ -201,6 +247,7 @@ func generateTemplate(schema client.Schema, outputPath string, templateName stri
 		"meta":               metadata,
 		"resourceMethods":    schema.ResourceMethods,
 		"collectionMethods":  schema.CollectionMethods,
+		"subResources":       subResources,
 	}
 
 	funcMap := template.FuncMap{
