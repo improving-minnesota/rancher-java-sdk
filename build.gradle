@@ -2,9 +2,11 @@ plugins {
   id 'groovy'
   id 'maven'
   id 'signing'
+//  id 'codenarc'
 }
 repositories {
   mavenCentral()
+  maven { url 'https://jitpack.io' }
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -14,6 +16,26 @@ dependencies {
   compile 'org.codehaus.groovy:groovy-all:2.4.9:indy'
   compile 'com.squareup.retrofit2:retrofit:2.3.0'
   compile 'com.squareup.retrofit2:converter-jackson:2.3.0'
+  compile 'org.slf4j:slf4j-api:1.7.25'
+  compile 'ch.qos.logback:logback-classic:1.2.3'
+
+  testCompile 'org.testcontainers:testcontainers:1.6.0'
+  testCompile 'com.github.testcontainers:testcontainers-spock:1.0.0-tc1.6.0'
+  testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+}
+
+//codenarc {
+//  maxPriority1Violations = 0
+//  maxPriority2Violations = 5
+//  maxPriority3Violations = 10
+//  configFile = rootProject.file('config/codenarc/codenarc.rules')
+//}
+
+test {
+  testLogging {
+    showStandardStreams = true
+    events 'passed', 'skipped', 'failed'
+  }
 }
 
 task javadocJar(type: Jar) {
