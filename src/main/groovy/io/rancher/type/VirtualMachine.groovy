@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class VirtualMachine extends RancherType { 
+class VirtualMachine implements RancherType {
   String accountId
   String agentId
   String allocationState
@@ -28,7 +28,6 @@ class VirtualMachine extends RancherType {
   String deploymentUnitUuid
   String description
   BigInteger diskQuota
-  List<VirtualMachineDisk> disks
   List<String> dns
   List<String> dnsOpt
   List<String> dnsSearch
@@ -107,7 +106,8 @@ class VirtualMachine extends RancherType {
   String usernsMode
   String uts
   String uuid
-  BigInteger vcpu
   String version
   String volumeDriver
+  BigInteger vcpu
+  List<VirtualMachineDisk> disks
 }

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ApiKey extends RancherType { 
+class ApiKey implements RancherType {
   String accountId
   String created
   Map<String, Object> data

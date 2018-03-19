@@ -1,9 +1,0 @@
-package io.rancher.type
-
-import io.rancher.base.RancherModel
-import io.rancher.base.RancherType
-
-@RancherModel
-class {{.class}} extends RancherType { {{range $key, $value := .structFields}}
-  {{$value}} {{$key | toCamelCase}}{{end}}
-}

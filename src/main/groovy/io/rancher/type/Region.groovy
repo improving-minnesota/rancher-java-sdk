@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Region extends RancherType { 
+class Region implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -17,9 +17,9 @@ class Region extends RancherType {
   String removed
   String secretValue
   String state
+  String url
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String url
-  String uuid
 }

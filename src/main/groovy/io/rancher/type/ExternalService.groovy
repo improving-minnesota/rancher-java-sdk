@@ -4,17 +4,14 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ExternalService extends RancherType { 
+class ExternalService implements RancherType {
   String accountId
   String created
   Map<String, Object> data
   String description
   String externalId
-  List<String> externalIpAddresses
   String fqdn
-  InstanceHealthCheck healthCheck
   String healthState
-  String hostname
   List<String> instanceIds
   String kind
   LaunchConfig launchConfig
@@ -32,4 +29,7 @@ class ExternalService extends RancherType {
   BigInteger transitioningProgress
   ServiceUpgrade upgrade
   String uuid
+  List<String> externalIpAddresses
+  String hostname
+  InstanceHealthCheck healthCheck
 }

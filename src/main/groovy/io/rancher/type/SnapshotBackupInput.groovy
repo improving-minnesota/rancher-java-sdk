@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class SnapshotBackupInput extends RancherType { 
+class SnapshotBackupInput implements RancherType {
   String backupTargetId
   Map<String, Object> data
   String name

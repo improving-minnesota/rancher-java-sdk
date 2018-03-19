@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Credential extends RancherType { 
+class Credential implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -16,8 +16,8 @@ class Credential extends RancherType {
   String removed
   Password secretValue
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
 }

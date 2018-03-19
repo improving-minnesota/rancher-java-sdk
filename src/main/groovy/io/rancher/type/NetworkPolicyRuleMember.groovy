@@ -4,6 +4,6 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class NetworkPolicyRuleMember extends RancherType { 
+class NetworkPolicyRuleMember implements RancherType {
   String selector
 }

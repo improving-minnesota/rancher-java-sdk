@@ -4,9 +4,9 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class HaConfig extends RancherType { 
+class HaConfig implements RancherType {
   BigInteger clusterSize
-  String dbHost
   BigInteger dbSize
   Boolean enabled
+  String dbHost
 }

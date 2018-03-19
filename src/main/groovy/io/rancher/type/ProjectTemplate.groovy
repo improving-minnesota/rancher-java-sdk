@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ProjectTemplate extends RancherType { 
+class ProjectTemplate implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -15,10 +15,10 @@ class ProjectTemplate extends RancherType {
   String name
   String removeTime
   String removed
-  List<CatalogTemplate> stacks
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  List<CatalogTemplate> stacks
 }

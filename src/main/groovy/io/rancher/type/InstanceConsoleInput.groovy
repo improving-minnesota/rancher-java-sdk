@@ -4,5 +4,5 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class InstanceConsoleInput extends RancherType { 
+class InstanceConsoleInput implements RancherType {
 }

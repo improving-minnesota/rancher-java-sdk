@@ -1,0 +1,76 @@
+package io.rancher.service
+
+import io.rancher.base.TypeCollection
+import io.rancher.type.<schema.typeClass>
+<schema.actionImports :{import | import <import>}; separator="\n">
+<importTypes :{import | import <import>}; separator="\n">
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.DELETE
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
+import retrofit2.http.QueryMap
+
+interface <schema.typeClass>Api {
+<if(schema.collectionGet)>
+  @GET('<schema.pluralName>')
+  Call\<TypeCollection\<<schema.typeClass>>> list()
+
+  @GET('<schema.pluralName>')
+  Call\<TypeCollection\<<schema.typeClass>>> query(@QueryMap Map\<String, String> filters)<endif>
+<if(schema.collectionPost)>
+
+  @POST('<schema.pluralName>')
+  Call\<<schema.typeClass>> create(@Body <schema.typeClass> <schema.id>)<endif>
+<if(schema.resourceGet)>
+
+  @GET('<schema.pluralName>/{id\}')
+  Call\<<schema.typeClass>> findById(@Path('id') String id)<endif>
+<if(schema.resourcePut)>
+
+  @PUT('<schema.pluralName>/{id\}')
+  Call\<<schema.typeClass>> update(@Path('id') String id, @Body <schema.typeClass> <schema.id>)<endif>
+<if(schema.resourceDelete)>
+
+  @DELETE('<schema.pluralName>/{id\}')
+  Call\<<schema.typeClass>> delete(@Path('id') String id)<endif>
+
+
+<schema.resourceActions.keys :{ action |
+  @POST('<schema.pluralName>/{id\}?action=<action>')
+  <if(!schema.resourceActions.(action).input)>Call\<<schema.resourceActions.(action).outputClass>> <action>(@Path('id') String id)
+  <else>Call\<<schema.resourceActions.(action).outputClass>> <action>(@Path('id') String id, @Body <schema.resourceActions.(action).inputClass> <schema.resourceActions.(action).input>)<endif>}; separator="\n">
+<subResources :{subResource |
+<if(subResource.collectionGet)>
+
+  @GET('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>')
+  Call\<TypeCollection\<<subResource.typeClass>>> list<subResource.pluralName>(@Path('<schema.id>Id') String <schema.id>Id)
+
+  @GET('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>')
+  Call\<TypeCollection\<<subResource.typeClass>>> query<subResource.pluralName>(@Path('<schema.id>Id') String <schema.id>Id, @QueryMap Map\<String, String> filters)<endif>
+<if(subResource.collectionPost)>
+
+  @POST('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>')
+  Call\<<subResource.typeClass>> create<subResource.typeClass>(@Path('<schema.id>Id') String <schema.id>Id, @Body <subResource.typeClass> <subResource.id>)<endif>
+<if(subResource.resourceGet)>
+
+  @GET('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>/{id\}')
+  Call\<<subResource.typeClass>> find<subResource.typeClass>ById(@Path('<schema.id>Id') String <schema.id>Id, @Path('id') String id)<endif>
+<if(subResource.resourcePut)>
+
+  @PUT('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>/{id\}')
+  Call\<<subResource.typeClass>> update<subResource.typeClass>(@Path('<schema.id>Id') String <schema.id>Id, @Path('id') String id, @Body <subResource.typeClass> <subResource.id>)<endif>
+<if(subResource.resourceDelete)>
+
+  @DELETE('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>/{id\}')
+  Call\<<subResource.typeClass>> delete<subResource.typeClass>(@Path('<schema.id>Id') String <schema.id>Id, @Path('id') String id)<endif>
+
+<subResource.resourceActions.keys :{ action |
+
+
+  @POST('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>/{id\}?action=<action>')
+  <if(!subResource.resourceActions.(action).input)>Call\<<subResource.resourceActions.(action).outputClass>> <action><subResource.typeClass>(@Path('id') String id)
+  <else>Call\<<subResource.resourceActions.(action).outputClass>> <action><subResource.typeClass>(@Path('<schema.id>Id') String <schema.id>Id, @Path('id') String id, @Body <subResource.resourceActions.(action).inputClass> <subResource.resourceActions.(action).input>)<endif>}>}>
+}

@@ -4,20 +4,40 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Host extends RancherType { 
+class Host implements RancherType {
   String accountId
   String agentId
-  String agentIpAddress
   String agentState
-  Amazonec2Config amazonec2Config
-  String apiProxy
-  String authCertificateAuthority
-  String authKey
-  AzureConfig azureConfig
   BigInteger computeTotal
   String created
   Map<String, Object> data
   String description
+  String hostTemplateId
+  String kind
+  BigInteger localStorageMb
+  BigInteger memory
+  BigInteger milliCpu
+  String name
+  String physicalHostId
+  String removeTime
+  String removed
+  String stackId
+  String state
+  String uuid
+  String transitioning
+  String transitioningMessage
+  BigInteger transitioningProgress
+  Map<String, Object> info
+  String hostname
+  String apiProxy
+  String agentIpAddress
+  List<String> instanceIds
+  Map<String, Object> labels
+  List<PublicEndpoint> publicEndpoints
+  Amazonec2Config amazonec2Config
+  String authCertificateAuthority
+  String authKey
+  AzureConfig azureConfig
   DigitaloceanConfig digitaloceanConfig
   String dockerVersion
   String driver
@@ -28,25 +48,5 @@ class Host extends RancherType {
   Map<String, Object> engineOpt
   List<String> engineRegistryMirror
   String engineStorageDriver
-  String hostTemplateId
-  String hostname
-  Map<String, Object> info
-  List<String> instanceIds
-  String kind
-  Map<String, Object> labels
-  BigInteger localStorageMb
-  BigInteger memory
-  BigInteger milliCpu
-  String name
   PacketConfig packetConfig
-  String physicalHostId
-  List<PublicEndpoint> publicEndpoints
-  String removeTime
-  String removed
-  String stackId
-  String state
-  String transitioning
-  String transitioningMessage
-  BigInteger transitioningProgress
-  String uuid
 }

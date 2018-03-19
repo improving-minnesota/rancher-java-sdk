@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ServiceProxy extends RancherType { 
+class ServiceProxy implements RancherType {
   BigInteger port
   String scheme
   String service

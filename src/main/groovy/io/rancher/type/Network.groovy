@@ -4,26 +4,26 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Network extends RancherType { 
+class Network implements RancherType {
   String accountId
   String created
   Map<String, Object> data
-  String defaultPolicyAction
   String description
-  List<String> dns
-  List<String> dnsSearch
-  Boolean hostPorts
   String kind
-  Map<String, Object> metadata
   String name
   String networkDriverId
-  List<NetworkPolicyRule> policy
   String removeTime
   String removed
   String state
-  List<Subnet> subnets
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  List<String> dns
+  List<String> dnsSearch
+  Map<String, Object> metadata
+  List<Subnet> subnets
+  Boolean hostPorts
+  String defaultPolicyAction
+  List<NetworkPolicyRule> policy
 }

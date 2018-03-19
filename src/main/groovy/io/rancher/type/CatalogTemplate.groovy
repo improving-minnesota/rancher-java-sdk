@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class CatalogTemplate extends RancherType { 
+class CatalogTemplate implements RancherType {
   Map<String, Object> answers
   Binding binding
   String description

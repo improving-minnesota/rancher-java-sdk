@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ClusterMembership extends RancherType { 
+class ClusterMembership implements RancherType {
   Boolean clustered
   String config
   BigInteger heartbeat

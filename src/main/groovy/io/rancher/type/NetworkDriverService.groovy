@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class NetworkDriverService extends RancherType { 
+class NetworkDriverService implements RancherType {
   String accountId
   Boolean assignServiceIpAddress
   BigInteger createIndex
@@ -22,7 +22,6 @@ class NetworkDriverService extends RancherType {
   Map<String, Object> linkedServices
   Map<String, Object> metadata
   String name
-  NetworkDriver networkDriver
   List<PublicEndpoint> publicEndpoints
   String removeTime
   String removed
@@ -42,4 +41,5 @@ class NetworkDriverService extends RancherType {
   ServiceUpgrade upgrade
   String uuid
   String vip
+  NetworkDriver networkDriver
 }

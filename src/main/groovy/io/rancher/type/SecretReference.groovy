@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class SecretReference extends RancherType { 
+class SecretReference implements RancherType {
   String gid
   String mode
   String name

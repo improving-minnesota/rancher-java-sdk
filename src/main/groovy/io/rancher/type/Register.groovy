@@ -4,8 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Register extends RancherType { 
-  String accessKey
+class Register implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -16,10 +15,11 @@ class Register extends RancherType {
   String removeTime
   String removed
   Map<String, Object> resourceData
-  String secretKey
   String state
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
   String uuid
+  String accessKey
+  String secretKey
 }

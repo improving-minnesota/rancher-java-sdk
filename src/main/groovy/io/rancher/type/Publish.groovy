@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Publish extends RancherType { 
+class Publish implements RancherType {
   Map<String, Object> data
   String name
   List<String> previousIds

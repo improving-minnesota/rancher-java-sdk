@@ -1,11 +1,11 @@
 package io.rancher.service
 
-import com.groovycoder.spockdockerextension.Testcontainers
 import groovy.util.logging.Slf4j
 import io.rancher.Rancher
 import io.rancher.Rancher.Config
 import org.testcontainers.containers.GenericContainer
 import org.testcontainers.containers.output.Slf4jLogConsumer
+import org.testcontainers.spock.Testcontainers
 import spock.lang.Shared
 import spock.lang.Specification
 

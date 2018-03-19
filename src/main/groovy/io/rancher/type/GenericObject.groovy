@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class GenericObject extends RancherType { 
+class GenericObject implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -14,10 +14,10 @@ class GenericObject extends RancherType {
   String name
   String removeTime
   String removed
-  Map<String, Object> resourceData
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  Map<String, Object> resourceData
 }

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Mount extends RancherType { 
+class Mount implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -17,9 +17,9 @@ class Mount extends RancherType {
   String removeTime
   String removed
   String state
+  String uuid
+  String volumeId
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
-  String volumeId
 }

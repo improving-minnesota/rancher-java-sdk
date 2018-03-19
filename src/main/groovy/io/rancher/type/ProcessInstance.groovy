@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ProcessInstance extends RancherType { 
+class ProcessInstance implements RancherType {
   String accountId
   Map<String, Object> data
   String endTime

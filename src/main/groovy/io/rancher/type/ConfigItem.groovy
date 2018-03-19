@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ConfigItem extends RancherType { 
+class ConfigItem implements RancherType {
   String name
   String sourceVersion
 }

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Databasechangelog extends RancherType { 
+class Databasechangelog implements RancherType {
   String author
   String comments
   String dateexecuted

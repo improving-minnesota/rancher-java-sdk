@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ScheduledUpgrade extends RancherType { 
+class ScheduledUpgrade implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -14,8 +14,8 @@ class ScheduledUpgrade extends RancherType {
   String stackId
   String started
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
 }

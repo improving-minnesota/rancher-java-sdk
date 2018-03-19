@@ -4,11 +4,10 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ContainerEvent extends RancherType { 
+class ContainerEvent implements RancherType {
   String accountId
   String created
   Map<String, Object> data
-  Map<String, Object> dockerInspect
   String externalFrom
   String externalId
   String externalStatus
@@ -20,4 +19,5 @@ class ContainerEvent extends RancherType {
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
+  Map<String, Object> dockerInspect
 }

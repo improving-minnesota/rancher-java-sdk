@@ -4,6 +4,6 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class RevertToSnapshotInput extends RancherType { 
+class RevertToSnapshotInput implements RancherType {
   String snapshotId
 }

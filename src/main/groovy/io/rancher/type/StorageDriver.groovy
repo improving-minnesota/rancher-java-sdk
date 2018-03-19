@@ -4,9 +4,8 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class StorageDriver extends RancherType { 
+class StorageDriver implements RancherType {
   String accountId
-  String blockDevicePath
   String created
   Map<String, Object> data
   String description
@@ -14,13 +13,14 @@ class StorageDriver extends RancherType {
   String name
   String removeTime
   String removed
-  String scope
   String serviceId
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
   String volumeAccessMode
   List<String> volumeCapabilities
+  String blockDevicePath
+  String scope
 }

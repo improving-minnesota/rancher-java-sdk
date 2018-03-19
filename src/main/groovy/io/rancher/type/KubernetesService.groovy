@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class KubernetesService extends RancherType { 
+class KubernetesService implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -21,10 +21,10 @@ class KubernetesService extends RancherType {
   String stackId
   String state
   Boolean system
-  Map<String, Object> template
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
   String uuid
   String vip
+  Map<String, Object> template
 }

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Identity extends RancherType { 
+class Identity implements RancherType {
   String all
   String externalId
   String externalIdType

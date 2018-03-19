@@ -4,9 +4,8 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class UserPreference extends RancherType { 
+class UserPreference implements RancherType {
   String accountId
-  Boolean all
   String created
   Map<String, Object> data
   String description
@@ -15,9 +14,10 @@ class UserPreference extends RancherType {
   String removeTime
   String removed
   String state
+  String uuid
+  String value
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
-  String value
+  Boolean all
 }

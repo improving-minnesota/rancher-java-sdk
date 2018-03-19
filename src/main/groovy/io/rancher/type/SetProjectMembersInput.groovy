@@ -4,6 +4,6 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class SetProjectMembersInput extends RancherType { 
+class SetProjectMembersInput implements RancherType {
   List<ProjectMember> members
 }

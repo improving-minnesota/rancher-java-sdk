@@ -4,33 +4,33 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Stack extends RancherType { 
+class Stack implements RancherType {
   String accountId
-  Map<String, Object> answers
-  Binding binding
   String created
   Map<String, Object> data
   String description
-  String dockerCompose
-  Map<String, Object> environment
   String externalId
   String group
   String healthState
   String kind
   String name
-  Map<String, Object> outputs
-  Map<String, Object> previousEnvironment
-  String previousExternalId
-  String rancherCompose
   String removeTime
   String removed
-  List<String> serviceIds
-  Boolean startOnCreate
   String state
   Boolean system
-  Map<String, Object> templates
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  String dockerCompose
+  String rancherCompose
+  Map<String, Object> environment
+  Map<String, Object> answers
+  Map<String, Object> templates
+  String previousExternalId
+  Map<String, Object> previousEnvironment
+  Boolean startOnCreate
+  Map<String, Object> outputs
+  Binding binding
+  List<String> serviceIds
 }

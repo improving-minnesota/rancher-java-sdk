@@ -4,6 +4,6 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class FieldDocumentation extends RancherType { 
+class FieldDocumentation implements RancherType {
   String description
 }

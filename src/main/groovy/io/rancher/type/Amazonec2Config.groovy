@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Amazonec2Config extends RancherType { 
+class Amazonec2Config implements RancherType {
   String accessKey
   String ami
   String blockDurationMinutes

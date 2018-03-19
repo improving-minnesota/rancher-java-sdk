@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class InstanceHealthCheck extends RancherType { 
+class InstanceHealthCheck implements RancherType {
   BigInteger healthyThreshold
   BigInteger initializingTimeout
   BigInteger interval

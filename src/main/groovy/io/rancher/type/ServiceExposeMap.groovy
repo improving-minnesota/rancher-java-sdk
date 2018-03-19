@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ServiceExposeMap extends RancherType { 
+class ServiceExposeMap implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -18,8 +18,8 @@ class ServiceExposeMap extends RancherType {
   String removed
   String serviceId
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
 }

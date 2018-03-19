@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class HaConfigInput extends RancherType { 
+class HaConfigInput implements RancherType {
   String cert
   String certChain
   BigInteger clusterSize

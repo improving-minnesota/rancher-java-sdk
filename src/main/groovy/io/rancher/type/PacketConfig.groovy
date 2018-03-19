@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class PacketConfig extends RancherType { 
+class PacketConfig implements RancherType {
   String apiKey
   String billingCycle
   String facilityCode

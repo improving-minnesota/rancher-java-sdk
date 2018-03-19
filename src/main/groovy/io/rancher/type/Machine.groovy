@@ -4,18 +4,28 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Machine extends RancherType { 
+class Machine implements RancherType {
   String accountId
+  String created
+  Map<String, Object> data
+  String description
+  String driver
+  String externalId
+  String kind
+  String name
+  String removeTime
+  String removed
+  String state
+  String uuid
+  String transitioning
+  String transitioningMessage
+  BigInteger transitioningProgress
   Amazonec2Config amazonec2Config
   String authCertificateAuthority
   String authKey
   AzureConfig azureConfig
-  String created
-  Map<String, Object> data
-  String description
   DigitaloceanConfig digitaloceanConfig
   String dockerVersion
-  String driver
   Map<String, Object> engineEnv
   List<String> engineInsecureRegistry
   String engineInstallUrl
@@ -23,17 +33,7 @@ class Machine extends RancherType {
   Map<String, Object> engineOpt
   List<String> engineRegistryMirror
   String engineStorageDriver
-  String externalId
   String hostTemplateId
-  String kind
   Map<String, Object> labels
-  String name
   PacketConfig packetConfig
-  String removeTime
-  String removed
-  String state
-  String transitioning
-  String transitioningMessage
-  BigInteger transitioningProgress
-  String uuid
 }

@@ -11,37 +11,38 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface MachineDriverApi { 
-  @GET("machineDriver")
+interface MachineDriverApi {
+  @GET('machineDrivers')
   Call<TypeCollection<MachineDriver>> list()
 
-  @GET("machineDriver")
+  @GET('machineDrivers')
   Call<TypeCollection<MachineDriver>> query(@QueryMap Map<String, String> filters)
 
-  @POST("machineDriver")
+  @POST('machineDrivers')
   Call<MachineDriver> create(@Body MachineDriver machineDriver)
 
-  @GET("machineDriver/{id}")
-  Call<MachineDriver> findById(@Path("id") String id)
+  @GET('machineDrivers/{id}')
+  Call<MachineDriver> findById(@Path('id') String id)
 
-  @PUT("machineDriver/{id}")
-  Call<MachineDriver> update(@Path("id") String id, @Body MachineDriver machineDriver)
+  @PUT('machineDrivers/{id}')
+  Call<MachineDriver> update(@Path('id') String id, @Body MachineDriver machineDriver)
 
-  @DELETE("machineDriver/{id}")
-  Call<MachineDriver> delete(@Path("id") String id)
+  @DELETE('machineDrivers/{id}')
+  Call<MachineDriver> delete(@Path('id') String id)
 
-  @POST("machineDriver/{id}?action=activate")
-  Call<MachineDriver> activate(@Path("id") String id)
+  @POST('machineDrivers/{id}?action=reactivate')
+  Call<MachineDriver> reactivate(@Path('id') String id)
 
-  @POST("machineDriver/{id}?action=deactivate")
-  Call<MachineDriver> deactivate(@Path("id") String id)
+  @POST('machineDrivers/{id}?action=activate')
+  Call<MachineDriver> activate(@Path('id') String id)
 
-  @POST("machineDriver/{id}?action=error")
-  Call<MachineDriver> error(@Path("id") String id)
+  @POST('machineDrivers/{id}?action=error')
+  Call<MachineDriver> error(@Path('id') String id)
 
-  @POST("machineDriver/{id}?action=reactivate")
-  Call<MachineDriver> reactivate(@Path("id") String id)
+  @POST('machineDrivers/{id}?action=remove')
+  Call<MachineDriver> remove(@Path('id') String id)
 
-  @POST("machineDriver/{id}?action=remove")
-  Call<MachineDriver> remove(@Path("id") String id)
+  @POST('machineDrivers/{id}?action=deactivate')
+  Call<MachineDriver> deactivate(@Path('id') String id)
+
 }

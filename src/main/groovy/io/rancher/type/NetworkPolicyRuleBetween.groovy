@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class NetworkPolicyRuleBetween extends RancherType { 
+class NetworkPolicyRuleBetween implements RancherType {
   String groupBy
   String selector
 }

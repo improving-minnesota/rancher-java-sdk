@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ExtensionPoint extends RancherType { 
+class ExtensionPoint implements RancherType {
   String excludeSetting
   List<ExtensionImplementation> implementations
   String includeSetting

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class TypeDocumentation extends RancherType { 
+class TypeDocumentation implements RancherType {
   String description
   Map<String, Object> resourceFields
 }

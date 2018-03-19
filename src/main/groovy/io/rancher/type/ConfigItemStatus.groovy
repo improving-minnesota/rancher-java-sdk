@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ConfigItemStatus extends RancherType { 
+class ConfigItemStatus implements RancherType {
   String accountId
   String agentId
   String appliedUpdated

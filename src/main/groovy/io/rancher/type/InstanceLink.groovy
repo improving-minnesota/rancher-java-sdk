@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class InstanceLink extends RancherType { 
+class InstanceLink implements RancherType {
   String accountId
   String created
   Map<String, Object> data
@@ -13,13 +13,13 @@ class InstanceLink extends RancherType {
   String kind
   String linkName
   String name
-  List<Map<String, Object>> ports
   String removeTime
   String removed
   String state
   String targetInstanceId
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  List<Map<String, Object>> ports
 }

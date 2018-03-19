@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Azureadconfig extends RancherType { 
+class Azureadconfig implements RancherType {
   String accessMode
   String adminAccountPassword
   String adminAccountUsername
