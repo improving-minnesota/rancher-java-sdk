@@ -1,14 +1,9 @@
-import io.rancher.SchemaProcessorPlugin
-
 plugins {
   id 'groovy'
   id 'maven'
   id 'signing'
-  id 'codenarc'
+//  id 'codenarc'
 }
-
-apply plugin: SchemaProcessorPlugin
-
 repositories {
   mavenCentral()
   maven { url 'https://jitpack.io' }
@@ -29,12 +24,12 @@ dependencies {
   testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
 }
 
-codenarc {
-  maxPriority1Violations = 0
-  maxPriority2Violations = 5
-  maxPriority3Violations = 10
-  configFile = rootProject.file('config/codenarc/codenarc.rules')
-}
+//codenarc {
+//  maxPriority1Violations = 0
+//  maxPriority2Violations = 5
+//  maxPriority3Violations = 10
+//  configFile = rootProject.file('config/codenarc/codenarc.rules')
+//}
 
 test {
   testLogging {
