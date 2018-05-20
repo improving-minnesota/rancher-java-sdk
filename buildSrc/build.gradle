@@ -1,0 +1,14 @@
+plugins {
+  id 'groovy'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile gradleApi()
+  compile localGroovy()
+  compile 'org.antlr:ST4:4.0.8'
+  compile 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
+}
