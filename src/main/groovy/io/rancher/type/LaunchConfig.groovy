@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class LaunchConfig extends RancherType { 
+class LaunchConfig implements RancherType {
   String accountId
   String agentId
   String allocationState
@@ -31,17 +31,14 @@ class LaunchConfig extends RancherType {
   Map<String, Object> dataVolumeMounts
   List<String> dataVolumes
   List<String> dataVolumesFrom
-  List<String> dataVolumesFromLaunchConfigs
   String deploymentUnitUuid
   String description
   List<String> devices
   BigInteger diskQuota
-  List<VirtualMachineDisk> disks
   List<String> dns
   List<String> dnsOpt
   List<String> dnsSearch
   String domainName
-  BigInteger drainTimeoutMs
   List<String> entryPoint
   Map<String, Object> environment
   List<String> expose
@@ -82,7 +79,6 @@ class LaunchConfig extends RancherType {
   List<String> netAlias
   String networkContainerId
   List<String> networkIds
-  String networkLaunchConfig
   String networkMode
   Boolean oomKillDisable
   BigInteger oomScoreAdj
@@ -128,8 +124,12 @@ class LaunchConfig extends RancherType {
   String usernsMode
   String uts
   String uuid
-  BigInteger vcpu
   String version
   String volumeDriver
   String workingDir
+  List<String> dataVolumesFromLaunchConfigs
+  String networkLaunchConfig
+  BigInteger vcpu
+  List<VirtualMachineDisk> disks
+  BigInteger drainTimeoutMs
 }

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ContainerProxy extends RancherType { 
+class ContainerProxy implements RancherType {
   BigInteger port
   String scheme
 }

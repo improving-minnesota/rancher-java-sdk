@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ContainerLogs extends RancherType { 
+class ContainerLogs implements RancherType {
   Boolean follow
   BigInteger lines
 }

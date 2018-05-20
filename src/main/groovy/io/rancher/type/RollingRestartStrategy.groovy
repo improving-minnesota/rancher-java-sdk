@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class RollingRestartStrategy extends RancherType { 
+class RollingRestartStrategy implements RancherType {
   BigInteger batchSize
   BigInteger intervalMillis
 }

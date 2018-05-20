@@ -4,13 +4,12 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class VolumeTemplate extends RancherType { 
+class VolumeTemplate implements RancherType {
   String accountId
   String created
   Map<String, Object> data
   String description
   String driver
-  Map<String, Object> driverOpts
   Boolean external
   String kind
   String name
@@ -19,8 +18,9 @@ class VolumeTemplate extends RancherType {
   String removed
   String stackId
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  Map<String, Object> driverOpts
 }

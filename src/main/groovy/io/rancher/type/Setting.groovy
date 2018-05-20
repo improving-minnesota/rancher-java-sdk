@@ -4,10 +4,10 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Setting extends RancherType { 
-  String activeValue
-  Boolean inDb
+class Setting implements RancherType {
   String name
-  String source
   String value
+  String activeValue
+  String source
+  Boolean inDb
 }

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class DigitaloceanConfig extends RancherType { 
+class DigitaloceanConfig implements RancherType {
   String accessToken
   Boolean backups
   String image

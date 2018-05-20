@@ -4,15 +4,12 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ExternalHostEvent extends RancherType { 
+class ExternalHostEvent implements RancherType {
   String accountId
   String created
   Map<String, Object> data
-  Boolean deleteHost
   String eventType
   String externalId
-  String hostId
-  String hostLabel
   String kind
   String reportedAccountId
   String state
@@ -20,4 +17,7 @@ class ExternalHostEvent extends RancherType {
   String transitioningMessage
   BigInteger transitioningProgress
   String uuid
+  String hostLabel
+  String hostId
+  Boolean deleteHost
 }

@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ProcessExecution extends RancherType { 
+class ProcessExecution implements RancherType {
   String created
   Map<String, Object> log
   String processInstanceId

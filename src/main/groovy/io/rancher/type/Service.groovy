@@ -4,41 +4,41 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Service extends RancherType { 
+class Service implements RancherType {
   String accountId
-  Boolean assignServiceIpAddress
   BigInteger createIndex
   String created
-  BigInteger currentScale
   Map<String, Object> data
   String description
   String externalId
-  String fqdn
   String healthState
-  List<String> instanceIds
   String kind
-  LaunchConfig launchConfig
-  LbTargetConfig lbConfig
-  Map<String, Object> linkedServices
-  Map<String, Object> metadata
   String name
-  List<PublicEndpoint> publicEndpoints
   String removeTime
   String removed
-  Boolean retainIp
-  BigInteger scale
-  ScalePolicy scalePolicy
-  List<SecondaryLaunchConfig> secondaryLaunchConfigs
   String selectorContainer
   String selectorLink
   String stackId
-  Boolean startOnCreate
   String state
   Boolean system
+  String uuid
+  String vip
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
+  BigInteger scale
+  BigInteger currentScale
+  ScalePolicy scalePolicy
+  LaunchConfig launchConfig
   ServiceUpgrade upgrade
-  String uuid
-  String vip
+  List<SecondaryLaunchConfig> secondaryLaunchConfigs
+  Map<String, Object> metadata
+  String fqdn
+  List<PublicEndpoint> publicEndpoints
+  Boolean retainIp
+  Boolean assignServiceIpAddress
+  Boolean startOnCreate
+  Map<String, Object> linkedServices
+  List<String> instanceIds
+  LbTargetConfig lbConfig
 }

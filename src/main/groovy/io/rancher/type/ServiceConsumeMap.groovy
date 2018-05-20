@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ServiceConsumeMap extends RancherType { 
+class ServiceConsumeMap implements RancherType {
   String accountId
   String consumedService
   String consumedServiceId
@@ -13,13 +13,13 @@ class ServiceConsumeMap extends RancherType {
   String description
   String kind
   String name
-  List<String> ports
   String removeTime
   String removed
   String serviceId
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  List<String> ports
 }

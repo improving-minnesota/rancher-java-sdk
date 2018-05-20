@@ -4,9 +4,8 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Port extends RancherType { 
+class Port implements RancherType {
   String accountId
-  String bindAddress
   String created
   Map<String, Object> data
   String description
@@ -21,8 +20,9 @@ class Port extends RancherType {
   String removeTime
   String removed
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  String bindAddress
 }

@@ -3,17 +3,22 @@ package io.rancher.service
 import io.rancher.base.TypeCollection
 import io.rancher.type.ResourceDefinition
 import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface ResourceDefinitionApi { 
-  @GET("resourceDefinition")
+interface ResourceDefinitionApi {
+  @GET('resourceDefinitions')
   Call<TypeCollection<ResourceDefinition>> list()
 
-  @GET("resourceDefinition")
+  @GET('resourceDefinitions')
   Call<TypeCollection<ResourceDefinition>> query(@QueryMap Map<String, String> filters)
 
-  @GET("resourceDefinition/{id}")
-  Call<ResourceDefinition> findById(@Path("id") String id)
+  @GET('resourceDefinitions/{id}')
+  Call<ResourceDefinition> findById(@Path('id') String id)
+
 }

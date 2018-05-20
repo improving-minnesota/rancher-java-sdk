@@ -4,33 +4,36 @@ import io.rancher.base.TypeCollection
 import io.rancher.type.ProjectMember
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
 interface ProjectMemberApi {
-  @GET("projectMember")
+  @GET('projectMembers')
   Call<TypeCollection<ProjectMember>> list()
 
-  @GET("projectMember")
+  @GET('projectMembers')
   Call<TypeCollection<ProjectMember>> query(@QueryMap Map<String, String> filters)
 
-  @POST("projectMember")
+  @POST('projectMembers')
   Call<ProjectMember> create(@Body ProjectMember projectMember)
 
-  @GET("projectMember/{id}")
-  Call<ProjectMember> findById(@Path("id") String id)
+  @GET('projectMembers/{id}')
+  Call<ProjectMember> findById(@Path('id') String id)
 
-  @POST("projectMember/{id}?action=activate")
-  Call<ProjectMember> activate(@Path("id") String id)
+  @POST('projectMembers/{id}?action=activate')
+  Call<ProjectMember> activate(@Path('id') String id)
 
-  @POST("projectMember/{id}?action=deactivate")
-  Call<ProjectMember> deactivate(@Path("id") String id)
+  @POST('projectMembers/{id}?action=purge')
+  Call<ProjectMember> purge(@Path('id') String id)
 
-  @POST("projectMember/{id}?action=purge")
-  Call<ProjectMember> purge(@Path("id") String id)
+  @POST('projectMembers/{id}?action=remove')
+  Call<ProjectMember> remove(@Path('id') String id)
 
-  @POST("projectMember/{id}?action=remove")
-  Call<ProjectMember> remove(@Path("id") String id)
+  @POST('projectMembers/{id}?action=deactivate')
+  Call<ProjectMember> deactivate(@Path('id') String id)
+
 }

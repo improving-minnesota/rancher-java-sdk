@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class ServiceUpgrade extends RancherType { 
+class ServiceUpgrade implements RancherType {
   InServiceUpgradeStrategy inServiceStrategy
   ToServiceUpgradeStrategy toServiceStrategy
 }

@@ -11,22 +11,23 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface SettingApi { 
-  @GET("setting")
+interface SettingApi {
+  @GET('settings')
   Call<TypeCollection<Setting>> list()
 
-  @GET("setting")
+  @GET('settings')
   Call<TypeCollection<Setting>> query(@QueryMap Map<String, String> filters)
 
-  @POST("setting")
+  @POST('settings')
   Call<Setting> create(@Body Setting setting)
 
-  @GET("setting/{id}")
-  Call<Setting> findById(@Path("id") String id)
+  @GET('settings/{id}')
+  Call<Setting> findById(@Path('id') String id)
 
-  @PUT("setting/{id}")
-  Call<Setting> update(@Path("id") String id, @Body Setting setting)
+  @PUT('settings/{id}')
+  Call<Setting> update(@Path('id') String id, @Body Setting setting)
 
-  @DELETE("setting/{id}")
-  Call<Setting> delete(@Path("id") String id)
+  @DELETE('settings/{id}')
+  Call<Setting> delete(@Path('id') String id)
+
 }

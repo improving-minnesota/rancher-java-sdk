@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class InstanceStop extends RancherType { 
+class InstanceStop implements RancherType {
   Boolean remove
   BigInteger timeout
 }

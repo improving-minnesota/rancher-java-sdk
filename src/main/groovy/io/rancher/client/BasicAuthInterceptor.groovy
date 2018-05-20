@@ -9,7 +9,7 @@ class BasicAuthInterceptor implements Interceptor {
   Credentials credentials
 
   @Override
-  Response intercept(Interceptor.Chain chain) throws IOException {
+  Response intercept(Chain chain) throws IOException {
     def request = chain.request()
     def modifiedRequest = request.newBuilder().addHeader(
       'Authorization',

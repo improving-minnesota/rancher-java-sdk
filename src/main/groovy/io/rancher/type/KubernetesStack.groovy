@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class KubernetesStack extends RancherType { 
+class KubernetesStack implements RancherType {
   String accountId
   Map<String, Object> answers
   Binding binding
@@ -17,7 +17,6 @@ class KubernetesStack extends RancherType {
   String healthState
   String kind
   String name
-  String namespace
   Map<String, Object> previousEnvironment
   String previousExternalId
   String removeTime
@@ -30,4 +29,5 @@ class KubernetesStack extends RancherType {
   String transitioningMessage
   BigInteger transitioningProgress
   String uuid
+  String namespace
 }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import groovy.transform.Canonical
 import io.rancher.client.BasicAuthInterceptor
-import io.rancher.service.ProjectApi
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit

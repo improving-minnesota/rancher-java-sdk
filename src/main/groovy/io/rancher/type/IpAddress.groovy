@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class IpAddress extends RancherType { 
+class IpAddress implements RancherType {
   String accountId
   String address
   String created
@@ -16,8 +16,8 @@ class IpAddress extends RancherType {
   String removeTime
   String removed
   String state
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
 }

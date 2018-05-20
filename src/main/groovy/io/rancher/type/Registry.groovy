@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Registry extends RancherType { 
+class Registry implements RancherType {
   String accountId
   String blockDevicePath
   String created
@@ -16,7 +16,6 @@ class Registry extends RancherType {
   String name
   String removeTime
   String removed
-  String serverAddress
   String state
   String transitioning
   String transitioningMessage
@@ -24,4 +23,5 @@ class Registry extends RancherType {
   String uuid
   String volumeAccessMode
   List<String> volumeCapabilities
+  String serverAddress
 }

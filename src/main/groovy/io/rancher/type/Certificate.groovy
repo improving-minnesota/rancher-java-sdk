@@ -4,31 +4,31 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Certificate extends RancherType { 
+class Certificate implements RancherType {
   String accountId
-  String algorithm
-  String cN
   String cert
   String certChain
-  String certFingerprint
   String created
   Map<String, Object> data
   String description
-  String expiresAt
-  String issuedAt
-  String issuer
   String key
-  BigInteger keySize
   String kind
   String name
   String removeTime
   String removed
-  String serialNumber
   String state
-  List<String> subjectAlternativeNames
+  String uuid
   String transitioning
   String transitioningMessage
   BigInteger transitioningProgress
-  String uuid
+  String certFingerprint
+  String CN
+  String expiresAt
+  String issuer
+  String issuedAt
+  String algorithm
   String version
+  String serialNumber
+  BigInteger keySize
+  List<String> subjectAlternativeNames
 }

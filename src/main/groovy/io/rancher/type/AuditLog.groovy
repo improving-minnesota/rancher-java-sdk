@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class AuditLog extends RancherType { 
+class AuditLog implements RancherType {
   String accountId
   String authType
   String authenticatedAsAccountId
@@ -14,9 +14,9 @@ class AuditLog extends RancherType {
   String description
   String eventType
   String kind
-  String requestObject
   BigInteger resourceId
   String resourceType
   BigInteger responseCode
+  String requestObject
   String responseObject
 }

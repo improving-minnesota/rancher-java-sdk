@@ -4,7 +4,7 @@ import io.rancher.base.RancherModel
 import io.rancher.base.RancherType
 
 @RancherModel
-class Openldapconfig extends RancherType { 
+class Openldapconfig implements RancherType {
   String accessMode
   List<Identity> allowedIdentities
   BigInteger connectionTimeout
