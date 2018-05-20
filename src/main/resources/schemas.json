@@ -4,10 +4,8 @@
   "links": {
     "self": "http://localhost:8080/v2-beta/schemas"
   },
-  "createTypes": {
-  },
-  "actions": {
-  },
+  "createTypes": {},
+  "actions": {},
   "data": [
     {
       "id": "account",
@@ -16,8 +14,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/account",
         "collection": "http://localhost:8080/v2-beta/accounts"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "accounts",
       "resourceFields": {
         "created": {
@@ -440,10 +437,8 @@
           "output": "account"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -462,8 +457,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/accountlink",
         "collection": "http://localhost:8080/v2-beta/accountlinks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "accountLinks",
       "resourceFields": {
         "accountId": {
@@ -818,10 +812,8 @@
           "output": "accountLink"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -836,8 +828,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/activesetting"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "activeSettings",
       "resourceFields": {
         "activeValue": {
@@ -884,18 +875,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET",
         "PUT",
@@ -909,8 +894,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/addoutputsinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "addOutputsInputs",
       "resourceFields": {
         "outputs": {
@@ -922,18 +906,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -945,8 +923,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/addremoveservicelinkinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "addRemoveServiceLinkInputs",
       "resourceFields": {
         "serviceLink": {
@@ -958,18 +935,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -982,8 +953,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/agent",
         "collection": "http://localhost:8080/v2-beta/agents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "agents",
       "resourceFields": {
         "accountId": {
@@ -1393,10 +1363,8 @@
           "output": "agent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -1414,8 +1382,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/amazonec2config"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "amazonec2Configs",
       "resourceFields": {
         "accessKey": {
@@ -1654,16 +1621,11 @@
           "default": "a"
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -1679,8 +1641,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/apikey",
         "collection": "http://localhost:8080/v2-beta/apikeys"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "apiKeys",
       "resourceFields": {
         "accountId": {
@@ -2012,10 +1973,8 @@
           "output": "credential"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -2034,8 +1993,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/auditlog",
         "collection": "http://localhost:8080/v2-beta/auditlogs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "auditLogs",
       "resourceFields": {
         "accountId": {
@@ -2322,12 +2280,9 @@
         "authenticatedAsAccount",
         "account"
       ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -2342,8 +2297,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/azureconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "azureConfigs",
       "resourceFields": {
         "availabilitySet": {
@@ -2519,16 +2473,11 @@
           "default": "docker-machine-vnet"
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -2544,8 +2493,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/azureadconfig",
         "collection": "http://localhost:8080/v2-beta/azureadconfigs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "azureadconfigs",
       "resourceFields": {
         "accessMode": {
@@ -2624,16 +2572,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -2651,8 +2594,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/backup",
         "collection": "http://localhost:8080/v2-beta/backups"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "backups",
       "resourceFields": {
         "accountId": {
@@ -2985,10 +2927,8 @@
           "output": "backup"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -3004,8 +2944,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/backuptarget",
         "collection": "http://localhost:8080/v2-beta/backuptargets"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "backupTargets",
       "resourceFields": {
         "accountId": {
@@ -3275,10 +3214,8 @@
           "output": "backupTarget"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -3293,23 +3230,15 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/basemachineconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "baseMachineConfigs",
-      "resourceFields": {
-      },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "resourceFields": {},
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -3321,8 +3250,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/binding"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "bindings",
       "resourceFields": {
         "services": {
@@ -3333,18 +3261,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -3356,8 +3278,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/blkiodeviceoption"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "blkioDeviceOptions",
       "resourceFields": {
         "readBps": {
@@ -3401,18 +3322,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -3424,8 +3339,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/catalogtemplate"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "catalogTemplates",
       "resourceFields": {
         "answers": {
@@ -3486,18 +3400,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -3510,8 +3418,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/certificate",
         "collection": "http://localhost:8080/v2-beta/certificates"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "certificates",
       "resourceFields": {
         "accountId": {
@@ -3907,10 +3814,8 @@
           "output": "certificate"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -3925,8 +3830,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/changesecretinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "changeSecretInputs",
       "resourceFields": {
         "oldSecret": {
@@ -3946,16 +3850,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -3971,8 +3870,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/clustermembership",
         "collection": "http://localhost:8080/v2-beta/clustermemberships"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "clusterMemberships",
       "resourceFields": {
         "clustered": {
@@ -4095,14 +3993,10 @@
           ]
         }
       },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -4117,8 +4011,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/composeconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "composeConfigs",
       "resourceFields": {
         "dockerComposeConfig": {
@@ -4136,18 +4029,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -4159,8 +4046,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/composeconfiginput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "composeConfigInputs",
       "resourceFields": {
         "serviceIds": {
@@ -4172,16 +4058,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -4197,8 +4078,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/composeproject",
         "collection": "http://localhost:8080/v2-beta/composeprojects"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "composeProjects",
       "resourceFields": {
         "accountId": {
@@ -4625,10 +4505,8 @@
           "output": "stack"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -4644,8 +4522,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/composeservice",
         "collection": "http://localhost:8080/v2-beta/composeservices"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "composeServices",
       "resourceFields": {
         "accountId": {
@@ -5175,10 +5052,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -5194,8 +5069,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/configitem",
         "collection": "http://localhost:8080/v2-beta/configitems"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "configItems",
       "resourceFields": {
         "id": {
@@ -5261,14 +5135,10 @@
           ]
         }
       },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -5284,8 +5154,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/configitemstatus",
         "collection": "http://localhost:8080/v2-beta/configitemstatuses"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "configItemStatuses",
       "resourceFields": {
         "accountId": {
@@ -5517,12 +5386,9 @@
         "agent",
         "account"
       ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -5539,8 +5405,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/container",
         "collection": "http://localhost:8080/v2-beta/containers"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "containers",
       "resourceFields": {
         "accountId": {
@@ -7178,10 +7043,8 @@
           "output": "hostAccess"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -7197,8 +7060,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/containerevent",
         "collection": "http://localhost:8080/v2-beta/containerevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "containerEvents",
       "resourceFields": {
         "accountId": {
@@ -7481,10 +7343,8 @@
           "output": "containerEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -7499,8 +7359,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/containerexec"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "containerExecs",
       "resourceFields": {
         "attachStdin": {
@@ -7540,18 +7399,12 @@
           "default": true
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -7563,8 +7416,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/containerlogs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "containerLogses",
       "resourceFields": {
         "follow": {
@@ -7588,18 +7440,12 @@
           "default": 100
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -7611,8 +7457,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/containerproxy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "containerProxys",
       "resourceFields": {
         "port": {
@@ -7640,18 +7485,12 @@
           "default": "http"
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -7664,8 +7503,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/credential",
         "collection": "http://localhost:8080/v2-beta/credentials"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "credentials",
       "resourceFields": {
         "accountId": {
@@ -7997,10 +7835,8 @@
           "output": "credential"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -8017,8 +7853,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/databasechangelog",
         "collection": "http://localhost:8080/v2-beta/databasechangelogs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "databasechangelogs",
       "resourceFields": {
         "author": {
@@ -8242,14 +8077,10 @@
           ]
         }
       },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -8266,8 +8097,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/databasechangeloglock",
         "collection": "http://localhost:8080/v2-beta/databasechangeloglocks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "databasechangeloglocks",
       "resourceFields": {
         "id": {
@@ -8350,14 +8180,10 @@
           ]
         }
       },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -8373,8 +8199,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/defaultnetwork"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "defaultNetworks",
       "resourceFields": {
         "accountId": {
@@ -8740,12 +8565,9 @@
           "output": "network"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -8757,8 +8579,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/digitaloceanconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "digitaloceanConfigs",
       "resourceFields": {
         "accessToken": {
@@ -8863,16 +8684,11 @@
           "default": ""
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -8888,8 +8704,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/dnsservice",
         "collection": "http://localhost:8080/v2-beta/dnsservices"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "dnsServices",
       "resourceFields": {
         "accountId": {
@@ -9429,10 +9244,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -9447,8 +9260,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/dockerbuild"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "dockerBuilds",
       "resourceFields": {
         "context": {
@@ -9500,18 +9312,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -9523,8 +9329,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/extensionimplementation"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "extensionImplementations",
       "resourceFields": {
         "className": {
@@ -9549,18 +9354,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -9573,8 +9372,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/extensionpoint",
         "collection": "http://localhost:8080/v2-beta/extensionpoints"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "extensionPoints",
       "resourceFields": {
         "excludeSetting": {
@@ -9613,16 +9411,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -9638,21 +9431,14 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalcredential",
         "collection": "http://localhost:8080/v2-beta/externalcredentials"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalCredentials",
-      "resourceFields": {
-      },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "resourceFields": {},
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -9668,8 +9454,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externaldnsevent",
         "collection": "http://localhost:8080/v2-beta/externaldnsevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalDnsEvents",
       "resourceFields": {
         "accountId": {
@@ -9925,10 +9710,8 @@
           "output": "externalEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -9944,8 +9727,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalevent",
         "collection": "http://localhost:8080/v2-beta/externalevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalEvents",
       "resourceFields": {
         "accountId": {
@@ -10180,10 +9962,8 @@
           "output": "externalEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -10199,8 +9979,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalhandler",
         "collection": "http://localhost:8080/v2-beta/externalhandlers"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalHandlers",
       "resourceFields": {
         "created": {
@@ -10513,10 +10292,8 @@
           "output": "externalHandler"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -10534,8 +10311,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalhandlerexternalhandlerprocessmap",
         "collection": "http://localhost:8080/v2-beta/externalhandlerexternalhandlerprocessmaps"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalHandlerExternalHandlerProcessMaps",
       "resourceFields": {
         "created": {
@@ -10875,10 +10651,8 @@
           "output": "externalHandlerExternalHandlerProcessMap"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -10894,8 +10668,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalhandlerprocess",
         "collection": "http://localhost:8080/v2-beta/externalhandlerprocesses"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalHandlerProcesses",
       "resourceFields": {
         "created": {
@@ -11161,10 +10934,8 @@
           "output": "externalHandlerProcess"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -11179,8 +10950,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/externalhandlerprocessconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalHandlerProcessConfigs",
       "resourceFields": {
         "name": {
@@ -11198,16 +10968,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -11223,8 +10988,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalhostevent",
         "collection": "http://localhost:8080/v2-beta/externalhostevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalHostEvents",
       "resourceFields": {
         "accountId": {
@@ -11483,10 +11247,8 @@
           "output": "externalEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -11502,8 +11264,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalservice",
         "collection": "http://localhost:8080/v2-beta/externalservices"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalServices",
       "resourceFields": {
         "accountId": {
@@ -12030,10 +11791,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -12049,8 +11808,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalserviceevent",
         "collection": "http://localhost:8080/v2-beta/externalserviceevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalServiceEvents",
       "resourceFields": {
         "accountId": {
@@ -12300,10 +12058,8 @@
           "output": "externalEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -12319,8 +12075,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalstoragepoolevent",
         "collection": "http://localhost:8080/v2-beta/externalstoragepoolevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalStoragePoolEvents",
       "resourceFields": {
         "accountId": {
@@ -12570,10 +12325,8 @@
           "output": "externalEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -12589,8 +12342,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/externalvolumeevent",
         "collection": "http://localhost:8080/v2-beta/externalvolumeevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "externalVolumeEvents",
       "resourceFields": {
         "accountId": {
@@ -12833,10 +12585,8 @@
           "output": "externalEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -12851,8 +12601,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/fielddocumentation"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "fieldDocumentations",
       "resourceFields": {
         "description": {
@@ -12863,18 +12612,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -12887,8 +12630,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/genericobject",
         "collection": "http://localhost:8080/v2-beta/genericobjects"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "genericObjects",
       "resourceFields": {
         "accountId": {
@@ -13174,10 +12916,8 @@
           "output": "genericObject"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -13196,8 +12936,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/haconfig",
         "collection": "http://localhost:8080/v2-beta/haconfigs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "haConfigs",
       "resourceFields": {
         "clusterSize": {
@@ -13232,20 +12971,16 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
       "resourceActions": {
         "createscript": {
           "input": "haConfigInput",
           "output": null
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -13262,8 +12997,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/haconfiginput",
         "collection": "http://localhost:8080/v2-beta/haconfiginputs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "haConfigInputs",
       "resourceFields": {
         "cert": {
@@ -13434,16 +13168,11 @@
           "default": 2888
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -13460,8 +13189,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/healthcheckinstancehostmap",
         "collection": "http://localhost:8080/v2-beta/healthcheckinstancehostmaps"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "healthcheckInstanceHostMaps",
       "resourceFields": {
         "accountId": {
@@ -13796,10 +13524,8 @@
           "output": "healthcheckInstanceHostMap"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -13815,8 +13541,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/host",
         "collection": "http://localhost:8080/v2-beta/hosts"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "hosts",
       "resourceFields": {
         "accountId": {
@@ -14528,10 +14253,8 @@
           "output": "host"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -14546,8 +14269,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/hostaccess"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "hostAccesses",
       "resourceFields": {
         "token": {
@@ -14565,18 +14287,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -14589,8 +14305,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/hostapiproxytoken",
         "collection": "http://localhost:8080/v2-beta/hostapiproxytokens"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "hostApiProxyTokens",
       "resourceFields": {
         "reportedUuid": {
@@ -14615,16 +14330,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -14640,8 +14350,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/hosttemplate",
         "collection": "http://localhost:8080/v2-beta/hosttemplates"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "hostTemplates",
       "resourceFields": {
         "accountId": {
@@ -14955,10 +14664,8 @@
           "output": "hostTemplate"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -14974,8 +14681,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/identity",
         "collection": "http://localhost:8080/v2-beta/identities"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "identities",
       "resourceFields": {
         "all": {
@@ -15090,14 +14796,10 @@
           ]
         }
       },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -15113,8 +14815,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/image",
         "collection": "http://localhost:8080/v2-beta/images"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "images",
       "resourceFields": {
         "accountId": {
@@ -15483,10 +15184,8 @@
           "output": "image"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -15501,8 +15200,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/inserviceupgradestrategy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "inServiceUpgradeStrategys",
       "resourceFields": {
         "batchSize": {
@@ -15567,18 +15265,12 @@
           "default": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -15591,8 +15283,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/instance",
         "collection": "http://localhost:8080/v2-beta/instances"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "instances",
       "resourceFields": {
         "accountId": {
@@ -16253,10 +15944,8 @@
           "output": "instance"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -16271,8 +15960,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/instanceconsole"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "instanceConsoles",
       "resourceFields": {
         "url": {
@@ -16297,18 +15985,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -16320,23 +16002,15 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/instanceconsoleinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "instanceConsoleInputs",
-      "resourceFields": {
-      },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "resourceFields": {},
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -16348,8 +16022,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/instancehealthcheck"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "instanceHealthChecks",
       "resourceFields": {
         "healthyThreshold": {
@@ -16455,16 +16128,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -16480,8 +16148,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/instancelink",
         "collection": "http://localhost:8080/v2-beta/instancelinks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "instanceLinks",
       "resourceFields": {
         "accountId": {
@@ -16834,10 +16501,8 @@
           "output": "instanceLink"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -16852,8 +16517,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/instancestop"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "instanceStops",
       "resourceFields": {
         "remove": {
@@ -16871,18 +16535,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -16895,8 +16553,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/ipaddress",
         "collection": "http://localhost:8080/v2-beta/ipaddresses"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "ipAddresses",
       "resourceFields": {
         "accountId": {
@@ -17268,10 +16925,8 @@
           "output": "ipAddress"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -17287,8 +16942,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/kubernetesservice",
         "collection": "http://localhost:8080/v2-beta/kubernetesservices"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "kubernetesServices",
       "resourceFields": {
         "accountId": {
@@ -17787,10 +17441,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -17806,8 +17458,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/kubernetesstack",
         "collection": "http://localhost:8080/v2-beta/kubernetesstacks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "kubernetesStacks",
       "resourceFields": {
         "accountId": {
@@ -18245,10 +17896,8 @@
           "output": "stack"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -18263,8 +17912,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/kubernetesstackupgrade"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "kubernetesStackUpgrades",
       "resourceFields": {
         "templates": {
@@ -18296,18 +17944,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -18320,8 +17962,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/label",
         "collection": "http://localhost:8080/v2-beta/labels"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "labels",
       "resourceFields": {
         "accountId": {
@@ -18633,10 +18274,8 @@
           "output": "label"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -18651,8 +18290,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/launchconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "launchConfigs",
       "resourceFields": {
         "accountId": {
@@ -20340,10 +19978,8 @@
           "output": "hostAccess"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -20359,8 +19995,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/lbconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "lbConfigs",
       "resourceFields": {
         "config": {
@@ -20403,18 +20038,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -20426,8 +20055,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/lbtargetconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "lbTargetConfigs",
       "resourceFields": {
         "portRules": {
@@ -20438,18 +20066,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -20461,8 +20083,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/loadbalancercookiestickinesspolicy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "loadBalancerCookieStickinessPolicys",
       "resourceFields": {
         "cookie": {
@@ -20528,18 +20149,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -20552,8 +20167,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/loadbalancerservice",
         "collection": "http://localhost:8080/v2-beta/loadbalancerservices"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "loadBalancerServices",
       "resourceFields": {
         "accountId": {
@@ -21144,10 +20758,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -21163,8 +20775,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/localauthconfig",
         "collection": "http://localhost:8080/v2-beta/localauthconfigs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "localAuthConfigs",
       "resourceFields": {
         "accessMode": {
@@ -21215,16 +20826,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -21240,8 +20846,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/logconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "logConfigs",
       "resourceFields": {
         "config": {
@@ -21263,18 +20868,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -21287,8 +20886,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/machine",
         "collection": "http://localhost:8080/v2-beta/machines"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "machines",
       "resourceFields": {
         "accountId": {
@@ -21739,10 +21337,8 @@
           "output": "physicalHost"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -21758,8 +21354,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/machinedriver",
         "collection": "http://localhost:8080/v2-beta/machinedrivers"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "machineDrivers",
       "resourceFields": {
         "created": {
@@ -22070,8 +21665,7 @@
           ]
         }
       },
-      "includeableLinks": [
-      ],
+      "includeableLinks": [],
       "resourceActions": {
         "reactivate": {
           "input": null,
@@ -22102,10 +21696,8 @@
           "output": "machineDriver"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -22124,8 +21716,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/mount",
         "collection": "http://localhost:8080/v2-beta/mounts"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "mounts",
       "resourceFields": {
         "accountId": {
@@ -22466,10 +22057,8 @@
           "output": "mount"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -22484,8 +22073,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/mountentry"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "mountEntrys",
       "resourceFields": {
         "instanceId": {
@@ -22526,18 +22114,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -22550,8 +22132,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/network",
         "collection": "http://localhost:8080/v2-beta/networks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "networks",
       "resourceFields": {
         "accountId": {
@@ -22927,10 +22508,8 @@
           "output": "network"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -22946,8 +22525,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/networkdriver",
         "collection": "http://localhost:8080/v2-beta/networkdrivers"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "networkDrivers",
       "resourceFields": {
         "accountId": {
@@ -23262,10 +22840,8 @@
           "output": "networkDriver"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -23281,8 +22857,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/networkdriverservice",
         "collection": "http://localhost:8080/v2-beta/networkdriverservices"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "networkDriverServices",
       "resourceFields": {
         "accountId": {
@@ -23904,10 +23479,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -23922,8 +23495,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/networkpolicyrule"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "networkPolicyRules",
       "resourceFields": {
         "action": {
@@ -23978,16 +23550,11 @@
           ]
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -24002,8 +23569,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/networkpolicyrulebetween"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "networkPolicyRuleBetweens",
       "resourceFields": {
         "groupBy": {
@@ -24021,16 +23587,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -24045,8 +23606,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/networkpolicyrulemember"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "networkPolicyRuleMembers",
       "resourceFields": {
         "selector": {
@@ -24057,16 +23617,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -24082,21 +23637,14 @@
         "self": "http://localhost:8080/v2-beta/schemas/networkpolicyrulewithin",
         "collection": "http://localhost:8080/v2-beta/networkpolicyrulewithins"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "networkPolicyRuleWithins",
-      "resourceFields": {
-      },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "resourceFields": {},
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -24112,8 +23660,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/nfsconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "nfsConfigs",
       "resourceFields": {
         "server": {
@@ -24141,18 +23688,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -24165,8 +23706,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/openldapconfig",
         "collection": "http://localhost:8080/v2-beta/openldapconfigs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "openldapconfigs",
       "resourceFields": {
         "accessMode": {
@@ -24420,16 +23960,11 @@
           "default": "uid"
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -24446,8 +23981,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/packetconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "packetConfigs",
       "resourceFields": {
         "apiKey": {
@@ -24499,16 +24033,11 @@
           "default": ""
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -24524,8 +24053,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/password",
         "collection": "http://localhost:8080/v2-beta/passwords"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "passwords",
       "resourceFields": {
         "accountId": {
@@ -24861,10 +24389,8 @@
           "output": "changeSecretInput"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -24883,8 +24409,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/physicalhost",
         "collection": "http://localhost:8080/v2-beta/physicalhosts"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "physicalHosts",
       "resourceFields": {
         "accountId": {
@@ -25209,10 +24734,8 @@
           "output": "physicalHost"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -25228,8 +24751,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/port",
         "collection": "http://localhost:8080/v2-beta/ports"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "ports",
       "resourceFields": {
         "accountId": {
@@ -25635,10 +25157,8 @@
           "output": "port"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -25653,8 +25173,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/portrule"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "portRules",
       "resourceFields": {
         "backendName": {
@@ -25782,18 +25301,12 @@
           "max": 256
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -25806,8 +25319,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/processdefinition",
         "collection": "http://localhost:8080/v2-beta/processdefinitions"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "processDefinitions",
       "resourceFields": {
         "extensionBased": {
@@ -25867,16 +25379,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -25892,8 +25399,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/processexecution",
         "collection": "http://localhost:8080/v2-beta/processexecutions"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "processExecutions",
       "resourceFields": {
         "created": {
@@ -25988,12 +25494,9 @@
       "includeableLinks": [
         "processInstance"
       ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -26009,8 +25512,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/processinstance",
         "collection": "http://localhost:8080/v2-beta/processinstances"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "processInstances",
       "resourceFields": {
         "accountId": {
@@ -26336,10 +25838,8 @@
           "output": "processInstance"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -26355,8 +25855,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/processpool",
         "collection": "http://localhost:8080/v2-beta/processpools"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "processPools",
       "resourceFields": {
         "activeTasks": {
@@ -26423,16 +25922,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -26448,8 +25942,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/processsummary",
         "collection": "http://localhost:8080/v2-beta/processsummary"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "processSummary",
       "resourceFields": {
         "delay": {
@@ -26481,16 +25974,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -26506,8 +25994,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/project",
         "collection": "http://localhost:8080/v2-beta/projects"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "projects",
       "resourceFields": {
         "created": {
@@ -27001,10 +26488,8 @@
           "output": null
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -27023,8 +26508,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/projectmember",
         "collection": "http://localhost:8080/v2-beta/projectmembers"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "projectMembers",
       "resourceFields": {
         "created": {
@@ -27395,10 +26879,8 @@
           "output": "projectMember"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -27415,8 +26897,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/projecttemplate",
         "collection": "http://localhost:8080/v2-beta/projecttemplates"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "projectTemplates",
       "resourceFields": {
         "accountId": {
@@ -27720,10 +27201,8 @@
           "output": "projectTemplate"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -27741,8 +27220,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/publicendpoint"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "publicEndpoints",
       "resourceFields": {
         "hostId": {
@@ -27785,16 +27263,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -27809,8 +27282,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/publish"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "publish",
       "resourceFields": {
         "data": {
@@ -27916,16 +27388,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -27941,8 +27408,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/pulltask",
         "collection": "http://localhost:8080/v2-beta/pulltasks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "pullTasks",
       "resourceFields": {
         "accountId": {
@@ -28247,10 +27713,8 @@
           "output": "genericObject"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -28265,8 +27729,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/recreateonquorumstrategyconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "recreateOnQuorumStrategyConfigs",
       "resourceFields": {
         "quorum": {
@@ -28280,18 +27743,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -28304,8 +27761,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/region",
         "collection": "http://localhost:8080/v2-beta/regions"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "regions",
       "resourceFields": {
         "accountId": {
@@ -28667,10 +28123,8 @@
           "output": "region"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -28689,8 +28143,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/register",
         "collection": "http://localhost:8080/v2-beta/register"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "register",
       "resourceFields": {
         "accountId": {
@@ -29000,10 +28453,8 @@
           "output": "instance"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -29019,8 +28470,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/registrationtoken",
         "collection": "http://localhost:8080/v2-beta/registrationtokens"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "registrationTokens",
       "resourceFields": {
         "accountId": {
@@ -29362,10 +28812,8 @@
           "output": "credential"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -29381,8 +28829,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/registry",
         "collection": "http://localhost:8080/v2-beta/registries"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "registries",
       "resourceFields": {
         "accountId": {
@@ -29809,10 +29256,8 @@
           "output": "storagePool"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -29828,8 +29273,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/registrycredential",
         "collection": "http://localhost:8080/v2-beta/registrycredentials"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "registryCredentials",
       "resourceFields": {
         "accountId": {
@@ -30171,10 +29615,8 @@
           "output": "credential"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -30190,8 +29632,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/resourcedefinition",
         "collection": "http://localhost:8080/v2-beta/resourcedefinitions"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "resourceDefinitions",
       "resourceFields": {
         "id": {
@@ -30209,16 +29650,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -30233,8 +29669,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/restartpolicy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "restartPolicys",
       "resourceFields": {
         "maximumRetryCount": {
@@ -30252,18 +29687,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -30275,8 +29704,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/restorefrombackupinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "restoreFromBackupInputs",
       "resourceFields": {
         "backupId": {
@@ -30288,18 +29716,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -30311,8 +29733,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/reverttosnapshotinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "revertToSnapshotInputs",
       "resourceFields": {
         "snapshotId": {
@@ -30324,18 +29745,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -30347,8 +29762,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/rollingrestartstrategy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "rollingRestartStrategys",
       "resourceFields": {
         "batchSize": {
@@ -30374,18 +29788,12 @@
           "default": 2000
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -30397,8 +29805,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/scalepolicy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "scalePolicys",
       "resourceFields": {
         "increment": {
@@ -30436,18 +29843,12 @@
           "default": 1
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -30460,8 +29861,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/scheduledupgrade",
         "collection": "http://localhost:8080/v2-beta/scheduledupgrades"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "scheduledUpgrades",
       "resourceFields": {
         "accountId": {
@@ -30761,10 +30161,8 @@
           "output": "scheduledUpgrade"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -30780,8 +30178,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/schema",
         "collection": "http://localhost:8080/v2-beta/schemas"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "schemas",
       "resourceFields": {
         "collectionActions": {
@@ -30848,16 +30245,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -30872,8 +30264,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/secondarylaunchconfig"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "secondaryLaunchConfigs",
       "resourceFields": {
         "accountId": {
@@ -32565,10 +31956,8 @@
           "output": "hostAccess"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -32584,8 +31973,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/secret",
         "collection": "http://localhost:8080/v2-beta/secrets"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "secrets",
       "resourceFields": {
         "accountId": {
@@ -32874,10 +32262,8 @@
           "output": "secret"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -32892,8 +32278,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/secretreference"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "secretReferences",
       "resourceFields": {
         "gid": {
@@ -32933,16 +32318,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -32958,8 +32338,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/service",
         "collection": "http://localhost:8080/v2-beta/services"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "services",
       "resourceFields": {
         "accountId": {
@@ -33573,10 +32952,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -33591,8 +32968,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/servicebinding"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceBindings",
       "resourceFields": {
         "labels": {
@@ -33610,18 +32986,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -33634,8 +33004,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/serviceconsumemap",
         "collection": "http://localhost:8080/v2-beta/serviceconsumemaps"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceConsumeMaps",
       "resourceFields": {
         "accountId": {
@@ -33965,10 +33334,8 @@
           "output": "serviceConsumeMap"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -33984,8 +33351,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/serviceevent",
         "collection": "http://localhost:8080/v2-beta/serviceevents"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceEvents",
       "resourceFields": {
         "accountId": {
@@ -34349,10 +33715,8 @@
           "output": "serviceEvent"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -34368,8 +33732,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/serviceexposemap",
         "collection": "http://localhost:8080/v2-beta/serviceexposemaps"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceExposeMaps",
       "resourceFields": {
         "accountId": {
@@ -34730,10 +34093,8 @@
           "output": "serviceExposeMap"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -34748,8 +34109,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/servicelink"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceLinks",
       "resourceFields": {
         "name": {
@@ -34783,16 +34143,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -34808,8 +34163,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/servicelog",
         "collection": "http://localhost:8080/v2-beta/servicelogs"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceLogs",
       "resourceFields": {
         "accountId": {
@@ -35058,12 +34412,9 @@
         "service",
         "account"
       ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -35079,8 +34430,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/serviceproxy",
         "collection": "http://localhost:8080/v2-beta/serviceproxies"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceProxies",
       "resourceFields": {
         "port": {
@@ -35132,16 +34482,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -35156,8 +34501,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/servicerestart"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceRestarts",
       "resourceFields": {
         "rollingRestartStrategy": {
@@ -35170,18 +34514,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -35193,8 +34531,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/serviceupgrade"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceUpgrades",
       "resourceFields": {
         "inServiceStrategy": {
@@ -35216,18 +34553,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -35239,8 +34570,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/serviceupgradestrategy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "serviceUpgradeStrategys",
       "resourceFields": {
         "batchSize": {
@@ -35266,18 +34596,12 @@
           "default": 2000
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -35289,8 +34613,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/servicesportrange"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "servicesPortRanges",
       "resourceFields": {
         "endPort": {
@@ -35318,16 +34641,11 @@
           "max": 65535
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "POST"
       ],
@@ -35343,8 +34661,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/setprojectmembersinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "setProjectMembersInputs",
       "resourceFields": {
         "members": {
@@ -35357,18 +34674,12 @@
           "minLength": 1
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -35380,8 +34691,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/setservicelinksinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "setServiceLinksInputs",
       "resourceFields": {
         "serviceLinks": {
@@ -35393,18 +34703,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -35417,8 +34721,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/setting",
         "collection": "http://localhost:8080/v2-beta/settings"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "settings",
       "resourceFields": {
         "id": {
@@ -35505,14 +34808,10 @@
           ]
         }
       },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -35531,8 +34830,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/snapshot",
         "collection": "http://localhost:8080/v2-beta/snapshots"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "snapshots",
       "resourceFields": {
         "accountId": {
@@ -35814,10 +35112,8 @@
           "output": "snapshot"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -35832,8 +35128,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/snapshotbackupinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "snapshotBackupInputs",
       "resourceFields": {
         "backupTargetId": {
@@ -36031,12 +35326,9 @@
           "output": "backup"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -36049,8 +35341,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/stack",
         "collection": "http://localhost:8080/v2-beta/stacks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "stacks",
       "resourceFields": {
         "accountId": {
@@ -36530,10 +35821,8 @@
           "output": "stack"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -36548,8 +35837,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/stackupgrade"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "stackUpgrades",
       "resourceFields": {
         "dockerCompose": {
@@ -36595,18 +35883,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -36618,23 +35900,15 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/statetransition"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "stateTransitions",
-      "resourceFields": {
-      },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "resourceFields": {},
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -36646,8 +35920,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/statsaccess"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "statsAccesses",
       "resourceFields": {
         "token": {
@@ -36665,18 +35938,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -36689,8 +35956,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/storagedriver",
         "collection": "http://localhost:8080/v2-beta/storagedrivers"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "storageDrivers",
       "resourceFields": {
         "accountId": {
@@ -37026,10 +36292,8 @@
           "output": "storageDriver"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -37045,8 +36309,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/storagedriverservice",
         "collection": "http://localhost:8080/v2-beta/storagedriverservices"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "storageDriverServices",
       "resourceFields": {
         "accountId": {
@@ -37668,10 +36931,8 @@
           "output": "service"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -37687,8 +36948,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/storagepool",
         "collection": "http://localhost:8080/v2-beta/storagepools"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "storagePools",
       "resourceFields": {
         "accountId": {
@@ -38132,10 +37392,8 @@
           "output": "storagePool"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -38151,8 +37409,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/subnet",
         "collection": "http://localhost:8080/v2-beta/subnets"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "subnets",
       "resourceFields": {
         "accountId": {
@@ -38568,10 +37825,8 @@
           "output": "subnet"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -38586,8 +37841,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/targetportrule"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "targetPortRules",
       "resourceFields": {
         "backendName": {
@@ -38630,18 +37884,12 @@
           "max": 65535
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -38654,8 +37902,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/task",
         "collection": "http://localhost:8080/v2-beta/tasks"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "tasks",
       "resourceFields": {
         "id": {
@@ -38710,10 +37957,8 @@
           "output": "task"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -38729,8 +37974,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/taskinstance",
         "collection": "http://localhost:8080/v2-beta/taskinstances"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "taskInstances",
       "resourceFields": {
         "endTime": {
@@ -38876,12 +38120,9 @@
       "includeableLinks": [
         "task"
       ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -38896,8 +38137,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/toserviceupgradestrategy"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "toServiceUpgradeStrategys",
       "resourceFields": {
         "batchSize": {
@@ -38949,18 +38189,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -38973,8 +38207,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/typedocumentation",
         "collection": "http://localhost:8080/v2-beta/typedocumentations"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "typeDocumentations",
       "resourceFields": {
         "description": {
@@ -38999,16 +38232,11 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -39023,8 +38251,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/ulimit"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "ulimits",
       "resourceFields": {
         "hard": {
@@ -39051,18 +38278,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -39075,8 +38296,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/userpreference",
         "collection": "http://localhost:8080/v2-beta/userpreferences"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "userPreferences",
       "resourceFields": {
         "accountId": {
@@ -39390,10 +38610,8 @@
           "output": "userPreference"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET",
         "POST"
@@ -39412,8 +38630,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/virtualmachine",
         "collection": "http://localhost:8080/v2-beta/virtualmachines"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "virtualMachines",
       "resourceFields": {
         "accountId": {
@@ -40842,10 +40059,8 @@
           "output": "hostAccess"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -40860,8 +40075,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/virtualmachinedisk"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "virtualMachineDisks",
       "resourceFields": {
         "driver": {
@@ -40922,18 +40136,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -40946,8 +40154,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/volume",
         "collection": "http://localhost:8080/v2-beta/volumes"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "volumes",
       "resourceFields": {
         "accessMode": {
@@ -41555,10 +40762,8 @@
           "output": "snapshot"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -41573,8 +40778,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/volumeactivateinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "volumeActivateInputs",
       "resourceFields": {
         "hostId": {
@@ -41587,18 +40791,12 @@
           "readOnCreateOnly": false
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -41610,8 +40808,7 @@
       "links": {
         "self": "http://localhost:8080/v2-beta/schemas/volumesnapshotinput"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "volumeSnapshotInputs",
       "resourceFields": {
         "name": {
@@ -41623,18 +40820,12 @@
           "maxLength": 255
         }
       },
-      "collectionFilters": {
-      },
-      "includeableLinks": [
-      ],
-      "resourceActions": {
-      },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
-      "collectionMethods": [
-      ],
+      "collectionFilters": {},
+      "includeableLinks": [],
+      "resourceActions": {},
+      "collectionActions": {},
+      "collectionFields": {},
+      "collectionMethods": [],
       "resourceMethods": [
         "GET"
       ],
@@ -41647,8 +40838,7 @@
         "self": "http://localhost:8080/v2-beta/schemas/volumetemplate",
         "collection": "http://localhost:8080/v2-beta/volumetemplates"
       },
-      "actions": {
-      },
+      "actions": {},
       "pluralName": "volumeTemplates",
       "resourceFields": {
         "accountId": {
@@ -42010,10 +41200,8 @@
           "output": "volumeTemplate"
         }
       },
-      "collectionActions": {
-      },
-      "collectionFields": {
-      },
+      "collectionActions": {},
+      "collectionFields": {},
       "collectionMethods": [
         "GET"
       ],
@@ -42023,12 +41211,9 @@
       "baseType": "schema"
     }
   ],
-  "sortLinks": {
-  },
+  "sortLinks": {},
   "pagination": null,
   "sort": null,
-  "filters": {
-  },
-  "createDefaults": {
-  }
+  "filters": {},
+  "createDefaults": {}
 }
