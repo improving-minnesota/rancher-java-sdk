@@ -71,6 +71,6 @@ interface <schema.typeClass>Api {
 
 
   @POST('<schema.pluralName>/{<schema.id>Id\}/<subResource.id>/{id\}?action=<action>')
-  <if(!subResource.resourceActions.(action).input)>Call\<<subResource.resourceActions.(action).outputClass>> <action><subResource.typeClass>(@Path('id') String id)
+  <if(!subResource.resourceActions.(action).input)>Call\<<subResource.resourceActions.(action).outputClass>> <action><subResource.typeClass>(@Path('<schema.id>Id') String <schema.id>Id, @Path('id') String id)
   <else>Call\<<subResource.resourceActions.(action).outputClass>> <action><subResource.typeClass>(@Path('<schema.id>Id') String <schema.id>Id, @Path('id') String id, @Body <subResource.resourceActions.(action).inputClass> <subResource.resourceActions.(action).input>)<endif>}>}>
 }

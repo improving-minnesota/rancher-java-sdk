@@ -58,19 +58,19 @@ interface ProjectApi {
   Call<Account> findAccountById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/account/{id}?action=upgrade')
-  Call<Account> upgradeAccount(@Path('id') String id)
+  Call<Account> upgradeAccount(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/account/{id}?action=activate')
-  Call<Account> activateAccount(@Path('id') String id)
+  Call<Account> activateAccount(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/account/{id}?action=purge')
-  Call<Account> purgeAccount(@Path('id') String id)
+  Call<Account> purgeAccount(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/account/{id}?action=remove')
-  Call<Account> removeAccount(@Path('id') String id)
+  Call<Account> removeAccount(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/account/{id}?action=deactivate')
-  Call<Account> deactivateAccount(@Path('id') String id)
+  Call<Account> deactivateAccount(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/activeSetting/{id}')
   Call<ActiveSetting> findActiveSettingById(@Path('projectId') String projectId, @Path('id') String id)
@@ -110,16 +110,16 @@ interface ProjectApi {
   Call<ApiKey> deleteApiKey(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/apiKey/{id}?action=activate')
-  Call<Credential> activateApiKey(@Path('id') String id)
+  Call<Credential> activateApiKey(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/apiKey/{id}?action=purge')
-  Call<Credential> purgeApiKey(@Path('id') String id)
+  Call<Credential> purgeApiKey(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/apiKey/{id}?action=remove')
-  Call<Credential> removeApiKey(@Path('id') String id)
+  Call<Credential> removeApiKey(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/apiKey/{id}?action=deactivate')
-  Call<Credential> deactivateApiKey(@Path('id') String id)
+  Call<Credential> deactivateApiKey(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/auditLog')
   Call<TypeCollection<AuditLog>> listauditLogs(@Path('projectId') String projectId)
@@ -149,7 +149,7 @@ interface ProjectApi {
   Call<Backup> deleteBackup(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/backup/{id}?action=remove')
-  Call<Backup> removeBackup(@Path('id') String id)
+  Call<Backup> removeBackup(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/backupTarget')
   Call<TypeCollection<BackupTarget>> listbackupTargets(@Path('projectId') String projectId)
@@ -167,7 +167,7 @@ interface ProjectApi {
   Call<BackupTarget> deleteBackupTarget(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/backupTarget/{id}?action=remove')
-  Call<BackupTarget> removeBackupTarget(@Path('id') String id)
+  Call<BackupTarget> removeBackupTarget(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/baseMachineConfig/{id}')
   Call<BaseMachineConfig> findBaseMachineConfigById(@Path('projectId') String projectId, @Path('id') String id)
@@ -209,7 +209,7 @@ interface ProjectApi {
   Call<Certificate> deleteCertificate(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/certificate/{id}?action=remove')
-  Call<Certificate> removeCertificate(@Path('id') String id)
+  Call<Certificate> removeCertificate(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/changeSecretInput')
   Call<ChangeSecretInput> createChangeSecretInput(@Path('projectId') String projectId, @Body ChangeSecretInput changeSecretInput)
@@ -245,19 +245,19 @@ interface ProjectApi {
   Call<ComposeProject> deleteComposeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeProject/{id}?action=rollback')
-  Call<Stack> rollbackComposeProject(@Path('id') String id)
+  Call<Stack> rollbackComposeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeProject/{id}?action=error')
-  Call<Stack> errorComposeProject(@Path('id') String id)
+  Call<Stack> errorComposeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeProject/{id}?action=cancelupgrade')
-  Call<Stack> cancelupgradeComposeProject(@Path('id') String id)
+  Call<Stack> cancelupgradeComposeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeProject/{id}?action=remove')
-  Call<Stack> removeComposeProject(@Path('id') String id)
+  Call<Stack> removeComposeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeProject/{id}?action=finishupgrade')
-  Call<Stack> finishupgradeComposeProject(@Path('id') String id)
+  Call<Stack> finishupgradeComposeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/composeService')
   Call<TypeCollection<ComposeService>> listcomposeServices(@Path('projectId') String projectId)
@@ -272,22 +272,22 @@ interface ProjectApi {
   Call<ComposeService> deleteComposeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeService/{id}?action=rollback')
-  Call<Service> rollbackComposeService(@Path('id') String id)
+  Call<Service> rollbackComposeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeService/{id}?action=remove')
-  Call<Service> removeComposeService(@Path('id') String id)
+  Call<Service> removeComposeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeService/{id}?action=finishupgrade')
-  Call<Service> finishupgradeComposeService(@Path('id') String id)
+  Call<Service> finishupgradeComposeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeService/{id}?action=continueupgrade')
-  Call<Service> continueupgradeComposeService(@Path('id') String id)
+  Call<Service> continueupgradeComposeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeService/{id}?action=activate')
-  Call<Service> activateComposeService(@Path('id') String id)
+  Call<Service> activateComposeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/composeService/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeComposeService(@Path('id') String id)
+  Call<Service> cancelupgradeComposeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/container')
   Call<TypeCollection<Container>> listcontainers(@Path('projectId') String projectId)
@@ -308,43 +308,43 @@ interface ProjectApi {
   Call<Container> deleteContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=updateunhealthy')
-  Call<Instance> updateunhealthyContainer(@Path('id') String id)
+  Call<Instance> updateunhealthyContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=console')
   Call<InstanceConsole> consoleContainer(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceConsoleInput instanceConsoleInput)
 
   @POST('projects/{projectId}/container/{id}?action=restart')
-  Call<Instance> restartContainer(@Path('id') String id)
+  Call<Instance> restartContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=deallocate')
-  Call<Instance> deallocateContainer(@Path('id') String id)
+  Call<Instance> deallocateContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=start')
-  Call<Instance> startContainer(@Path('id') String id)
+  Call<Instance> startContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=updatereinitializing')
-  Call<Instance> updatereinitializingContainer(@Path('id') String id)
+  Call<Instance> updatereinitializingContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=purge')
-  Call<Instance> purgeContainer(@Path('id') String id)
+  Call<Instance> purgeContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=error')
-  Call<Instance> errorContainer(@Path('id') String id)
+  Call<Instance> errorContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=remove')
-  Call<Instance> removeContainer(@Path('id') String id)
+  Call<Instance> removeContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=stop')
   Call<Instance> stopContainer(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceStop instanceStop)
 
   @POST('projects/{projectId}/container/{id}?action=allocate')
-  Call<Instance> allocateContainer(@Path('id') String id)
+  Call<Instance> allocateContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=updatehealthy')
-  Call<Instance> updatehealthyContainer(@Path('id') String id)
+  Call<Instance> updatehealthyContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=migrate')
-  Call<Instance> migrateContainer(@Path('id') String id)
+  Call<Instance> migrateContainer(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/container/{id}?action=logs')
   Call<HostAccess> logsContainer(@Path('projectId') String projectId, @Path('id') String id, @Body ContainerLogs containerLogs)
@@ -365,7 +365,7 @@ interface ProjectApi {
   Call<ContainerEvent> findContainerEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/containerEvent/{id}?action=remove')
-  Call<ContainerEvent> removeContainerEvent(@Path('id') String id)
+  Call<ContainerEvent> removeContainerEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/containerExec')
   Call<ContainerExec> createContainerExec(@Path('projectId') String projectId, @Body ContainerExec containerExec)
@@ -395,31 +395,31 @@ interface ProjectApi {
   Call<Credential> findCredentialById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/credential/{id}?action=activate')
-  Call<Credential> activateCredential(@Path('id') String id)
+  Call<Credential> activateCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/credential/{id}?action=purge')
-  Call<Credential> purgeCredential(@Path('id') String id)
+  Call<Credential> purgeCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/credential/{id}?action=remove')
-  Call<Credential> removeCredential(@Path('id') String id)
+  Call<Credential> removeCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/credential/{id}?action=deactivate')
-  Call<Credential> deactivateCredential(@Path('id') String id)
+  Call<Credential> deactivateCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/defaultNetwork/{id}')
   Call<DefaultNetwork> findDefaultNetworkById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/defaultNetwork/{id}?action=activate')
-  Call<Network> activateDefaultNetwork(@Path('id') String id)
+  Call<Network> activateDefaultNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/defaultNetwork/{id}?action=purge')
-  Call<Network> purgeDefaultNetwork(@Path('id') String id)
+  Call<Network> purgeDefaultNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/defaultNetwork/{id}?action=remove')
-  Call<Network> removeDefaultNetwork(@Path('id') String id)
+  Call<Network> removeDefaultNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/defaultNetwork/{id}?action=deactivate')
-  Call<Network> deactivateDefaultNetwork(@Path('id') String id)
+  Call<Network> deactivateDefaultNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/digitaloceanConfig')
   Call<DigitaloceanConfig> createDigitaloceanConfig(@Path('projectId') String projectId, @Body DigitaloceanConfig digitaloceanConfig)
@@ -446,7 +446,7 @@ interface ProjectApi {
   Call<DnsService> deleteDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=rollback')
-  Call<Service> rollbackDnsService(@Path('id') String id)
+  Call<Service> rollbackDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=upgrade')
   Call<Service> upgradeDnsService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceUpgrade serviceUpgrade)
@@ -455,30 +455,30 @@ interface ProjectApi {
   Call<Service> restartDnsService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceRestart serviceRestart)
 
   @POST('projects/{projectId}/dnsService/{id}?action=remove')
-  Call<Service> removeDnsService(@Path('id') String id)
+  Call<Service> removeDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=deactivate')
-  Call<Service> deactivateDnsService(@Path('id') String id)
+  Call<Service> deactivateDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=finishupgrade')
-  Call<Service> finishupgradeDnsService(@Path('id') String id)
+  Call<Service> finishupgradeDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=removeservicelink')
   Call<Service> removeservicelinkDnsService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/dnsService/{id}?action=continueupgrade')
-  Call<Service> continueupgradeDnsService(@Path('id') String id)
+  Call<Service> continueupgradeDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=activate')
-  Call<Service> activateDnsService(@Path('id') String id)
+  Call<Service> activateDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=addservicelink')
   Call<Service> addservicelinkDnsService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/dnsService/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeDnsService(@Path('id') String id)
+  Call<Service> cancelupgradeDnsService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/dnsService/{id}?action=setservicelinks')
   Call<Service> setservicelinksDnsService(@Path('projectId') String projectId, @Path('id') String id, @Body SetServiceLinksInput setServiceLinksInput)
@@ -499,7 +499,7 @@ interface ProjectApi {
   Call<ExternalDnsEvent> findExternalDnsEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalDnsEvent/{id}?action=remove')
-  Call<ExternalEvent> removeExternalDnsEvent(@Path('id') String id)
+  Call<ExternalEvent> removeExternalDnsEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/externalEvent')
   Call<TypeCollection<ExternalEvent>> listexternalEvents(@Path('projectId') String projectId)
@@ -511,7 +511,7 @@ interface ProjectApi {
   Call<ExternalEvent> findExternalEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalEvent/{id}?action=remove')
-  Call<ExternalEvent> removeExternalEvent(@Path('id') String id)
+  Call<ExternalEvent> removeExternalEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/externalHostEvent')
   Call<TypeCollection<ExternalHostEvent>> listexternalHostEvents(@Path('projectId') String projectId)
@@ -526,7 +526,7 @@ interface ProjectApi {
   Call<ExternalHostEvent> findExternalHostEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalHostEvent/{id}?action=remove')
-  Call<ExternalEvent> removeExternalHostEvent(@Path('id') String id)
+  Call<ExternalEvent> removeExternalHostEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/externalService')
   Call<TypeCollection<ExternalService>> listexternalServices(@Path('projectId') String projectId)
@@ -547,7 +547,7 @@ interface ProjectApi {
   Call<ExternalService> deleteExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalService/{id}?action=rollback')
-  Call<Service> rollbackExternalService(@Path('id') String id)
+  Call<Service> rollbackExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalService/{id}?action=upgrade')
   Call<Service> upgradeExternalService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceUpgrade serviceUpgrade)
@@ -556,22 +556,22 @@ interface ProjectApi {
   Call<Service> restartExternalService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceRestart serviceRestart)
 
   @POST('projects/{projectId}/externalService/{id}?action=remove')
-  Call<Service> removeExternalService(@Path('id') String id)
+  Call<Service> removeExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalService/{id}?action=deactivate')
-  Call<Service> deactivateExternalService(@Path('id') String id)
+  Call<Service> deactivateExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalService/{id}?action=finishupgrade')
-  Call<Service> finishupgradeExternalService(@Path('id') String id)
+  Call<Service> finishupgradeExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalService/{id}?action=continueupgrade')
-  Call<Service> continueupgradeExternalService(@Path('id') String id)
+  Call<Service> continueupgradeExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalService/{id}?action=activate')
-  Call<Service> activateExternalService(@Path('id') String id)
+  Call<Service> activateExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalService/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeExternalService(@Path('id') String id)
+  Call<Service> cancelupgradeExternalService(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/externalServiceEvent')
   Call<TypeCollection<ExternalServiceEvent>> listexternalServiceEvents(@Path('projectId') String projectId)
@@ -583,7 +583,7 @@ interface ProjectApi {
   Call<ExternalServiceEvent> findExternalServiceEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalServiceEvent/{id}?action=remove')
-  Call<ExternalEvent> removeExternalServiceEvent(@Path('id') String id)
+  Call<ExternalEvent> removeExternalServiceEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/externalStoragePoolEvent')
   Call<TypeCollection<ExternalStoragePoolEvent>> listexternalStoragePoolEvents(@Path('projectId') String projectId)
@@ -596,7 +596,7 @@ interface ProjectApi {
   Call<ExternalStoragePoolEvent> findExternalStoragePoolEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalStoragePoolEvent/{id}?action=remove')
-  Call<ExternalEvent> removeExternalStoragePoolEvent(@Path('id') String id)
+  Call<ExternalEvent> removeExternalStoragePoolEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/externalVolumeEvent')
   Call<TypeCollection<ExternalVolumeEvent>> listexternalVolumeEvents(@Path('projectId') String projectId)
@@ -608,7 +608,7 @@ interface ProjectApi {
   Call<ExternalVolumeEvent> findExternalVolumeEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/externalVolumeEvent/{id}?action=remove')
-  Call<ExternalEvent> removeExternalVolumeEvent(@Path('id') String id)
+  Call<ExternalEvent> removeExternalVolumeEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/fieldDocumentation/{id}')
   Call<FieldDocumentation> findFieldDocumentationById(@Path('projectId') String projectId, @Path('id') String id)
@@ -632,7 +632,7 @@ interface ProjectApi {
   Call<GenericObject> deleteGenericObject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/genericObject/{id}?action=remove')
-  Call<GenericObject> removeGenericObject(@Path('id') String id)
+  Call<GenericObject> removeGenericObject(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/healthcheckInstanceHostMap')
   Call<TypeCollection<HealthcheckInstanceHostMap>> listhealthcheckInstanceHostMaps(@Path('projectId') String projectId)
@@ -645,7 +645,7 @@ interface ProjectApi {
   Call<HealthcheckInstanceHostMap> findHealthcheckInstanceHostMapById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/healthcheckInstanceHostMap/{id}?action=remove')
-  Call<HealthcheckInstanceHostMap> removeHealthcheckInstanceHostMap(@Path('id') String id)
+  Call<HealthcheckInstanceHostMap> removeHealthcheckInstanceHostMap(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/host')
   Call<TypeCollection<Host>> listhosts(@Path('projectId') String projectId)
@@ -666,28 +666,28 @@ interface ProjectApi {
   Call<Host> deleteHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=evacuate')
-  Call<Host> evacuateHost(@Path('id') String id)
+  Call<Host> evacuateHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=provision')
-  Call<Host> provisionHost(@Path('id') String id)
+  Call<Host> provisionHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=dockersocket')
-  Call<HostAccess> dockersocketHost(@Path('id') String id)
+  Call<HostAccess> dockersocketHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=activate')
-  Call<Host> activateHost(@Path('id') String id)
+  Call<Host> activateHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=purge')
-  Call<Host> purgeHost(@Path('id') String id)
+  Call<Host> purgeHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=error')
-  Call<Host> errorHost(@Path('id') String id)
+  Call<Host> errorHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=remove')
-  Call<Host> removeHost(@Path('id') String id)
+  Call<Host> removeHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/host/{id}?action=deactivate')
-  Call<Host> deactivateHost(@Path('id') String id)
+  Call<Host> deactivateHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/hostAccess/{id}')
   Call<HostAccess> findHostAccessById(@Path('projectId') String projectId, @Path('id') String id)
@@ -711,7 +711,7 @@ interface ProjectApi {
   Call<HostTemplate> deleteHostTemplate(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/hostTemplate/{id}?action=remove')
-  Call<HostTemplate> removeHostTemplate(@Path('id') String id)
+  Call<HostTemplate> removeHostTemplate(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/identity')
   Call<TypeCollection<Identity>> listidentities(@Path('projectId') String projectId)
@@ -732,16 +732,16 @@ interface ProjectApi {
   Call<Image> findImageById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/image/{id}?action=activate')
-  Call<Image> activateImage(@Path('id') String id)
+  Call<Image> activateImage(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/image/{id}?action=purge')
-  Call<Image> purgeImage(@Path('id') String id)
+  Call<Image> purgeImage(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/image/{id}?action=remove')
-  Call<Image> removeImage(@Path('id') String id)
+  Call<Image> removeImage(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/image/{id}?action=deactivate')
-  Call<Image> deactivateImage(@Path('id') String id)
+  Call<Image> deactivateImage(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/inServiceUpgradeStrategy')
   Call<InServiceUpgradeStrategy> createInServiceUpgradeStrategy(
@@ -760,43 +760,43 @@ interface ProjectApi {
   Call<Instance> findInstanceById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=updateunhealthy')
-  Call<Instance> updateunhealthyInstance(@Path('id') String id)
+  Call<Instance> updateunhealthyInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=console')
   Call<InstanceConsole> consoleInstance(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceConsoleInput instanceConsoleInput)
 
   @POST('projects/{projectId}/instance/{id}?action=restart')
-  Call<Instance> restartInstance(@Path('id') String id)
+  Call<Instance> restartInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=deallocate')
-  Call<Instance> deallocateInstance(@Path('id') String id)
+  Call<Instance> deallocateInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=start')
-  Call<Instance> startInstance(@Path('id') String id)
+  Call<Instance> startInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=updatereinitializing')
-  Call<Instance> updatereinitializingInstance(@Path('id') String id)
+  Call<Instance> updatereinitializingInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=purge')
-  Call<Instance> purgeInstance(@Path('id') String id)
+  Call<Instance> purgeInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=error')
-  Call<Instance> errorInstance(@Path('id') String id)
+  Call<Instance> errorInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=remove')
-  Call<Instance> removeInstance(@Path('id') String id)
+  Call<Instance> removeInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=stop')
   Call<Instance> stopInstance(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceStop instanceStop)
 
   @POST('projects/{projectId}/instance/{id}?action=allocate')
-  Call<Instance> allocateInstance(@Path('id') String id)
+  Call<Instance> allocateInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=updatehealthy')
-  Call<Instance> updatehealthyInstance(@Path('id') String id)
+  Call<Instance> updatehealthyInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instance/{id}?action=migrate')
-  Call<Instance> migrateInstance(@Path('id') String id)
+  Call<Instance> migrateInstance(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/instanceConsole/{id}')
   Call<InstanceConsole> findInstanceConsoleById(@Path('projectId') String projectId, @Path('id') String id)
@@ -823,16 +823,16 @@ interface ProjectApi {
   Call<InstanceLink> updateInstanceLink(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceLink instanceLink)
 
   @POST('projects/{projectId}/instanceLink/{id}?action=activate')
-  Call<InstanceLink> activateInstanceLink(@Path('id') String id)
+  Call<InstanceLink> activateInstanceLink(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instanceLink/{id}?action=purge')
-  Call<InstanceLink> purgeInstanceLink(@Path('id') String id)
+  Call<InstanceLink> purgeInstanceLink(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instanceLink/{id}?action=remove')
-  Call<InstanceLink> removeInstanceLink(@Path('id') String id)
+  Call<InstanceLink> removeInstanceLink(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instanceLink/{id}?action=deactivate')
-  Call<InstanceLink> deactivateInstanceLink(@Path('id') String id)
+  Call<InstanceLink> deactivateInstanceLink(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/instanceStop')
   Call<InstanceStop> createInstanceStop(@Path('projectId') String projectId, @Body InstanceStop instanceStop)
@@ -850,22 +850,22 @@ interface ProjectApi {
   Call<IpAddress> findIpAddressById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/ipAddress/{id}?action=activate')
-  Call<IpAddress> activateIpAddress(@Path('id') String id)
+  Call<IpAddress> activateIpAddress(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/ipAddress/{id}?action=purge')
-  Call<IpAddress> purgeIpAddress(@Path('id') String id)
+  Call<IpAddress> purgeIpAddress(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/ipAddress/{id}?action=remove')
-  Call<IpAddress> removeIpAddress(@Path('id') String id)
+  Call<IpAddress> removeIpAddress(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/ipAddress/{id}?action=associate')
-  Call<IpAddress> associateIpAddress(@Path('id') String id)
+  Call<IpAddress> associateIpAddress(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/ipAddress/{id}?action=deactivate')
-  Call<IpAddress> deactivateIpAddress(@Path('id') String id)
+  Call<IpAddress> deactivateIpAddress(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/ipAddress/{id}?action=disassociate')
-  Call<IpAddress> disassociateIpAddress(@Path('id') String id)
+  Call<IpAddress> disassociateIpAddress(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/kubernetesService')
   Call<TypeCollection<KubernetesService>> listkubernetesServices(@Path('projectId') String projectId)
@@ -877,7 +877,7 @@ interface ProjectApi {
   Call<KubernetesService> findKubernetesServiceById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=rollback')
-  Call<Service> rollbackKubernetesService(@Path('id') String id)
+  Call<Service> rollbackKubernetesService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=upgrade')
   Call<Service> upgradeKubernetesService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceUpgrade serviceUpgrade)
@@ -886,30 +886,30 @@ interface ProjectApi {
   Call<Service> restartKubernetesService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceRestart serviceRestart)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=remove')
-  Call<Service> removeKubernetesService(@Path('id') String id)
+  Call<Service> removeKubernetesService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=deactivate')
-  Call<Service> deactivateKubernetesService(@Path('id') String id)
+  Call<Service> deactivateKubernetesService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=finishupgrade')
-  Call<Service> finishupgradeKubernetesService(@Path('id') String id)
+  Call<Service> finishupgradeKubernetesService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=removeservicelink')
   Call<Service> removeservicelinkKubernetesService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=continueupgrade')
-  Call<Service> continueupgradeKubernetesService(@Path('id') String id)
+  Call<Service> continueupgradeKubernetesService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=activate')
-  Call<Service> activateKubernetesService(@Path('id') String id)
+  Call<Service> activateKubernetesService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=addservicelink')
   Call<Service> addservicelinkKubernetesService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeKubernetesService(@Path('id') String id)
+  Call<Service> cancelupgradeKubernetesService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesService/{id}?action=setservicelinks')
   Call<Service> setservicelinksKubernetesService(
@@ -934,23 +934,23 @@ interface ProjectApi {
   Call<KubernetesStack> deleteKubernetesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesStack/{id}?action=rollback')
-  Call<Stack> rollbackKubernetesStack(@Path('id') String id)
+  Call<Stack> rollbackKubernetesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesStack/{id}?action=upgrade')
   Call<KubernetesStack> upgradeKubernetesStack(
     @Path('projectId') String projectId, @Path('id') String id, @Body KubernetesStackUpgrade kubernetesStackUpgrade)
 
   @POST('projects/{projectId}/kubernetesStack/{id}?action=error')
-  Call<Stack> errorKubernetesStack(@Path('id') String id)
+  Call<Stack> errorKubernetesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesStack/{id}?action=cancelupgrade')
-  Call<Stack> cancelupgradeKubernetesStack(@Path('id') String id)
+  Call<Stack> cancelupgradeKubernetesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesStack/{id}?action=remove')
-  Call<Stack> removeKubernetesStack(@Path('id') String id)
+  Call<Stack> removeKubernetesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesStack/{id}?action=finishupgrade')
-  Call<Stack> finishupgradeKubernetesStack(@Path('id') String id)
+  Call<Stack> finishupgradeKubernetesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/kubernetesStackUpgrade')
   Call<KubernetesStackUpgrade> createKubernetesStackUpgrade(@Path('projectId') String projectId, @Body KubernetesStackUpgrade kubernetesStackUpgrade)
@@ -968,7 +968,7 @@ interface ProjectApi {
   Call<Label> findLabelById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/label/{id}?action=remove')
-  Call<Label> removeLabel(@Path('id') String id)
+  Call<Label> removeLabel(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig')
   Call<LaunchConfig> createLaunchConfig(@Path('projectId') String projectId, @Body LaunchConfig launchConfig)
@@ -980,44 +980,44 @@ interface ProjectApi {
   Call<LaunchConfig> updateLaunchConfig(@Path('projectId') String projectId, @Path('id') String id, @Body LaunchConfig launchConfig)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=updateunhealthy')
-  Call<Instance> updateunhealthyLaunchConfig(@Path('id') String id)
+  Call<Instance> updateunhealthyLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=console')
   Call<InstanceConsole> consoleLaunchConfig(
     @Path('projectId') String projectId, @Path('id') String id, @Body InstanceConsoleInput instanceConsoleInput)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=restart')
-  Call<Instance> restartLaunchConfig(@Path('id') String id)
+  Call<Instance> restartLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=deallocate')
-  Call<Instance> deallocateLaunchConfig(@Path('id') String id)
+  Call<Instance> deallocateLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=start')
-  Call<Instance> startLaunchConfig(@Path('id') String id)
+  Call<Instance> startLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=updatereinitializing')
-  Call<Instance> updatereinitializingLaunchConfig(@Path('id') String id)
+  Call<Instance> updatereinitializingLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=purge')
-  Call<Instance> purgeLaunchConfig(@Path('id') String id)
+  Call<Instance> purgeLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=error')
-  Call<Instance> errorLaunchConfig(@Path('id') String id)
+  Call<Instance> errorLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=remove')
-  Call<Instance> removeLaunchConfig(@Path('id') String id)
+  Call<Instance> removeLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=stop')
   Call<Instance> stopLaunchConfig(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceStop instanceStop)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=allocate')
-  Call<Instance> allocateLaunchConfig(@Path('id') String id)
+  Call<Instance> allocateLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=updatehealthy')
-  Call<Instance> updatehealthyLaunchConfig(@Path('id') String id)
+  Call<Instance> updatehealthyLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=migrate')
-  Call<Instance> migrateLaunchConfig(@Path('id') String id)
+  Call<Instance> migrateLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/launchConfig/{id}?action=execute')
   Call<HostAccess> executeLaunchConfig(@Path('projectId') String projectId, @Path('id') String id, @Body ContainerExec containerExec)
@@ -1065,7 +1065,7 @@ interface ProjectApi {
   Call<LoadBalancerService> deleteLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=rollback')
-  Call<Service> rollbackLoadBalancerService(@Path('id') String id)
+  Call<Service> rollbackLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=upgrade')
   Call<Service> upgradeLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceUpgrade serviceUpgrade)
@@ -1074,30 +1074,30 @@ interface ProjectApi {
   Call<Service> restartLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceRestart serviceRestart)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=remove')
-  Call<Service> removeLoadBalancerService(@Path('id') String id)
+  Call<Service> removeLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=deactivate')
-  Call<Service> deactivateLoadBalancerService(@Path('id') String id)
+  Call<Service> deactivateLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=finishupgrade')
-  Call<Service> finishupgradeLoadBalancerService(@Path('id') String id)
+  Call<Service> finishupgradeLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=removeservicelink')
   Call<Service> removeservicelinkLoadBalancerService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=continueupgrade')
-  Call<Service> continueupgradeLoadBalancerService(@Path('id') String id)
+  Call<Service> continueupgradeLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=activate')
-  Call<Service> activateLoadBalancerService(@Path('id') String id)
+  Call<Service> activateLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=addservicelink')
   Call<Service> addservicelinkLoadBalancerService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeLoadBalancerService(@Path('id') String id)
+  Call<Service> cancelupgradeLoadBalancerService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/loadBalancerService/{id}?action=setservicelinks')
   Call<Service> setservicelinksLoadBalancerService(
@@ -1128,13 +1128,13 @@ interface ProjectApi {
   Call<Machine> deleteMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/machine/{id}?action=bootstrap')
-  Call<PhysicalHost> bootstrapMachine(@Path('id') String id)
+  Call<PhysicalHost> bootstrapMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/machine/{id}?action=error')
-  Call<PhysicalHost> errorMachine(@Path('id') String id)
+  Call<PhysicalHost> errorMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/machine/{id}?action=remove')
-  Call<PhysicalHost> removeMachine(@Path('id') String id)
+  Call<PhysicalHost> removeMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/machineDriver')
   Call<TypeCollection<MachineDriver>> listmachineDrivers(@Path('projectId') String projectId)
@@ -1155,10 +1155,10 @@ interface ProjectApi {
   Call<Mount> findMountById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/mount/{id}?action=remove')
-  Call<Mount> removeMount(@Path('id') String id)
+  Call<Mount> removeMount(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/mount/{id}?action=deactivate')
-  Call<Mount> deactivateMount(@Path('id') String id)
+  Call<Mount> deactivateMount(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/mountEntry/{id}')
   Call<MountEntry> findMountEntryById(@Path('projectId') String projectId, @Path('id') String id)
@@ -1182,16 +1182,16 @@ interface ProjectApi {
   Call<Network> deleteNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/network/{id}?action=activate')
-  Call<Network> activateNetwork(@Path('id') String id)
+  Call<Network> activateNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/network/{id}?action=purge')
-  Call<Network> purgeNetwork(@Path('id') String id)
+  Call<Network> purgeNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/network/{id}?action=remove')
-  Call<Network> removeNetwork(@Path('id') String id)
+  Call<Network> removeNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/network/{id}?action=deactivate')
-  Call<Network> deactivateNetwork(@Path('id') String id)
+  Call<Network> deactivateNetwork(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/networkDriver')
   Call<TypeCollection<NetworkDriver>> listnetworkDrivers(@Path('projectId') String projectId)
@@ -1203,13 +1203,13 @@ interface ProjectApi {
   Call<NetworkDriver> findNetworkDriverById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriver/{id}?action=activate')
-  Call<NetworkDriver> activateNetworkDriver(@Path('id') String id)
+  Call<NetworkDriver> activateNetworkDriver(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriver/{id}?action=remove')
-  Call<NetworkDriver> removeNetworkDriver(@Path('id') String id)
+  Call<NetworkDriver> removeNetworkDriver(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriver/{id}?action=deactivate')
-  Call<NetworkDriver> deactivateNetworkDriver(@Path('id') String id)
+  Call<NetworkDriver> deactivateNetworkDriver(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/networkDriverService')
   Call<TypeCollection<NetworkDriverService>> listnetworkDriverServices(@Path('projectId') String projectId)
@@ -1231,7 +1231,7 @@ interface ProjectApi {
   Call<NetworkDriverService> deleteNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=rollback')
-  Call<Service> rollbackNetworkDriverService(@Path('id') String id)
+  Call<Service> rollbackNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=upgrade')
   Call<Service> upgradeNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceUpgrade serviceUpgrade)
@@ -1240,30 +1240,30 @@ interface ProjectApi {
   Call<Service> restartNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceRestart serviceRestart)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=remove')
-  Call<Service> removeNetworkDriverService(@Path('id') String id)
+  Call<Service> removeNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=deactivate')
-  Call<Service> deactivateNetworkDriverService(@Path('id') String id)
+  Call<Service> deactivateNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=finishupgrade')
-  Call<Service> finishupgradeNetworkDriverService(@Path('id') String id)
+  Call<Service> finishupgradeNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=removeservicelink')
   Call<Service> removeservicelinkNetworkDriverService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=continueupgrade')
-  Call<Service> continueupgradeNetworkDriverService(@Path('id') String id)
+  Call<Service> continueupgradeNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=activate')
-  Call<Service> activateNetworkDriverService(@Path('id') String id)
+  Call<Service> activateNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=addservicelink')
   Call<Service> addservicelinkNetworkDriverService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeNetworkDriverService(@Path('id') String id)
+  Call<Service> cancelupgradeNetworkDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/networkDriverService/{id}?action=setservicelinks')
   Call<Service> setservicelinksNetworkDriverService(
@@ -1331,16 +1331,16 @@ interface ProjectApi {
   Call<Password> deletePassword(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/password/{id}?action=activate')
-  Call<Credential> activatePassword(@Path('id') String id)
+  Call<Credential> activatePassword(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/password/{id}?action=purge')
-  Call<Credential> purgePassword(@Path('id') String id)
+  Call<Credential> purgePassword(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/password/{id}?action=remove')
-  Call<Credential> removePassword(@Path('id') String id)
+  Call<Credential> removePassword(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/password/{id}?action=deactivate')
-  Call<Credential> deactivatePassword(@Path('id') String id)
+  Call<Credential> deactivatePassword(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/password/{id}?action=changesecret')
   Call<ChangeSecretInput> changesecretPassword(@Path('projectId') String projectId, @Path('id') String id, @Body ChangeSecretInput changeSecretInput)
@@ -1355,13 +1355,13 @@ interface ProjectApi {
   Call<PhysicalHost> findPhysicalHostById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/physicalHost/{id}?action=bootstrap')
-  Call<PhysicalHost> bootstrapPhysicalHost(@Path('id') String id)
+  Call<PhysicalHost> bootstrapPhysicalHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/physicalHost/{id}?action=error')
-  Call<PhysicalHost> errorPhysicalHost(@Path('id') String id)
+  Call<PhysicalHost> errorPhysicalHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/physicalHost/{id}?action=remove')
-  Call<PhysicalHost> removePhysicalHost(@Path('id') String id)
+  Call<PhysicalHost> removePhysicalHost(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/port')
   Call<TypeCollection<Port>> listports(@Path('projectId') String projectId)
@@ -1376,16 +1376,16 @@ interface ProjectApi {
   Call<Port> updatePort(@Path('projectId') String projectId, @Path('id') String id, @Body Port port)
 
   @POST('projects/{projectId}/port/{id}?action=activate')
-  Call<Port> activatePort(@Path('id') String id)
+  Call<Port> activatePort(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/port/{id}?action=purge')
-  Call<Port> purgePort(@Path('id') String id)
+  Call<Port> purgePort(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/port/{id}?action=remove')
-  Call<Port> removePort(@Path('id') String id)
+  Call<Port> removePort(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/port/{id}?action=deactivate')
-  Call<Port> deactivatePort(@Path('id') String id)
+  Call<Port> deactivatePort(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/portRule')
   Call<PortRule> createPortRule(@Path('projectId') String projectId, @Body PortRule portRule)
@@ -1403,19 +1403,19 @@ interface ProjectApi {
   Call<Project> findProjectById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/project/{id}?action=upgrade')
-  Call<Account> upgradeProject(@Path('id') String id)
+  Call<Account> upgradeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/project/{id}?action=activate')
-  Call<Account> activateProject(@Path('id') String id)
+  Call<Account> activateProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/project/{id}?action=purge')
-  Call<Account> purgeProject(@Path('id') String id)
+  Call<Account> purgeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/project/{id}?action=remove')
-  Call<Account> removeProject(@Path('id') String id)
+  Call<Account> removeProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/project/{id}?action=deactivate')
-  Call<Account> deactivateProject(@Path('id') String id)
+  Call<Account> deactivateProject(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/project/{id}?action=setmembers')
   Call<SetProjectMembersInput> setmembersProject(
@@ -1431,16 +1431,16 @@ interface ProjectApi {
   Call<ProjectMember> findProjectMemberById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/projectMember/{id}?action=activate')
-  Call<ProjectMember> activateProjectMember(@Path('id') String id)
+  Call<ProjectMember> activateProjectMember(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/projectMember/{id}?action=purge')
-  Call<ProjectMember> purgeProjectMember(@Path('id') String id)
+  Call<ProjectMember> purgeProjectMember(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/projectMember/{id}?action=remove')
-  Call<ProjectMember> removeProjectMember(@Path('id') String id)
+  Call<ProjectMember> removeProjectMember(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/projectMember/{id}?action=deactivate')
-  Call<ProjectMember> deactivateProjectMember(@Path('id') String id)
+  Call<ProjectMember> deactivateProjectMember(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/projectTemplate')
   Call<TypeCollection<ProjectTemplate>> listprojectTemplates(@Path('projectId') String projectId)
@@ -1452,7 +1452,7 @@ interface ProjectApi {
   Call<ProjectTemplate> findProjectTemplateById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/projectTemplate/{id}?action=remove')
-  Call<ProjectTemplate> removeProjectTemplate(@Path('id') String id)
+  Call<ProjectTemplate> removeProjectTemplate(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/publicEndpoint/{id}')
   Call<PublicEndpoint> findPublicEndpointById(@Path('projectId') String projectId, @Path('id') String id)
@@ -1470,7 +1470,7 @@ interface ProjectApi {
   Call<PullTask> findPullTaskById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/pullTask/{id}?action=remove')
-  Call<GenericObject> removePullTask(@Path('id') String id)
+  Call<GenericObject> removePullTask(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/recreateOnQuorumStrategyConfig')
   Call<RecreateOnQuorumStrategyConfig> createRecreateOnQuorumStrategyConfig(
@@ -1489,16 +1489,16 @@ interface ProjectApi {
   Call<Region> findRegionById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/region/{id}?action=activate')
-  Call<Region> activateRegion(@Path('id') String id)
+  Call<Region> activateRegion(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/region/{id}?action=purge')
-  Call<Region> purgeRegion(@Path('id') String id)
+  Call<Region> purgeRegion(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/region/{id}?action=remove')
-  Call<Region> removeRegion(@Path('id') String id)
+  Call<Region> removeRegion(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/region/{id}?action=deactivate')
-  Call<Region> deactivateRegion(@Path('id') String id)
+  Call<Region> deactivateRegion(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/register')
   Call<TypeCollection<Register>> listregister(@Path('projectId') String projectId)
@@ -1513,7 +1513,7 @@ interface ProjectApi {
   Call<Register> findRegisterById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/register/{id}?action=remove')
-  Call<GenericObject> removeRegister(@Path('id') String id)
+  Call<GenericObject> removeRegister(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/register/{id}?action=stop')
   Call<Instance> stopRegister(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceStop instanceStop)
@@ -1531,16 +1531,16 @@ interface ProjectApi {
   Call<RegistrationToken> findRegistrationTokenById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registrationToken/{id}?action=activate')
-  Call<Credential> activateRegistrationToken(@Path('id') String id)
+  Call<Credential> activateRegistrationToken(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registrationToken/{id}?action=purge')
-  Call<Credential> purgeRegistrationToken(@Path('id') String id)
+  Call<Credential> purgeRegistrationToken(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registrationToken/{id}?action=remove')
-  Call<Credential> removeRegistrationToken(@Path('id') String id)
+  Call<Credential> removeRegistrationToken(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registrationToken/{id}?action=deactivate')
-  Call<Credential> deactivateRegistrationToken(@Path('id') String id)
+  Call<Credential> deactivateRegistrationToken(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/registry')
   Call<TypeCollection<Registry>> listregistries(@Path('projectId') String projectId)
@@ -1561,16 +1561,16 @@ interface ProjectApi {
   Call<Registry> deleteRegistry(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registry/{id}?action=activate')
-  Call<StoragePool> activateRegistry(@Path('id') String id)
+  Call<StoragePool> activateRegistry(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registry/{id}?action=purge')
-  Call<StoragePool> purgeRegistry(@Path('id') String id)
+  Call<StoragePool> purgeRegistry(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registry/{id}?action=remove')
-  Call<StoragePool> removeRegistry(@Path('id') String id)
+  Call<StoragePool> removeRegistry(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registry/{id}?action=deactivate')
-  Call<StoragePool> deactivateRegistry(@Path('id') String id)
+  Call<StoragePool> deactivateRegistry(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/registryCredential')
   Call<TypeCollection<RegistryCredential>> listregistryCredentials(@Path('projectId') String projectId)
@@ -1592,16 +1592,16 @@ interface ProjectApi {
   Call<RegistryCredential> deleteRegistryCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registryCredential/{id}?action=activate')
-  Call<Credential> activateRegistryCredential(@Path('id') String id)
+  Call<Credential> activateRegistryCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registryCredential/{id}?action=purge')
-  Call<Credential> purgeRegistryCredential(@Path('id') String id)
+  Call<Credential> purgeRegistryCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registryCredential/{id}?action=remove')
-  Call<Credential> removeRegistryCredential(@Path('id') String id)
+  Call<Credential> removeRegistryCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/registryCredential/{id}?action=deactivate')
-  Call<Credential> deactivateRegistryCredential(@Path('id') String id)
+  Call<Credential> deactivateRegistryCredential(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/restartPolicy')
   Call<RestartPolicy> createRestartPolicy(@Path('projectId') String projectId, @Body RestartPolicy restartPolicy)
@@ -1634,10 +1634,10 @@ interface ProjectApi {
   Call<ScheduledUpgrade> findScheduledUpgradeById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/scheduledUpgrade/{id}?action=start')
-  Call<ScheduledUpgrade> startScheduledUpgrade(@Path('id') String id)
+  Call<ScheduledUpgrade> startScheduledUpgrade(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/scheduledUpgrade/{id}?action=remove')
-  Call<ScheduledUpgrade> removeScheduledUpgrade(@Path('id') String id)
+  Call<ScheduledUpgrade> removeScheduledUpgrade(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig')
   Call<SecondaryLaunchConfig> createSecondaryLaunchConfig(@Path('projectId') String projectId, @Body SecondaryLaunchConfig secondaryLaunchConfig)
@@ -1650,44 +1650,44 @@ interface ProjectApi {
     @Path('projectId') String projectId, @Path('id') String id, @Body SecondaryLaunchConfig secondaryLaunchConfig)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=updateunhealthy')
-  Call<Instance> updateunhealthySecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> updateunhealthySecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=console')
   Call<InstanceConsole> consoleSecondaryLaunchConfig(
     @Path('projectId') String projectId, @Path('id') String id, @Body InstanceConsoleInput instanceConsoleInput)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=restart')
-  Call<Instance> restartSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> restartSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=deallocate')
-  Call<Instance> deallocateSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> deallocateSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=start')
-  Call<Instance> startSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> startSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=updatereinitializing')
-  Call<Instance> updatereinitializingSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> updatereinitializingSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=purge')
-  Call<Instance> purgeSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> purgeSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=error')
-  Call<Instance> errorSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> errorSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=remove')
-  Call<Instance> removeSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> removeSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=stop')
   Call<Instance> stopSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceStop instanceStop)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=allocate')
-  Call<Instance> allocateSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> allocateSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=updatehealthy')
-  Call<Instance> updatehealthySecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> updatehealthySecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=migrate')
-  Call<Instance> migrateSecondaryLaunchConfig(@Path('id') String id)
+  Call<Instance> migrateSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secondaryLaunchConfig/{id}?action=execute')
   Call<HostAccess> executeSecondaryLaunchConfig(@Path('projectId') String projectId, @Path('id') String id, @Body ContainerExec containerExec)
@@ -1714,7 +1714,7 @@ interface ProjectApi {
   Call<Secret> deleteSecret(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secret/{id}?action=remove')
-  Call<Secret> removeSecret(@Path('id') String id)
+  Call<Secret> removeSecret(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/secretReference')
   Call<SecretReference> createSecretReference(@Path('projectId') String projectId, @Body SecretReference secretReference)
@@ -1741,7 +1741,7 @@ interface ProjectApi {
   Call<Service> deleteService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=rollback')
-  Call<Service> rollbackService(@Path('id') String id)
+  Call<Service> rollbackService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=upgrade')
   Call<Service> upgradeService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceUpgrade serviceUpgrade)
@@ -1750,30 +1750,30 @@ interface ProjectApi {
   Call<Service> restartService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceRestart serviceRestart)
 
   @POST('projects/{projectId}/service/{id}?action=remove')
-  Call<Service> removeService(@Path('id') String id)
+  Call<Service> removeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=deactivate')
-  Call<Service> deactivateService(@Path('id') String id)
+  Call<Service> deactivateService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=finishupgrade')
-  Call<Service> finishupgradeService(@Path('id') String id)
+  Call<Service> finishupgradeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=removeservicelink')
   Call<Service> removeservicelinkService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/service/{id}?action=continueupgrade')
-  Call<Service> continueupgradeService(@Path('id') String id)
+  Call<Service> continueupgradeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=activate')
-  Call<Service> activateService(@Path('id') String id)
+  Call<Service> activateService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=addservicelink')
   Call<Service> addservicelinkService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/service/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeService(@Path('id') String id)
+  Call<Service> cancelupgradeService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/service/{id}?action=setservicelinks')
   Call<Service> setservicelinksService(@Path('projectId') String projectId, @Path('id') String id, @Body SetServiceLinksInput setServiceLinksInput)
@@ -1797,7 +1797,7 @@ interface ProjectApi {
   Call<ServiceConsumeMap> findServiceConsumeMapById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/serviceConsumeMap/{id}?action=remove')
-  Call<ServiceConsumeMap> removeServiceConsumeMap(@Path('id') String id)
+  Call<ServiceConsumeMap> removeServiceConsumeMap(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/serviceEvent')
   Call<TypeCollection<ServiceEvent>> listserviceEvents(@Path('projectId') String projectId)
@@ -1809,7 +1809,7 @@ interface ProjectApi {
   Call<ServiceEvent> findServiceEventById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/serviceEvent/{id}?action=remove')
-  Call<ServiceEvent> removeServiceEvent(@Path('id') String id)
+  Call<ServiceEvent> removeServiceEvent(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/serviceExposeMap')
   Call<TypeCollection<ServiceExposeMap>> listserviceExposeMaps(@Path('projectId') String projectId)
@@ -1821,7 +1821,7 @@ interface ProjectApi {
   Call<ServiceExposeMap> findServiceExposeMapById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/serviceExposeMap/{id}?action=remove')
-  Call<ServiceExposeMap> removeServiceExposeMap(@Path('id') String id)
+  Call<ServiceExposeMap> removeServiceExposeMap(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/serviceLink')
   Call<ServiceLink> createServiceLink(@Path('projectId') String projectId, @Body ServiceLink serviceLink)
@@ -1912,7 +1912,7 @@ interface ProjectApi {
   Call<Backup> backupSnapshot(@Path('projectId') String projectId, @Path('id') String id, @Body SnapshotBackupInput snapshotBackupInput)
 
   @POST('projects/{projectId}/snapshot/{id}?action=remove')
-  Call<Snapshot> removeSnapshot(@Path('id') String id)
+  Call<Snapshot> removeSnapshot(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/snapshotBackupInput/{id}')
   Call<SnapshotBackupInput> findSnapshotBackupInputById(@Path('projectId') String projectId, @Path('id') String id)
@@ -1936,13 +1936,13 @@ interface ProjectApi {
   Call<Stack> deleteStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stack/{id}?action=rollback')
-  Call<Stack> rollbackStack(@Path('id') String id)
+  Call<Stack> rollbackStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stack/{id}?action=deactivateservices')
-  Call<Stack> deactivateservicesStack(@Path('id') String id)
+  Call<Stack> deactivateservicesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stack/{id}?action=activateservices')
-  Call<Stack> activateservicesStack(@Path('id') String id)
+  Call<Stack> activateservicesStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stack/{id}?action=upgrade')
   Call<Stack> upgradeStack(@Path('projectId') String projectId, @Path('id') String id, @Body StackUpgrade stackUpgrade)
@@ -1954,16 +1954,16 @@ interface ProjectApi {
   Call<ComposeConfig> exportconfigStack(@Path('projectId') String projectId, @Path('id') String id, @Body ComposeConfigInput composeConfigInput)
 
   @POST('projects/{projectId}/stack/{id}?action=error')
-  Call<Stack> errorStack(@Path('id') String id)
+  Call<Stack> errorStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stack/{id}?action=cancelupgrade')
-  Call<Stack> cancelupgradeStack(@Path('id') String id)
+  Call<Stack> cancelupgradeStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stack/{id}?action=remove')
-  Call<Stack> removeStack(@Path('id') String id)
+  Call<Stack> removeStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stack/{id}?action=finishupgrade')
-  Call<Stack> finishupgradeStack(@Path('id') String id)
+  Call<Stack> finishupgradeStack(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/stackUpgrade')
   Call<StackUpgrade> createStackUpgrade(@Path('projectId') String projectId, @Body StackUpgrade stackUpgrade)
@@ -1984,13 +1984,13 @@ interface ProjectApi {
   Call<StorageDriver> findStorageDriverById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriver/{id}?action=activate')
-  Call<StorageDriver> activateStorageDriver(@Path('id') String id)
+  Call<StorageDriver> activateStorageDriver(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriver/{id}?action=remove')
-  Call<StorageDriver> removeStorageDriver(@Path('id') String id)
+  Call<StorageDriver> removeStorageDriver(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriver/{id}?action=deactivate')
-  Call<StorageDriver> deactivateStorageDriver(@Path('id') String id)
+  Call<StorageDriver> deactivateStorageDriver(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/storageDriverService')
   Call<TypeCollection<StorageDriverService>> liststorageDriverServices(@Path('projectId') String projectId)
@@ -2012,7 +2012,7 @@ interface ProjectApi {
   Call<StorageDriverService> deleteStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=rollback')
-  Call<Service> rollbackStorageDriverService(@Path('id') String id)
+  Call<Service> rollbackStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=upgrade')
   Call<Service> upgradeStorageDriverService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceUpgrade serviceUpgrade)
@@ -2021,30 +2021,30 @@ interface ProjectApi {
   Call<Service> restartStorageDriverService(@Path('projectId') String projectId, @Path('id') String id, @Body ServiceRestart serviceRestart)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=remove')
-  Call<Service> removeStorageDriverService(@Path('id') String id)
+  Call<Service> removeStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=deactivate')
-  Call<Service> deactivateStorageDriverService(@Path('id') String id)
+  Call<Service> deactivateStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=finishupgrade')
-  Call<Service> finishupgradeStorageDriverService(@Path('id') String id)
+  Call<Service> finishupgradeStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=removeservicelink')
   Call<Service> removeservicelinkStorageDriverService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=continueupgrade')
-  Call<Service> continueupgradeStorageDriverService(@Path('id') String id)
+  Call<Service> continueupgradeStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=activate')
-  Call<Service> activateStorageDriverService(@Path('id') String id)
+  Call<Service> activateStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=addservicelink')
   Call<Service> addservicelinkStorageDriverService(
     @Path('projectId') String projectId, @Path('id') String id, @Body AddRemoveServiceLinkInput addRemoveServiceLinkInput)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=cancelupgrade')
-  Call<Service> cancelupgradeStorageDriverService(@Path('id') String id)
+  Call<Service> cancelupgradeStorageDriverService(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storageDriverService/{id}?action=setservicelinks')
   Call<Service> setservicelinksStorageDriverService(
@@ -2060,16 +2060,16 @@ interface ProjectApi {
   Call<StoragePool> findStoragePoolById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storagePool/{id}?action=activate')
-  Call<StoragePool> activateStoragePool(@Path('id') String id)
+  Call<StoragePool> activateStoragePool(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storagePool/{id}?action=purge')
-  Call<StoragePool> purgeStoragePool(@Path('id') String id)
+  Call<StoragePool> purgeStoragePool(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storagePool/{id}?action=remove')
-  Call<StoragePool> removeStoragePool(@Path('id') String id)
+  Call<StoragePool> removeStoragePool(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/storagePool/{id}?action=deactivate')
-  Call<StoragePool> deactivateStoragePool(@Path('id') String id)
+  Call<StoragePool> deactivateStoragePool(@Path('projectId') String projectId, @Path('id') String id)
 
   @GET('projects/{projectId}/subnet')
   Call<TypeCollection<Subnet>> listsubnets(@Path('projectId') String projectId)
@@ -2081,16 +2081,16 @@ interface ProjectApi {
   Call<Subnet> findSubnetById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/subnet/{id}?action=activate')
-  Call<Subnet> activateSubnet(@Path('id') String id)
+  Call<Subnet> activateSubnet(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/subnet/{id}?action=purge')
-  Call<Subnet> purgeSubnet(@Path('id') String id)
+  Call<Subnet> purgeSubnet(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/subnet/{id}?action=remove')
-  Call<Subnet> removeSubnet(@Path('id') String id)
+  Call<Subnet> removeSubnet(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/subnet/{id}?action=deactivate')
-  Call<Subnet> deactivateSubnet(@Path('id') String id)
+  Call<Subnet> deactivateSubnet(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/targetPortRule')
   Call<TargetPortRule> createTargetPortRule(@Path('projectId') String projectId, @Body TargetPortRule targetPortRule)
@@ -2139,44 +2139,44 @@ interface ProjectApi {
   Call<VirtualMachine> deleteVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=updateunhealthy')
-  Call<Instance> updateunhealthyVirtualMachine(@Path('id') String id)
+  Call<Instance> updateunhealthyVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=console')
   Call<InstanceConsole> consoleVirtualMachine(
     @Path('projectId') String projectId, @Path('id') String id, @Body InstanceConsoleInput instanceConsoleInput)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=restart')
-  Call<Instance> restartVirtualMachine(@Path('id') String id)
+  Call<Instance> restartVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=deallocate')
-  Call<Instance> deallocateVirtualMachine(@Path('id') String id)
+  Call<Instance> deallocateVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=start')
-  Call<Instance> startVirtualMachine(@Path('id') String id)
+  Call<Instance> startVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=updatereinitializing')
-  Call<Instance> updatereinitializingVirtualMachine(@Path('id') String id)
+  Call<Instance> updatereinitializingVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=purge')
-  Call<Instance> purgeVirtualMachine(@Path('id') String id)
+  Call<Instance> purgeVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=error')
-  Call<Instance> errorVirtualMachine(@Path('id') String id)
+  Call<Instance> errorVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=remove')
-  Call<Instance> removeVirtualMachine(@Path('id') String id)
+  Call<Instance> removeVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=stop')
   Call<Instance> stopVirtualMachine(@Path('projectId') String projectId, @Path('id') String id, @Body InstanceStop instanceStop)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=allocate')
-  Call<Instance> allocateVirtualMachine(@Path('id') String id)
+  Call<Instance> allocateVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=updatehealthy')
-  Call<Instance> updatehealthyVirtualMachine(@Path('id') String id)
+  Call<Instance> updatehealthyVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=migrate')
-  Call<Instance> migrateVirtualMachine(@Path('id') String id)
+  Call<Instance> migrateVirtualMachine(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/virtualMachine/{id}?action=logs')
   Call<HostAccess> logsVirtualMachine(@Path('projectId') String projectId, @Path('id') String id, @Body ContainerLogs containerLogs)
@@ -2212,20 +2212,20 @@ interface ProjectApi {
   Call<Volume> deleteVolume(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volume/{id}?action=allocate')
-  Call<Volume> allocateVolume(@Path('id') String id)
+  Call<Volume> allocateVolume(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volume/{id}?action=restorefrombackup')
   Call<Volume> restorefrombackupVolume(
     @Path('projectId') String projectId, @Path('id') String id, @Body RestoreFromBackupInput restoreFromBackupInput)
 
   @POST('projects/{projectId}/volume/{id}?action=deallocate')
-  Call<Volume> deallocateVolume(@Path('id') String id)
+  Call<Volume> deallocateVolume(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volume/{id}?action=purge')
-  Call<Volume> purgeVolume(@Path('id') String id)
+  Call<Volume> purgeVolume(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volume/{id}?action=remove')
-  Call<Volume> removeVolume(@Path('id') String id)
+  Call<Volume> removeVolume(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volume/{id}?action=reverttosnapshot')
   Call<Volume> reverttosnapshotVolume(@Path('projectId') String projectId, @Path('id') String id, @Body RevertToSnapshotInput revertToSnapshotInput)
@@ -2255,15 +2255,15 @@ interface ProjectApi {
   Call<VolumeTemplate> findVolumeTemplateById(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volumeTemplate/{id}?action=activate')
-  Call<VolumeTemplate> activateVolumeTemplate(@Path('id') String id)
+  Call<VolumeTemplate> activateVolumeTemplate(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volumeTemplate/{id}?action=purge')
-  Call<VolumeTemplate> purgeVolumeTemplate(@Path('id') String id)
+  Call<VolumeTemplate> purgeVolumeTemplate(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volumeTemplate/{id}?action=remove')
-  Call<VolumeTemplate> removeVolumeTemplate(@Path('id') String id)
+  Call<VolumeTemplate> removeVolumeTemplate(@Path('projectId') String projectId, @Path('id') String id)
 
   @POST('projects/{projectId}/volumeTemplate/{id}?action=deactivate')
-  Call<VolumeTemplate> deactivateVolumeTemplate(@Path('id') String id)
+  Call<VolumeTemplate> deactivateVolumeTemplate(@Path('projectId') String projectId, @Path('id') String id)
 
 }
